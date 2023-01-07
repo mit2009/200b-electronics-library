@@ -13,7 +13,7 @@
 
 .electronicsItem {
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 300px;
   transition: 0.1s transform;
@@ -55,6 +55,41 @@
 
   &:hover {
     cursor: pointer;
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
+}
+
+.fullOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.2s opacity;
+
+  &.showOverlay {
+    opacity: 1;
+    pointer-events: auto;
+    .overlayContent {
+      transform: none;
+    }
+  }
+}
+
+.overlayContent {
+  width: 600px;
+  height: 450px;
+  background-color: var(--grey1);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  transition: 0.2s transform;
+  transform: translateY(40px);
 }

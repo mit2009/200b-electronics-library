@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import type { NextPage } from 'next';
-import React from 'react';
+import { useState } from 'react';
 
 import { google } from 'googleapis';
 import styles from '../styles/Page.module.scss';
@@ -96,13 +95,23 @@ export async function getStaticProps() {
 }
 
 const Home = ({ electronicComponents }: { electronicComponents: IElectronicsComponent[] }) => {
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [activeProduct, setActiveProduct] = useState<IElectronicsComponent | null>(null);
+
   return (
     <div className={styles.homepage}>
       <h1>2.00b Electronics Library!</h1>
       <h2>Recommended Electronic Components</h2>
       <div className={styles.electronicsContainer}>
         {electronicComponents.map((item: any) => (
-          <div key={item.name} className={styles.electronicsItem}>
+          <div
+            key={item.name}
+            className={styles.electronicsItem}
+            onClick={() => {
+              setShowOverlay(true);
+              setActiveProduct(item);
+            }}
+          >
             <div className={styles.productName}>{item.name}</div>
             <img src={item.productPhoto[0]} alt={item.name} />
             <div className={styles.category} style={styleFromCategory(item.category)}>
@@ -111,6 +120,26 @@ const Home = ({ electronicComponents }: { electronicComponents: IElectronicsComp
             <div className={styles.description}>{item.description}</div>
           </div>
         ))}
+      </div>
+      <div
+        className={cx(styles.fullOverlay, {
+          [styles.showOverlay]: showOverlay,
+        })}
+        onClick={() => {
+          setShowOverlay(false);
+        }}
+      >
+        <div
+          className={styles.overlayContent}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+        >
+          <h2>{activeProduct?.name}</h2>
+          <p>{activeProduct?.description}</p>
+          <p>Placeholder</p>
+        </div>
       </div>
     </div>
   );

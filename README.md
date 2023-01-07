@@ -2,7 +2,7 @@
 
 Hello! This is a companion website to Toy Product Design (2.00b) a Mechanical Engineering class that runs in the spring at MIT, with a focus on learning product design through building a toy product prototype. This simple one-page website has a list of recommended electronic components for students of the class.
 
-The data is loaded from an invite-only Google sheet. Contact Victor for access.
+The data is loaded from a private Google sheet. Contact Victor for access.
 
 The website is built on top of [Next.js](https://nextjs.org/), bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and uses TypeScript.
 

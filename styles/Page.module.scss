@@ -1,0 +1,60 @@
+.homepage {
+  max-width: 1260px;
+  margin: 40px auto;
+  padding: 0 40px;
+}
+
+.electronicsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  gap: 20px;
+}
+
+.electronicsItem {
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+  transition: 0.1s transform;
+
+  .productName {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: var(--grey9);
+    color: var(--grey1);
+    text-overflow: ellipsis;
+  }
+
+  img {
+    width: 300px;
+    height: 225px;
+    object-fit: cover;
+    background-color: var(--grey1);
+    display: block;
+  }
+
+  .category {
+    padding: 2px 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .description {
+    padding: 10px 15px;
+    font-size: 16px;
+    text-overflow: ellipsis;
+    height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+}

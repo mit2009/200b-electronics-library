@@ -8,6 +8,7 @@ import cx from 'classnames';
 interface IElectronicsComponent {
   name?: string;
   category?: string;
+  shortDescription?: string;
   tags?: string[];
   shownTo?: string;
   productPhoto?: string[];
@@ -29,13 +30,15 @@ const pickTextColorBasedOnBgColorSimple = (bgColor: string) => {
 };
 
 const backgroundColorFromCategory = (category: string) => {
-  switch (category.toLowerCase()) {
+  switch (category?.toLowerCase()) {
     case 'microcontroller':
       return { backgroundColor: '#04c2a8' };
     case 'power':
       return { backgroundColor: '#3107eb' };
     case 'communication':
       return { backgroundColor: '#f5a623' };
+    case 'sensor':
+      return { backgroundColor: '#813222' };
   }
   return { backgroundColor: '#000000' };
 };
@@ -74,15 +77,16 @@ export async function getStaticProps() {
     return removeEmpty({
       name: item[0],
       category: item[1],
-      tags: item[2]?.split(','),
-      shownTo: item[3],
-      productPhoto: item[4]?.split(','),
-      description: item[5],
-      purchaseLink: item[6],
-      leadTime: item[7],
-      dataSheet: item[8],
-      tutorialLinks: item[9]?.split(','),
-      additionalLinks: item[10]?.split(','),
+      shortDescription: item[2],
+      tags: item[3]?.split(','),
+      shownTo: item[4],
+      productPhoto: item[5]?.split(','),
+      description: item[6],
+      purchaseLink: item[7],
+      leadTime: item[8],
+      dataSheet: item[9],
+      tutorialLinks: item[10]?.split(','),
+      additionalLinks: item[11]?.split(','),
     });
   });
 
@@ -117,7 +121,7 @@ const Home = ({ electronicComponents }: { electronicComponents: IElectronicsComp
             <div className={styles.category} style={styleFromCategory(item.category)}>
               {item.category}
             </div>
-            <div className={styles.description}>{item.description}</div>
+            <div className={styles.description}>{item.shortDescription}</div>
           </div>
         ))}
       </div>

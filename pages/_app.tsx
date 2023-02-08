@@ -8,6 +8,8 @@ import cx from 'classnames';
 import '../styles/globals.scss';
 import { isDev } from '../lib/devHelper';
 
+import { Sidebar } from '../components/Sidebar';
+
 function MyApp({ Component, pageProps }: AppProps) {
   const color = new Date().getDay() + 1;
   const colorList = ['red', 'green', 'blue', 'pink', 'purple', 'gold', 'orange'];
@@ -37,6 +39,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
       </Head>
+      <Sidebar />
       <div className="page-content">
         {isDev && <div className="dev-marker">development</div>}
         <Component {...pageProps} />

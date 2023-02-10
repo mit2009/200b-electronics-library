@@ -1,5 +1,2 @@
-const Home = () => {
-  return <div>Toober Home</div>;
-};
-
-export default Home;
+import Overview from './intro/overview';
+export default Overview;

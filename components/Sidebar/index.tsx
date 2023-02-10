@@ -116,14 +116,12 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
       },
       "/breadboarding": {
         value: "5. Breadboarding",
-        coming_soon: true,
         due_date: "Feb 17",
         location: Location.AT_HOME,
         has_pages: true,
         pages: {
           "/install": {
             value: "Installing the IDE",
-            coming_soon: true,
           },
           "/test": {
             value: "Test the Microcontroller",

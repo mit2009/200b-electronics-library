@@ -125,7 +125,6 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
           "/test": {
             value: "Test the Microcontroller",
-            coming_soon: true,
           },
           "/circuit": {
             value: "The First Circuit",

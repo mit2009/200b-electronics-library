@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import cx from 'classnames';
 import styles from './Sidebar.module.scss';
@@ -10,7 +10,7 @@ interface IPage {
   coming_soon?: boolean;
 }
 
-interface IPages { 
+interface IPages {
   [url: string]: IPage;
 }
 
@@ -30,21 +30,24 @@ enum Location {
 interface ISection extends IPage {
   has_chapters: boolean;
   chapters?: { [url: string]: IChapter };
+  icon: JSX.Element;
 }
 
 const COMING_SOON_URL = "/toobers/coming-soon";
 
 const PAGES_LAYOUT: { [url: string]: ISection } = {
   "/": {
-    value: "Home Icon",
+    value: "Home",
     has_chapters: false,
+    icon: <div>HOME</div>,
   },
   "/toobers": {
-    value: "Toober Icon",
+    value: "Toobers",
     has_chapters: true,
+    icon: <div>Toober</div>,
     chapters: {
       "/intro": {
-        value: "Introduction",
+        value: "1. Introduction",
         due_date: "Feb 17",
         location: Location.AT_HOME,
         has_pages: true,
@@ -59,7 +62,7 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
         },
       },
       "/CAD": {
-        value: "Toober Enclosure CAD",
+        value: "2. Enclosure CAD",
         coming_soon: true,
         due_date: "Feb 17",
         location: Location.AT_HOME,
@@ -80,7 +83,7 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
         },
       },
       "/sugar-cube": {
-        value: "Sugar Cube",
+        value: "3. Sugar Cube",
         coming_soon: true,
         due_date: "Feb 17",
         location: Location.IN_LAB,
@@ -97,7 +100,7 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
         },
       },
       "/battery-charger": {
-        value: "Battery & Charger",
+        value: "4. Battery & Charger",
         coming_soon: true,
         due_date: "Feb 17",
         location: Location.IN_LAB,
@@ -114,7 +117,7 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
         },
       },
       "/breadboarding": {
-        value: "Breadboarding",
+        value: "5. Breadboarding",
         coming_soon: true,
         due_date: "Feb 17",
         location: Location.AT_HOME,
@@ -139,7 +142,7 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
         },
       },
       "/pcb": {
-        value: "PCB Assembly",
+        value: "6. PCB Assembly",
         coming_soon: true,
         due_date: "Feb 17",
         location: Location.AT_HOME,
@@ -168,7 +171,7 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
         },
       },
       "/final": {
-        value: "Final Assembly",
+        value: "7. Final Assembly",
         coming_soon: true,
         due_date: "Feb 17",
         location: Location.AT_HOME,
@@ -195,16 +198,19 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
     }
   },
   "/electronic-library": {
-    value: "Electronic Library Icon",
+    value: "Electronics Library",
     has_chapters: false,
+    icon: <div>Electronics</div>,
   }
 }
-const PageList = ({chapterUrl, pages}: {chapterUrl: string, pages?: IPages}) => {
+const PageList = ({ chapterUrl, pages, dirs }: { chapterUrl: string, pages?: IPages, dirs: string[] }) => {
   if (pages) {
     return (
       <ul className={styles.pageList}>
-        {Object.keys(pages).map(pageUrl => {
-          return <li key={pageUrl}><Link href={pages[pageUrl].coming_soon ?  COMING_SOON_URL : chapterUrl + pageUrl}>{pages[pageUrl].value}</Link></li>
+        {Object.keys(pages).map((pageUrl, index) => {
+          const url = chapterUrl + pageUrl;
+          const selected = dirs.join("") === url || index === 0 && dirs.join("") + pageUrl == url || "/toobers/intro/overview" === url && dirs.join("") === "/toobers"; 
+          return <li key={pageUrl} className={cx({ [styles.selected]: selected })}><Link href={pages[pageUrl].coming_soon ? COMING_SOON_URL : url}>{pages[pageUrl].value}</Link></li>
         })}
       </ul>
     )
@@ -213,26 +219,23 @@ const PageList = ({chapterUrl, pages}: {chapterUrl: string, pages?: IPages}) => 
   }
 }
 
-const ChapterContainer = () => {
-  const router = useRouter();
-  const path = router.pathname;
-  const currentSection = "/" + path.split("/")[1]
-
+const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
+  const currentSection = dirs[0];
   if (Object.hasOwn(PAGES_LAYOUT, currentSection) && PAGES_LAYOUT[currentSection].has_chapters) {
     const chapters = PAGES_LAYOUT[currentSection].chapters as { [url: string]: IChapter }
     return (
       <div className={styles.chapterContainer}>
         {Object.keys(chapters).map(chapterUrl => {
 
-          const chapterPath = `/${currentSection}${chapterUrl}`;
+          const chapterPath = `${currentSection}${chapterUrl}`;
           return (
             <div className={styles.chapter} key={chapterUrl}>
-              <Link href={chapters[chapterUrl].coming_soon ? COMING_SOON_URL : chapterPath}><div className={styles.chapterName}>{chapters[chapterUrl].value}</div></Link>
+              <Link href={chapters[chapterUrl].coming_soon ? COMING_SOON_URL : chapterPath}><div className={cx(styles.chapterName, { [styles.selected]: dirs[dirs.length - 1] === chapterUrl })}>{chapters[chapterUrl].value}</div></Link>
               <div className={styles.details}>
                 <div className={styles.location}>{chapters[chapterUrl].location}</div>
                 <div className={styles.dueDate}>{chapters[chapterUrl].due_date}</div>
               </div>
-              <PageList chapterUrl={chapterPath} pages={chapters[chapterUrl].pages} />
+              <PageList chapterUrl={chapterPath} pages={chapters[chapterUrl].pages} dirs={dirs} />
             </div>
           )
         })}
@@ -244,14 +247,52 @@ const ChapterContainer = () => {
 }
 
 export const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const router = useRouter();
+  useEffect(() => {
+    if (isOpen) {
+      setIsOpen(false);
+    }
+  }, [router.asPath]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const path = router.pathname;
+  const dirs = path.split("/").slice(1).map(dir => `/${dir}`);
+  const currentPage = dirs.reduce((acc: any, cur: string) => {
+    if (Object.hasOwn(acc, cur)) {
+      return acc[cur];
+    }
+    if (acc.has_chapters && Object.hasOwn(acc.chapters, cur)) {
+      return acc.chapters[cur];
+    }
+    if (acc.has_pages && Object.hasOwn(acc.pages, cur)) {
+      return acc.pages[cur];
+    }
+    return {}
+  }, PAGES_LAYOUT);
+  const currentPageName = Object.hasOwn(currentPage, "value") ? currentPage.value : "Coming Soon!";
   return (
     <div className={styles.sidebar}>
-      <div className={styles.iconContainer}>
-        {Object.keys(PAGES_LAYOUT).map(url => {
-          return <Link href={url} key={url}><div className={styles.icon}>{PAGES_LAYOUT[url].value}</div></Link>
-        })}
+      <div className={styles.topbar}>
+        <label htmlFor="hamburger-toggle">
+          <div className={styles.hamburgerContainer}>
+            <input type="checkbox" id="hamburger-toggle" checked={isOpen} onChange={(e) => {
+              const opened = e.target.checked;
+              setIsOpen(opened);
+            }} />
+            <div className={styles.hamburger} />
+          </div>
+        </label>
+        <div>{currentPageName}</div>
       </div>
-      <ChapterContainer />
+      <div className={cx(styles.sidebarContainer, { [styles.hidden]: !isOpen })}>
+        <div className={styles.iconContainer}>
+          {Object.keys(PAGES_LAYOUT).map(url => {
+            return <Link href={url} key={url}><div className={cx(styles.icon, { [styles.selected]: dirs[0] === url })}>{PAGES_LAYOUT[url].icon}</div></Link>
+          })}
+        </div>
+        <ChapterContainer dirs={dirs} />
+      </div>
     </div>
   )
 }

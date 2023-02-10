@@ -1,3 +1,4 @@
+@use './variables';
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
 html,
@@ -160,4 +161,12 @@ div {
     padding: 30px;
     max-width: 960px;
   }
+}
+
+@media (max-width: variables.$media-max-width) {
+  .app-container {
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+  }
+
 }

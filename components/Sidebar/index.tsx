@@ -61,16 +61,14 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
           }
         },
       },
-      "/CAD": {
+      "/cad": {
         value: "2. Enclosure CAD",
-        coming_soon: true,
         due_date: "Feb 17",
         location: Location.AT_HOME,
         has_pages: true,
         pages: {
           "/intro": {
             value: "CAD Intro",
-            coming_soon: true,
           },
           "/base-model": {
             value: "Getting the Base Model",

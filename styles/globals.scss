@@ -35,7 +35,7 @@ div {
   grid-template-rows: 1fr;
 
   a {
-    color: var(--primary);
+    color: #1f83f7;
     font-weight: bold;
     text-decoration: underline;
   }
@@ -62,8 +62,7 @@ div {
 
   h2 {
     font-size: 28px;
-    font-weight: bold;
-    color: var(--standard-font);
+    color: #999;
     margin-bottom: 20px;
   }
 
@@ -106,7 +105,7 @@ div {
   p,
   ul,
   ol {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
     margin-bottom: 20px;
     padding: 0;
@@ -160,6 +159,28 @@ div {
     overflow-y: scroll;
     padding: 30px;
     max-width: 960px;
+  }
+
+  .link-image {
+    display: block;
+    margin: auto;
+
+    border: 2px solid #000;
+    border-radius: 12px;
+    overflow: hidden;
+
+    width: fit-content;
+
+    &.fusion-image {
+      padding-top: 5px;
+      margin-bottom: 25px;
+    }
+  }
+
+  p.important {
+    border: 3px solid rgb(255, 168, 86);
+    padding: 10px 15px;
+    border-radius: 10px;
   }
 }
 

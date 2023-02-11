@@ -72,7 +72,6 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
           '/components-inside': {
             value: 'The Components Inside',
-            coming_soon: true,
           },
         },
       },
@@ -87,45 +86,37 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
           '/base-model': {
             value: 'Getting the Base Model',
-            coming_soon: true,
           },
           '/case-design': {
             value: 'Designing your own Case',
-            coming_soon: true,
           },
         },
       },
       '/sugar-cube': {
         value: '3. Sugar Cube',
-        coming_soon: true,
         due_date: 'Feb 17',
         location: Location.IN_LAB,
         has_pages: true,
         pages: {
           '/intro': {
             value: 'Hello Sugar Cube!',
-            coming_soon: true,
           },
           '/assembly': {
             value: 'Sugar Cube Assembly',
-            coming_soon: true,
           },
         },
       },
       '/battery-charger': {
         value: '4. Battery & Charger',
-        coming_soon: true,
         due_date: 'Feb 17',
         location: Location.IN_LAB,
         has_pages: true,
         pages: {
           '/intro': {
             value: 'The Power Circuit',
-            coming_soon: true,
           },
           '/assembly': {
             value: 'Battery & Charger Assembly',
-            coming_soon: true,
           },
         },
       },
@@ -143,64 +134,52 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
           '/circuit': {
             value: 'The First Circuit',
-            coming_soon: true,
           },
           '/prototype': {
             value: 'Breadboard Prototype',
-            coming_soon: true,
           },
         },
       },
       '/pcb': {
         value: '6. PCB Assembly',
-        coming_soon: true,
         due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
         pages: {
           '/intro': {
             value: 'PCB Overview',
-            coming_soon: true,
           },
           '/safety': {
             value: 'Solder & Safety',
-            coming_soon: true,
           },
           '/parts': {
             value: 'Preparing the Parts',
-            coming_soon: true,
           },
           '/soldering': {
             value: 'Actually Soldering!',
-            coming_soon: true,
           },
           '/assembly': {
             value: 'Connect it Together',
-            coming_soon: true,
           },
         },
       },
       '/final': {
         value: '7. Final Assembly',
-        coming_soon: true,
         due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
         pages: {
           '/intro': {
             value: 'Background Info',
-            coming_soon: true,
           },
           '/prep': {
             value: 'Preparing your Enclosure',
-            coming_soon: true,
           },
           '/glue': {
             value: 'Glue and Adhesives',
           },
           '/electronics': {
             value: 'Electronics Inside',
-            coming_soon: true,
           },
         },
       },

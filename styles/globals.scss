@@ -126,6 +126,7 @@ div {
 
   li {
     margin-bottom: 10px;
+    max-width: calc(70ch - 20px);
   }
 
   .full-image-container {
@@ -174,6 +175,10 @@ div {
     border-radius: 12px;
     overflow: hidden;
 
+    width: fit-content;
+
+    margin: 0 auto;
+
     &.fusion-image {
       padding-top: 5px;
       margin-bottom: 25px;
@@ -184,6 +189,8 @@ div {
     border: 3px solid rgb(255, 168, 86);
     padding: 10px 15px;
     border-radius: 10px;
+
+    max-width: calc(70ch - 36px);
   }
 
   div.advanced {

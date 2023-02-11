@@ -204,7 +204,7 @@ const PageList = ({ chapterUrl, pages, dirs }: { chapterUrl: string, pages?: IPa
       <ul className={styles.pageList}>
         {Object.keys(pages).map((pageUrl, index) => {
           const url = chapterUrl + pageUrl;
-          const selected = dirs.join("") === url || index === 0 && dirs.join("") + pageUrl == url || "/toobers/intro/overview" === url && dirs.join("") === "/toobers"; 
+          const selected = dirs.join("") === url || index === 0 && dirs.join("") + pageUrl == url || "/toobers/intro/overview" === url && dirs.join("") === "/toobers";
           return <li key={pageUrl} className={cx({ [styles.selected]: selected })}><Link href={pages[pageUrl].coming_soon ? COMING_SOON_URL : url}>{pages[pageUrl].value}</Link></li>
         })}
       </ul>
@@ -249,9 +249,11 @@ export const Sidebar = () => {
     if (isOpen) {
       setIsOpen(false);
     }
+    setTargetUrl(router.pathname);
   }, [router.asPath]); // eslint-disable-line react-hooks/exhaustive-deps
+  const [targetUrl, setTargetUrl] = useState(router.pathname);
 
-  const path = router.pathname;
+  const path = targetUrl;
   const dirs = path.split("/").slice(1).map(dir => `/${dir}`);
   const currentPage = dirs.reduce((acc: any, cur: string) => {
     if (Object.hasOwn(acc, cur)) {
@@ -283,7 +285,19 @@ export const Sidebar = () => {
       <div className={cx(styles.sidebarContainer, { [styles.hidden]: !isOpen })}>
         <div className={styles.iconContainer}>
           {Object.keys(PAGES_LAYOUT).map(url => {
-            return <Link href={url} key={url}><div className={cx(styles.icon, { [styles.selected]: dirs[0] === url })}>{PAGES_LAYOUT[url].icon}</div></Link>
+            const displayDiv = (
+              <div key={url} className={cx(styles.icon, { [styles.selected]: dirs[0] === url })} onClick={() => setTargetUrl(url)}>
+                {PAGES_LAYOUT[url].icon}
+              </div>
+            );
+            if (PAGES_LAYOUT[url].has_chapters) {
+              return displayDiv;
+            }
+            return (
+              <Link href={url} key={url}>
+                {displayDiv}
+              </Link>
+            )
           })}
         </div>
         <ChapterContainer dirs={dirs} />

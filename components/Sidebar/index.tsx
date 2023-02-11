@@ -22,223 +22,269 @@ interface IChapter extends IPage {
   pages?: IPages;
 }
 
+interface IChapters {
+  [url: string]: IChapter;
+}
+
 enum Location {
-  AT_HOME = "At Home",
-  IN_LAB = "In Lab",
+  AT_HOME = 'At Home',
+  IN_LAB = 'In Lab',
 }
 
 interface ISection extends IPage {
   has_chapters: boolean;
-  chapters?: { [url: string]: IChapter };
+  chapters?: IChapters;
   icon: JSX.Element;
 }
 
-const COMING_SOON_URL = "/toobers/coming-soon";
+const COMING_SOON_URL = '/toobers/coming-soon';
 
 const PAGES_LAYOUT: { [url: string]: ISection } = {
-  "/": {
-    value: "Home",
+  '/': {
+    value: 'Home',
     has_chapters: false,
     icon: <div>HOME</div>,
   },
-  "/toobers": {
-    value: "Toobers",
+  '/toobers': {
+    value: 'Toobers',
     has_chapters: true,
     icon: <div>Toober</div>,
     chapters: {
-      "/intro": {
-        value: "1. Introduction",
-        due_date: "Feb 17",
+      '/intro': {
+        value: '1. Introduction',
+        due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
         pages: {
-          "/overview": {
-            value: "Overview",
+          '/overview': {
+            value: 'Overview',
           },
-          "/components-inside": {
-            value: "The Components Inside",
+          '/components-inside': {
+            value: 'The Components Inside',
             coming_soon: true,
-          }
+          },
         },
       },
-      "/cad": {
-        value: "2. Enclosure CAD",
-        due_date: "Feb 17",
+      '/cad': {
+        value: '2. Enclosure CAD',
+        due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
         pages: {
-          "/intro": {
-            value: "CAD Intro",
+          '/intro': {
+            value: 'CAD Intro',
           },
-          "/base-model": {
-            value: "Getting the Base Model",
+          '/base-model': {
+            value: 'Getting the Base Model',
             coming_soon: true,
           },
-          "/case-design": {
-            value: "Designing your own Case",
+          '/case-design': {
+            value: 'Designing your own Case',
             coming_soon: true,
-          }
+          },
         },
       },
-      "/sugar-cube": {
-        value: "3. Sugar Cube",
+      '/sugar-cube': {
+        value: '3. Sugar Cube',
         coming_soon: true,
-        due_date: "Feb 17",
+        due_date: 'Feb 17',
         location: Location.IN_LAB,
         has_pages: true,
         pages: {
-          "/intro": {
-            value: "Getting to know your sugar cube",
+          '/intro': {
+            value: 'Getting to know your sugar cube',
             coming_soon: true,
           },
-          "/assembly": {
-            value: "Sugar Cube Assembly",
+          '/assembly': {
+            value: 'Sugar Cube Assembly',
             coming_soon: true,
-          }
+          },
         },
       },
-      "/battery-charger": {
-        value: "4. Battery & Charger",
+      '/battery-charger': {
+        value: '4. Battery & Charger',
         coming_soon: true,
-        due_date: "Feb 17",
+        due_date: 'Feb 17',
         location: Location.IN_LAB,
         has_pages: true,
         pages: {
-          "/intro": {
-            value: "Getting to know your Battery & Charger",
+          '/intro': {
+            value: 'Getting to know your Battery & Charger',
             coming_soon: true,
           },
-          "/assembly": {
-            value: "Battery & Charger Assembly",
+          '/assembly': {
+            value: 'Battery & Charger Assembly',
             coming_soon: true,
-          }
+          },
         },
       },
-      "/breadboarding": {
-        value: "5. Breadboarding",
-        due_date: "Feb 17",
+      '/breadboarding': {
+        value: '5. Breadboarding',
+        due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
         pages: {
-          "/install": {
-            value: "Installing the IDE",
+          '/install': {
+            value: 'Installing the IDE',
           },
-          "/test": {
-            value: "Test the Microcontroller",
+          '/test': {
+            value: 'Test the Microcontroller',
           },
-          "/circuit": {
-            value: "The First Circuit",
+          '/circuit': {
+            value: 'The First Circuit',
             coming_soon: true,
           },
-          "/prototype": {
-            value: "Breadboard Prototype",
+          '/prototype': {
+            value: 'Breadboard Prototype',
             coming_soon: true,
-          }
+          },
         },
       },
-      "/pcb": {
-        value: "6. PCB Assembly",
+      '/pcb': {
+        value: '6. PCB Assembly',
         coming_soon: true,
-        due_date: "Feb 17",
+        due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
         pages: {
-          "/intro": {
-            value: "PCB Overview",
+          '/intro': {
+            value: 'PCB Overview',
             coming_soon: true,
           },
-          "/safety": {
-            value: "Solder & Safety",
+          '/safety': {
+            value: 'Solder & Safety',
             coming_soon: true,
           },
-          "/parts": {
-            value: "Preparing the Parts",
+          '/parts': {
+            value: 'Preparing the Parts',
             coming_soon: true,
           },
-          "/soldering": {
-            value: "Actually Soldering!",
+          '/soldering': {
+            value: 'Actually Soldering!',
             coming_soon: true,
           },
-          "/assembly": {
-            value: "Connect it Together",
+          '/assembly': {
+            value: 'Connect it Together',
             coming_soon: true,
-          }
+          },
         },
       },
-      "/final": {
-        value: "7. Final Assembly",
+      '/final': {
+        value: '7. Final Assembly',
         coming_soon: true,
-        due_date: "Feb 17",
+        due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
         pages: {
-          "/intro": {
-            value: "Background Info",
+          '/intro': {
+            value: 'Background Info',
             coming_soon: true,
           },
-          "/prep": {
-            value: "Preparing your Enclosure",
+          '/prep': {
+            value: 'Preparing your Enclosure',
             coming_soon: true,
           },
-          "/glue": {
-            value: "Glue and Adhesives",
+          '/glue': {
+            value: 'Glue and Adhesives',
           },
-          "/electronics": {
-            value: "Electronics Inside",
+          '/electronics': {
+            value: 'Electronics Inside',
             coming_soon: true,
-          }
+          },
         },
       },
-    }
+    },
   },
-  "/electronic-library": {
-    value: "Electronics Library",
+  '/electronic-library': {
+    value: 'Electronics Library',
     has_chapters: false,
     icon: <div>Electronics</div>,
-  }
-}
-const PageList = ({ chapterUrl, pages, dirs }: { chapterUrl: string, pages?: IPages, dirs: string[] }) => {
+  },
+};
+
+// const URL_LIST = Object.keys(PAGES_LAYOUT).map(sectionUrl => {
+//   if (PAGES_LAYOUT[sectionUrl].has_chapters) {
+//     const chapters = PAGES_LAYOUT[sectionUrl].chapters as IChapters;
+//     const chapterURLS =
+//   } else {
+//     return [sectionUrl, []];
+//   }
+// })
+
+const PageList = ({ chapterUrl, pages, dirs }: { chapterUrl: string; pages?: IPages; dirs: string[] }) => {
   if (pages) {
     return (
       <ul className={styles.pageList}>
         {Object.keys(pages).map((pageUrl, index) => {
           const url = chapterUrl + pageUrl;
-          const selected = dirs.join("") === url || index === 0 && dirs.join("") + pageUrl == url || "/toobers/intro/overview" === url && dirs.join("") === "/toobers";
-          return <li key={pageUrl} className={cx({ [styles.selected]: selected })}><Link href={pages[pageUrl].coming_soon ? COMING_SOON_URL : url}>{pages[pageUrl].value}</Link></li>
+          const selected =
+            dirs.join('') === url ||
+            (index === 0 && dirs.join('') + pageUrl == url) ||
+            ('/toobers/intro/overview' === url && dirs.join('') === '/toobers');
+          return (
+            <li key={pageUrl} className={cx({ [styles.selected]: selected })}>
+              <Link href={pages[pageUrl].coming_soon ? COMING_SOON_URL : url}>{pages[pageUrl].value}</Link>
+            </li>
+          );
         })}
       </ul>
-    )
+    );
   } else {
-    return <></>
+    return <></>;
   }
-}
+};
 
 const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   const currentSection = dirs[0];
   if (Object.hasOwn(PAGES_LAYOUT, currentSection) && PAGES_LAYOUT[currentSection].has_chapters) {
-    const chapters = PAGES_LAYOUT[currentSection].chapters as { [url: string]: IChapter }
+    const chapters = PAGES_LAYOUT[currentSection].chapters as { [url: string]: IChapter };
     return (
       <div className={styles.chapterContainer}>
-        {Object.keys(chapters).map(chapterUrl => {
-
+        {Object.keys(chapters).map((chapterUrl) => {
           const chapterPath = `${currentSection}${chapterUrl}`;
           return (
             <div className={styles.chapter} key={chapterUrl}>
-              <Link href={chapters[chapterUrl].coming_soon ? COMING_SOON_URL : chapterPath}><div className={cx(styles.chapterName, { [styles.selected]: dirs[dirs.length - 1] === chapterUrl })}>{chapters[chapterUrl].value}</div></Link>
+              <Link href={chapters[chapterUrl].coming_soon ? COMING_SOON_URL : chapterPath}>
+                <div className={cx(styles.chapterName, { [styles.selected]: dirs[dirs.length - 1] === chapterUrl })}>
+                  {chapters[chapterUrl].value}
+                </div>
+              </Link>
               <div className={styles.details}>
                 <div className={styles.location}>{chapters[chapterUrl].location}</div>
                 <div className={styles.dueDate}>{chapters[chapterUrl].due_date}</div>
               </div>
               <PageList chapterUrl={chapterPath} pages={chapters[chapterUrl].pages} dirs={dirs} />
             </div>
-          )
+          );
         })}
       </div>
     );
   } else {
-    return <></>
+    return <></>;
   }
-}
+};
+
+const getCurrentPage = (dirs: string[]): IPage => {
+  return dirs.reduce((acc: any, cur: string) => {
+    if (Object.hasOwn(acc, cur)) {
+      return acc[cur];
+    }
+    if (acc.has_chapters && Object.hasOwn(acc.chapters, cur)) {
+      return acc.chapters[cur];
+    }
+    if (acc.has_pages && Object.hasOwn(acc.pages, cur)) {
+      return acc.pages[cur];
+    }
+    return {};
+  }, PAGES_LAYOUT);
+};
+
+const splitPath = (path: string): string[] => {
+  return path
+    .split('/')
+    .slice(1)
+    .map((dir) => `/${dir}`);
+};
 
 export const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -253,29 +299,23 @@ export const Sidebar = () => {
   const [targetUrl, setTargetUrl] = useState(router.pathname);
 
   const path = targetUrl;
-  const dirs = path.split("/").slice(1).map(dir => `/${dir}`);
-  const currentPage = dirs.reduce((acc: any, cur: string) => {
-    if (Object.hasOwn(acc, cur)) {
-      return acc[cur];
-    }
-    if (acc.has_chapters && Object.hasOwn(acc.chapters, cur)) {
-      return acc.chapters[cur];
-    }
-    if (acc.has_pages && Object.hasOwn(acc.pages, cur)) {
-      return acc.pages[cur];
-    }
-    return {}
-  }, PAGES_LAYOUT);
-  const currentPageName = Object.hasOwn(currentPage, "value") ? currentPage.value : "Coming Soon!";
+  const dirs = splitPath(path);
+  const currentPage = getCurrentPage(dirs);
+  const currentPageName = Object.hasOwn(currentPage, 'value') ? currentPage.value : 'Coming Soon!';
   return (
     <div className={styles.sidebar}>
       <div className={styles.topbar}>
         <label htmlFor="hamburger-toggle">
           <div className={styles.hamburgerContainer}>
-            <input type="checkbox" id="hamburger-toggle" checked={isOpen} onChange={(e) => {
-              const opened = e.target.checked;
-              setIsOpen(opened);
-            }} />
+            <input
+              type="checkbox"
+              id="hamburger-toggle"
+              checked={isOpen}
+              onChange={(e) => {
+                const opened = e.target.checked;
+                setIsOpen(opened);
+              }}
+            />
             <div className={styles.hamburger} />
           </div>
         </label>
@@ -283,9 +323,13 @@ export const Sidebar = () => {
       </div>
       <div className={cx(styles.sidebarContainer, { [styles.hidden]: !isOpen })}>
         <div className={styles.iconContainer}>
-          {Object.keys(PAGES_LAYOUT).map(url => {
+          {Object.keys(PAGES_LAYOUT).map((url) => {
             const displayDiv = (
-              <div key={url} className={cx(styles.icon, { [styles.selected]: dirs[0] === url })} onClick={() => setTargetUrl(url)}>
+              <div
+                key={url}
+                className={cx(styles.icon, { [styles.selected]: dirs[0] === url })}
+                onClick={() => setTargetUrl(url)}
+              >
                 {PAGES_LAYOUT[url].icon}
               </div>
             );
@@ -296,11 +340,103 @@ export const Sidebar = () => {
               <Link href={url} key={url}>
                 {displayDiv}
               </Link>
-            )
+            );
           })}
         </div>
         <ChapterContainer dirs={dirs} />
       </div>
     </div>
-  )
-}
+  );
+};
+
+const getNthPropertyName = (obj: { [key: string]: any }, position = 0): any => {
+  return Object.keys(obj)[position];
+};
+
+const getNthProperty = (obj: { [key: string]: any }, position = 0): any => {
+  return obj[getNthPropertyName(obj, position)];
+};
+
+const getPropertyCount = (obj: { [key: string]: any }) => {
+  return Object.keys(obj).length;
+};
+
+const DOES_NOT_EXIST_RESULT = { url: '', value: '', nonexistant: true };
+const COMING_SOON_RESULT = { url: COMING_SOON_URL, value: 'Coming Soon!', coming_soon: true };
+const comingSoonDiv = <div className={cx(styles.navButton, styles.comingSoonLink)}>Coming Soon!</div>;
+
+export const SectionNavigation = () => {
+  const router = useRouter();
+  const path = router.pathname;
+  const dirs = splitPath(path);
+  const currentPage = getCurrentPage(dirs);
+  if (!Object.hasOwn(currentPage, 'value') || !PAGES_LAYOUT[dirs[0]].has_chapters) {
+    return <></>;
+  }
+
+  const currentSection = getCurrentPage(dirs.slice(0, 1)) as ISection;
+  const chapterIndex = dirs.length < 2 ? 0 : Object.keys(currentSection.chapters as IChapters).indexOf(dirs[1]);
+  const currentChapter = getNthProperty(currentSection.chapters as IChapters, chapterIndex);
+  const currentIndex = dirs.length < 3 ? 0 : Object.keys(currentChapter.pages).indexOf(dirs[2]);
+
+  let prevPage = DOES_NOT_EXIST_RESULT as any;
+  if (currentIndex > 0) {
+    const relativeUrl = getNthPropertyName(currentChapter.pages, currentIndex - 1);
+    const url = dirs.slice(0, 2).join('') + relativeUrl;
+    const val = getNthProperty(currentChapter.pages, currentIndex - 1);
+    if (val.coming_soon) {
+      prevPage = COMING_SOON_RESULT;
+    } else {
+      prevPage = { url, value: val.value };
+    }
+  } else if (chapterIndex > 0) {
+    const relativeUrl = getNthPropertyName(currentSection.chapters as IChapters, chapterIndex - 1);
+    const url = dirs.slice(0, 1) + relativeUrl;
+    const val = getNthProperty(currentSection.chapters as IChapters, chapterIndex - 1);
+    if (val.coming_soon) {
+      prevPage = COMING_SOON_RESULT;
+    } else {
+      prevPage = { url, value: val.value };
+    }
+  }
+
+  let nextPage = DOES_NOT_EXIST_RESULT as any;
+  if (currentIndex + 1 < getPropertyCount(currentChapter.pages)) {
+    const relativeUrl = getNthPropertyName(currentChapter.pages, currentIndex + 1);
+    const url = dirs.slice(0, 2).join('') + relativeUrl;
+    const val = getNthProperty(currentChapter.pages, currentIndex + 1);
+    if (val.coming_soon) {
+      nextPage = COMING_SOON_RESULT;
+    } else {
+      nextPage = { url, value: val.value };
+    }
+  } else if (chapterIndex + 1 < getPropertyCount(currentSection.chapters as IChapters)) {
+    const relativeUrl = getNthPropertyName(currentSection.chapters as IChapters, chapterIndex + 1);
+    const url = dirs.slice(0, 1) + relativeUrl;
+    const val = getNthProperty(currentSection.chapters as IChapters, chapterIndex + 1);
+    if (val.coming_soon) {
+      nextPage = COMING_SOON_RESULT;
+    } else {
+      nextPage = { url, value: val.value };
+    }
+  }
+
+  const prevDiv = (
+    <Link href={prevPage.url}>
+      <div className={cx(styles.navButton, styles.prevLink)}>Back to {prevPage.value}</div>
+    </Link>
+  );
+
+  const nextDiv = (
+    <Link href={nextPage.url}>
+      <div className={cx(styles.navButton, styles.nextLink)}>Proceed to {nextPage.value}</div>
+    </Link>
+  );
+
+  return (
+    <div className={styles.sectionNav}>
+      {prevPage.nonexistant ? <div></div> : prevPage.coming_soon ? comingSoonDiv : prevDiv}
+      {nextPage.nonexistant ? <></> : nextPage.coming_soon ? comingSoonDiv : nextDiv}
+    </div>
+  );
+};

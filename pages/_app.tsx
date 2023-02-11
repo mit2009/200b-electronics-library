@@ -8,7 +8,7 @@ import cx from 'classnames';
 import '../styles/globals.scss';
 import { isDev } from '../lib/devHelper';
 
-import { Sidebar } from '../components/Sidebar';
+import { SectionNavigation, Sidebar } from '../components/Sidebar';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const color = new Date().getDay() + 1;
@@ -43,6 +43,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <div className="page-content">
         {isDev && <div className="dev-marker">development</div>}
         <Component {...pageProps} />
+        <SectionNavigation />
       </div>
     </div>
   );

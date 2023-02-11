@@ -23,7 +23,7 @@ const Glue = () => {
         human skin! On that note, it's generally a good idea to wear gloves when working with substances like this.
       </p>
       <div className={'image-container'}>
-        <Image alt={'CA Glue'} src={'/images/ca-glue.webp'} width={300} height={300} />
+        <Image alt={'CA Glue'} src={'/images/toobers/ca-glue.webp'} width={300} height={300} />
       </div>
       <p>
         CA glue dries or cures when it comes in contact with moisture (including the moisture in the air!) Sometimes,
@@ -40,9 +40,9 @@ const Glue = () => {
       <h2>Just a bit will do the trick!</h2>
       <p>
         Unlike wood glue, you don't need to saturate or evenly coat your entire surface with this glue. A dab on one of
-        the surfaces you'll be attaching to is enough (<strong>one drop per square inch</strong>). Once you've added your part, you want
-        to make sure that you hold the two pieces together for a good few minutes. It'll remain in place after that and
-        should hold itself together, but will reach its full strength in 24 hours.
+        the surfaces you'll be attaching to is enough (<strong>one drop per square inch</strong>). Once you've added
+        your part, you want to make sure that you hold the two pieces together for a good few minutes. It'll remain in
+        place after that and should hold itself together, but will reach its full strength in 24 hours.
       </p>
     </div>
   );

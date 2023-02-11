@@ -20,7 +20,7 @@ const Intro = () => {
         rel="noreferrer"
       >
         <div className="link-image fusion-image">
-          <Image src="/images/toobers/fusion-logo.png" alt="Fusion 360 Logo " height={85} width={400} />
+          <Image src="/images/toobers/fusion-logo.png" alt="Fusion 360 Logo" height={85} width={400} />
         </div>
       </a>
       <h2>Installation</h2>

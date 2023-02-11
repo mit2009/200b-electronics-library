@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import cx from 'classnames';
 import styles from './Sidebar.module.scss';
+import Image from 'next/image';
 
 interface IPage {
   value: string;
@@ -27,7 +28,7 @@ interface IChapters {
 }
 
 enum Location {
-  AT_HOME = 'At Home',
+  AT_HOME = 'Home',
   IN_LAB = 'In Lab',
 }
 
@@ -43,12 +44,22 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
   '/': {
     value: 'Home',
     has_chapters: false,
-    icon: <div>HOME</div>,
+    icon: (
+      <div>
+        <Image src="/images/home-icon.svg" alt="Home Icon" height={50} width={50} />
+        <div>Home</div>
+      </div>
+    ),
   },
   '/toobers': {
     value: 'Toobers',
     has_chapters: true,
-    icon: <div>Toober</div>,
+    icon: (
+      <div>
+        <Image src="/images/toobers-icon.svg" alt="Home Icon" height={55} width={60} />
+        <div>toobers!</div>
+      </div>
+    ),
     chapters: {
       '/intro': {
         value: '1. Introduction',
@@ -92,7 +103,7 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
         has_pages: true,
         pages: {
           '/intro': {
-            value: 'Getting to know your sugar cube',
+            value: 'Hello Sugar Cube!',
             coming_soon: true,
           },
           '/assembly': {
@@ -109,7 +120,7 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
         has_pages: true,
         pages: {
           '/intro': {
-            value: 'Getting to know your Battery & Charger',
+            value: 'The Power Circuit',
             coming_soon: true,
           },
           '/assembly': {
@@ -198,7 +209,16 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
   '/electronic-library': {
     value: 'Electronics Library',
     has_chapters: false,
-    icon: <div>Electronics</div>,
+    icon: (
+      <div>
+        <Image src="/images/electronics-icon.svg" alt="Home Icon" height={55} width={60} />
+        <div>
+          electronics
+          <br />
+          library
+        </div>
+      </div>
+    ),
   },
 };
 

@@ -182,7 +182,6 @@ const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
           "/glue": {
             value: "Glue and Adhesives",
-            coming_soon: true,
           },
           "/electronics": {
             value: "Electronics Inside",

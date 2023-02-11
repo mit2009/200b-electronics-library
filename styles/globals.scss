@@ -33,10 +33,6 @@ div {
 
   position: relative;
 
-  & > div:nth-child(2) {
-    justify-self: center;
-  }
-
   a {
     color: #1f83f7;
     font-weight: bold;

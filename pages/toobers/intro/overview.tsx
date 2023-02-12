@@ -34,11 +34,31 @@ const Overview = () => {
         late at night. Also, if you know the answer to a question that has been asked, please feel free to pitch in and
         answer. We're all in this together!
       </p>
+      <h3>Asking help on Slack</h3>
       <p>
         <strong>Electrical-related questions</strong>: (e.g., wiring & electronics) it is often helpful to post a
         picture of your wiring so that we can check that everything has been wired correctly. It may take multiple
         pictures from different angles to show all the wiring clearly. Sometimes a second set of eyes is all you need.
       </p>
+      <p>
+        <strong>Software-related questions</strong>: it is often helpful to post a picture of the error message, or if
+        you've modified the code to do something different, posting a code. Tip: In Slack, you can post a code block by
+        surrounding your text with <code>```</code>.
+      </p>
+      <p>
+        <strong>CAD-related questions</strong>: Be sure to describe what you're trying to do, and what you've tried so
+        far. As with the above, screenshots is helpful! It's also sometimes advised to <strong>sketch</strong> on paper
+        and take a photo of what you're trying to CAD if you're getting stuck!
+      </p>
+      <p>
+        Not sure what kind of an issue it is? Post information on anything you have! Avoid just saying something "just
+        doesn't work". Here's a checklist for points that are good to cover in your question:
+      </p>
+      <ul>
+        <li>What is happening (or not happening)?</li>
+        <li>What you were expecting to happen?</li>
+        <li>Anything you may have tried so far to fix the problem</li>
+      </ul>
     </div>
   );
 };

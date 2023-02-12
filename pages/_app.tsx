@@ -3,17 +3,24 @@
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
 
 import cx from 'classnames';
 import '../styles/globals.scss';
+import sidebarStyles from '../components/Sidebar/Sidebar.module.scss';
+
 import { isDev } from '../lib/devHelper';
 
-import { SectionNavigation, Sidebar } from '../components/Sidebar';
+import { PAGES_LAYOUT, SectionNavigation, Sidebar } from '../components/Sidebar';
+import { kebabToCamel, splitPath } from '../utils/format';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const color = new Date().getDay() + 1;
   const colorList = ['red', 'green', 'blue', 'pink', 'purple', 'gold', 'orange'];
   const colorClass = colorList[color - 1];
+
+  const router = useRouter();
+  const paths = splitPath(router.pathname);
 
   return (
     <div className={cx('app-container', colorClass)}>
@@ -40,7 +47,16 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
       </Head>
       <Sidebar />
-      <div className="page-content">
+      <div className={cx('page-content', sidebarStyles[kebabToCamel(paths[1])])}>
+        {paths[0] === 'toobers' && (
+          <div className="breadcrumbs">
+            <span className="chapter">{PAGES_LAYOUT?.['/toobers']?.chapters?.[`/${paths[1]}`]?.value}</span>{' '}
+            <span className="separator">&gt;</span>{' '}
+            <span className="page">
+              {PAGES_LAYOUT?.['/toobers']?.chapters?.[`/${paths[1]}`]?.pages?.[`/${paths[2]}`]?.value}
+            </span>
+          </div>
+        )}
         {isDev && <div className="dev-marker">development</div>}
         <Component {...pageProps} />
         <SectionNavigation />

@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
 import styles from './Sidebar.module.scss';
 import Image from 'next/image';
+import { kebabToCamel } from '../../utils/format';
 
 interface IPage {
   value: string;
@@ -40,7 +41,7 @@ interface ISection extends IPage {
 
 const COMING_SOON_URL = '/toobers/coming-soon';
 
-const PAGES_LAYOUT: { [url: string]: ISection } = {
+export const PAGES_LAYOUT: { [url: string]: ISection } = {
   '/': {
     value: 'Home',
     has_chapters: false,
@@ -221,9 +222,9 @@ const PageList = ({ chapterUrl, pages, dirs }: { chapterUrl: string; pages?: IPa
             (index === 0 && dirs.join('') + pageUrl == url) ||
             ('/toobers/intro/overview' === url && dirs.join('') === '/toobers');
           return (
-            <li key={pageUrl} className={cx({ [styles.selected]: selected })}>
-              <Link href={pages[pageUrl].coming_soon ? COMING_SOON_URL : url}>{pages[pageUrl].value}</Link>
-            </li>
+            <Link key={pageUrl} href={pages[pageUrl].coming_soon ? COMING_SOON_URL : url}>
+              <li className={cx({ [styles.selected]: selected })}>{pages[pageUrl].value}</li>
+            </Link>
           );
         })}
       </ul>
@@ -241,13 +242,16 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
       <div className={styles.chapterContainer}>
         {Object.keys(chapters).map((chapterUrl) => {
           const chapterPath = `${currentSection}${chapterUrl}`;
+
           return (
-            <div className={styles.chapter} key={chapterUrl}>
-              <Link href={chapters[chapterUrl].coming_soon ? COMING_SOON_URL : chapterPath}>
-                <div className={cx(styles.chapterName, { [styles.selected]: dirs[dirs.length - 1] === chapterUrl })}>
-                  {chapters[chapterUrl].value}
-                </div>
-              </Link>
+            <div className={cx(styles.chapter, [styles[kebabToCamel(chapterUrl.slice(1))]])} key={chapterUrl}>
+              <div
+                className={cx(styles.chapterName, {
+                  [styles.selected]: dirs[dirs.length - 1] === chapterUrl,
+                })}
+              >
+                {chapters[chapterUrl].value}
+              </div>
               <div className={styles.details}>
                 <div className={styles.location}>{chapters[chapterUrl].location}</div>
                 <div className={styles.dueDate}>{chapters[chapterUrl].due_date}</div>

@@ -213,13 +213,13 @@ div {
   }
 
   span.pin {
-    background-color: rgb(255, 236,206);
+    background-color: rgb(255, 236, 206);
     color: rgb(235, 116, 5);
     padding: 0 5px;
     border-radius: 6px;
     margin: 0 1px;
     text-transform: uppercase;
-    font-family: "Source Code Pro", monospace;
+    font-family: 'Source Code Pro', monospace;
   }
 
   video {
@@ -243,10 +243,35 @@ div {
   }
 }
 
+.breadcrumbs {
+  border: 3px solid var(--section-color);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+
+  .chapter {
+    color: var(--section-color);
+    font-weight: bold;
+  }
+
+  .page {
+  }
+
+  .separator {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 0;
+    margin: 0 6px;
+    color: var(--section-lighter);
+  }
+}
+
 @media (max-width: variables.$media-max-width) {
   .app-container {
     grid-template-rows: auto 1fr;
     grid-template-columns: 1fr;
   }
-
 }

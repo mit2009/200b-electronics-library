@@ -301,7 +301,7 @@ export const Sidebar = () => {
   }, [router.asPath]); // eslint-disable-line react-hooks/exhaustive-deps
   const [targetUrl, setTargetUrl] = useState(router.pathname);
 
-  const path = targetUrl;
+  const path = router.pathname;
   const dirs = splitPath(path);
   const currentPage = getCurrentPage(dirs);
   const currentPageName = Object.hasOwn(currentPage, 'value') ? currentPage.value : 'Coming Soon!';
@@ -331,14 +331,10 @@ export const Sidebar = () => {
               <div
                 key={url}
                 className={cx(styles.icon, { [styles.selected]: dirs[0] === url })}
-                onClick={() => setTargetUrl(url)}
               >
                 {PAGES_LAYOUT[url].icon}
               </div>
             );
-            if (PAGES_LAYOUT[url].has_chapters) {
-              return displayDiv;
-            }
             return (
               <Link href={url} key={url}>
                 {displayDiv}

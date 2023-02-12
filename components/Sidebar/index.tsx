@@ -328,10 +328,7 @@ export const Sidebar = () => {
         <div className={styles.iconContainer}>
           {Object.keys(PAGES_LAYOUT).map((url) => {
             const displayDiv = (
-              <div
-                key={url}
-                className={cx(styles.icon, { [styles.selected]: dirs[0] === url })}
-              >
+              <div key={url} className={cx(styles.icon, { [styles.selected]: dirs[0] === url })}>
                 {PAGES_LAYOUT[url].icon}
               </div>
             );

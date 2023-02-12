@@ -180,11 +180,9 @@ div {
   }
 
   p.important {
-    border: 3px solid rgb(255, 168, 86);
+    border: 3px solid var(--section-color);
     padding: 10px 15px;
     border-radius: 10px;
-
-    max-width: calc(70ch - 36px);
   }
 
   div.advanced {

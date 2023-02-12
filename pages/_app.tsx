@@ -47,13 +47,15 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
       </Head>
       <Sidebar />
-      <div className={cx('page-content', sidebarStyles[kebabToCamel(paths[1])])}>
+      <div className={cx('page-content', sidebarStyles[kebabToCamel(paths[1]) ?? 'intro'])}>
         {paths[0] === 'toobers' && (
           <div className="breadcrumbs">
-            <span className="chapter">{PAGES_LAYOUT?.['/toobers']?.chapters?.[`/${paths[1]}`]?.value}</span>{' '}
+            <span className="chapter">
+              {PAGES_LAYOUT?.['/toobers']?.chapters?.[`/${paths[1]}`]?.value ?? `1. Introduction`}
+            </span>{' '}
             <span className="separator">&gt;</span>{' '}
             <span className="page">
-              {PAGES_LAYOUT?.['/toobers']?.chapters?.[`/${paths[1]}`]?.pages?.[`/${paths[2]}`]?.value}
+              {PAGES_LAYOUT?.['/toobers']?.chapters?.[`/${paths[1]}`]?.pages?.[`/${paths[2]}`]?.value ?? `Overview`}
             </span>
           </div>
         )}

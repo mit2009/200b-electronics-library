@@ -10,10 +10,12 @@ const Page = () => {
     const scroll = document.documentElement.scrollTop;
     const videoHeight = video?.offsetHeight ?? 0;
     const scrollHeight = document.documentElement.scrollHeight;
-    const scrollPercent = (scroll / (scrollHeight - videoHeight)) * 5;
+    const scrollPercent = Math.min((scroll / (scrollHeight - videoHeight)) * 4, 1);
     const videoDuration = (video as any)?.duration ?? 0;
     const videoTime = scrollPercent * videoDuration;
-    video.currentTime = videoTime;
+    if (video) {
+      video.currentTime = videoTime ?? 0;
+    }
   };
 
   useEffect(() => {
@@ -29,7 +31,8 @@ const Page = () => {
       <h2>Look Under the Hood</h2>
       <p>Before we get started, let's take a look inside a Toober.</p>
       <video id="video" className={'exploded-view'} width="80%" height="auto">
-        <source src="/images/toobers/toobers-explode-video.mp4" type="video/mp4" />
+        <source src="/images/toobers/toobers-explode-video.webm" type="video/webm" />
+        {/* <source src="/images/toobers/toobers-explode-video.mp4" type="video/mp4" /> */}
       </video>
       <p>
         The Toobers toy is made up of several components and sub-units (we'll call them submodules.) It might look like

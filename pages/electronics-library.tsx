@@ -103,7 +103,7 @@ const Home = ({ electronicComponents }: { electronicComponents: IElectronicsComp
   const [activeProduct, setActiveProduct] = useState<IElectronicsComponent | null>(null);
 
   return (
-    <div className={styles.homepage}>
+    <div>
       <h1>2.00b Electronics Library!</h1>
       <h2>Recommended Electronic Components</h2>
       <div className={styles.electronicsContainer}>

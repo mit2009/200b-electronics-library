@@ -186,7 +186,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       },
     },
   },
-  '/electronic-library': {
+  '/electronics-library': {
     value: 'Electronics Library',
     has_chapters: false,
     icon: (

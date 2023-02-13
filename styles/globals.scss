@@ -1,6 +1,11 @@
 @use './variables';
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
 
+@font-face {
+  font-family: 'grilledcheese';
+  src: url('/fonts/gc.ttf') format('truetype');
+}
+
 html,
 body {
   font-family: 'DM Sans', sans-serif;
@@ -20,6 +25,8 @@ body {
   --grey7: #616161;
   --grey8: #424242;
   --grey9: #212121;
+
+  --icon-background-color: #002846;
 }
 
 div {
@@ -162,6 +169,17 @@ div {
   .page-content {
     padding: 50px;
     max-width: 920px;
+
+    &.electronics-library,
+    &.home {
+      max-width: 100%;
+    }
+
+    &.home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
 
   .link-image {

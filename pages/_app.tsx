@@ -25,13 +25,19 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className={cx('app-container', colorClass)}>
       <Head>
-        <title>MIT 2.00b Electronics Library</title>
+        <title>MIT 2.00b Resources Website</title>
         <meta name="description" content="MIT 2.00b Resources Website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="MIT 2.00b Resources Website" />
         <meta property="og:description" content="Helpful tips and tricks for building your toy!" />
         <meta property="og:image" content="/images/og.jpg" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon/favicon.ico" />{' '}
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <link rel="manifest" href="/favicon/site.webmanifest"></link>
+        <meta name="theme-color" content="#ffffff" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ND6J62XYXW"></script>
         <script
           dangerouslySetInnerHTML={{

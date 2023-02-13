@@ -29,7 +29,7 @@ interface IChapters {
 }
 
 enum Location {
-  AT_HOME = 'Home',
+  AT_HOME = 'Due',
   IN_LAB = 'In Lab',
 }
 

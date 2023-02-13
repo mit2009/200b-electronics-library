@@ -186,16 +186,19 @@ div {
   }
 
   div.advanced {
-    --color: rgb(74, 144, 226);
-    border: 3px solid var(--color);
+    border: 3px solid var(--section-color);
     padding: 10px 15px;
     border-radius: 10px;
 
     h3 {
       font-size: 12px;
-      color: var(--color);
+      color: var(--section-color);
       font-weight: bold;
       margin-bottom: 5px;
+    }
+
+    a {
+      color: var(--section-color);
     }
 
     p {
@@ -207,7 +210,8 @@ div {
     }
   }
 
-  span.instruction {
+  span.instruction,
+  code {
     background-color: #eee;
     padding: 2px 6px;
     border-radius: 6px;
@@ -231,8 +235,12 @@ div {
     width: 100%;
     max-width: 600px;
     margin: 0 auto 30px auto;
-
     border-radius: 10px;
+
+    &.exploded-view {
+      max-width: 500px;
+      margin-bottom: 0;
+    }
   }
 
   pre {

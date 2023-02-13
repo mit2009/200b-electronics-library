@@ -12,7 +12,7 @@
 .choice {
   position: relative;
 
-  border: 2px solid var(--color);
+  border: 3px solid var(--color);
   padding: 10px 15px;
   border-radius: 6px;
 
@@ -21,7 +21,7 @@
   cursor: pointer;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: calc(50% - 10px);
     right: 10px;

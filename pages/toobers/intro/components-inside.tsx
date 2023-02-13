@@ -35,9 +35,9 @@ const Page = () => {
         {/* <source src="/images/toobers/toobers-explode-video.mp4" type="video/mp4" /> */}
       </video>
       <p>
-        The Toobers toy is made up of several components and sub-units (we'll call them submodules.) It might look like
-        a lot, but don't fret. We won't be building each one from scratch (which is often the case with product design
-        as well - we try to <strong>source</strong> the correct parts so we don't end up reinventing the wheel.)
+        The Toobers toy is made up of several components and sub-units (we'll call them modules.) It might look like a
+        lot, but don't fret. We won't be building each one from scratch (which is often the case with product design as
+        well - we try to <strong>source</strong> the correct parts so we don't end up reinventing the wheel.)
       </p>
       <GuideImage src={'/images/toobers/exploded-diagram.jpg'} alt={'Exploded View'} size={'LARGE'} />
     </div>

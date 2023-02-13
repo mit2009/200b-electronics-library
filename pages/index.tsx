@@ -13,7 +13,7 @@ const Home = () => {
         2.00b <span className={styles.themed}>Resources</span> Website!
       </h1>
       <p>
-        Hello! This is the companion website to <a href="https://mit.edu/2.00b">2.00b's Homepage</a> which contains some
+        Hello! This is the companion website to <a href="https://mit.edu/2.00b">2.00b's Homepage</a> containing some
         helpful toy design tips!
       </p>
       <div className={styles.topics}>

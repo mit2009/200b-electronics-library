@@ -26,10 +26,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     <div className={cx('app-container', colorClass)}>
       <Head>
         <title>MIT 2.00b Electronics Library</title>
-        <meta name="description" content="MIT 2.00b Electronics Library" />
+        <meta name="description" content="MIT 2.00b Resources Website" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="MIT 2.00b Electronics Library" />
-        <meta property="og:description" content="Product Design Processes" />
+        <meta property="og:title" content="MIT 2.00b Resources Website" />
+        <meta property="og:description" content="Helpful tips and tricks for building your toy!" />
         <meta property="og:image" content="/images/og.jpg" />
         <link rel="icon" href="/favicon.ico" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ND6J62XYXW"></script>

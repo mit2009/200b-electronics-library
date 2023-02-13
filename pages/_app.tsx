@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta property="og:title" content="MIT 2.00b Electronics Library" />
         <meta property="og:description" content="Product Design Processes" />
-        {/* <meta property="og:image" content="/images/move.png" /> */}
+        <meta property="og:image" content="/images/og.jpg" />
         <link rel="icon" href="/favicon.ico" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ND6J62XYXW"></script>
         <script

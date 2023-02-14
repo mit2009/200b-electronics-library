@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useEffect } from 'react';
 import GuideImage from '../../../components/GuideImage';
 
@@ -40,6 +41,36 @@ const Page = () => {
         well - we try to <strong>source</strong> the correct parts so we don't end up reinventing the wheel.)
       </p>
       <GuideImage src={'/images/toobers/exploded-diagram.jpg'} alt={'Exploded View'} size={'LARGE'} />
+      <h3>Top & Bottom Housing</h3>
+      <p>
+        Your Toober housing, also known as the Toober enclosure, is where everything will be contained. The two pieces
+        are secured togther via 2 housing screws, and also have <strong>unique alignment features</strong> along the rim
+        such that they only come together in one orientation.{' '}
+      </p>
+      <p>
+        You'll notice that the interior of the housing also has designated features where other components such as the
+        speaker and printed circuit board (PCB) will sit. These features are <strong>hardpoints</strong> in the design-
+        meaning that these are constraints in your final Toober design that you should not change.
+      </p>
+      <p>
+        The top and bottom housing will be printed on a very special 3D printer (
+        <Link href="https://www.stratasys.com/en/3d-printers/printer-catalog/polyjet/j55-prime/">the J55 Prime</Link>)
+        which can print in <strong>full color</strong>! These printers <strong>do not use filament</strong> and instead
+        use a special (insanely expensive) resin.
+      </p>
+      <GuideImage
+        src={'/images/toobers/rotating-j55.gif'}
+        alt={'3D Printer'}
+        size={'MEDIUM'}
+        caption={'These are the Toobers printing in real-time! Look at them go!'}
+      />
+      <h3>Sugar Cubes!</h3>
+      <p>
+        There are 4, nice squishy silicone buttons on your Toobers which are the 4 buttons with which the toy user will
+        interact.
+      </p>
+      <h3>Battery & Charging Unit</h3>
+      <p>test</p>
     </div>
   );
 };

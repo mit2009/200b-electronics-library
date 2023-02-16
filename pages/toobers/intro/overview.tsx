@@ -54,7 +54,7 @@ const Overview = () => {
       </p>
       <p>
         <strong>CAD-related questions</strong>: Be sure to describe what you're trying to do, and what you've tried so
-        far. As with the above, screenshots is helpful! It's also sometimes advised to <strong>sketch</strong> on paper
+        far. As with the above, screenshots are helpful! It's also sometimes advised to <strong>sketch</strong> on paper
         and take a photo of what you're trying to CAD if you're getting stuck!
       </p>
       <p>

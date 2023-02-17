@@ -11,7 +11,7 @@ const Page = () => {
     const scroll = document.documentElement.scrollTop;
     const videoHeight = video?.offsetHeight ?? 0;
     const scrollHeight = document.documentElement.scrollHeight;
-    const scrollPercent = Math.min((scroll / (scrollHeight - videoHeight)) * 4, 1);
+    const scrollPercent = Math.min((scroll / (scrollHeight - videoHeight)) * 10, 1);
     const videoDuration = (video as any)?.duration ?? 0;
     const videoTime = scrollPercent * videoDuration;
     if (video && !isNaN(videoTime)) {

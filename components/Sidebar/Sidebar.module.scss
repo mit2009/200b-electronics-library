@@ -101,6 +101,13 @@
   display: grid;
   grid-template-columns: auto 1fr;
   padding: 15px;
+
+  &.comingSoon {
+    color: var(--grey7);
+    font-size: 14px;
+    padding-top: 8px;
+    padding-left: 20px;
+  }
 }
 
 .chapter + .chapter {
@@ -120,12 +127,13 @@
 .details {
   display: flex;
   justify-self: end;
-  padding: 4px 8px 3px;
+  align-self: flex-start;
+  padding: 1px 5px 1px;
   border-radius: 100vw;
   border: 1px solid rgba(0, 0, 0, 0.5);
 
   .location {
-    font-size: 13px;
+    font-size: 11px;
     border-radius: 8px;
     text-align: center;
     margin-right: 5px;
@@ -134,7 +142,7 @@
   }
 
   .dueDate {
-    font-size: 13px;
+    font-size: 11px;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.8);
     text-transform: uppercase;

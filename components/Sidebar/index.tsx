@@ -65,7 +65,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
     chapters: {
       '/intro': {
         value: '1. Introduction',
-        due_date: 'Feb 17',
+        due_date: 'Before Lab',
         location: Location.AT_HOME,
         has_pages: true,
         pages: {
@@ -266,14 +266,15 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
               >
                 {chapters[chapterUrl].value}
               </div>
-              {/* <div className={styles.details}>
+              <div className={styles.details}>
                 <div className={styles.location}>{chapters[chapterUrl].location}</div>
                 <div className={styles.dueDate}>{chapters[chapterUrl].due_date}</div>
-              </div> */}
+              </div>
               <PageList chapterUrl={chapterPath} pages={chapters[chapterUrl].pages} dirs={dirs} />
             </div>
           );
         })}
+        <div className={cx(styles.chapter, styles.comingSoon)}>more coming soon!</div>
       </div>
     );
   } else {
@@ -413,7 +414,7 @@ export const SectionNavigation = () => {
   let nextPage = DOES_NOT_EXIST_RESULT as any;
   if (currentIndex + 1 < getPropertyCount(currentChapter.pages)) {
     const relativeUrl = getNthPropertyName(currentChapter.pages, currentIndex + 1);
-    const url = dirs.length < 2 ? dirs.slice(0,1) + "/intro" + relativeUrl : dirs.slice(0, 2).join('') + relativeUrl;
+    const url = dirs.length < 2 ? dirs.slice(0, 1) + '/intro' + relativeUrl : dirs.slice(0, 2).join('') + relativeUrl;
     const val = getNthProperty(currentChapter.pages, currentIndex + 1);
     if (val.coming_soon || val.is_hidden) {
       nextPage = COMING_SOON_RESULT;

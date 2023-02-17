@@ -47,7 +47,7 @@ const Overview = () => {
         Slack channel! There's usually someone available, even late at night. Also, if you know the answer to a question
         that has been asked, please feel free to pitch in and answer. We're all in this together!
       </p>
-      <h3>Asking help on Slack</h3>
+      <h3>Asking for help on Slack</h3>
       <p>
         <strong>Electronics-related questions</strong>: (e.g., wiring & electronics) it is often helpful to post a
         picture of your wiring so that we can check that everything has been wired correctly. It may take multiple

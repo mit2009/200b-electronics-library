@@ -77,7 +77,9 @@ export const WhatsDue = ({ chapter }: { chapter: string }) => {
               <div key={index} onClick={clickItem} className={styles.dueItem}>
                 {item[1]}
                 {!dontShowConfetti && Object.values(trackedItems).every((item: any) => item === true) && (
-                  <ConfettiExplosion width={1600} height={1000} duration={3000} force={0.6} />
+                  <div className={styles.confettiContainer}>
+                    <ConfettiExplosion particleCount={40} width={2000} height={'300vh'} duration={6000} force={0.8} />
+                  </div>
                 )}
               </div>
             </>

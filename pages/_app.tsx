@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </span>
           </div>
         )}
-        {isDev && <div className="dev-marker">development</div>}
+        {/* {isDev && <div className="dev-marker">development</div>} */}
         <Component {...pageProps} />
         <SectionNavigation />
       </div>

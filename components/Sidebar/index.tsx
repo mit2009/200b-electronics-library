@@ -74,6 +74,9 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/components-inside': {
             value: 'The Components Inside',
           },
+          '/install': {
+            value: 'Installing the IDE',
+          },
         },
       },
       '/cad': {
@@ -127,9 +130,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         location: Location.AT_HOME,
         has_pages: true,
         pages: {
-          '/install': {
-            value: 'Installing the IDE',
-          },
           '/test': {
             value: 'Test the Microcontroller',
           },
@@ -252,10 +252,10 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
               >
                 {chapters[chapterUrl].value}
               </div>
-              <div className={styles.details}>
+              {/* <div className={styles.details}>
                 <div className={styles.location}>{chapters[chapterUrl].location}</div>
                 <div className={styles.dueDate}>{chapters[chapterUrl].due_date}</div>
-              </div>
+              </div> */}
               <PageList chapterUrl={chapterPath} pages={chapters[chapterUrl].pages} dirs={dirs} />
             </div>
           );

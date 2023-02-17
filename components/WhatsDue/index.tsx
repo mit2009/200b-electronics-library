@@ -3,9 +3,12 @@ import { PAGES_LAYOUT } from '../Sidebar';
 import styles from './WhatsDue.module.scss';
 import cx from 'classnames';
 
+import ConfettiExplosion from 'react-confetti-explosion';
+
 export const WhatsDue = ({ chapter }: { chapter: string }) => {
-  const [dueItems, setDueItems] = useState(PAGES_LAYOUT['/toobers'].chapters?.[chapter].whatsDue);
+  const dueItems = PAGES_LAYOUT['/toobers'].chapters?.[chapter].whatsDue;
   const [trackedItems, setTrackedItems] = useState(dueItems);
+  const [dontShowConfetti, setDontShowConfetti] = useState(true);
 
   useEffect(() => {
     // get from local storage if any of these have been read already
@@ -24,7 +27,15 @@ export const WhatsDue = ({ chapter }: { chapter: string }) => {
     }
   }, [dueItems]);
 
-  console.log(trackedItems);
+  useEffect(() => {
+    // determine if the document loaded with all items already checked
+    // if so, don't show the confetti
+    if (window) {
+      if (Object.values(trackedItems).every((item: any) => item === true)) {
+        setDontShowConfetti(false);
+      }
+    }
+  }, []);
 
   return (
     <div className={styles.whatsDueContainer}>
@@ -33,6 +44,7 @@ export const WhatsDue = ({ chapter }: { chapter: string }) => {
         {Object.entries(dueItems).map((item: any, index: any) => {
           const clickItem = () => {
             if (window) {
+              setDontShowConfetti(false);
               if (trackedItems[item[0]] === true) {
                 window.localStorage.setItem(item[0], 'false');
                 setTrackedItems((prev: any) => {
@@ -64,12 +76,15 @@ export const WhatsDue = ({ chapter }: { chapter: string }) => {
               </div>
               <div key={index} onClick={clickItem} className={styles.dueItem}>
                 {item[1]}
+                {!dontShowConfetti && Object.values(trackedItems).every((item: any) => item === true) && (
+                  <ConfettiExplosion width={1600} height={1000} duration={3000} force={0.6} />
+                )}
               </div>
             </>
           );
         })}
       </div>
-      <div className={styles.dueTime}></div>
+      <div className={styles.dueTime} />
     </div>
   );
 };

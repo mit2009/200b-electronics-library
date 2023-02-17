@@ -3,6 +3,7 @@ import { useState } from 'react';
 import cx from 'classnames';
 import styles from './Toggle.module.scss';
 import GuideImage from '../../../components/GuideImage';
+import { WhatsDue } from '../../../components/WhatsDue';
 
 const PageToggle = ({ options }: { options: { [text: string]: JSX.Element } }) => {
   const choices = Object.keys(options);
@@ -53,7 +54,7 @@ const windowsVersion = (
       </li>
     </ul>
     <p>
-      Once the installer is complete, there will be a shortcut to the Arduino IDE on your desktop, or a square in the
+      Once the installer is complete, there will be a shortcut to the Arduino IDE on your laptop, or a square in the
       Windows 10 interface.
     </p>
   </>
@@ -66,11 +67,11 @@ const macVersion = (version: 'intel' | 'silicon') => (
       To install the Arduino IDE on{' '}
       {version === 'intel' ? (
         <>
-          <strong>intel-based</strong> Macs
+          <strong>Intel-based</strong> Macs
         </>
       ) : (
         <>
-          <strong>apple-silicon-based</strong> Macs
+          <strong>Apple-Silicon-based</strong> Macs
         </>
       )}
       :
@@ -98,10 +99,10 @@ const macVersion = (version: 'intel' | 'silicon') => (
         file will start to download onto your computer.
       </li>
       <li>
-        Once the download is finished, "Open" the <code>.dmg</code> file.
+        Once the download is finished, open the <code>.dmg</code> file.
       </li>
       <li>
-        Drag the <strong>Arduino</strong> application to the <strong>Applications</strong> folder.
+        Drag the <strong>Arduino IDE</strong> application to the <strong>Applications</strong> folder.
       </li>
       <li>
         (Optional) Drag the <strong>Arduino</strong> application to your <strong>Dock</strong>.
@@ -138,7 +139,7 @@ const Install = () => {
         There are several versions of the Arduino IDE. We strongly recommend that you use{' '}
         <strong>Arduino IDE 2.0.3</strong>. While there is a web editor, we recommend <strong>against</strong> using
         this version, as the plugins and drivers required can sometimes be difficult to work with. The staff will also
-        be more familiar with the desktop version of the IDE.
+        be more familiar with the downloaded version of the IDE.
       </p>
       <p>
         If you have an older version of the IDE and aren't actively using it, we recommend that you uninstall the older
@@ -151,6 +152,7 @@ const Install = () => {
         Go ahead and click on the icon that downloaded to open the Arduino IDE. If you see a nice teal-looking text
         editor like the screenshot shown above, you're all set for lab! See you soon!
       </p>
+      <WhatsDue chapter={'/intro'} />
     </div>
   );
 };

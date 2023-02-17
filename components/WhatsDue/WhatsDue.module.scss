@@ -1,0 +1,58 @@
+.whatsDueContainer {
+  background-color: var(--section-lightest);
+  border-radius: 8px;
+  padding: 20px;
+
+  h1 {
+    font-size: 16px;
+    color: var(--section-color);
+    margin-bottom: 10px;
+  }
+
+  .dueContainer {
+    gap: 15px;
+    display: grid;
+    grid-template-columns: 15px 1fr;
+  }
+
+  .dueItem {
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+
+  .checkboxSquare {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--grey6);
+    border-radius: 3px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: visible;
+
+    &.hasCheckmark {
+      overflow: visible;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: '';
+        left: 3px;
+        top: -2px;
+        width: 14px;
+        height: 6px;
+        border: solid var(--section-color);
+        border-width: 0 0 5px 5px;
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:hover {
+      border-color: var(--section-color);
+    }
+  }
+}

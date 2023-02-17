@@ -1,12 +1,14 @@
-import Link from 'next/link';
 import GuideImage from '../../../components/GuideImage';
 import { GuideLink } from '../../../components/GuideLink';
+import { PAGES_LAYOUT } from '../../../components/Sidebar';
+import { WhatsDue } from '../../../components/WhatsDue';
 
 const Overview = () => {
   return (
     <div>
       <h1>Introduction to Toobers!</h1>
       <h2>Hello 2.00ber!</h2>
+      <WhatsDue chapter={'/intro'} />
       <p>
         Here are the step-by-step instructions for building and testing a simon-esque toy called "Toobers!". If you're
         not familiar with the classic 'simon' toy game,{' '}
@@ -55,7 +57,7 @@ const Overview = () => {
       </p>
       <p>
         <strong>Software-related questions</strong>: it is often helpful to post a picture of the error message, or if
-        you've modified the code to do something different, posting a code you modified is helpful. Tip: In Slack, you
+        you've modified the code to do something different, posting the code you modified is helpful. Tip: In Slack, you
         can post a code block by surrounding your text with <code>```</code>.
       </p>
       <p>

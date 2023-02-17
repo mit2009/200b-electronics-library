@@ -20,7 +20,7 @@ interface IPages {
 interface IChapter extends IPage {
   due_date: string;
   location: string;
-
+  whatsDue?: any;
   has_pages: boolean;
   pages?: IPages;
 }
@@ -68,6 +68,13 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Before Lab',
         location: Location.AT_HOME,
         has_pages: true,
+        whatsDue: {
+          '1.1':
+            'Read through all of the introduction (3 pages) and familiarize yourself with the terms used when talking about the Toober',
+          '1.2':
+            'Gain a rough understanding of the Toober architecture (the components inside that make up the Toober)',
+          '1.3': 'Install the Arduino IDE 2.0.3 on your laptop',
+        },
         pages: {
           '/overview': {
             value: 'Overview & Getting Help',

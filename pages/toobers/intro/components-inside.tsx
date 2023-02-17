@@ -65,13 +65,34 @@ const Page = () => {
         size={'MEDIUM'}
         caption={'These are the Toobers printing in real-time! Look at them go!'}
       />
+      <h3>PCB</h3>
+      <p>
+        The PCB houses a couple of components and is connected to the buttons, the speaker, and the on/off switch. On
+        this PCB sits our microcontroller, the chip which can be thought of as the 'brains' of the toy.
+      </p>
+      <p>
+        In the next lab, you'll be loading code onto the microcontroller: an <strong>Arduino Nano</strong>. This
+        microcontroller will be responsible for all the logic of the toy, which includes what to do when buttons are
+        pressed, when to play certain sounds, what color to light up the LEDs, etc.
+      </p>
       <h3>Sugar Cubes!</h3>
       <p>
         There are 4, nice squishy silicone buttons on your Toobers which are the 4 buttons with which the toy user will
-        interact.
+        interact. Inside each button is an individually addressable RGB (red, green, blue all in one) LED. Both the
+        button contact and the LED run to our microcontroller.
       </p>
       <h3>Battery & Charging Unit</h3>
-      <p>test</p>
+      <p>
+        The <strong>3.7V Lithium Polymer (Li-po) Battery</strong> will power all parts of the toy, powering to the
+        microcontroller, the speaker, the lights. This rechargeable battery is hooked up to a charging circuit which you
+        can charge with an USB-C cable! Rechargeable batteries can often be much more environmentally-friendly
+        alternatives to the standard AA alkaline batteries.
+      </p>
+      <h3>Speaker</h3>
+      <p>
+        The speaker will playback prerecorded sounds stored on a microSD card. The sound file to be played is triggered
+        by our friend the Arduino Nano. You're also free to customize these sounds and add your own!
+      </p>
     </div>
   );
 };

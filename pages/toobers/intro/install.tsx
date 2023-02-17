@@ -59,10 +59,22 @@ const windowsVersion = (
   </>
 );
 
-const macVersion = (
+const macVersion = (version: 'intel' | 'silicon') => (
   <>
     <h2>Mac OS Arduino IDE Installation</h2>
-    <p>To install the Mac OS version of the Arduino IDE:</p>
+    <p>
+      To install the Arduino IDE on{' '}
+      {version === 'intel' ? (
+        <>
+          <strong>intel-based</strong> Macs
+        </>
+      ) : (
+        <>
+          <strong>apple-silicon-based</strong> Macs
+        </>
+      )}
+      :
+    </p>
     <ul>
       <li>
         Go to the{' '}
@@ -71,15 +83,22 @@ const macVersion = (
         </a>
       </li>
       <li>
-        Click on the <code>macOS Intel, 10.14: "Mojave" or newer, 64 bits</code> option.
+        Click on the{' '}
+        <code>
+          {version === 'intel' ? (
+            <>macOS Intel, 10.14: "Mojave" or newer, 64 bits</>
+          ) : (
+            <>Apple Silicon, 11: “Big Sur” or newer, 64 bits</>
+          )}
+        </code>{' '}
+        option.
       </li>
       <li>
         On the subsequent page, click the "Just Download" button (or contribute, if you wish) and the installation zip
         file will start to download onto your computer.
       </li>
       <li>
-        Once the download is finished, "Open" the installation zip file. The zip file will uncompress and Finder will
-        open with the contents of the zip file.
+        Once the download is finished, "Open" the <code>.dmg</code> file.
       </li>
       <li>
         Drag the <strong>Arduino</strong> application to the <strong>Applications</strong> folder.
@@ -93,8 +112,8 @@ const macVersion = (
 
 const installOptions = {
   'Show Windows': windowsVersion,
-  'Show MacOS (Intel)': macVersion,
-  'Show MacOS (Apple Silicon)': macVersion,
+  'Show MacOS (Intel)': macVersion('intel'),
+  'Show MacOS (Apple Silicon)': macVersion('silicon'),
 };
 
 const Install = () => {

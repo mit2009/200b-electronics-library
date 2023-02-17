@@ -55,8 +55,8 @@ const Overview = () => {
       </p>
       <p>
         <strong>Software-related questions</strong>: it is often helpful to post a picture of the error message, or if
-        you've modified the code to do something different, posting a code. Tip: In Slack, you can post a code block by
-        surrounding your text with <code>```</code>.
+        you've modified the code to do something different, posting a code you modified is helpful. Tip: In Slack, you
+        can post a code block by surrounding your text with <code>```</code>.
       </p>
       <p>
         <strong>CAD-related questions</strong>: Be sure to describe what you're trying to do, and what you've tried so

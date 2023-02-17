@@ -69,7 +69,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         has_pages: true,
         pages: {
           '/overview': {
-            value: 'Overview',
+            value: 'Overview & Getting Help',
           },
           '/components-inside': {
             value: 'The Components Inside',

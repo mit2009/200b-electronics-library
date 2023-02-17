@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
 
 const Overview = () => {
   return (
@@ -9,10 +10,12 @@ const Overview = () => {
       <p>
         Here are the step-by-step instructions for building and testing a simon-esque toy called "Toobers!". If you're
         not familiar with the classic 'simon' toy game,{' '}
-        <Link href="https://www.youtube.com/watch?v=vLi1qnRmpe4&ab_channel=hop1155">here's a video of it</Link>! This is
-        an introductory activity designed to get your hands wet in building and assembling your own toy. Below is an
-        example of what you might end up with- of course, once you've gone through this activity, you're always free to
-        customize and modify as you see&nbsp;fit!
+        <GuideLink target="_blank" href="https://www.youtube.com/watch?v=vLi1qnRmpe4&ab_channel=hop1155">
+          here's a video of it
+        </GuideLink>
+        ! This is an introductory activity designed to get your hands wet in building and assembling your own toy. Below
+        is an example of what you might end up with- of course, once you've gone through this activity, you're always
+        free to customize and modify as you see&nbsp;fit!
       </p>
       <GuideImage
         caption={`It's the "Textbook Example" Toober`}
@@ -37,9 +40,12 @@ const Overview = () => {
         may also be extra lab staff floating around (you'll see them in white lab coats.)
       </p>
       <p>
-        Need help outside of lab time? Just post in the #ask-the-tas Slack channel! There's usually someone available,
-        even late at night. Also, if you know the answer to a question that has been asked, please feel free to pitch in
-        and answer. We're all in this together!
+        Need help outside of lab time? Just post in the{' '}
+        <GuideLink href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J" target="_blank">
+          #ask-the-tas
+        </GuideLink>{' '}
+        Slack channel! There's usually someone available, even late at night. Also, if you know the answer to a question
+        that has been asked, please feel free to pitch in and answer. We're all in this together!
       </p>
       <h3>Asking help on Slack</h3>
       <p>

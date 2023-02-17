@@ -70,11 +70,6 @@ const Test = () => {
           options if the computer detects that the microcontroller is connected.
         </li>
       </ol>
-      <p>Watch the video below for a demonstration of the steps above.</p>
-      <video controls>
-        <source src="/videos/board-port-select.mp4" type="video/mp4" />
-        "Your browser does not support the video tag."
-      </video>
       <h2>Explore the File Editor</h2>
       <p>
         The Arduino IDE always starts up with a File Editor, a screen to edit files, opened to an empty "sketch"

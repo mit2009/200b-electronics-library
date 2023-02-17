@@ -12,6 +12,7 @@ const GuideImage = ({
   caption,
   border,
   href,
+  removeMargin,
 }: {
   src: string | string[];
   size?: ImageSize;
@@ -19,10 +20,11 @@ const GuideImage = ({
   caption?: string;
   border?: boolean;
   href?: string;
+  removeMargin?: boolean;
 }) => {
   if (typeof src === 'string') {
     return (
-      <div className={styles.imageContainer}>
+      <div className={cx(styles.imageContainer, { [styles.noMargin]: removeMargin })}>
         <a href={href ? href : src} target="_blank">
           <img
             className={cx({

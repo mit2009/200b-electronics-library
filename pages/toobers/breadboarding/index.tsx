@@ -1,2 +1,2 @@
-import Install from "./install";
-export default Install;
+import Test from "./test";
+export default Test;

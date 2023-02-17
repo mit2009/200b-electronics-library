@@ -399,7 +399,7 @@ export const SectionNavigation = () => {
   let nextPage = DOES_NOT_EXIST_RESULT as any;
   if (currentIndex + 1 < getPropertyCount(currentChapter.pages)) {
     const relativeUrl = getNthPropertyName(currentChapter.pages, currentIndex + 1);
-    const url = dirs.slice(0, 2).join('') + relativeUrl;
+    const url = dirs.length < 2 ? dirs.slice(0,1) + "/intro" + relativeUrl : dirs.slice(0, 2).join('') + relativeUrl;
     const val = getNthProperty(currentChapter.pages, currentIndex + 1);
     if (val.coming_soon) {
       nextPage = COMING_SOON_RESULT;

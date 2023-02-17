@@ -83,10 +83,10 @@ const Page = () => {
       </p>
       <h3>Battery & Charging Unit</h3>
       <p>
-        The <strong>3.7V Lithium Polymer (Li-po) Battery</strong> will power all parts of the toy, powering to the
-        microcontroller, the speaker, the lights. This rechargeable battery is hooked up to a charging circuit which you
-        can charge with an USB-C cable! Rechargeable batteries can often be much more environmentally-friendly
-        alternatives to the standard AA alkaline batteries.
+        The <strong>Lithium Ion Polymer Battery</strong> (3.7v at 1200mAh) will power your Toober, sending power to the
+        microcontroller, the speaker, and the lights. This rechargeable battery is hooked up to a charging circuit which
+        you can recharge with an USB-C cable. Rechargeable batteries can often be much more environmentally-friendly
+        alternative to the standard AA alkaline batteries.
       </p>
       <h3>Speaker</h3>
       <p>

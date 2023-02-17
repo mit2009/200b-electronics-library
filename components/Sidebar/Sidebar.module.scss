@@ -130,7 +130,8 @@
   justify-self: end;
   align-self: flex-start;
   padding: 1px 5px 1px;
-  border-radius: 100vw;
+  border-radius: 10px;
+  margin: 0 0 5px 5px;
   border: 1px solid rgba(0, 0, 0, 0.5);
 
   .location {
@@ -159,9 +160,10 @@ ul.pageList {
   padding: 0;
 
   li {
-    padding: 2px 15px 1px;
+    padding: 3px 15px;
     width: fit-content;
-    border-radius: 100vw;
+    border-radius: 15px;
+    line-height: normal;
     margin-bottom: 2px;
     transition: 0.1s background-color;
 
@@ -185,6 +187,10 @@ ul.pageList {
   .sidebar {
     --top-height: 40px;
     z-index: 100;
+  }
+
+  .chapter {
+    padding: 5px;
   }
 
   .topbar {

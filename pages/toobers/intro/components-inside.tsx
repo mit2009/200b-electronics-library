@@ -37,8 +37,9 @@ const Page = () => {
       </video>
       <p>
         The Toobers toy is made up of several components and sub-units (we'll call them modules.) It might look like a
-        lot, but don't fret. We won't be building each one from scratch (which is often the case with product design as
-        well - we try to <strong>source</strong> the correct parts so we don't end up reinventing the wheel.)
+        lot, but don't fret. We'll explain each part and we <strong>won't</strong> be building each one from scratch
+        (which is often the case with product design as well - we try to <strong>source</strong> the correct parts so we
+        don't end up reinventing the wheel.)
       </p>
       <GuideImage src={'/images/toobers/exploded-diagram.jpg'} alt={'Exploded View'} size={'LARGE'} />
       <h3>Top & Bottom Housing</h3>

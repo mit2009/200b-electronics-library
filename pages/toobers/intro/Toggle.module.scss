@@ -4,7 +4,7 @@
   max-width: 800px;
   display: flex;
   justify-content: space-evenly;
-
+  gap: 10px;
   margin: 30px 0;
 }
 
@@ -32,5 +32,13 @@
   &.selected {
     background-color: var(--color);
     color: white;
+  }
+}
+
+@media (max-width: 600px) {
+  .choices {
+    .choice {
+      font-size: 14px;
+    }
   }
 }

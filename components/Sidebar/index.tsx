@@ -337,7 +337,7 @@ export const Sidebar = () => {
             <div className={styles.hamburger} />
           </div>
         </label>
-        <div>{currentPageName}</div>
+        <div className={styles.pageName}>{currentPageName}</div>
       </div>
       <div className={cx(styles.sidebarContainer, { [styles.hidden]: !isOpen })}>
         <div className={styles.iconContainer}>

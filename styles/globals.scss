@@ -285,6 +285,7 @@ div {
   .chapter {
     color: var(--section-color);
     font-weight: bold;
+    white-space: nowrap;
   }
 
   .page {

@@ -10,6 +10,7 @@ import { kebabToCamel } from '../../utils/format';
 interface IPage {
   value: string;
   coming_soon?: boolean;
+  is_hidden?: boolean;
 }
 
 interface IPages {
@@ -84,6 +85,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
+        is_hidden: true,
         pages: {
           '/intro': {
             value: 'CAD Intro',
@@ -101,6 +103,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Feb 17',
         location: Location.IN_LAB,
         has_pages: true,
+        is_hidden: true,
         pages: {
           '/intro': {
             value: 'Hello Sugar Cube!',
@@ -115,6 +118,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Feb 17',
         location: Location.IN_LAB,
         has_pages: true,
+        is_hidden: true,
         pages: {
           '/intro': {
             value: 'The Power Circuit',
@@ -129,6 +133,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
+        is_hidden: true,
         pages: {
           '/test': {
             value: 'Test the Microcontroller',
@@ -146,6 +151,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
+        is_hidden: true,
         pages: {
           '/intro': {
             value: 'PCB Overview',
@@ -169,6 +175,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
+        is_hidden: true,
         pages: {
           '/intro': {
             value: 'Background Info',
@@ -216,6 +223,10 @@ const PageList = ({ chapterUrl, pages, dirs }: { chapterUrl: string; pages?: IPa
     return (
       <ul className={styles.pageList}>
         {Object.keys(pages).map((pageUrl, index) => {
+          if (pages[pageUrl].is_hidden) {
+            return <></>;
+          }
+
           const url = chapterUrl + pageUrl;
           const selected =
             dirs.join('') === url ||
@@ -241,6 +252,9 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
     return (
       <div className={styles.chapterContainer}>
         {Object.keys(chapters).map((chapterUrl) => {
+          if (chapters[chapterUrl].is_hidden) {
+            return <></>;
+          }
           const chapterPath = `${currentSection}${chapterUrl}`;
 
           return (

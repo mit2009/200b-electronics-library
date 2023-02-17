@@ -14,7 +14,7 @@ const Page = () => {
     const scrollPercent = Math.min((scroll / (scrollHeight - videoHeight)) * 4, 1);
     const videoDuration = (video as any)?.duration ?? 0;
     const videoTime = scrollPercent * videoDuration;
-    if (video) {
+    if (video && !isNaN(videoTime)) {
       video.currentTime = videoTime ?? 0;
     }
   };

@@ -40,7 +40,9 @@ const windowsVersion = (
           Arduino software downloads page.
         </a>
       </li>
-      <li>Click on the "Windows Win 10 and newer, 64 bits" option.</li>
+      <li>
+        Click on the <code>Windows Win 10 and newer, 64 bits</code> option.
+      </li>
       <li>
         On the subsequent page, click the "Just Download" button (or contribute, if you wish) and the installer will
         start to download onto your computer.
@@ -52,13 +54,8 @@ const windowsVersion = (
     </ul>
     <p>
       Once the installer is complete, there will be a shortcut to the Arduino IDE on your desktop, or a square in the
-      Windows 10 interface. Watch the video below for a demonstration of the steps above. (Caveat: events in the video
-      take longer than shown!)
+      Windows 10 interface.
     </p>
-    <video controls>
-      <source src="/videos/win-installation.mp4" type="video/mp4" />
-      "Your browser does not support the video tag."
-    </video>
   </>
 );
 
@@ -73,7 +70,9 @@ const macVersion = (
           Arduino software downloads page.
         </a>
       </li>
-      <li>Click on the " macOS Apple Silicon, 11: “Big Sur” or newer, 64 bits" option.</li>
+      <li>
+        Click on the <code>macOS Intel, 10.14: "Mojave" or newer, 64 bits</code> option.
+      </li>
       <li>
         On the subsequent page, click the "Just Download" button (or contribute, if you wish) and the installation zip
         file will start to download onto your computer.
@@ -89,20 +88,13 @@ const macVersion = (
         (Optional) Drag the <strong>Arduino</strong> application to your <strong>Dock</strong>.
       </li>
     </ul>
-    <p>
-      Watch the video below for a demonstration of the steps above. (Caveat: events in the video take longer than
-      shown!)
-    </p>
-    <video controls>
-      <source src="/videos/mac-installation.mp4" type="video/mp4" />
-      "Your browser does not support the video tag."
-    </video>
   </>
 );
 
 const installOptions = {
-  'Show Windows Version': windowsVersion,
-  'Show macOS Version': macVersion,
+  'Show Windows': windowsVersion,
+  'Show MacOS (Intel)': macVersion,
+  'Show MacOS (Apple Silicon)': macVersion,
 };
 
 const Install = () => {
@@ -116,21 +108,29 @@ const Install = () => {
         many features that help make programming easier. The Arduino IDE not only lets us write and edit programs for
         the Arduino microcontrollers, it also helps us to upload the programs to the Arduino microcontrollers.
       </p>
-      <GuideImage border={false} src="/images/toobers/arduino-ide.png" alt="Arduino IDE" />
+      <GuideImage
+        removeMargin={true}
+        border={false}
+        size="LARGE"
+        src="/images/toobers/arduino-ide.png"
+        alt="Arduino IDE"
+      />
       <p>
-        There are two versions of the Arduino IDE: a web-based Arduino Web Editor and a desktop version of the Arduino
-        IDE for Windows or Mac OS. We strongly recommend that you use the desktop version instead of the web version,
-        since the board driver management is all contained within the desktop software. If you choose to use the
-        web-based version, you will also need to use a separate plugin to manage the connection between the
-        microcontroller and your computer. The plugin is sometimes a bit flaky. We will be supporting the desktop
-        version in this class (i.e., that is what the staff will be most familiar with, and the screenshots in these
-        instructions will be from the desktop version).
+        There are several versions of the Arduino IDE. We strongly recommend that you use{' '}
+        <strong>Arduino IDE 2.0.3</strong>. While there is a web editor, we recommend <strong>against</strong> using
+        this version, as the plugins and drivers required can sometimes be difficult to work with. The staff will also
+        be more familiar with the desktop version of the IDE.
+      </p>
+      <p>
+        If you have an older version of the IDE and aren't actively using it, we recommend that you uninstall the older
+        version to avoid confusion. Version 2 has autocompletion, better code navigation, and debugging tools that will
+        help greatly.
       </p>
       <PageToggle options={installOptions} />
       <h2>Open the Arduino IDE</h2>
       <p>
         Go ahead and click on the icon that downloaded to open the Arduino IDE. If you see a nice teal-looking text
-        editor, you're all set for lab! See you soon!
+        editor like the screenshot shown above, you're all set for lab! See you soon!
       </p>
     </div>
   );

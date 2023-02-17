@@ -53,6 +53,10 @@
     font-weight: normal;
     color: var(--grey9);
   }
+
+  &.noMargin {
+    margin: 0;
+  }
 }
 
 .allImages {

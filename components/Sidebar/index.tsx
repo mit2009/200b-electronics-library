@@ -394,7 +394,7 @@ export const SectionNavigation = () => {
     const relativeUrl = getNthPropertyName(currentChapter.pages, currentIndex - 1);
     const url = dirs.slice(0, 2).join('') + relativeUrl;
     const val = getNthProperty(currentChapter.pages, currentIndex - 1);
-    if (val.coming_soon) {
+    if (val.coming_soon || val.is_hidden) {
       prevPage = COMING_SOON_RESULT;
     } else {
       prevPage = { url, value: val.value };
@@ -403,7 +403,7 @@ export const SectionNavigation = () => {
     const relativeUrl = getNthPropertyName(currentSection.chapters as IChapters, chapterIndex - 1);
     const url = dirs.slice(0, 1) + relativeUrl;
     const val = getNthProperty(currentSection.chapters as IChapters, chapterIndex - 1);
-    if (val.coming_soon) {
+    if (val.coming_soon || val.is_hidden) {
       prevPage = COMING_SOON_RESULT;
     } else {
       prevPage = { url, value: val.value };
@@ -415,7 +415,7 @@ export const SectionNavigation = () => {
     const relativeUrl = getNthPropertyName(currentChapter.pages, currentIndex + 1);
     const url = dirs.length < 2 ? dirs.slice(0,1) + "/intro" + relativeUrl : dirs.slice(0, 2).join('') + relativeUrl;
     const val = getNthProperty(currentChapter.pages, currentIndex + 1);
-    if (val.coming_soon) {
+    if (val.coming_soon || val.is_hidden) {
       nextPage = COMING_SOON_RESULT;
     } else {
       nextPage = { url, value: val.value };
@@ -424,7 +424,7 @@ export const SectionNavigation = () => {
     const relativeUrl = getNthPropertyName(currentSection.chapters as IChapters, chapterIndex + 1);
     const url = dirs.slice(0, 1) + relativeUrl;
     const val = getNthProperty(currentSection.chapters as IChapters, chapterIndex + 1);
-    if (val.coming_soon) {
+    if (val.coming_soon || val.is_hidden) {
       nextPage = COMING_SOON_RESULT;
     } else {
       nextPage = { url, value: val.value };

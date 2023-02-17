@@ -295,6 +295,10 @@ ul.pageList {
       color: #444;
       cursor: not-allowed;
     }
+
+    & + .navButton {
+      margin-left: 30px;
+    }
   }
 
   .prevLink {

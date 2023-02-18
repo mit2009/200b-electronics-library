@@ -101,8 +101,25 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
         },
       },
+      '/breadboarding': {
+        value: '2. Breadboarding',
+        due_date: 'Feb 17',
+        location: Location.AT_HOME,
+        has_pages: true,
+        pages: {
+          '/test': {
+            value: 'Test the Microcontroller',
+          },
+          '/circuit': {
+            value: 'The First Circuit',
+          },
+          '/prototype': {
+            value: 'Breadboard Prototype',
+          },
+        },
+      },
       '/cad': {
-        value: '2. Enclosure CAD',
+        value: '3. Enclosure CAD',
         due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
@@ -119,7 +136,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         },
       },
       '/sugar-cube': {
-        value: '3. Sugar Cube',
+        value: '4. Sugar Cube',
         due_date: 'Feb 17',
         location: Location.IN_LAB,
         has_pages: true,
@@ -133,7 +150,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         },
       },
       '/battery-charger': {
-        value: '4. Battery & Charger',
+        value: '5. Battery & Charger',
         due_date: 'Feb 17',
         location: Location.IN_LAB,
         has_pages: true,
@@ -143,23 +160,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
           '/assembly': {
             value: 'Battery & Charger Assembly',
-          },
-        },
-      },
-      '/breadboarding': {
-        value: '5. Breadboarding',
-        due_date: 'Feb 17',
-        location: Location.AT_HOME,
-        has_pages: true,
-        pages: {
-          '/test': {
-            value: 'Test the Microcontroller',
-          },
-          '/circuit': {
-            value: 'The First Circuit',
-          },
-          '/prototype': {
-            value: 'Breadboard Prototype',
           },
         },
       },
@@ -254,6 +254,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   const currentSection = dirs[0];
   const [enteringUnlockPhrase, setEnteringUnlockPhrase] = useState(false);
   const defaultState = (
+    Object.hasOwn( PAGES_LAYOUT, currentSection) && 
     Object.hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
       ? PAGES_LAYOUT[currentSection].chapter_visibility
       : {}

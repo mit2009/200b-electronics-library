@@ -34,7 +34,7 @@ const Overview = () => {
       <p>
         Parts of this activity should be done before coming to lab, and some will happen during lab. We will provide you
         with all tools and resources needed complete this activity. Please note when various parts are due/will be
-        happening in the timeline to the left!
+        happening!
       </p>
       <h2>Getting Help</h2>
       <p>

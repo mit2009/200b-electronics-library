@@ -166,11 +166,7 @@ ul.pageList {
     line-height: normal;
     margin-bottom: 2px;
     transition: 0.1s background-color;
-
-    a {
-      font-size: 16px;
-      font-weight: 400;
-    }
+    font-size: 16px;
 
     &.selected {
       background-color: var(--section-color);
@@ -184,11 +180,18 @@ ul.pageList {
 }
 
 @media (max-width: variables.$media-max-width) {
+  ul.pageList li {
+    font-size: 14px;
+  }
+
   .sidebar {
     --top-height: 40px;
     z-index: 100;
   }
 
+  .details {
+    display: none;
+  }
   .chapter {
     padding: 5px;
   }
@@ -351,5 +354,12 @@ ul.pageList {
       border: 3px solid white;
       border-width: 0 3px 3px 0;
     }
+  }
+}
+
+@media (max-width: variables.$media-max-width) {
+  .icon {
+    width: 70px;
+    font-size: 12px;
   }
 }

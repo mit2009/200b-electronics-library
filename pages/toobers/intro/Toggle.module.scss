@@ -37,8 +37,11 @@
 
 @media (max-width: 600px) {
   .choices {
+    flex-wrap: wrap;
+
     .choice {
-      font-size: 14px;
+      width: 100%;
+      font-size: 13px;
     }
   }
 }

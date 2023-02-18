@@ -48,7 +48,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
     has_chapters: false,
     icon: (
       <div>
-        <Image src="/images/home-icon.svg" alt="Home Icon" height={50} width={50} />
+        <Image src="/images/home-icon.svg" alt="Home Icon" height={50} width={45} />
         <div>Home</div>
       </div>
     ),
@@ -58,7 +58,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
     has_chapters: true,
     icon: (
       <div>
-        <Image src="/images/toobers-icon.svg" alt="Home Icon" height={55} width={60} />
+        <Image src="/images/toobers-icon.svg" alt="Home Icon" height={55} width={55} />
         <div>toobers!</div>
       </div>
     ),
@@ -205,7 +205,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
     has_chapters: false,
     icon: (
       <div>
-        <Image src="/images/electronics-icon.svg" alt="Home Icon" height={55} width={60} />
+        <Image src="/images/electronics-icon.svg" alt="Home Icon" height={55} width={55} />
         <div>
           electronics
           <br />

@@ -8,17 +8,24 @@
     color: var(--section-color);
     margin-bottom: 10px;
   }
-
   .dueContainer {
-    gap: 15px;
     display: grid;
-    grid-template-columns: 15px 1fr;
+    gap: 15px;
   }
 
-  .dueItem {
+  .dueItemContainer {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 15px 1fr;
+    cursor: pointer;
+
     &:hover {
-      opacity: 0.8;
-      cursor: pointer;
+      .dueItem {
+        opacity: 0.8;
+      }
+      .checkboxSquare {
+        border-color: var(--section-color);
+      }
     }
   }
 
@@ -49,10 +56,6 @@
         border-width: 0 0 5px 5px;
         transform: rotate(-45deg);
       }
-    }
-
-    &:hover {
-      border-color: var(--section-color);
     }
   }
 }

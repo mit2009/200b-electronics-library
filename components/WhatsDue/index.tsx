@@ -66,18 +66,16 @@ export const WhatsDue = ({ chapter }: { chapter: string }) => {
           };
 
           return (
-            <>
-              <div className={styles.checkbox} onClick={clickItem}>
+            <div key={item[1]} className={styles.dueItemContainer} onClick={clickItem}>
+              <div className={styles.checkbox}>
                 <div
                   className={cx(styles.checkboxSquare, {
                     [styles.hasCheckmark]: trackedItems[item[0]] === true,
                   })}
                 />
               </div>
-              <div key={index} onClick={clickItem} className={styles.dueItem}>
-                {item[1]}
-              </div>
-            </>
+              <div className={styles.dueItem}>{item[1]}</div>
+            </div>
           );
         })}
         {!dontShowConfetti && Object.values(trackedItems).every((item: any) => item === true) && (

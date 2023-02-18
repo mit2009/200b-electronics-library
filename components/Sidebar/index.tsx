@@ -224,7 +224,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
   },
 };
 
-const SIDEBAR_LOCAL_STORAGE_PREFIX = "sidebar-chapter-visible";
+const SIDEBAR_LOCAL_STORAGE_PREFIX = 'sidebar-chapter-visible';
 
 const PageList = ({ chapterUrl, pages, dirs }: { chapterUrl: string; pages?: IPages; dirs: string[] }) => {
   if (pages) {
@@ -254,8 +254,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   const currentSection = dirs[0];
   const [enteringUnlockPhrase, setEnteringUnlockPhrase] = useState(false);
   const defaultState = (
-    Object.hasOwn( PAGES_LAYOUT, currentSection) && 
-    Object.hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
+    Object.hasOwn(PAGES_LAYOUT, currentSection) && Object.hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
       ? PAGES_LAYOUT[currentSection].chapter_visibility
       : {}
   ) as IChapterVisibility;
@@ -264,23 +263,25 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   const [confettiColor, setConfettiColor] = useState<string[]>([]);
 
   useEffect(() => {
-    Object.keys(pageStates).map(page => {
+    Object.keys(pageStates).map((page) => {
       if (pageStates[page]) {
-        window.localStorage.setItem(`${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`, "true");
+        window.localStorage.setItem(`${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`, 'true');
       }
-    })
-  }, [pageStates])
+    });
+  }, [pageStates]);
 
   useEffect(() => {
-    setPageStates(current => {
-      Object.keys(pageStates).filter(page => {
-        return window.localStorage.getItem(`${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`) === 'true';
-      }).map(page => {
-        current = {...current, [page]: true}
-      });
+    setPageStates((current) => {
+      Object.keys(pageStates)
+        .filter((page) => {
+          return window.localStorage.getItem(`${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`) === 'true';
+        })
+        .map((page) => {
+          current = { ...current, [page]: true };
+        });
       return current;
-    })
-  }, [])
+    });
+  }, []);
 
   if (Object.hasOwn(PAGES_LAYOUT, currentSection) && PAGES_LAYOUT[currentSection].has_chapters) {
     const chapters = PAGES_LAYOUT[currentSection].chapters as { [url: string]: IChapter };
@@ -324,7 +325,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
                 const phrase = e.target.value;
                 setUnlockPhrase(phrase);
               }}
-              placeholder={"coming soon?"}
+              placeholder={'coming soon?'}
               onKeyDown={(e) => {
                 if (e.code == 'Enter') {
                   const phrase = unlockPhrase.toLocaleLowerCase();
@@ -337,7 +338,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
                         router.push(`${dirs[0]}/breadboarding`);
                         setUnlockPhrase('');
                         setEnteringUnlockPhrase(false);
-                        setConfettiColor(["#c73030"]);
+                        setConfettiColor(['#c73030']);
                       }
                       break;
                     default:
@@ -351,7 +352,14 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
         </div>
         {confettiColor.length > 0 && (
           <div className={styles.confettiContainer}>
-            <ConfettiExplosion particleCount={100} width={2000} height={'300vh'} colors={confettiColor} duration={6000} force={0.8} />
+            <ConfettiExplosion
+              particleCount={100}
+              width={2000}
+              height={'300vh'}
+              colors={confettiColor}
+              duration={6000}
+              force={0.8}
+            />
           </div>
         )}
       </div>
@@ -460,6 +468,27 @@ export const SectionNavigation = () => {
   const path = router.pathname;
   const dirs = splitPath(path);
   const currentPage = getCurrentPage(dirs);
+
+  let defaultState = (
+    Object.hasOwn(PAGES_LAYOUT, dirs[0]) && Object.hasOwn(PAGES_LAYOUT[dirs[0]], 'chapter_visibility')
+      ? PAGES_LAYOUT[dirs[0]].chapter_visibility
+      : {}
+  ) as IChapterVisibility;
+  const [pageStates, setPageStates] = useState<IChapterVisibility>(defaultState);
+  useEffect(() => {
+    setPageStates((current) => {
+      Object.keys(pageStates)
+        .filter((page) => {
+          return window.localStorage.getItem(`${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`) === 'true';
+        })
+        .map((page) => {
+          current = { ...current, [page]: true };
+        });
+      return current;
+    });
+  }, []);
+
+
   if (!Object.hasOwn(currentPage, 'value') || !PAGES_LAYOUT[dirs[0]].has_chapters) {
     return <></>;
   }
@@ -504,7 +533,7 @@ export const SectionNavigation = () => {
     const relativeUrl = getNthPropertyName(currentSection.chapters as IChapters, chapterIndex + 1);
     const url = dirs.slice(0, 1) + relativeUrl;
     const val = getNthProperty(currentSection.chapters as IChapters, chapterIndex + 1);
-    if (val.coming_soon || val.is_hidden) {
+    if (!pageStates[relativeUrl]) {
       nextPage = COMING_SOON_RESULT;
     } else {
       nextPage = { url, value: val.value };

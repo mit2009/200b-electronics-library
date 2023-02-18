@@ -38,14 +38,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="msapplication-TileColor" content="#da532c" />
         <link rel="manifest" href="/favicon/site.webmanifest"></link>
         <meta name="theme-color" content="#ffffff" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ND6J62XYXW"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-DZWKXN9YW1"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-ND6J62XYXW');`,
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-DZWKXN9YW1');`,
           }}
         ></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />

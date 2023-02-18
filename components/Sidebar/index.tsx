@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Router, { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 
 import cx from 'classnames';
@@ -7,10 +7,10 @@ import styles from './Sidebar.module.scss';
 import Image from 'next/image';
 import { kebabToCamel } from '../../utils/format';
 
+import ConfettiExplosion from 'react-confetti-explosion';
+
 interface IPage {
   value: string;
-  coming_soon?: boolean;
-  is_hidden?: boolean;
 }
 
 interface IPages {
@@ -34,9 +34,14 @@ enum Location {
   IN_LAB = 'In Lab',
 }
 
+interface IChapterVisibility {
+  [url: string]: boolean;
+}
+
 interface ISection extends IPage {
   has_chapters: boolean;
   chapters?: IChapters;
+  chapter_visibility?: IChapterVisibility;
   icon: JSX.Element;
 }
 
@@ -62,6 +67,15 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         <div>toobers!</div>
       </div>
     ),
+    chapter_visibility: {
+      '/intro': true,
+      '/cad': false,
+      '/suger-cube': false,
+      '/battery-charger': false,
+      '/breadboarding': false,
+      '/pcb': false,
+      '/final': false,
+    },
     chapters: {
       '/intro': {
         value: '1. Introduction',
@@ -92,7 +106,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
-        is_hidden: true,
         pages: {
           '/intro': {
             value: 'CAD Intro',
@@ -110,7 +123,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Feb 17',
         location: Location.IN_LAB,
         has_pages: true,
-        is_hidden: true,
         pages: {
           '/intro': {
             value: 'Hello Sugar Cube!',
@@ -125,7 +137,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Feb 17',
         location: Location.IN_LAB,
         has_pages: true,
-        is_hidden: true,
         pages: {
           '/intro': {
             value: 'The Power Circuit',
@@ -140,7 +151,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
-        is_hidden: true,
         pages: {
           '/test': {
             value: 'Test the Microcontroller',
@@ -158,7 +168,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
-        is_hidden: true,
         pages: {
           '/intro': {
             value: 'PCB Overview',
@@ -182,7 +191,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Feb 17',
         location: Location.AT_HOME,
         has_pages: true,
-        is_hidden: true,
         pages: {
           '/intro': {
             value: 'Background Info',
@@ -216,31 +224,20 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
   },
 };
 
-// const URL_LIST = Object.keys(PAGES_LAYOUT).map(sectionUrl => {
-//   if (PAGES_LAYOUT[sectionUrl].has_chapters) {
-//     const chapters = PAGES_LAYOUT[sectionUrl].chapters as IChapters;
-//     const chapterURLS =
-//   } else {
-//     return [sectionUrl, []];
-//   }
-// })
+const SIDEBAR_LOCAL_STORAGE_PREFIX = "sidebar-chapter-visible";
 
 const PageList = ({ chapterUrl, pages, dirs }: { chapterUrl: string; pages?: IPages; dirs: string[] }) => {
   if (pages) {
     return (
       <ul className={styles.pageList}>
         {Object.keys(pages).map((pageUrl, index) => {
-          if (pages[pageUrl].is_hidden) {
-            return <></>;
-          }
-
           const url = chapterUrl + pageUrl;
           const selected =
             dirs.join('') === url ||
             (index === 0 && dirs.join('') + pageUrl == url) ||
             ('/toobers/intro/overview' === url && dirs.join('') === '/toobers');
           return (
-            <Link key={pageUrl} href={pages[pageUrl].coming_soon ? COMING_SOON_URL : url}>
+            <Link key={pageUrl} href={url}>
               <li className={cx({ [styles.selected]: selected })}>{pages[pageUrl].value}</li>
             </Link>
           );
@@ -253,14 +250,44 @@ const PageList = ({ chapterUrl, pages, dirs }: { chapterUrl: string; pages?: IPa
 };
 
 const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
+  const router = useRouter();
   const currentSection = dirs[0];
+  const [enteringUnlockPhrase, setEnteringUnlockPhrase] = useState(false);
+  const defaultState = (
+    Object.hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
+      ? PAGES_LAYOUT[currentSection].chapter_visibility
+      : {}
+  ) as IChapterVisibility;
+  const [pageStates, setPageStates] = useState<IChapterVisibility>(defaultState);
+  const [unlockPhrase, setUnlockPhrase] = useState('');
+  const [confettiColor, setConfettiColor] = useState<string[]>([]);
+
+  useEffect(() => {
+    Object.keys(pageStates).map(page => {
+      if (pageStates[page]) {
+        window.localStorage.setItem(`${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`, "true");
+      }
+    })
+  }, [pageStates])
+
+  useEffect(() => {
+    setPageStates(current => {
+      Object.keys(pageStates).filter(page => {
+        return window.localStorage.getItem(`${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`) === 'true';
+      }).map(page => {
+        current = {...current, [page]: true}
+      });
+      return current;
+    })
+  }, [])
+
   if (Object.hasOwn(PAGES_LAYOUT, currentSection) && PAGES_LAYOUT[currentSection].has_chapters) {
     const chapters = PAGES_LAYOUT[currentSection].chapters as { [url: string]: IChapter };
     return (
       <div className={styles.chapterContainer}>
         {Object.keys(chapters).map((chapterUrl) => {
-          if (chapters[chapterUrl].is_hidden) {
-            return <></>;
+          if (!pageStates[chapterUrl]) {
+            return <React.Fragment key={chapterUrl}></React.Fragment>;
           }
           const chapterPath = `${currentSection}${chapterUrl}`;
 
@@ -281,7 +308,51 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
             </div>
           );
         })}
-        <div className={cx(styles.chapter, styles.comingSoon)}>more coming soon!</div>
+        <div
+          className={cx(styles.chapter, styles.comingSoon)}
+          onClick={() => {
+            setEnteringUnlockPhrase(true);
+            setConfettiColor([]);
+          }}
+        >
+          {!enteringUnlockPhrase && 'more coming soon?'}
+          {enteringUnlockPhrase && (
+            <input
+              type="text"
+              onChange={(e) => {
+                const phrase = e.target.value;
+                setUnlockPhrase(phrase);
+              }}
+              placeholder={"coming soon?"}
+              onKeyDown={(e) => {
+                if (e.code == 'Enter') {
+                  const phrase = unlockPhrase.toLocaleLowerCase();
+                  switch (phrase) {
+                    case 'bready':
+                      if (!pageStates['/breadboarding']) {
+                        setPageStates((current) => {
+                          return { ...current, '/breadboarding': true };
+                        });
+                        router.push(`${dirs[0]}/breadboarding`);
+                        setUnlockPhrase('');
+                        setEnteringUnlockPhrase(false);
+                        setConfettiColor(["#c73030"]);
+                      }
+                      break;
+                    default:
+                      setUnlockPhrase('');
+                      break;
+                  }
+                }
+              }}
+            />
+          )}
+        </div>
+        {confettiColor.length > 0 && (
+          <div className={styles.confettiContainer}>
+            <ConfettiExplosion particleCount={100} width={2000} height={'300vh'} colors={confettiColor} duration={6000} force={0.8} />
+          </div>
+        )}
       </div>
     );
   } else {

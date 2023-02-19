@@ -151,13 +151,13 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         has_pages: true,
         pages: {
           '/overview': {
-            value: 'Soldering Overview',
+            value: 'Overview',
           },
           '/safety': {
             value: 'Soldering Safety',
           },
           '/soldering': {
-            value: 'Actually Soldering',
+            value: 'Connecting your Components',
           },
         },
       },

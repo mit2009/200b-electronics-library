@@ -53,7 +53,12 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
     has_chapters: false,
     icon: (
       <div>
-        <Image src="/images/home-icon.svg" alt="Home Icon" height={50} width={45} />
+        <Image
+          src="/images/home-icon.svg"
+          alt="Home Icon"
+          height={50}
+          width={45}
+        />
         <div>Home</div>
       </div>
     ),
@@ -63,7 +68,12 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
     has_chapters: true,
     icon: (
       <div>
-        <Image src="/images/toobers-icon.svg" alt="Home Icon" height={55} width={55} />
+        <Image
+          src="/images/toobers-icon.svg"
+          alt="Home Icon"
+          height={55}
+          width={55}
+        />
         <div>toobers!</div>
       </div>
     ),
@@ -109,8 +119,10 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         location: Location.IN_LAB,
         has_pages: true,
         whatsDue: {
-          '2.1': 'Using the breadboard, wire up a working, playable prototype of your Toobers toy!',
-          '2.2': 'Take a photo of your breadboard prototype for your portfolio.',
+          '2.1':
+            'Using the breadboard, wire up a working, playable prototype of your Toobers toy!',
+          '2.2':
+            'Take a photo of your breadboard prototype for your portfolio.',
         },
         pages: {
           '/lab2-intro': {
@@ -127,6 +139,9 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
           '/buttons-and-lights': {
             value: 'Buttons and Lights',
+          },
+          '/audio': {
+            value: 'Audio',
           },
         },
       },
@@ -255,7 +270,12 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
     has_chapters: false,
     icon: (
       <div>
-        <Image src="/images/electronics-icon.svg" alt="Home Icon" height={55} width={55} />
+        <Image
+          src="/images/electronics-icon.svg"
+          alt="Home Icon"
+          height={55}
+          width={55}
+        />
         <div>
           electronics
           <br />
@@ -268,7 +288,15 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
 
 const SIDEBAR_LOCAL_STORAGE_PREFIX = 'sidebar-chapter-visible';
 
-const PageList = ({ chapterUrl, pages, dirs }: { chapterUrl: string; pages?: IPages; dirs: string[] }) => {
+const PageList = ({
+  chapterUrl,
+  pages,
+  dirs,
+}: {
+  chapterUrl: string;
+  pages?: IPages;
+  dirs: string[];
+}) => {
   if (pages) {
     return (
       <ul className={styles.pageList}>
@@ -280,7 +308,9 @@ const PageList = ({ chapterUrl, pages, dirs }: { chapterUrl: string; pages?: IPa
             ('/toobers/intro/overview' === url && dirs.join('') === '/toobers');
           return (
             <Link key={pageUrl} href={url}>
-              <li className={cx({ [styles.selected]: selected })}>{pages[pageUrl].value}</li>
+              <li className={cx({ [styles.selected]: selected })}>
+                {pages[pageUrl].value}
+              </li>
             </Link>
           );
         })}
@@ -302,20 +332,28 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   useEffect(() => {
     Object.keys(pageStates).map((page) => {
       if (pageStates[page]) {
-        window.localStorage.setItem(`${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`, 'true');
+        window.localStorage.setItem(
+          `${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`,
+          'true'
+        );
       }
     });
   }, [pageStates]);
 
   useEffect(() => {
     const defaultState = (
-      Object.hasOwn(PAGES_LAYOUT, currentSection) && Object.hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
+      Object.hasOwn(PAGES_LAYOUT, currentSection) &&
+      Object.hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
         ? PAGES_LAYOUT[currentSection].chapter_visibility
         : {}
     ) as IChapterVisibility;
     Object.keys(defaultState)
       .filter((page) => {
-        return window.localStorage.getItem(`${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`) === 'true';
+        return (
+          window.localStorage.getItem(
+            `${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`
+          ) === 'true'
+        );
       })
       .map((page) => {
         defaultState[page] = true;
@@ -324,8 +362,13 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.asPath]);
 
-  if (Object.hasOwn(PAGES_LAYOUT, currentSection) && PAGES_LAYOUT[currentSection].has_chapters) {
-    const chapters = PAGES_LAYOUT[currentSection].chapters as { [url: string]: IChapter };
+  if (
+    Object.hasOwn(PAGES_LAYOUT, currentSection) &&
+    PAGES_LAYOUT[currentSection].has_chapters
+  ) {
+    const chapters = PAGES_LAYOUT[currentSection].chapters as {
+      [url: string]: IChapter;
+    };
     return (
       <div className={styles.chapterContainer}>
         {Object.keys(chapters).map((chapterUrl) => {
@@ -335,7 +378,12 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
           const chapterPath = `${currentSection}${chapterUrl}`;
 
           return (
-            <div className={cx(styles.chapter, [styles[kebabToCamel(chapterUrl.slice(1))]])} key={chapterUrl}>
+            <div
+              className={cx(styles.chapter, [
+                styles[kebabToCamel(chapterUrl.slice(1))],
+              ])}
+              key={chapterUrl}
+            >
               <div
                 className={cx(styles.chapterName, {
                   [styles.selected]: dirs[dirs.length - 1] === chapterUrl,
@@ -344,10 +392,20 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
                 {chapters[chapterUrl].value}
               </div>
               <div className={styles.details}>
-                <div className={styles.location}>{chapters[chapterUrl].location}</div>
-                {chapters[chapterUrl].due_date && <div className={styles.dueDate}>{chapters[chapterUrl].due_date}</div>}
+                <div className={styles.location}>
+                  {chapters[chapterUrl].location}
+                </div>
+                {chapters[chapterUrl].due_date && (
+                  <div className={styles.dueDate}>
+                    {chapters[chapterUrl].due_date}
+                  </div>
+                )}
               </div>
-              <PageList chapterUrl={chapterPath} pages={chapters[chapterUrl].pages} dirs={dirs} />
+              <PageList
+                chapterUrl={chapterPath}
+                pages={chapters[chapterUrl].pages}
+                dirs={dirs}
+              />
             </div>
           );
         })}
@@ -374,7 +432,13 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
                     case 'bready':
                       if (!pageStates['/breadboarding']) {
                         setPageStates((current) => {
-                          return { ...current, '/breadboarding': true, '/soldering': true, '/power': true, '/prototype': true };
+                          return {
+                            ...current,
+                            '/breadboarding': true,
+                            '/soldering': true,
+                            '/power': true,
+                            '/prototype': true,
+                          };
                         });
                         router.push(`${dirs[0]}/breadboarding`);
                         setUnlockPhrase('');
@@ -447,7 +511,9 @@ export const Sidebar = () => {
   const path = router.pathname;
   const dirs = splitPath(path);
   const currentPage = getCurrentPage(dirs);
-  const currentPageName = Object.hasOwn(currentPage, 'value') ? currentPage.value : 'Coming Soon!';
+  const currentPageName = Object.hasOwn(currentPage, 'value')
+    ? currentPage.value
+    : 'Coming Soon!';
   return (
     <div className={styles.sidebar}>
       <div className={styles.topbar}>
@@ -467,11 +533,18 @@ export const Sidebar = () => {
         </label>
         <div className={styles.pageName}>{currentPageName}</div>
       </div>
-      <div className={cx(styles.sidebarContainer, { [styles.hidden]: !isOpen })}>
+      <div
+        className={cx(styles.sidebarContainer, { [styles.hidden]: !isOpen })}
+      >
         <div className={styles.iconContainer}>
           {Object.keys(PAGES_LAYOUT).map((url) => {
             const displayDiv = (
-              <div key={url} className={cx(styles.icon, { [styles.selected]: dirs[0] === url })}>
+              <div
+                key={url}
+                className={cx(styles.icon, {
+                  [styles.selected]: dirs[0] === url,
+                })}
+              >
                 {PAGES_LAYOUT[url].icon}
               </div>
             );
@@ -501,8 +574,16 @@ const getPropertyCount = (obj: { [key: string]: any }) => {
 };
 
 const DOES_NOT_EXIST_RESULT = { url: '', value: '', nonexistant: true };
-const COMING_SOON_RESULT = { url: COMING_SOON_URL, value: 'Coming Soon!', coming_soon: true };
-const comingSoonDiv = <div className={cx(styles.navButton, styles.comingSoonLink)}>Coming Soon!</div>;
+const COMING_SOON_RESULT = {
+  url: COMING_SOON_URL,
+  value: 'Coming Soon!',
+  coming_soon: true,
+};
+const comingSoonDiv = (
+  <div className={cx(styles.navButton, styles.comingSoonLink)}>
+    Coming Soon!
+  </div>
+);
 
 export const SectionNavigation = () => {
   const router = useRouter();
@@ -511,16 +592,22 @@ export const SectionNavigation = () => {
   const currentPage = getCurrentPage(dirs);
 
   let defaultState = (
-    Object.hasOwn(PAGES_LAYOUT, dirs[0]) && Object.hasOwn(PAGES_LAYOUT[dirs[0]], 'chapter_visibility')
+    Object.hasOwn(PAGES_LAYOUT, dirs[0]) &&
+    Object.hasOwn(PAGES_LAYOUT[dirs[0]], 'chapter_visibility')
       ? PAGES_LAYOUT[dirs[0]].chapter_visibility
       : {}
   ) as IChapterVisibility;
-  const [pageStates, setPageStates] = useState<IChapterVisibility>(defaultState);
+  const [pageStates, setPageStates] =
+    useState<IChapterVisibility>(defaultState);
   useEffect(() => {
     setPageStates((current) => {
       Object.keys(pageStates)
         .filter((page) => {
-          return window.localStorage.getItem(`${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`) === 'true';
+          return (
+            window.localStorage.getItem(
+              `${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`
+            ) === 'true'
+          );
         })
         .map((page) => {
           current = { ...current, [page]: true };
@@ -530,18 +617,31 @@ export const SectionNavigation = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!Object.hasOwn(currentPage, 'value') || !PAGES_LAYOUT[dirs[0]].has_chapters) {
+  if (
+    !Object.hasOwn(currentPage, 'value') ||
+    !PAGES_LAYOUT[dirs[0]].has_chapters
+  ) {
     return <></>;
   }
 
   const currentSection = getCurrentPage(dirs.slice(0, 1)) as ISection;
-  const chapterIndex = dirs.length < 2 ? 0 : Object.keys(currentSection.chapters as IChapters).indexOf(dirs[1]);
-  const currentChapter = getNthProperty(currentSection.chapters as IChapters, chapterIndex);
-  const currentIndex = dirs.length < 3 ? 0 : Object.keys(currentChapter.pages).indexOf(dirs[2]);
+  const chapterIndex =
+    dirs.length < 2
+      ? 0
+      : Object.keys(currentSection.chapters as IChapters).indexOf(dirs[1]);
+  const currentChapter = getNthProperty(
+    currentSection.chapters as IChapters,
+    chapterIndex
+  );
+  const currentIndex =
+    dirs.length < 3 ? 0 : Object.keys(currentChapter.pages).indexOf(dirs[2]);
 
   let prevPage = DOES_NOT_EXIST_RESULT as any;
   if (currentIndex > 0) {
-    const relativeUrl = getNthPropertyName(currentChapter.pages, currentIndex - 1);
+    const relativeUrl = getNthPropertyName(
+      currentChapter.pages,
+      currentIndex - 1
+    );
     const url = dirs.slice(0, 2).join('') + relativeUrl;
     const val = getNthProperty(currentChapter.pages, currentIndex - 1);
     if (val.coming_soon || val.is_hidden) {
@@ -550,9 +650,15 @@ export const SectionNavigation = () => {
       prevPage = { url, value: val.value };
     }
   } else if (chapterIndex > 0) {
-    const relativeUrl = getNthPropertyName(currentSection.chapters as IChapters, chapterIndex - 1);
+    const relativeUrl = getNthPropertyName(
+      currentSection.chapters as IChapters,
+      chapterIndex - 1
+    );
     const url = dirs.slice(0, 1) + relativeUrl;
-    const val = getNthProperty(currentSection.chapters as IChapters, chapterIndex - 1);
+    const val = getNthProperty(
+      currentSection.chapters as IChapters,
+      chapterIndex - 1
+    );
     if (val.coming_soon || val.is_hidden) {
       prevPage = COMING_SOON_RESULT;
     } else {
@@ -562,18 +668,33 @@ export const SectionNavigation = () => {
 
   let nextPage = DOES_NOT_EXIST_RESULT as any;
   if (currentIndex + 1 < getPropertyCount(currentChapter.pages)) {
-    const relativeUrl = getNthPropertyName(currentChapter.pages, currentIndex + 1);
-    const url = dirs.length < 2 ? dirs.slice(0, 1) + '/intro' + relativeUrl : dirs.slice(0, 2).join('') + relativeUrl;
+    const relativeUrl = getNthPropertyName(
+      currentChapter.pages,
+      currentIndex + 1
+    );
+    const url =
+      dirs.length < 2
+        ? dirs.slice(0, 1) + '/intro' + relativeUrl
+        : dirs.slice(0, 2).join('') + relativeUrl;
     const val = getNthProperty(currentChapter.pages, currentIndex + 1);
     if (val.coming_soon || val.is_hidden) {
       nextPage = COMING_SOON_RESULT;
     } else {
       nextPage = { url, value: val.value };
     }
-  } else if (chapterIndex + 1 < getPropertyCount(currentSection.chapters as IChapters)) {
-    const relativeUrl = getNthPropertyName(currentSection.chapters as IChapters, chapterIndex + 1);
+  } else if (
+    chapterIndex + 1 <
+    getPropertyCount(currentSection.chapters as IChapters)
+  ) {
+    const relativeUrl = getNthPropertyName(
+      currentSection.chapters as IChapters,
+      chapterIndex + 1
+    );
     const url = dirs.slice(0, 1) + relativeUrl;
-    const val = getNthProperty(currentSection.chapters as IChapters, chapterIndex + 1);
+    const val = getNthProperty(
+      currentSection.chapters as IChapters,
+      chapterIndex + 1
+    );
     if (!pageStates[relativeUrl]) {
       nextPage = COMING_SOON_RESULT;
     } else {
@@ -583,20 +704,36 @@ export const SectionNavigation = () => {
 
   const prevDiv = (
     <Link href={prevPage.url}>
-      <div className={cx(styles.navButton, styles.prevLink)}>Back to {prevPage.value}</div>
+      <div className={cx(styles.navButton, styles.prevLink)}>
+        Back to {prevPage.value}
+      </div>
     </Link>
   );
 
   const nextDiv = (
     <Link href={nextPage.url}>
-      <div className={cx(styles.navButton, styles.nextLink)}>Proceed to {nextPage.value}</div>
+      <div className={cx(styles.navButton, styles.nextLink)}>
+        Proceed to {nextPage.value}
+      </div>
     </Link>
   );
 
   return (
     <div className={styles.sectionNav}>
-      {prevPage.nonexistant ? <div></div> : prevPage.coming_soon ? comingSoonDiv : prevDiv}
-      {nextPage.nonexistant ? <></> : nextPage.coming_soon ? comingSoonDiv : nextDiv}
+      {prevPage.nonexistant ? (
+        <div></div>
+      ) : prevPage.coming_soon ? (
+        comingSoonDiv
+      ) : (
+        prevDiv
+      )}
+      {nextPage.nonexistant ? (
+        <></>
+      ) : nextPage.coming_soon ? (
+        comingSoonDiv
+      ) : (
+        nextDiv
+      )}
     </div>
   );
 };

@@ -29,7 +29,7 @@ const Test = () => {
         operations, and how we'll be controlling the logic for our Simon-esque game!
       </p>
       <h2>Place your Arduino on the Breadboard</h2>
-      <p>// PLACE ARDUINO ON BREADBOARD INSTRUCTIONS</p>
+      {/* <p>// PLACE ARDUINO ON BREADBOARD INSTRUCTIONS</p> */}
       <h2>Connecting & Uploading Code to the Arduino</h2>
       <p>
         Connect the Mini-B USB end of the USB cable (that's the one that might look like it connects to an older smart

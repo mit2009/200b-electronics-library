@@ -18,8 +18,8 @@ interface IPages {
 }
 
 interface IChapter extends IPage {
-  due_date: string;
-  location: string;
+  due_date?: string;
+  location?: string;
   whatsDue?: any;
   has_pages: boolean;
   pages?: IPages;
@@ -31,7 +31,7 @@ interface IChapters {
 
 enum Location {
   AT_HOME = 'Due',
-  IN_LAB = 'In Lab',
+  IN_LAB = 'In Lab 2',
 }
 
 interface IChapterVisibility {
@@ -103,25 +103,40 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       },
       '/breadboarding': {
         value: '2. Breadboarding',
-        due_date: 'Feb 17',
-        location: Location.AT_HOME,
+        location: Location.IN_LAB,
         has_pages: true,
         pages: {
-          '/test': {
+          '/lab2-intro': {
+            value: 'Ingredients for Lab 2',
+          },
+          '/breadboard-intro': {
+            value: 'The Breadboard',
+          },
+          '/test-microcontroller': {
             value: 'Test the Microcontroller',
           },
-          '/circuit': {
+          '/first-circuit': {
             value: 'The First Circuit',
           },
-          '/prototype': {
-            value: 'Breadboard Prototype',
+          '/buttons-and-lights': {
+            value: 'Buttons and Lights',
+          },
+        },
+      },
+      '/power': {
+        value: '3. Power & Charging',
+        location: Location.IN_LAB,
+        has_pages: true,
+        pages: {
+          '/ingredients-for-lab2': {
+            value: 'Ingredients for Lab 2',
           },
         },
       },
       '/cad': {
         value: '3. Enclosure CAD',
         due_date: 'Feb 17',
-        location: Location.AT_HOME,
+        location: Location.IN_LAB,
         has_pages: true,
         pages: {
           '/intro': {
@@ -304,7 +319,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
               </div>
               <div className={styles.details}>
                 <div className={styles.location}>{chapters[chapterUrl].location}</div>
-                <div className={styles.dueDate}>{chapters[chapterUrl].due_date}</div>
+                {chapters[chapterUrl].due_date && <div className={styles.dueDate}>{chapters[chapterUrl].due_date}</div>}
               </div>
               <PageList chapterUrl={chapterPath} pages={chapters[chapterUrl].pages} dirs={dirs} />
             </div>
@@ -333,7 +348,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
                     case 'bready':
                       if (!pageStates['/breadboarding']) {
                         setPageStates((current) => {
-                          return { ...current, '/breadboarding': true };
+                          return { ...current, '/breadboarding': true, '/power': true };
                         });
                         router.push(`${dirs[0]}/breadboarding`);
                         setUnlockPhrase('');
@@ -487,7 +502,6 @@ export const SectionNavigation = () => {
       return current;
     });
   }, []);
-
 
   if (!Object.hasOwn(currentPage, 'value') || !PAGES_LAYOUT[dirs[0]].has_chapters) {
     return <></>;

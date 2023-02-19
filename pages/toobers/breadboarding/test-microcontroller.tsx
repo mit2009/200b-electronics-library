@@ -28,12 +28,13 @@ const Test = () => {
         have software applied to them, and send outputs back out into the real world. This is the 'brains' behind our
         operations, and how we'll be controlling the logic for our Simon-esque game!
       </p>
+      <h2>Place your Arduino on the Breadboard</h2>
+      <p>// PLACE ARDUINO ON BREADBOARD INSTRUCTIONS</p>
       <h2>Connecting & Uploading Code to the Arduino</h2>
       <p>
         Connect the Mini-B USB end of the USB cable (that's the one that might look like it connects to an older smart
-        phone or electronic device) to the Arduino, and then connect the other end (USB type C) to your computer. If you
-        don't have a USB type C connector on your computer, we have plenty of USB type A cables - just ask a staff
-        member in a lab coat and we'll swap it out for you!
+        phone or electronic device) to the Arduino, and then connect the other end (USB type A) to your computer. If you
+        don't have a USB type A connector on your computer, we have plenty of adapters just for you.
       </p>
       <p>
         As soon as you plug in your Arduino, you'll notice a green LED may turn on, and a yellow LED may blink. This

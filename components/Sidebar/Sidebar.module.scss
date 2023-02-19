@@ -35,7 +35,10 @@
   --section-lightest: rgba(10, 21, 115, 0.1);
 }
 
-.breadboarding {
+.breadboarding,
+.soldering,
+.power,
+.prototype {
   --section-color: rgb(199, 48, 48);
   --section-lighter: rgba(199, 48, 48, 0.3);
   --section-lightest: rgba(199, 48, 48, 0.1);

@@ -150,8 +150,14 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         location: Location.IN_LAB,
         has_pages: true,
         pages: {
-          '/ingredients-for-lab2': {
-            value: 'Ingredients for Lab 2',
+          '/overview': {
+            value: 'Soldering Overview',
+          },
+          '/safety': {
+            value: 'Soldering Safety',
+          },
+          '/soldering': {
+            value: 'Actually Soldering',
           },
         },
       },

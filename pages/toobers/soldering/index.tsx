@@ -1,2 +1,2 @@
-import Page from "./intro";
+import Page from './overview';
 export default Page;

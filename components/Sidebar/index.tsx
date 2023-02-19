@@ -458,6 +458,24 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
                         setConfettiColor(['#c73030']);
                       }
                       break;
+                    case 'cadlab':
+                      if (!pageStates['/cad']) {
+                        setPageStates((current) => {
+                          return {
+                            ...current,
+                            '/breadboarding': true,
+                            '/soldering': true,
+                            '/power': true,
+                            '/prototype': true,
+                            '/cad': true,
+                          };
+                        });
+                        router.push(`${dirs[0]}/cad`);
+                        setUnlockPhrase('');
+                        setEnteringUnlockPhrase(false);
+                        setConfettiColor(['#a600a6']);
+                      }
+                      break;
                     default:
                       setUnlockPhrase('');
                       break;

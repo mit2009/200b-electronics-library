@@ -1,6 +1,5 @@
 import GuideImage from '../../../components/GuideImage';
 import { GuideLink } from '../../../components/GuideLink';
-import { PAGES_LAYOUT } from '../../../components/Sidebar';
 import { WhatsDue } from '../../../components/WhatsDue';
 
 const Overview = () => {

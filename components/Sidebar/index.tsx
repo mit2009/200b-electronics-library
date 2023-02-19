@@ -105,6 +105,10 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         value: '2. Breadboarding',
         location: Location.IN_LAB,
         has_pages: true,
+        whatsDue: {
+          '2.1': 'Using the breadboard, wire up a working, playable prototype of your Toobers toy!',
+          '2.2': 'Take a photo of your breadboard prototype for your portfolio.',
+        },
         pages: {
           '/lab2-intro': {
             value: 'Ingredients for Lab 2',

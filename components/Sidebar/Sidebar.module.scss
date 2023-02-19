@@ -20,31 +20,37 @@
 .cad {
   --section-color: rgb(166, 0, 166);
   --section-lighter: rgba(166, 0, 166, 0.3);
+  --section-lightest: rgba(66, 0, 166, 0.1);
 }
 
 .sugarCube {
   --section-color: rgb(255, 145, 0);
   --section-lighter: rgba(255, 145, 0, 0.3);
+  --section-lightest: rgba(255, 145, 0, 0.1);
 }
 
 .batteryCharger {
   --section-color: rgb(10, 21, 115);
   --section-lighter: rgba(10, 21, 115, 0.3);
+  --section-lightest: rgba(10, 21, 115, 0.1);
 }
 
 .breadboarding {
   --section-color: rgb(199, 48, 48);
   --section-lighter: rgba(199, 48, 48, 0.3);
+  --section-lightest: rgba(199, 48, 48, 0.1);
 }
 
 .pcb {
   --section-color: rgb(7, 109, 22);
   --section-lighter: rgba(7, 109, 22, 0.3);
+  --section-lightest: rgba(7, 109, 22, 0.1);
 }
 
 .final {
   --section-color: rgb(185, 140, 6);
   --section-lighter: rgba(185, 140, 6, 0.3);
+  --section-lightest: rgba(185, 140, 6, 0.1);
 }
 
 .sidebarContainer {
@@ -110,10 +116,16 @@
     padding-left: 20px;
 
     input[type='text'] {
-      padding: 8px 15px;
+      padding: 6px 10px;
       border-radius: 5px;
       outline: none;
-      border: 2px solid black;
+      width: 100%;
+      border: 2px solid var(--grey4);
+      font-family: 'DM Sans', sans-serif;
+
+      &:focus {
+        border: 2px solid var(--grey6);
+      }
     }
   }
 }

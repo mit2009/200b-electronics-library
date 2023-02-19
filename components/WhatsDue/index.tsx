@@ -6,14 +6,14 @@ import cx from 'classnames';
 import ConfettiExplosion from 'react-confetti-explosion';
 
 export const WhatsDue = ({ chapter }: { chapter: string }) => {
-  const dueItems = PAGES_LAYOUT['/toobers'].chapters?.[chapter].whatsDue;
+  const dueItems = PAGES_LAYOUT['/toobers'].chapters?.[chapter]?.whatsDue;
   const [trackedItems, setTrackedItems] = useState(dueItems);
   const [dontShowConfetti, setDontShowConfetti] = useState(true);
 
   useEffect(() => {
     // get from local storage if any of these have been read already
     // if so, mark them as read
-    if (window) {
+    if (window && dueItems) {
       Object.entries(dueItems).forEach((item: any) => {
         if (window.localStorage.getItem(item[0]) === 'true') {
           setTrackedItems((prev: any) => {
@@ -39,45 +39,46 @@ export const WhatsDue = ({ chapter }: { chapter: string }) => {
 
   return (
     <div className={styles.whatsDueContainer}>
-      <h1>What's Due {PAGES_LAYOUT['/toobers'].chapters?.[chapter].due_date}</h1>
+      <h1>What's Due {PAGES_LAYOUT['/toobers'].chapters?.[chapter]?.due_date}</h1>
       <div className={styles.dueContainer}>
-        {Object.entries(dueItems).map((item: any, index: any) => {
-          const clickItem = () => {
-            if (window) {
-              setDontShowConfetti(false);
-              if (trackedItems[item[0]] === true) {
-                window.localStorage.setItem(item[0], 'false');
-                setTrackedItems((prev: any) => {
-                  return {
-                    ...prev,
-                    [item[0]]: false,
-                  };
-                });
-              } else {
-                window.localStorage.setItem(item[0], 'true');
-                setTrackedItems((prev: any) => {
-                  return {
-                    ...prev,
-                    [item[0]]: true,
-                  };
-                });
+        {dueItems &&
+          Object.entries(dueItems).map((item: any, index: any) => {
+            const clickItem = () => {
+              if (window) {
+                setDontShowConfetti(false);
+                if (trackedItems[item[0]] === true) {
+                  window.localStorage.setItem(item[0], 'false');
+                  setTrackedItems((prev: any) => {
+                    return {
+                      ...prev,
+                      [item[0]]: false,
+                    };
+                  });
+                } else {
+                  window.localStorage.setItem(item[0], 'true');
+                  setTrackedItems((prev: any) => {
+                    return {
+                      ...prev,
+                      [item[0]]: true,
+                    };
+                  });
+                }
               }
-            }
-          };
+            };
 
-          return (
-            <div key={item[1]} className={styles.dueItemContainer} onClick={clickItem}>
-              <div className={styles.checkbox}>
-                <div
-                  className={cx(styles.checkboxSquare, {
-                    [styles.hasCheckmark]: trackedItems[item[0]] === true,
-                  })}
-                />
+            return (
+              <div key={item[1]} className={styles.dueItemContainer} onClick={clickItem}>
+                <div className={styles.checkbox}>
+                  <div
+                    className={cx(styles.checkboxSquare, {
+                      [styles.hasCheckmark]: trackedItems[item[0]] === true,
+                    })}
+                  />
+                </div>
+                <div className={styles.dueItem}>{item[1]}</div>
               </div>
-              <div className={styles.dueItem}>{item[1]}</div>
-            </div>
-          );
-        })}
+            );
+          })}
         {!dontShowConfetti && Object.values(trackedItems).every((item: any) => item === true) && (
           <div className={styles.confettiContainer}>
             <ConfettiExplosion particleCount={100} width={2000} height={'300vh'} duration={6000} force={0.8} />

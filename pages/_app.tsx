@@ -12,6 +12,7 @@ import sidebarStyles from '../components/Sidebar/Sidebar.module.scss';
 import { isDev } from '../lib/devHelper';
 
 import { PAGES_LAYOUT, SectionNavigation, Sidebar } from '../components/Sidebar';
+import { DevBar } from '../components/DevBar';
 import { kebabToCamel, splitPath } from '../utils/format';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -65,7 +66,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </span>
           </div>
         )}
-        {/* {isDev && <div className="dev-marker">development</div>} */}
+        {isDev && <DevBar />}
         <Component {...pageProps} />
         <SectionNavigation />
       </div>

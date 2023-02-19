@@ -69,9 +69,12 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
     ),
     chapter_visibility: {
       '/intro': true,
+      '/soldering': false,
+      '/power': false,
+      '/prototype': false,
       '/cad': false,
       '/suger-cube': false,
-      '/battery-charger': false,
+      // '/battery-charger': false,
       '/breadboarding': false,
       '/pcb': false,
       '/final': false,
@@ -127,8 +130,28 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
         },
       },
+      '/soldering': {
+        value: '3. Soldering',
+        location: Location.IN_LAB,
+        has_pages: true,
+        pages: {
+          '/ingredients-for-lab2': {
+            value: 'Ingredients for Lab 2',
+          },
+        },
+      },
       '/power': {
-        value: '3. Power & Charging',
+        value: '4. Power & Charging',
+        location: Location.IN_LAB,
+        has_pages: true,
+        pages: {
+          '/ingredients-for-lab2': {
+            value: 'Ingredients for Lab 2',
+          },
+        },
+      },
+      '/prototype': {
+        value: '5. The Prototype',
         location: Location.IN_LAB,
         has_pages: true,
         pages: {
@@ -138,7 +161,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         },
       },
       '/cad': {
-        value: '3. Enclosure CAD',
+        value: '6. Enclosure CAD',
         due_date: 'Feb 17',
         location: Location.IN_LAB,
         has_pages: true,
@@ -168,20 +191,20 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
         },
       },
-      '/battery-charger': {
-        value: '5. Battery & Charger',
-        due_date: 'Feb 17',
-        location: Location.IN_LAB,
-        has_pages: true,
-        pages: {
-          '/intro': {
-            value: 'The Power Circuit',
-          },
-          '/assembly': {
-            value: 'Battery & Charger Assembly',
-          },
-        },
-      },
+      // '/battery-charger': {
+      //   value: '5. Battery & Charger',
+      //   due_date: 'Feb 17',
+      //   location: Location.IN_LAB,
+      //   has_pages: true,
+      //   pages: {
+      //     '/intro': {
+      //       value: 'The Power Circuit',
+      //     },
+      //     '/assembly': {
+      //       value: 'Battery & Charger Assembly',
+      //     },
+      //   },
+      // },
       '/pcb': {
         value: '6. PCB Assembly',
         due_date: 'Feb 17',
@@ -272,12 +295,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   const router = useRouter();
   const currentSection = dirs[0];
   const [enteringUnlockPhrase, setEnteringUnlockPhrase] = useState(false);
-  const defaultState = (
-    Object.hasOwn(PAGES_LAYOUT, currentSection) && Object.hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
-      ? PAGES_LAYOUT[currentSection].chapter_visibility
-      : {}
-  ) as IChapterVisibility;
-  const [pageStates, setPageStates] = useState<IChapterVisibility>(defaultState);
+  const [pageStates, setPageStates] = useState<IChapterVisibility>({});
   const [unlockPhrase, setUnlockPhrase] = useState('');
   const [confettiColor, setConfettiColor] = useState<string[]>([]);
 
@@ -290,18 +308,22 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   }, [pageStates]);
 
   useEffect(() => {
-    setPageStates((current) => {
-      Object.keys(pageStates)
-        .filter((page) => {
-          return window.localStorage.getItem(`${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`) === 'true';
-        })
-        .map((page) => {
-          current = { ...current, [page]: true };
-        });
-      return current;
-    });
+    console.log("loading state")
+    const defaultState = (
+      Object.hasOwn(PAGES_LAYOUT, currentSection) && Object.hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
+        ? PAGES_LAYOUT[currentSection].chapter_visibility
+        : {}
+    ) as IChapterVisibility;
+    Object.keys(defaultState)
+      .filter((page) => {
+        return window.localStorage.getItem(`${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`) === 'true';
+      })
+      .map((page) => {
+        defaultState[page] = true;
+      });
+    setPageStates(defaultState);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [router.asPath]);
 
   if (Object.hasOwn(PAGES_LAYOUT, currentSection) && PAGES_LAYOUT[currentSection].has_chapters) {
     const chapters = PAGES_LAYOUT[currentSection].chapters as { [url: string]: IChapter };
@@ -353,7 +375,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
                     case 'bready':
                       if (!pageStates['/breadboarding']) {
                         setPageStates((current) => {
-                          return { ...current, '/breadboarding': true, '/power': true };
+                          return { ...current, '/breadboarding': true, '/soldering': true, '/power': true, '/prototype': true };
                         });
                         router.push(`${dirs[0]}/breadboarding`);
                         setUnlockPhrase('');

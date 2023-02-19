@@ -169,7 +169,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/overview': {
             value: 'Power Two Ways',
           },
-          '/assembling': {
+          '/assembly': {
             value: 'Assemble your Power Module',
           },
         },
@@ -182,7 +182,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/altogether': {
             value: 'Altogether Now',
           },
-          '/code': {
+          '/final': {
             value: 'Code, Test, & Play!',
           },
         },
@@ -428,7 +428,9 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
             setConfettiColor([]);
           }}
         >
-          {!enteringUnlockPhrase && 'more coming soon?'}
+          {!enteringUnlockPhrase && (
+            <div className={styles.moreComingSoon}>more coming soon?</div>
+          )}
           {enteringUnlockPhrase && (
             <input
               type="text"

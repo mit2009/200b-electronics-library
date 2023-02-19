@@ -207,6 +207,13 @@ ul.pageList {
   }
 }
 
+.moreComingSoon {
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+  }
+}
+
 @media (max-width: variables.$media-max-width) {
   ul.pageList li {
     font-size: 14px;
@@ -386,9 +393,7 @@ ul.pageList {
       border-width: 0 3px 3px 0;
     }
   }
-}
 
-@media (max-width: variables.$media-max-width) {
   .icon {
     width: 70px;
     font-size: 12px;

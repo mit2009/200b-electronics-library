@@ -300,6 +300,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
         });
       return current;
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (Object.hasOwn(PAGES_LAYOUT, currentSection) && PAGES_LAYOUT[currentSection].has_chapters) {
@@ -505,6 +506,7 @@ export const SectionNavigation = () => {
         });
       return current;
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (!Object.hasOwn(currentPage, 'value') || !PAGES_LAYOUT[dirs[0]].has_chapters) {

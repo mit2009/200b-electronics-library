@@ -1,2 +1,2 @@
-import Test from "./test";
-export default Test;
+import Page from "./lab2-intro";
+export default Page;

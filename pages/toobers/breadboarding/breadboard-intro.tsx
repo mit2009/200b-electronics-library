@@ -99,7 +99,7 @@ const Page = () => {
         have them wired up. It'll save some headache later if you do decide to use them, (and wonder why it's not
         working if you don't wire them up)
       </p>
-      <p>// IMAGE OF WHAT WIRED UP POWER BUSSES SHOULD LOOK LIKE</p>
+      <p>{"//"} IMAGE OF WHAT WIRED UP POWER BUSSES SHOULD LOOK LIKE</p>
     </div>
   );
 };

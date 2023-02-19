@@ -1,42 +1,28 @@
 import Image from 'next/image';
+import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
 
 const Test = () => {
   return (
     <div>
       <h1>Test the Microcontroller</h1>
-      <h2>This Lab</h2>
-      <p>
-        Welcome to Lab 1! The goal of this first lab will be to prototype a version of our Toobers toy on a breadboard.
-        Everything you need for this lab will be in the electronics kit (the blue box!). It's yours to keep, and you're
-        free to use any parts for anything you'd like in the future.
-      </p>
-      <p>
-        To start, please <strong>write your name on your electronics kit</strong>!
-      </p>
-      <div className={'advanced'}>
-        <h3>CHECK YOUR KIT!</h3>
-        <p>
-          Take a couple minutes to check out the{' '}
-          <a href="/assets/toobers-kit-catalog.pdf" target="_blank" rel="noreferrer">
-            Toobers Kit Catalog
-          </a>{' '}
-          (provided in your kit) along with all the different components. Make sure you can identify each item, and feel
-          free to ask if you have questions!
-        </p>
-      </div>
-      <p>
-        For this lab (and a lot of the next) we will primarily be working independently on our own prototype - but that
-        doesn't mean you can't ask your teammates for help and work together!
-      </p>
       <h2>Hello Arduino!</h2>
       <p>
-        We'll be using an Arduino Nano microcontroller. Arduino makes a whole line of controllers, and many of them can
-        be programmed and controlled in the same way. Once you learn how to work with an Arduino, you'll be able to use
-        fancier Arduinos- some of which even have built-in WiFi, Bluetooth, etc.!
+        We'll be using an Arduino Nano microcontroller.{' '}
+        <GuideLink href="https://arduino.cc" target="_BLANK">
+          Arduino
+        </GuideLink>{' '}
+        makes a whole line of controllers, and many of them can be programmed and controlled in the same way. Once you
+        learn how to work with an Arduino, you'll be able to use fancier Arduinos- some of which even have built-in
+        WiFi, Bluetooth, etc.!
       </p>
-      <div className={'image-container'}>
-        <Image src="/images/toobers/arduino-nano.jpeg" alt="Arduino Nano" height={200} width={300} />
-      </div>
+      <GuideImage
+        src="/images/toobers/arduino-nano.jpeg"
+        alt="Arduino Nano"
+        caption="Arduino Nano, the Brains of our operation"
+        size="SMALL"
+        border={false}
+      />
       <p>
         The basic idea behind an Arduino is that it allows us to programmatically take in inputs from the real world,
         have software applied to them, and send outputs back out into the real world. This is the 'brains' behind our

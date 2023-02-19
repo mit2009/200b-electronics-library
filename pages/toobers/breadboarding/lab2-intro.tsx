@@ -1,3 +1,4 @@
+import GuideImage from '../../../components/GuideImage';
 import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
@@ -12,6 +13,18 @@ const Page = () => {
         you don't finish in time, no worries - there will be staffed lab hours during the week where you can finish up
         the breadboard.
       </p>
+      <p>
+        You'll notice infront of you is a nice, semi-transparent 2.00b Toolbox. You can use this handy carrying case to
+        hold all of your Toobers-related parts. To start, <strong>write your name on your toolbox</strong> in the blank,
+        pill shaped space in the front.
+      </p>
+      <GuideImage
+        src="/images/toobers/toolbox.png"
+        alt="Toolbox"
+        size="MEDIUM"
+        border={false}
+        caption="Remember to write your name on your toolbox!"
+      />
       <p>
         The first part of this lab will be a <strong>team activity.</strong>
       </p>

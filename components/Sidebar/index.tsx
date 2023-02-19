@@ -308,7 +308,6 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   }, [pageStates]);
 
   useEffect(() => {
-    console.log("loading state")
     const defaultState = (
       Object.hasOwn(PAGES_LAYOUT, currentSection) && Object.hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
         ? PAGES_LAYOUT[currentSection].chapter_visibility

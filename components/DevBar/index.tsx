@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import styles from './DevBar.module.scss';
 
+const HIDDEN_DURATION = 2500;
+
 export const DevBar = () => {
   const [shrink, setShrink] = useState(true);
   const [visible, setVisible] = useState(true);
@@ -32,7 +34,7 @@ export const DevBar = () => {
               setVisible(false);
               setTimeout(() => {
                 setVisible(true);
-              }, 1000);
+              }, HIDDEN_DURATION);
             }}
           >
             Hide

@@ -268,13 +268,17 @@ div {
   }
 
   pre {
-    background-color: #eee;
-    padding: 20px;
+    width: calc(100% - 40px);
+    background-color: var(--grey2);
+    padding: 15px 20px;
     border-radius: 10px;
-    color: #999;
+    color: var(--grey7);
+    white-space: pre-wrap;
 
     p {
-      margin: 3px 0;
+      font-size: 14px;
+      margin: 2px 0;
+      line-height: 1.4em;
     }
   }
 }

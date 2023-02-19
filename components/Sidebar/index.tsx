@@ -156,12 +156,15 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         },
       },
       '/power': {
-        value: '4. Power & Charging',
+        value: '4. Battery & Charging',
         location: Location.IN_LAB,
         has_pages: true,
         pages: {
-          '/ingredients-for-lab2': {
-            value: 'Ingredients for Lab 2',
+          '/overview': {
+            value: 'Power Two Ways',
+          },
+          '/assembling': {
+            value: 'Assemble your Power Module',
           },
         },
       },
@@ -170,8 +173,11 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         location: Location.IN_LAB,
         has_pages: true,
         pages: {
-          '/ingredients-for-lab2': {
-            value: 'Ingredients for Lab 2',
+          '/altogether': {
+            value: 'Altogether Now',
+          },
+          '/code': {
+            value: 'Code, Test, & Play!',
           },
         },
       },

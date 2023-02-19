@@ -29,7 +29,7 @@
   --section-lightest: rgba(255, 145, 0, 0.1);
 }
 
-.batteryCharger {
+.power {
   --section-color: rgb(10, 21, 115);
   --section-lighter: rgba(10, 21, 115, 0.3);
   --section-lightest: rgba(10, 21, 115, 0.1);
@@ -41,10 +41,16 @@
   --section-lightest: rgba(199, 48, 48, 0.1);
 }
 
-.pcb {
+.soldering {
   --section-color: rgb(7, 109, 22);
   --section-lighter: rgba(7, 109, 22, 0.3);
   --section-lightest: rgba(7, 109, 22, 0.1);
+}
+
+.prototype {
+  --section-color: rgb(223, 114, 13);
+  --section-lighter: rgba(223, 114, 13, 0.3);
+  --section-lightest: rgba(223, 114, 13, 0.1);
 }
 
 .final {
@@ -245,7 +251,8 @@ ul.pageList {
     height: var(--burger-slice-height);
     width: calc(var(--top-height) * var(--burger-width-percentage));
 
-    margin: 0 calc(var(--top-height) * (1 - var(--burger-width-percentage)) / 2 + 4px);
+    margin: 0
+      calc(var(--top-height) * (1 - var(--burger-width-percentage)) / 2 + 4px);
 
     position: relative;
     transition: height 1ms var(--transition-duration);
@@ -267,7 +274,8 @@ ul.pageList {
     width: 100%;
     height: var(--burger-slice-height);
 
-    transition: top var(--transition-duration) var(--transition-duration), transform var(--transition-duration);
+    transition: top var(--transition-duration) var(--transition-duration),
+      transform var(--transition-duration);
   }
 
   .hamburger::before {
@@ -290,7 +298,8 @@ ul.pageList {
     &::before,
     &::after {
       top: 0;
-      transition: top var(--transition-duration), transform var(--transition-duration) var(--transition-duration);
+      transition: top var(--transition-duration),
+        transform var(--transition-duration) var(--transition-duration);
     }
     &::before {
       transform: translate(0, -1px) rotate(45deg);

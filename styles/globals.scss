@@ -303,11 +303,6 @@ div {
   }
 }
 
-.inARow {
-  display: flex;
-  gap: 10px;
-}
-
 .breadcrumbs {
   border: 3px solid var(--section-color);
   padding: 4px 10px;
@@ -351,10 +346,6 @@ div {
 
     h2 {
       font-size: 24px;
-    }
-
-    .inARow {
-      flex-wrap: wrap;
     }
 
     .breadcrumbs {

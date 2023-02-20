@@ -18,20 +18,13 @@ const Page = () => {
         hoods above every table. Give it a quick glance to make sure it's on
         (the knob is turned to the position shown below.)
       </p>
-      <div className={'inARow'}>
-        <GuideImage
-          src="/images/toobers/fume-hood-02.png"
-          border={false}
-          alt="Fume Hood"
-          size={'MEDIUM'}
-        />
-        <GuideImage
-          src="/images/toobers/fume-hood-01.png"
-          border={false}
-          alt="Fume Hood Controls"
-          size={'MEDIUM'}
-        />
-      </div>
+      <GuideImage
+        src={[
+          '/images/toobers/fume-hood-02.png',
+          '/images/toobers/fume-hood-01.png',
+        ]}
+        border={false}
+      />
       <p>
         If you're in one of the satellite labs, there may also be soldering fume
         extractors that are placed around to help with air circulation.

@@ -24,7 +24,11 @@ const GuideImage = ({
 }) => {
   if (typeof src === 'string') {
     return (
-      <div className={cx(styles.imageContainer, { [styles.noMargin]: removeMargin })}>
+      <div
+        className={cx(styles.imageContainer, {
+          [styles.noMargin]: removeMargin,
+        })}
+      >
         <a href={href ? href : src} target="_blank">
           <img
             className={cx({
@@ -48,7 +52,13 @@ const GuideImage = ({
       {src.map((image, key) => (
         <div className={styles.imageContainer} key={key}>
           <a href={image} target="_blank">
-            <img src={image} alt={`${alt} ${key + 1}`} />
+            <img
+              className={cx({
+                [styles.hideBorder]: border === false,
+              })}
+              src={image}
+              alt={`${alt} ${key + 1}`}
+            />
           </a>
         </div>
       ))}

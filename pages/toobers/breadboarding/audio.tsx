@@ -1,4 +1,5 @@
 import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
 import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
@@ -27,8 +28,9 @@ const Page = () => {
       </p>
       <p>
         The DFPlayer pulls .mp3 files from a microSD card. The specific naming
-        convention depends on the mode you're using it in. We've preloaded your
-        microSD card with sounds so that it'll work with the Toobers game
+        convention depends on the mode you're using it in.{' '}
+        <strong>We've preloaded your microSD card with sounds</strong> so that
+        it'll work with the Toobers game.
       </p>
       <p>
         The microSD card only goes in one orientation, and to remove it, simply
@@ -39,8 +41,97 @@ const Page = () => {
       <p>
         We'll start with placing the DFPlayer. The DFPlayer has two rows of
         pins, which can straddle the trough nicely to prevent its own pins from
-        shorting (coming into contact) with itself.
+        shorting (coming into contact) with itself. Very carefully note the
+        direction of the DFPlayer. Note the direction of the notch in the PCB
+        and make sure you know which pins are which.{' '}
+        <strong>Check with an instructor if you're unsure!</strong>
       </p>
+      <p>
+        This is the wiring diagram. Pay attention to which pins are used on the
+        DFPlayer
+      </p>
+      <GuideImage
+        src="/images/toobers/wiring-diagram-with-speaker.png"
+        border={false}
+        size="FULL"
+      />
+      <p>
+        Below is what your final breadboard for this step should look like. Note
+        the alignment and perspective in the photo may be off, so we've added
+        tiny dotted lines to indicate which pins go where.
+      </p>
+      <GuideImage
+        src="/images/toobers/with-speaker.png"
+        border={false}
+        size="FULL"
+      />
+      <ol>
+        <li>Connect blah blah to blah blah</li>
+        <li>Connect blah blah to blah blah</li>
+      </ol>
+      <h2>The Tiny Speaker Wires</h2>
+      <p>
+        The speaker we've sourced has an impedance of 8 Ohms (nominally) and
+        draws 2 Watts. It uses a special connector different from all the other
+        connectors we're using - this is called Molex-type connector,
+        specifically the Molex Picoblade.
+      </p>
+      <GuideImage
+        src="/images/toobers/molex-picoblade.png"
+        border={false}
+        size="MEDIUM"
+      />
+      <p>
+        The two connectors go together, and the leads go into the breadboard.
+        The wires are very tiny and aren't typically meant to go into a
+        breadboard like this, but it should be possible if you're careful, and
+        it should work for this prototyping stage (albeit a very precarious
+        operation).
+      </p>
+      <GuideImage
+        src="/images/toobers/molex-picoblade-lead.jpg"
+        size="SMALL"
+        caption="Not quite the right gauge, but should work for what we're trying to do"
+      />
+      <ul>
+        <li>
+          Connect the <span className="pin red">red</span> wire into{' '}
+          <span className="pin">B51</span>
+        </li>
+        <li>
+          Connect the <span className="pin black">black</span> wire into{' '}
+          <span className="pin">B53</span>
+        </li>
+      </ul>
+      <h2>Test some Audio!</h2>
+      <p>
+        Download this test code into your Arduino to test the DFPlayer playing
+        the first sound file (which should say something like "Toobers, get
+        ready to play!".)
+      </p>
+      <div className="center">
+        <GuideLink
+          target="_blank"
+          href="https://github.com/mit2009/200b-toobers/blob/main/2023/arduino/JustSomeNoise/JustSomeNoise.ino"
+        >
+          <span className={'download-btn'}>
+            Get the <strong>Audio Test Code</strong>
+          </span>
+        </GuideLink>
+      </div>
+      <h2>Do you hear Crackling?</h2>
+      <p>
+        If you hear weird crackling, or if your speaker isn't quite working
+        right, this may be a power problem! Move the wire that connects the
+        Arduino <span className="pin">Vin</span> to the Arduino{' '}
+        <span className="pin red">5V</span> instead, as shown below.
+      </p>
+      <GuideImage
+        src="/images/toobers/crackling-fix.png"
+        border={false}
+        size={'LARGE'}
+      />
+
       <h2>Debugging</h2>
       <p>
         If something doesn't look right, here are some steps that may help you
@@ -58,45 +149,9 @@ const Page = () => {
       <ul>
         <li>
           Talk to a lab staff regarding re-loading audio files onto your microSD
-          card. The issue may be the dotfiles as mentioned below.
+          card.
         </li>
       </ul>
-      <h4>An LED isn't turning on:</h4>
-      <ul>
-        <li>
-          Double check your wiring for the LED (and if it's just a specific one,
-          see if you can find a difference between that LED and another LED that
-          is working.
-        </li>
-        <li>
-          Make sure the LED isn't burnt out. Did you remember to put in your
-          resistor?
-        </li>
-        <li>Is the orientation of the LED correct?</li>
-        <li>What happens if you try a different LED?</li>
-        <li>
-          You can always upload the old code (FourNewFriends.ino) to test just
-          your LED setup, and go back to the previous step.
-        </li>
-      </ul>
-      <h4>A Button isn't working:</h4>
-      <ul>
-        <li>
-          It's sometimes hard to see where the contacts are- double check to
-          make sure the contacts are indeed seated where they're supposed to be.
-        </li>
-        <li>
-          Is it just that button? What happens if you try a different button?
-        </li>
-        <li>
-          Similarly to the LED test, you can always upload the old code
-          (FourButtonFriends.ino) to test just the malfunctioning button.
-        </li>
-      </ul>
-      <p>
-        Play around with your prototype for a bit. Bask in the glory. See how
-        high of a score you can get. Exciting, isn't it?
-      </p>
       <WhatsDue chapter="/breadboarding" />
     </div>
   );

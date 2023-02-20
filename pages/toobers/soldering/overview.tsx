@@ -29,83 +29,13 @@ const Page = () => {
         electronics, soldering has applications in plumbing, flashing,
         metalwork, jewelry, musical instruments, etc.!
       </p>
-      <h2>The Upgrades!</h2>
+      <h2>Sourced Parts</h2>
       <p>
-        Before jumping into the hot stuff, let's take a look at what's going to
-        be happening. We'll be condensing the form factor of our current toy
-        into something more manageable. With that, we'll be soldering and
-        permanently attaching parts so that wires and components don't
-        accidentally fall out if the toy is shaken about. And lastly, we'll be
-        making it so our Toobers doesn't use our computer as a power source, by
-        adding a 9v battery (rechargeable!) and a toggle power switch.
+        To prototype something quickly, often times you'll want to procure
+        existing parts rather than build everything from scratch. In this case,
+        the two parts we will be using don't have 'breadboard-friendly'
+        connectors. The two parts are:
       </p>
-      <h2>Printed Circuit Board & Perfboards</h2>
-      <p>
-        Printed Circuit Boards (or PCBs) are everywhere in our world today. If
-        you're using anything that involves electricity, it's likely that
-        there's a PCB in the device. A PCB forgoes the wires in a breadboard
-        circuit in exchange for <strong>traces</strong> - the network of
-        conductive paths that make up a printed circuit board and connect the
-        different components. Your components (like resistors, or buttons) are
-        then soldered to this PCB.
-      </p>
-      <GuideImage
-        removeMargin={true}
-        border={false}
-        size="LARGE"
-        src="/images/toobers/404"
-        alt="Anatomy of a PCB"
-      />
-      <p>
-        While getting a professionally made PCB is relatively cheap and easy
-        nowadays, you may not have a chance to design and make a PCB for this
-        class, as the turnaround & shipping time for a PCB tend to not work very
-        well with the milestones of this class. We also have tools in the PDL
-        that helps with making your PCB, although that can also be time
-        consuming.
-      </p>
-      <p>
-        So, what do we want to do if we want something more reliable than a
-        breadboarded circuit in our final product? A reasonable solution is a
-        'perfboard'! A perfboard doesn't have traces, so you'll need to solder
-        your own wires, but it still has the reliability and permanence of a
-        printed circuit board.
-      </p>
-      <GuideImage
-        removeMargin={true}
-        border={false}
-        size="LARGE"
-        src="/images/toobers/404"
-        alt="PCB Permanence"
-      />
-      <p>
-        Alright, now that we understand that option, back to the PCB. Take a
-        look at the PCB, and take a few seconds to identify all the different
-        components that you'll attach to it. You may notice that we're missing
-        locations for the resistors for the LEDs on the PCBs. That's because the
-        buttons you have are extra special! Each arcade button is actually a
-        button AND a LED with a built-in resistor.
-      </p>
-      <h2>The PCB File</h2>
-      <p>
-        This PCB was made in{' '}
-        <GuideLink href="https://easyeda.com/" target="_blank">
-          EasyEDA
-        </GuideLink>
-        , a free, online-based PCB design tool. If you're curious, you can
-        download the file{' '}
-        <GuideLink href="404 TODO" target="_blank">
-          here
-        </GuideLink>
-        .
-      </p>
-      <GuideImage
-        removeMargin={true}
-        border={false}
-        size="LARGE"
-        src="/images/toobers/404"
-        alt="PCB Design Screenshot"
-      />
     </div>
   );
 };

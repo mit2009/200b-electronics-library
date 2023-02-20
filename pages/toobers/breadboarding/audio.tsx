@@ -109,6 +109,10 @@ const Page = () => {
         the first sound file (which should say something like "Toobers, get
         ready to play!".)
       </p>
+      <p>
+        Noted staffnote hotfix: (thanks, team sam & jimmy) - you need to
+        download dfplayer mini library... i'll also add this
+      </p>
       <div className="center">
         <GuideLink
           target="_blank"

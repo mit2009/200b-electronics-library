@@ -447,7 +447,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
             }}
             placeholder={'coming soon?'}
             onKeyDown={(e) => {
-              if (e.code == 'Enter') {
+              if (e.code == 'Enter' || e.code == 'y') {
                 const phrase = unlockPhrase.toLocaleLowerCase();
                 switch (phrase) {
                   case 'bready':

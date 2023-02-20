@@ -10,7 +10,7 @@ const Page = () => {
         flux and/or rosin can produce dust and fumes that are hazardous if
         ingested in significant quantities. For this lab, because our exposure
         to soldering is for a relatively short amount of time and we're working
-        in a well-ventilated space, the risk is very low to none.
+        in a well-ventilated space, the risk is insanely negligible.
       </p>
       <p>
         Whenever we work with anything that has fumes, we want to make sure

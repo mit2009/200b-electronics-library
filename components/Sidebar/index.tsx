@@ -152,6 +152,11 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         value: '3. Soldering',
         location: Location.IN_LAB,
         has_pages: true,
+        whatsDue: {
+          '3.1': 'Get experience soldering',
+          '3.2': 'Solder the JST-XH connector for the power toggle switch',
+          '3.3': 'Solder the JST-XH connector for the charging circuit',
+        },
         pages: {
           '/overview': {
             value: 'Overview',

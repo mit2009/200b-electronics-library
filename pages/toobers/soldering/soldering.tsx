@@ -10,8 +10,17 @@ const Page = () => {
       <p>
         Turn your soldering irons on. These are particularily fancy and have a
         temperature adjust - turn the knob so it shows 800F. The temperature
-        should slowly rise until it reaches that.
+        should slowly rise until it reaches that. We're going to be soldering
+        JST-XH connectors to both the components.{' '}
+        <strong>
+          note how they are different than the ones for the speaker (the Molex
+          ones)
+        </strong>
       </p>
+      <GuideImage
+        src={'/images/toobers/jst-xh-charging-circuit.png'}
+        border={false}
+      />
       <p>
         Let's start with the charging circuit. Put the wires into the through
         holes in the charging circuit board, noting where the red and the black
@@ -83,7 +92,15 @@ const Page = () => {
         pile. Feel free to grab one to investigate.)
       </p>
       <h2>Repeat for Switch!</h2>
-      <p>Solder </p>
+      <p>
+        Go ahead and proceed to do this again but for the switch. Once again,
+        pay attention to where the red wire goes and where the black wire goes.
+      </p>
+      <GuideImage
+        src={'/images/toobers/switch.jpg'}
+        size={'MEDIUM'}
+        border={true}
+      />
       <WhatsDue chapter={'/soldering'} />
     </div>
   );

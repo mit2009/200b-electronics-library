@@ -154,8 +154,8 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         has_pages: true,
         whatsDue: {
           '3.1': 'Get experience soldering',
-          '3.2': 'Solder the JST-XH connector for the power toggle switch',
-          '3.3': 'Solder the JST-XH connector for the charging circuit',
+          '3.2': 'Solder the JST-XH connector for the charging circuit',
+          '3.3': 'Solder the JST-XH connector for the power toggle switch',
         },
         pages: {
           '/overview': {

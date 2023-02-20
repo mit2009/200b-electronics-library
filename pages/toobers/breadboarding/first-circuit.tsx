@@ -1,3 +1,5 @@
+import GuideImage from '../../../components/GuideImage';
+
 const Page = () => {
   return (
     <div>
@@ -16,9 +18,29 @@ const Page = () => {
       <p>
         Below is an image of what the product of this section will look like.
       </p>
-      {/* TODO: image of first circuit */}
+      <GuideImage
+        src="/images/toobers/one-led-button.jpg"
+        alt="First Circuit"
+        border={false}
+      />
       <p>Below is the circuit diagram.</p>
-      {/* TODO: image of circuit diagram */}
+      <GuideImage
+        src="/images/toobers/led-diagram.png"
+        alt="First Circuit Diagram"
+        border={false}
+        size={'LARGE'}
+      />
+      <p>
+        In the future, when we begin working with the actual sugar cubes, we'll
+        simplify the diagram to be what it's shown below. Take a look and see if
+        you understand the difference. If not, check-in with your instructor!
+      </p>
+      <GuideImage
+        src="/images/toobers/led-sugarcube.png"
+        alt="LED diagram with the sugar cube"
+        border={false}
+        size={'LARGE'}
+      />
       <p>
         Take a look at one of the LEDs in your kit. LEDs are light emitting
         diodes - but these are rather special. Inside each LED is actually a
@@ -27,11 +49,22 @@ const Page = () => {
         <strong>WS2812b LEDs</strong>. These are designed to be{' '}
         <strong>chained together in a series</strong>.
       </p>
+      <GuideImage
+        src="/images/toobers/ic-diagram.png"
+        alt="A closer look at the LED"
+        size={'FULL'}
+        border={false}
+      />
       <p>
         Each pin of this LED does something different. Take a look at the
         diagram below.
       </p>
-      {/* TODO: LED Diagram */}
+      <GuideImage
+        src="/images/toobers/ws2812b-pinout-diagram.png"
+        alt="A closer look at the LED"
+        size={'MEDIUM'}
+        border={false}
+      />
       <p>
         The microcontroller sends data to all the WS2812b LEDs through one of
         the data in pins <span className="pin">Di</span>. For example, the

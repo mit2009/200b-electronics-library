@@ -120,9 +120,12 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         has_pages: true,
         whatsDue: {
           '2.1':
-            'Using the breadboard, wire up a working, playable prototype of your Toobers toy!',
-          '2.2':
-            'Take a photo of your breadboard prototype for your portfolio.',
+            'Assemble your individual electronics kit as a team, ensuring you have everything to prototype your Toober',
+          '2.2': 'Have 4 WS2812b LEDs and 4 buttons wired up to the Arduino',
+          '2.3':
+            'Have the WS2812b LEDs change when their respective buttons are pressed',
+          '2.4':
+            'Play a sample audio file off the DFPlayer, triggered by the Arduino',
         },
         pages: {
           '/lab2-intro': {

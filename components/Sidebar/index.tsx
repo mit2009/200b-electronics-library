@@ -447,9 +447,12 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
             }}
             placeholder={'coming soon?'}
             onKeyDown={(e) => {
-              if (e.code == 'Enter' || e.code == 'y') {
+              console.log(e.key);
+              if (e.code == 'Enter' || e.key === 'y') {
                 const phrase = unlockPhrase.toLocaleLowerCase();
+                console.log(phrase);
                 switch (phrase) {
+                  case 'bread':
                   case 'bready':
                     if (!pageStates['/breadboarding']) {
                       setPageStates((current) => {

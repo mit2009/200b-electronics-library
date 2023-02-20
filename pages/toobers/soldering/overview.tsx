@@ -10,34 +10,15 @@ const Page = () => {
       <h2>Hot Stuff</h2>
       <WhatsDue chapter={'/soldering'} />
       <p>
-        This is what you'll end up with today. This is sometimes known as an{' '}
-        <strong>Arduino Shield</strong>, a printed circuit board (PCB) component
-        that can sit directly ontop of the Arduino.{' '}
-        <strong>
-          The long leads you see on the PCB go into the Arduino pins
-        </strong>
-        , and the board has connectors which allow us to later assemble and
-        connect our components easier. Take a look below at what your end result
-        will be.
-      </p>
-      <GuideImage
-        removeMargin={true}
-        border={false}
-        size="LARGE"
-        src="/images/toobers/404"
-        alt="End Result"
-      />
-      <h2>Soldering</h2>
-      <p>
         Soldering is the process of joining different types of metal together by
         melting a filler material (the solder). Solder is typically made of lead
         or lead-free alloys (which have low melting-points). We'll discuss the
-        safety of soldering and soldering fumes in a later section.
+        safety of soldering and soldering fumes in the next section.
       </p>
       <GuideImage
         removeMargin={true}
         border={false}
-        size="LARGE"
+        size="MEDIUM"
         src="/images/toobers/soldering-closeup.gif"
         alt="Close-up of Soldering"
       />

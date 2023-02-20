@@ -1,4 +1,7 @@
+import Link from 'next/link';
 import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
+import { Ws2812bLed, PIN } from '../../../components/Ws2812bLed';
 
 const Page = () => {
   return (
@@ -73,37 +76,31 @@ const Page = () => {
         removes the first color data, and then sends the rest of the data down
         the line. So the data out <span className="pin">Dout</span> of LED 1
         would remove <code>orange</code> and then send{' '}
-        <code>blue, red, pink</code>. And so on and so on with the rest of the
-        LEDs.
+        <code>blue, red, pink</code> to LED 2. And so on and so on with the rest
+        of the LEDs.
       </p>
+      <GuideImage
+        src="/images/toobers/top-down-one-led-one-button.jpg"
+        alt="One Light and One Button in Top Down View"
+      />
       <h2>Connecting the LED</h2>
       <p>
         Let's start by assembling one LED. Throughout this guide, we'll provide
         locations of pins as suggestions - as long as you have the right
         connections, you're good to go.
       </p>
-      {/* TODO: Update instructions */}
+      {/* TODO(dillon): Update instructions for the LED */}
       <ul>
         <li>
-          Bring Pin 2 of the Arduino <span className="pin">PIN 2</span> to the
-          board <span className="pin">J3</span>
+          Grab the LED. Place the shorter <Ws2812bLed pin={PIN.Din} /> into blah
+          blah.
         </li>
         <li>
-          Grab the red LED. Place the longer end{' '}
-          <span className="sign positive">+</span> into
-          <span className="pin">H3</span> and the shorter end{' '}
-          <span className="sign negative">-</span> into
-          <span className="pin">H4</span>.
-        </li>
-        <li>
-          Place a resistor on the board (220&#8486;) from
+          Place a blah blah blah on the board (220&#8486;) from{' '}
           <span className="pin">G4</span> to <span className="pin">E4</span>
         </li>
-        <li>
-          Finally, connect the resistor to ground
-          <span className="pin">A4</span> to{' '}
-          <span className="pin black">Gnd</span>
-        </li>
+        <li>blah blah</li>
+        <li>blah blah</li>
       </ul>
       <p>
         Note that you'll likely have red wire, black wire, and a random color in
@@ -111,7 +108,7 @@ const Page = () => {
         random color is there to help you distinguish the different wires (and
         so the actual wire color itself doesn't matter.)
       </p>
-      {/* TODO: LED Photo on breadboard photo */}
+      {/* TODO(dillon): Update instructions for the BUTTON */}
       <h2>Connecting the Button</h2>
       <p>
         Next, let's attach the button. If you grab one of the buttons from your
@@ -122,18 +119,18 @@ const Page = () => {
         <em>on</em>.) There's a little cap which can go onto the button, to give
         it some color and a slightly larger push area.
       </p>
-      {/* TODO: Update instructions */}
       <ul>
         <li>
           Bring Pin 6 of the Arduino <span className="pin">PIN 6</span> into the
-          board <span className="pin">J2</span>
+          board <span className="pin">J2</span> blah blah blah
         </li>
         <li>
           Place a wire to jump across the trough
-          <span className="pin">G2</span> to <span className="pin">E2</span>
+          <span className="pin">G2</span> to blah blah{' '}
+          <span className="pin">E2</span>
         </li>
         <li>
-          Place a button on the board from the input line
+          Place a blah blah on the board from the input line
           <span className="pin">C2</span> to the ground
           <span className="pin">C4</span>
         </li>
@@ -144,19 +141,34 @@ const Page = () => {
         the Arduino software now.
       </p>
       <h2>The Arduino Code</h2>
-      {/* TODO: Download button */}
-      {/* TODO: Update Link */}
+      <p>We've provided some test code for you. Check out the link below!</p>
+      <div className="center">
+        <GuideLink
+          target="_blank"
+          href="https://github.com/mit2009/200b-toobers/blob/main/2023/arduino/LEDandButtonTest/LEDandButtonTest.ino"
+        >
+          <span className={'download-btn'}>
+            Get the <strong>One WS2812b LED & Button Test Code</strong>
+          </span>
+        </GuideLink>
+      </div>
       <p>
-        Open the file up in your Arduino IDE, and upload the file to the
+        Open the file up in your Arduino IDE, and upload the code to the
         Arduino. Be sure your IDE is correctly configured and you've selected
         the right settings. If you don't remember this, you can always jump back
-        to part 3 to take a look.
+        to{' '}
+        <GuideLink href="http://localhost:3000/toobers/breadboarding/test-microcontroller">
+          the previous section
+        </GuideLink>{' '}
+        to take a look.
       </p>
       <p>
         Once the code has uploaded (the TX/RX light should stop blinking) the
-        new software should be on your Arduino! Go ahead and test it out. When
-        you press the button and release, the light should switch between three
-        different colors.
+        new software should be on your Arduino! Go ahead and test it out.{' '}
+        <strong>
+          When you press the button and release, the light should switch between
+          three different colors.
+        </strong>
       </p>
       <p>
         If this looks correct, hooray! Take a few minutes to take a look at the

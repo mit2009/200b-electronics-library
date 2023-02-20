@@ -1,4 +1,5 @@
 import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
 import { PIN, Ws2812bLed } from '../../../components/Ws2812bLed';
 
 const Page = () => {
@@ -8,22 +9,22 @@ const Page = () => {
       <h2>Multiply by Four</h2>
       <p>
         It's time to kick it up a notch! We'll be hooking up all four of the
-        LEDs and buttons now. Because we're using the WS2812B LEDs, we can wire
+        LEDs and buttons now. Because we're using the WS2812b LEDs, we can wire
         these up in series, with the data out <span className="pin">Dout</span>{' '}
         of one LED going into the data in <span className="pin">Di</span> of the
         next LED.
       </p>
       <p>The final inputs/outputs on the Arduino should be as follows</p>
       <p>
-        <span className="pin">PIN 2</span> Red Button
+        <span className="pin">PIN 8</span> Red Button
         <br />
-        <span className="pin">PIN 3</span> Green Button
+        <span className="pin">PIN 7</span> Green Button
         <br />
-        <span className="pin">PIN 4</span> Blue Button
+        <span className="pin">PIN 6</span> Blue Button
         <br />
         <span className="pin">PIN 5</span> Yellow Button
         <br />
-        <span className="pin">PIN 6</span> WS2812b LEDs
+        <span className="pin">PIN 4</span> WS2812b LEDs
       </p>
       <p>
         If you think you understand how you built the red LED and button, see if
@@ -31,7 +32,11 @@ const Page = () => {
         don't worry - keep reading for a handy guide!
       </p>
       <p>Your result should look something like this:</p>
-      {/* TODO: FOUR LEDs Demo <GuideImage /> */}
+      <GuideImage
+        src="/images/toobers/four-new-friends-perspective.jpg"
+        alt="Four LEDs"
+        size={'SMALL'}
+      />
       <p>
         In this photo, we used different colored wires, just to make it easier
         to identify. You can ask around for different colors of wire (we always
@@ -45,9 +50,31 @@ const Page = () => {
         alt="Jumper wires"
       />
       <p>
+        Remember to <strong>KEEP IT NEAT!</strong> notice that in our example,
+        we press down as many of the wires as possible to the board so they're
+        easy to follow. When building your final toy, you also want to keep
+        wires as clean as possible. Messy wires are super hard to debug and
+        figure out if something is wrong - and instructors have a much harder
+        time helping you!
+      </p>
+      <GuideImage
+        size="SMALL"
+        border={false}
+        src="/images/toobers/lots-of-wires.jpg"
+        alt="An image showing a lot of wires"
+        caption="This is an actual project from a while back we've encountered. Try to keep your wires neater than this!"
+      />
+      <p>
         If you'd like, you're free to follow the pin markings below to get to
         build your circuit so it's identical to ours.
       </p>
+
+      <GuideImage
+        src="/images/toobers/four-new-friends-top-down.jpg"
+        alt="Four LEDs"
+        border={true}
+        size={'LARGE'}
+      />
       <h4>Green</h4>
       <p>(everything is shifted 6 from red)</p>
       <ul>
@@ -57,6 +84,9 @@ const Page = () => {
           pin, <Ws2812bLed pin={PIN.Vin} />, should be in position{' '}
           <span className="pin">F26</span>.
         </li>
+        <li>blah blah</li>
+        <li>blah blah</li>
+        <li>blah blah</li>
       </ul>
       <h4>Blue</h4>
       <p>(everything is shifted 6 from green)</p>
@@ -123,12 +153,36 @@ const Page = () => {
           <span className="pin black">GND</span>
         </li>
       </ul>
+      <GuideImage
+        src={'/images/toobers/four-new-friends-perspective.jpg'}
+        size={'LARGE'}
+        alt="Four LEDs"
+      />
+      <GuideImage
+        src={'/images/toobers/four-new-friends-weird.jpg'}
+        size={'LARGE'}
+        alt="Four LEDs"
+      />
       <h2>Software for our Four New Friends</h2>
       <p>
         It's always good to test your wiring in stages. Once you have a lot of
         wires, it can be difficult to find what's wrong if there's a lot going
-        on. For this, we've prepared a short demo file which will help you test
-        to see if you've got all the LEDs and buttons wired up correctly.
+        on. Once again, for this, we've prepared some code for you to see if
+        you've got all the LEDs and buttons wired up correctly.
+      </p>
+      <div className="center">
+        <GuideLink
+          target="_blank"
+          href="https://github.com/mit2009/200b-toobers/blob/main/2023/arduino/FourNewFriends/FourNewFriends.ino"
+        >
+          <span className={'download-btn'}>
+            Get the <strong>Four New Friends code</strong>
+          </span>
+        </GuideLink>
+      </div>
+      <p>
+        The correct behavior is: once you click on each button, the
+        corresponding LED should blink twice! If it works, you're good to go!
       </p>
     </div>
   );

@@ -11,6 +11,9 @@
     max-width: 500px;
     border-radius: 12px;
     border: 3px solid var(--grey3);
+    &:hover {
+      filter: brightness(1.1);
+    }
   }
 
   img.full {
@@ -35,10 +38,6 @@
 
   .hideBorder {
     border: none;
-  }
-
-  &:hover {
-    filter: brightness(1.1);
   }
 
   a {

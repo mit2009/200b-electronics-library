@@ -27,9 +27,13 @@ export const Ws2812bLed = ({ pin }: { pin: PIN }) => {
         ) : pin === PIN.Gnd ? (
           'GND'
         ) : pin === PIN.Dout ? (
-          'Dout'
+          <>
+            D<span className={styles.subscript}>out</span>
+          </>
         ) : pin === PIN.Din ? (
-          'Din'
+          <>
+            D<span className={styles.subscript}>in</span>
+          </>
         ) : (
           ''
         )}

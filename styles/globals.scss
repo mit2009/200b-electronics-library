@@ -330,6 +330,29 @@ div {
   }
 }
 
+.center {
+  text-align: center;
+}
+
+.download-btn {
+  border: 2px solid var(--section-color);
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 18px;
+  flex: 1 1 100px;
+  display: inline-block;
+  transition: 0.2s all;
+  position: relative;
+  margin: 10px auto 30px;
+  font-weight: normal;
+  color: var(--section-color);
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+}
+
 @media (max-width: variables.$media-max-width) {
   .app-container {
     grid-template-rows: auto 1fr;

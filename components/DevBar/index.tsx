@@ -3,14 +3,14 @@ import React, { useState } from 'react';
 import cx from 'classnames';
 import styles from './DevBar.module.scss';
 
-const HIDDEN_DURATION = 2500;
+const HIDDEN_DURATION = 8000;
 
 export const DevBar = () => {
   const [shrink, setShrink] = useState(true);
   const [visible, setVisible] = useState(true);
 
   return (
-    <div className={cx(styles.devMarker, {[styles.hidden]: !visible})}>
+    <div className={cx(styles.devMarker, { [styles.hidden]: !visible })}>
       <button
         onClick={() => {
           setShrink((current) => !current);
@@ -23,7 +23,7 @@ export const DevBar = () => {
         <>
           <button
             onClick={() => {
-              console.log("Clearing local storage");
+              console.log('Clearing local storage');
               localStorage.clear();
             }}
           >

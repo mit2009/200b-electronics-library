@@ -345,6 +345,10 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   const [confettiColor, setConfettiColor] = useState<string[]>([]);
 
   useEffect(() => {
+    setConfettiColor([]);
+  }, []);
+
+  useEffect(() => {
     Object.keys(pageStates).map((page) => {
       if (pageStates[page]) {
         window.localStorage.setItem(
@@ -376,137 +380,129 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
     setPageStates(defaultState);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.asPath]);
+  const chapters = PAGES_LAYOUT[currentSection].chapters as {
+    [url: string]: IChapter;
+  };
+  return (
+    <div className={styles.chapterContainer}>
+      {Object.keys(chapters).map((chapterUrl) => {
+        if (!pageStates[chapterUrl]) {
+          return <React.Fragment key={chapterUrl}></React.Fragment>;
+        }
+        const chapterPath = `${currentSection}${chapterUrl}`;
 
-  if (
-    Object.hasOwn(PAGES_LAYOUT, currentSection) &&
-    PAGES_LAYOUT[currentSection].has_chapters
-  ) {
-    const chapters = PAGES_LAYOUT[currentSection].chapters as {
-      [url: string]: IChapter;
-    };
-    return (
-      <div className={styles.chapterContainer}>
-        {Object.keys(chapters).map((chapterUrl) => {
-          if (!pageStates[chapterUrl]) {
-            return <React.Fragment key={chapterUrl}></React.Fragment>;
-          }
-          const chapterPath = `${currentSection}${chapterUrl}`;
-
-          return (
+        return (
+          <div
+            className={cx(styles.chapter, [
+              styles[kebabToCamel(chapterUrl.slice(1))],
+            ])}
+            key={chapterUrl}
+          >
             <div
-              className={cx(styles.chapter, [
-                styles[kebabToCamel(chapterUrl.slice(1))],
-              ])}
-              key={chapterUrl}
+              className={cx(styles.chapterName, {
+                [styles.selected]: dirs[dirs.length - 1] === chapterUrl,
+              })}
             >
-              <div
-                className={cx(styles.chapterName, {
-                  [styles.selected]: dirs[dirs.length - 1] === chapterUrl,
-                })}
-              >
-                {chapters[chapterUrl].value}
-              </div>
-              <div className={styles.details}>
-                <div className={styles.location}>
-                  {chapters[chapterUrl].location}
-                </div>
-                {chapters[chapterUrl].due_date && (
-                  <div className={styles.dueDate}>
-                    {chapters[chapterUrl].due_date}
-                  </div>
-                )}
-              </div>
-              <PageList
-                chapterUrl={chapterPath}
-                pages={chapters[chapterUrl].pages}
-                dirs={dirs}
-              />
+              {chapters[chapterUrl].value}
             </div>
-          );
-        })}
-        <div
-          className={cx(styles.chapter, styles.comingSoon)}
-          onClick={() => {
-            setEnteringUnlockPhrase(true);
-            setConfettiColor([]);
-          }}
-        >
-          {!enteringUnlockPhrase && (
-            <div className={styles.moreComingSoon}>more coming soon?</div>
-          )}
-          {enteringUnlockPhrase && (
-            <input
-              type="text"
-              onChange={(e) => {
-                const phrase = e.target.value;
-                setUnlockPhrase(phrase);
-              }}
-              placeholder={'coming soon?'}
-              onKeyDown={(e) => {
-                if (e.code == 'Enter') {
-                  const phrase = unlockPhrase.toLocaleLowerCase();
-                  switch (phrase) {
-                    case 'bready':
-                      if (!pageStates['/breadboarding']) {
-                        setPageStates((current) => {
-                          return {
-                            ...current,
-                            '/breadboarding': true,
-                            '/soldering': true,
-                            '/power': true,
-                            '/prototype': true,
-                          };
-                        });
-                        router.push(`${dirs[0]}/breadboarding`);
-                        setUnlockPhrase('');
-                        setEnteringUnlockPhrase(false);
-                        setConfettiColor(['#c73030']);
-                      }
-                      break;
-                    case 'cadlab':
-                      if (!pageStates['/cad']) {
-                        setPageStates((current) => {
-                          return {
-                            ...current,
-                            '/breadboarding': true,
-                            '/soldering': true,
-                            '/power': true,
-                            '/prototype': true,
-                            '/cad': true,
-                          };
-                        });
-                        router.push(`${dirs[0]}/cad`);
-                        setUnlockPhrase('');
-                        setEnteringUnlockPhrase(false);
-                        setConfettiColor(['#a600a6']);
-                      }
-                      break;
-                    default:
-                      setUnlockPhrase('');
-                      break;
-                  }
-                }
-              }}
-            />
-          )}
-        </div>
-        {confettiColor.length > 0 && (
-          <div className={styles.confettiContainer}>
-            <ConfettiExplosion
-              particleCount={100}
-              width={2000}
-              height={'300vh'}
-              colors={confettiColor}
-              duration={6000}
-              force={0.8}
+            <div className={styles.details}>
+              <div className={styles.location}>
+                {chapters[chapterUrl].location}
+              </div>
+              {chapters[chapterUrl].due_date && (
+                <div className={styles.dueDate}>
+                  {chapters[chapterUrl].due_date}
+                </div>
+              )}
+            </div>
+            <PageList
+              chapterUrl={chapterPath}
+              pages={chapters[chapterUrl].pages}
+              dirs={dirs}
             />
           </div>
+        );
+      })}
+      <div
+        className={cx(styles.chapter, styles.comingSoon)}
+        onClick={() => {
+          setEnteringUnlockPhrase(true);
+          setConfettiColor([]);
+        }}
+      >
+        {!enteringUnlockPhrase && (
+          <div className={styles.moreComingSoon}>more coming soon?</div>
+        )}
+        {enteringUnlockPhrase && (
+          <input
+            type="text"
+            onChange={(e) => {
+              const phrase = e.target.value;
+              setUnlockPhrase(phrase);
+            }}
+            placeholder={'coming soon?'}
+            onKeyDown={(e) => {
+              if (e.code == 'Enter') {
+                const phrase = unlockPhrase.toLocaleLowerCase();
+                switch (phrase) {
+                  case 'bready':
+                    if (!pageStates['/breadboarding']) {
+                      setPageStates((current) => {
+                        return {
+                          ...current,
+                          '/breadboarding': true,
+                          '/soldering': true,
+                          '/power': true,
+                          '/prototype': true,
+                        };
+                      });
+                      router.push(`${dirs[0]}/breadboarding`);
+                      setUnlockPhrase('');
+                      setEnteringUnlockPhrase(false);
+                      setConfettiColor(['#c73030']);
+                    }
+                    break;
+                  case 'cadlab':
+                    if (!pageStates['/cad']) {
+                      setPageStates((current) => {
+                        return {
+                          ...current,
+                          '/breadboarding': true,
+                          '/soldering': true,
+                          '/power': true,
+                          '/prototype': true,
+                          '/cad': true,
+                        };
+                      });
+                      router.push(`${dirs[0]}/cad`);
+                      setUnlockPhrase('');
+                      setEnteringUnlockPhrase(false);
+                      setConfettiColor(['#a600a6']);
+                    }
+                    break;
+                  default:
+                    setUnlockPhrase('');
+                    break;
+                }
+              }
+            }}
+          />
         )}
       </div>
-    );
-  } else {
-    return <></>;
-  }
+      {confettiColor.length > 0 && (
+        <div className={styles.confettiContainer}>
+          <ConfettiExplosion
+            particleCount={100}
+            width={2000}
+            height={'300vh'}
+            colors={confettiColor}
+            duration={6000}
+            force={0.8}
+          />
+        </div>
+      )}
+    </div>
+  );
 };
 
 const getCurrentPage = (dirs: string[]): IPage => {
@@ -590,7 +586,10 @@ export const Sidebar = () => {
             );
           })}
         </div>
-        <ChapterContainer dirs={dirs} />
+        {Object.hasOwn(PAGES_LAYOUT, dirs[0]) &&
+          PAGES_LAYOUT[dirs[0]].has_chapters && (
+            <ChapterContainer dirs={dirs} />
+          )}
       </div>
     </div>
   );

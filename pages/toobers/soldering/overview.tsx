@@ -34,7 +34,18 @@ const Page = () => {
         To prototype something quickly, often times you'll want to procure
         existing parts rather than build everything from scratch. In this case,
         the two parts we will be using don't have 'breadboard-friendly'
-        connectors. The two parts are:
+        connectors. The two parts are <strong>the power switch</strong> and the{' '}
+        <strong>charging circuit</strong>.
+      </p>
+      <GuideImage
+        src="/images/toobers/switch-and-charging-circuit.jpg"
+        size="MEDIUM"
+        border={false}
+      />
+      <p>
+        When we solder, we'll connect wires to them such that we can attach them
+        more easily to our breadboard, and then eventually to the printed
+        circuit board (PCB) of our final toy prototype.
       </p>
     </div>
   );

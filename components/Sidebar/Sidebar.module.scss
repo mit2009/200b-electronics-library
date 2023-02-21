@@ -348,6 +348,8 @@ ul.pageList {
     color: white;
     border-radius: 6px;
 
+    display: flex;
+
     &.comingSoonLink {
       background-color: #aaa;
       color: #444;
@@ -364,6 +366,9 @@ ul.pageList {
     background-color: var(--grey7);
 
     &::before {
+      align-self: center;
+      flex-shrink: 0;
+      
       content: '';
       margin-right: 5px;
       transform: rotate(-225deg);
@@ -380,6 +385,9 @@ ul.pageList {
     background-color: var(--section-color);
 
     &:after {
+      align-self: center;
+      flex-shrink: 0;
+
       content: '';
       margin-left: 5px;
       transform: rotate(-45deg);

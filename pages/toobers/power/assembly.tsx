@@ -111,6 +111,7 @@ const Page = () => {
         sure none of the holes of the acrylic are blocked by your battery.
       </p>
       <GuideImage src="/images/toobers/power-module-done.jpg" border={false} />
+      <p>Your power module is now assembled.</p>
       <p>
         When you plug in the charger, you should see a small red LED turn on.
         Once it turns green, it's done charging! If{' '}

@@ -91,8 +91,9 @@ const Page = () => {
       </p>
       <ul>
         <li>
-          Grab the LED. Place the shorter <Ws2812bLed pin={PIN.Din} /> into{' '}
-          <span className="pin">F20</span>
+          Grab the LED. The pins, in order from left to right, should be{' '}
+          <em>short, short, long, long</em>. Place the shorter{' '}
+          <Ws2812bLed pin={PIN.Din} /> into <span className="pin">F20</span>
         </li>
         <li>
           The other pins <Ws2812bLed pin={PIN.Vin} />,{' '}

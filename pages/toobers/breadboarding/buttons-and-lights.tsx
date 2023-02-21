@@ -65,8 +65,8 @@ const Page = () => {
         caption="This is an actual project from a while back we've encountered. Try to keep your wires neater than this!"
       />
       <p>
-        If you'd like, you're free to follow the pin markings below to get to
-        build your circuit so it's identical to ours.
+        If you'd like, you're free to follow the pin markings below to build
+        your circuit so it's identical to ours.
       </p>
 
       <GuideImage
@@ -76,57 +76,126 @@ const Page = () => {
         size={'LARGE'}
       />
       <h4>Green</h4>
-      <p>(everything is shifted 6 from red)</p>
+      <p>Let's run it back (everything is shifted 6 from red)</p>
       <ul>
         <li>
-          Place the WS2812b LED on the breadboard. The pins, in order from left
-          to right, should be <em>short, short, long, long</em>. The leftmost
-          pin, <Ws2812bLed pin={PIN.Vin} />, should be in position{' '}
-          <span className="pin">F26</span>.
+          Grab another LED. Place the shorter <Ws2812bLed pin={PIN.Din} /> into{' '}
+          <span className="pin">F26</span>
         </li>
-        <li>blah blah</li>
-        <li>blah blah</li>
-        <li>blah blah</li>
+        <li>
+          The other pins <Ws2812bLed pin={PIN.Vin} />,{' '}
+          <Ws2812bLed pin={PIN.Gnd} />, and <Ws2812bLed pin={PIN.Dout} /> should
+          fall into <span className="pin">F27</span>,{' '}
+          <span className="pin">F28</span>, and <span className="pin">F29</span>{' '}
+          respectively
+        </li>
+        <li>
+          Connect <span className="pin">G26</span> (
+          <Ws2812bLed pin={PIN.Din} />) to <span className="pin">G23</span> (the
+          first <Ws2812bLed pin={PIN.Dout} />)
+        </li>
+        <li>
+          Connect <span className="pin">G27</span> (<Ws2812bLed pin={PIN.Vin} />
+          ) to the <span className="pin red">3.7V</span> rail
+        </li>
+        <li>
+          Connect <span className="pin">I28</span> (<Ws2812bLed pin={PIN.Gnd} />
+          ) to the <span className="pin black">GND</span> rail
+        </li>
+        <li>
+          Grab another button and place it so that the pins fall into{' '}
+          <span className="pin">C26</span> and <span className="pin">C28</span>
+        </li>
+        <li>
+          Connect <span className="pin">A26</span> to the{' '}
+          <span className="pin black">GND</span> rail
+        </li>
+        <li>
+          Connect <span className="pin">E28</span> to{' '}
+          <span className="pin">J6</span> (Arduino Nano's{' '}
+          <span className="pin">D7</span>)
+        </li>
       </ul>
       <h4>Blue</h4>
-      <p>(everything is shifted 6 from green)</p>
+      <p>Third time's the charm (everything is shifted 6 from green)</p>
       <ul>
         <li>
-          LED Arduino Output to Breadboard <span className="pin">PIN 4</span> to
-          <span className="pin">J15</span>
+          Grab a third LED. Place the shorter <Ws2812bLed pin={PIN.Din} /> into{' '}
+          <span className="pin">F32</span>
         </li>
         <li>
-          Button Arduino Button to Breadboard
-          <span className="pin">PIN 8</span> to <span className="pin">J14</span>
+          The other pins <Ws2812bLed pin={PIN.Vin} />,{' '}
+          <Ws2812bLed pin={PIN.Gnd} />, and <Ws2812bLed pin={PIN.Dout} /> should
+          fall into <span className="pin">F33</span>,{' '}
+          <span className="pin">F34</span>, and <span className="pin">F35</span>{' '}
+          respectively
         </li>
         <li>
-          Wire to ground
-          <span className="pin">A16</span> to{' '}
-          <span className="pin black">GND</span>
+          Connect <span className="pin">G32</span> (
+          <Ws2812bLed pin={PIN.Din} />) to <span className="pin">G29</span> (the
+          second <Ws2812bLed pin={PIN.Dout} />)
+        </li>
+        <li>
+          Connect <span className="pin">G33</span> (<Ws2812bLed pin={PIN.Vin} />
+          ) to the <span className="pin red">3.7V</span> rail
+        </li>
+        <li>
+          Connect <span className="pin">I34</span> (<Ws2812bLed pin={PIN.Gnd} />
+          ) to the <span className="pin black">GND</span> rail
+        </li>
+        <li>
+          Grab another button and place it so that the pins fall into{' '}
+          <span className="pin">C32</span> and <span className="pin">C34</span>
+        </li>
+        <li>
+          Connect <span className="pin">A32</span> to the{' '}
+          <span className="pin black">GND</span> rail
+        </li>
+        <li>
+          Connect <span className="pin">E34</span> to{' '}
+          <span className="pin">J7</span> (Arduino Nano's{' '}
+          <span className="pin">D6</span>)
         </li>
       </ul>
       <h4>Yellow</h4>
-      <p>(everything is shifted 6 from blue)</p>
+      <p>One last time for good measure (everything is shifted 6 from blue)</p>
       <ul>
         <li>
-          LED Arduino Output to Breadboard <span className="pin">PIN 5</span> to
-          <span className="pin">J21</span>
+          Grab a fourth LED. Place the shorter <Ws2812bLed pin={PIN.Din} /> into{' '}
+          <span className="pin">F38</span>
         </li>
         <li>
-          Button Arduino Button to Breadboard
-          <span className="pin">PIN 9</span> to <span className="pin">J20</span>
+          The other pins <Ws2812bLed pin={PIN.Vin} />,{' '}
+          <Ws2812bLed pin={PIN.Gnd} />, and <Ws2812bLed pin={PIN.Dout} /> should
+          fall into <span className="pin">F39</span>,{' '}
+          <span className="pin">F40</span>, and <span className="pin">F41</span>{' '}
+          respectively
         </li>
         <li>
-          Short wire to bring Input to button
-          <span className="pin">G20</span> to <span className="pin">E20</span>
+          Connect <span className="pin">G38</span> (
+          <Ws2812bLed pin={PIN.Din} />) to <span className="pin">G35</span> (the
+          third <Ws2812bLed pin={PIN.Dout} />)
         </li>
         <li>
-          Button from wire to ground <span className="pin">C20</span> to
-          <span className="pin">C22</span>
+          Connect <span className="pin">G39</span> (<Ws2812bLed pin={PIN.Vin} />
+          ) to the <span className="pin red">3.7V</span> rail
         </li>
         <li>
-          Wire to ground <span className="pin">A22</span> to
-          <span className="pin black">GND</span>
+          Connect <span className="pin">I40</span> (<Ws2812bLed pin={PIN.Gnd} />
+          ) to the <span className="pin black">GND</span> rail
+        </li>
+        <li>
+          Grab another button and place it so that the pins fall into{' '}
+          <span className="pin">C38</span> and <span className="pin">C40</span>
+        </li>
+        <li>
+          Connect <span className="pin">A38</span> to the{' '}
+          <span className="pin black">GND</span> rail
+        </li>
+        <li>
+          Connect <span className="pin">E40</span> to{' '}
+          <span className="pin">J8</span> (Arduino Nano's{' '}
+          <span className="pin">D5</span>)
         </li>
       </ul>
       <GuideImage

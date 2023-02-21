@@ -396,9 +396,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
 
   const handleSubmit = () => {
     const phrase = unlockPhrase.toLocaleLowerCase();
-    console.log(phrase);
     switch (phrase) {
-      case 'bread':
       case 'bready':
         if (!pageStates['/breadboarding']) {
           setPageStates((current) => {
@@ -499,8 +497,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
               }}
               placeholder={'coming soon?'}
               onKeyDown={(e) => {
-                console.log(e.key);
-                if (e.code == 'Enter' || e.key === 'y') {
+                if (e.code == 'Enter') {
                   handleSubmit();
                 }
               }}

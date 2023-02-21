@@ -149,7 +149,7 @@ const Page = () => {
       <div className="center">
         <GuideLink
           target="_blank"
-          href="https://github.com/mit2009/200b-toobers/blob/main/2023/arduino/FourNewFriends/FourNewFriends.ino"
+          href="https://github.com/mit2009/200b-toobers/blob/main/2023/arduino/FourNewFriends.zip?raw=true"
         >
           <span className={'download-btn'}>
             Get the <strong>Four New Friends code</strong>

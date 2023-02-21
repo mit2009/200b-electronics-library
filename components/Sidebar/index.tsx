@@ -501,6 +501,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
                   handleSubmit();
                 }
               }}
+              autoFocus
             />
           </form>
         )}

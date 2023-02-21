@@ -33,12 +33,72 @@ const Test = () => {
         logic for our Simon-esque game!
       </p>
       <h2>Place your Arduino on the Breadboard</h2>
-      {/* <p>// PLACE ARDUINO ON BREADBOARD INSTRUCTIONS</p> */}
+      <p>
+        With the USB port side of the Arduino facing towards the edge of
+        breadboard, insert your Arduino into the breadbaord. The Arduino should
+        bridge the middle channel with its pins on opposite sides. Your
+        Arduino's <span className="pin">D13</span> pin should fall into the
+        breadboard's <span className="pin">D1</span> hole.
+      </p>
+      <GuideImage
+        src="/images/toobers/nano_seated.jpg"
+        alt="Arduino on Breadboard"
+        border={false}
+        size={'FULL'}
+      />
+      <p>
+        Make sure your Arduino is fully seated in the breadboard. The black
+        plastic underneath the Arduino should be flush with the breadboard. If
+        you can still see the pins between the breadboard and the Arduino, keep
+        pushing it down. New breadboards can be a little stiff and you may find
+        it difficult to push your Arduino all the way in. We recommend
+        flattening the box your Arduino Nano came in and using it to cover the
+        pins to protect your hands while pushing down. It can also help to
+        alternate sides rather than trying get one side completely seated before
+        moving onto the other.
+      </p>
+      <GuideImage
+        src={[
+          '/images/toobers/nano_not_seated.jpg',
+          '/images/toobers/nano_push_in.jpg',
+        ]}
+        alt="Arduino on Breadboard"
+        border={false}
+      />
+      <p>
+        For components like the Arduino Nano, we have spudgers available to help
+        you remove them from your breadboard if you ever need or want to.
+      </p>
+      <GuideImage
+        src="/images/toobers/spudger.jpg"
+        alt="Arduino on Breadboard"
+        border={false}
+        size={'MEDIUM'}
+      />
+
+      <p>
+        While we will be powering our Arduino Nano using a USB cable in the next
+        step, it is still a good idea to connect it the{' '}
+        <span className="pin red">3.7V</span> and{' '}
+        <span className="pin black">GND</span> rails.
+      </p>
+      <ul>
+        <li>
+          Using a short black wire connect <span className="pin">A14</span>{' '}
+          (Arduino Nano's <span className="pin black">GND</span>) to the{' '}
+          <span className="pin black">GND</span> rail
+        </li>
+        <li>
+          Using a red black wire connect <span className="pin">A15</span>{' '}
+          (Arduino Nano's <span className="pin red">VIN</span>) to the{' '}
+          <span className="pin red">3.7V</span> rail
+        </li>
+      </ul>
       <GuideImage
         src="/images/toobers/arduino-in-breadboard.jpg"
         alt="Arduino on Breadboard"
         border={false}
-        size={'FULL'}
+        size={'MEDIUM'}
       />
       <h2>Connecting & Uploading Code to the Arduino</h2>
       <p>

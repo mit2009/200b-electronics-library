@@ -7,3 +7,8 @@ export function kebabToCamel(str: string): string {
 export function splitPath(path: string): string[] {
   return path.split('/').filter((p) => p !== '');
 }
+
+// implement Object.hasown for older browsers
+export function hasOwn(obj: any, key: string): boolean {
+  return Object.prototype.hasOwnProperty.call(obj, key);
+}

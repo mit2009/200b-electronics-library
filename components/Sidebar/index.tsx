@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import cx from 'classnames';
 import styles from './Sidebar.module.scss';
 import Image from 'next/image';
-import { kebabToCamel } from '../../utils/format';
+import { hasOwn, kebabToCamel } from '../../utils/format';
 
 import ConfettiExplosion from 'react-confetti-explosion';
 
@@ -375,8 +375,8 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
 
   useEffect(() => {
     const defaultState = (
-      Object.hasOwn(PAGES_LAYOUT, currentSection) &&
-      Object.hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
+      hasOwn(PAGES_LAYOUT, currentSection) &&
+      hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
         ? PAGES_LAYOUT[currentSection].chapter_visibility
         : {}
     ) as IChapterVisibility;
@@ -535,13 +535,13 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
 
 const getCurrentPage = (dirs: string[]): IPage => {
   return dirs.reduce((acc: any, cur: string) => {
-    if (Object.hasOwn(acc, cur)) {
+    if (hasOwn(acc, cur)) {
       return acc[cur];
     }
-    if (acc.has_chapters && Object.hasOwn(acc.chapters, cur)) {
+    if (acc.has_chapters && hasOwn(acc.chapters, cur)) {
       return acc.chapters[cur];
     }
-    if (acc.has_pages && Object.hasOwn(acc.pages, cur)) {
+    if (acc.has_pages && hasOwn(acc.pages, cur)) {
       return acc.pages[cur];
     }
     return {};
@@ -570,7 +570,7 @@ export const Sidebar = () => {
   const path = router.pathname;
   const dirs = splitPath(path);
   const currentPage = getCurrentPage(dirs);
-  const currentPageName = Object.hasOwn(currentPage, 'value')
+  const currentPageName = hasOwn(currentPage, 'value')
     ? currentPage.value
     : 'Coming Soon!';
   return (
@@ -614,7 +614,7 @@ export const Sidebar = () => {
             );
           })}
         </div>
-        {Object.hasOwn(PAGES_LAYOUT, dirs[0]) &&
+        {hasOwn(PAGES_LAYOUT, dirs[0]) &&
           PAGES_LAYOUT[dirs[0]].has_chapters && (
             <ChapterContainer dirs={dirs} />
           )}
@@ -654,8 +654,8 @@ export const SectionNavigation = () => {
   const currentPage = getCurrentPage(dirs);
 
   let defaultState = (
-    Object.hasOwn(PAGES_LAYOUT, dirs[0]) &&
-    Object.hasOwn(PAGES_LAYOUT[dirs[0]], 'chapter_visibility')
+    hasOwn(PAGES_LAYOUT, dirs[0]) &&
+    hasOwn(PAGES_LAYOUT[dirs[0]], 'chapter_visibility')
       ? PAGES_LAYOUT[dirs[0]].chapter_visibility
       : {}
   ) as IChapterVisibility;
@@ -679,10 +679,7 @@ export const SectionNavigation = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (
-    !Object.hasOwn(currentPage, 'value') ||
-    !PAGES_LAYOUT[dirs[0]].has_chapters
-  ) {
+  if (!hasOwn(currentPage, 'value') || !PAGES_LAYOUT[dirs[0]].has_chapters) {
     return <></>;
   }
 

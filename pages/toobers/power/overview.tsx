@@ -8,6 +8,8 @@ const Page = () => {
         edge cases we've found. Instructors: you can skip it for now. we believe
         in you.
       </p>
+      <h2>Li-po Battery Safety</h2>
+      <p>// section on LiPo Batteries & Safety</p>
     </div>
   );
 };

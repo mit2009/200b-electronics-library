@@ -184,7 +184,8 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       },
       '/prototype': {
         value: '5. The Prototype',
-        location: Location.IN_LAB,
+        location: Location.AT_HOME,
+        due_date: 'Feb 24',
         has_pages: true,
         pages: {
           '/altogether': {

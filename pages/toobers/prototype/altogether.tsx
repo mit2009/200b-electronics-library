@@ -6,9 +6,15 @@ const Page = () => {
       <h1>Playable Prototype</h1>
       <h2>Almost there!</h2>
       <p>
-        This page talks a little bit about the final assembly. We haven't
-        written this up yet, so follow this image and best of luck!
+        First part: talk about connecting wires to join the POWER MODULE and the
+        SWITCH
       </p>
+      <GuideImage
+        src="/images/toobers/power-module-diagram.png"
+        border={false}
+        size={'LARGE'}
+      />
+      <p>talk about how to Connect the wires to the BREADBOARD</p>
       <GuideImage src="/images/toobers/final-assembly.jpg" border={false} />
     </div>
   );

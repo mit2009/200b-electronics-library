@@ -38,6 +38,11 @@ const Page = () => {
         you've used it before, and help each other understand how to use the
         item and where to go for more information.
       </p>
+      <GuideImage
+        src="/images/toobers/table-setup.jpg"
+        border={false}
+        size="FULL"
+      />
       <p>
         Pick another team member, and repeat for <strong>containers 2-9</strong>{' '}
         in order (some of you might have to go multiple times.) If nobody really

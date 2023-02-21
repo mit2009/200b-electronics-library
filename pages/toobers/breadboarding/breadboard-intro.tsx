@@ -5,7 +5,6 @@ const Page = () => {
     <div>
       <h1>The Breadboard</h1>
       <h2>Understanding the Breadboard</h2>
-
       <p>
         We've got a lot of components we want to assemble together; how do we
         actually connect them? Introducing: <strong>breadboards</strong>! A

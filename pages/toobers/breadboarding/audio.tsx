@@ -34,9 +34,16 @@ const Page = () => {
       </p>
       <p>
         The microSD card only goes in one orientation, and to remove it, simply
-        push the microSD card in once for it to spring back out (known as a
-        push-push mechanism or a catch/latch in mechanical design)
+        <strong>push</strong> the microSD card in once for it to spring back out
+        (known as a push-push mechanism or a catch/latch in mechanical design).
       </p>
+      <GuideImage
+        src={[
+          '/images/toobers/microSD-placement.jpg',
+          '/images/toobers/microSD-installed.jpg',
+        ]}
+        border={false}
+      />
       <h2>Wiring up the DFPlayer</h2>
       <p>
         We'll start with placing the DFPlayer. The DFPlayer has two rows of
@@ -67,6 +74,11 @@ const Page = () => {
       />
       <ol>
         <li>
+          Place the <span className="pin red">VCC</span> of the DFPlayer into
+          point <span className="pin">46C</span> on the breadboard, facing in
+          the direction as shown
+        </li>
+        <li>
           Connect the DFPlayer's <span className="pin black">GND</span> pin to
           the <span className="pin black">GND</span> rail
         </li>
@@ -74,17 +86,37 @@ const Page = () => {
           Connect the DFPlayer's <span className="pin red">VCC</span> pin to the{' '}
           <span className="pin red">3.7V</span> rail
         </li>
-        <li>
-          Connect the DFPlayer's <span className="pin">TX</span> to the Arduino
-          Nano's <span className="pin">D3</span> pin
-        </li>
+      </ol>
+      <GuideImage
+        src={[
+          '/images/toobers/DFPlayer_position.jpg',
+          '/images/toobers/DFPlayer_wired1.jpg',
+        ]}
+        border={false}
+        size="SMALL"
+      />
+      <ol start={4}>
         <li>
           Connect the DFPlayer's <span className="pin">RX</span> to one end of a
-          resistor
+          1kΩ resistor - point <span className="pin">B47</span> on the
+          breadboard.
         </li>
         <li>
-          Connect the other end of the resistor to the Arduino Nano's{' '}
-          <span className="pin">D2</span> pin
+          Connect the other end of the resistor to point{' '}
+          <span className="pin">B47</span> on the breadboard. The resistor leads
+          might be a tad bit long - you're free to trim them down to keep it
+          neat (as long as they still seat into the breadboard)
+        </li>
+        <li>
+          Connect a jumper wire from <span className="pin">A47</span> to{' '}
+          <span className="pin">J11</span> (resistor to the Arduino Nano's{' '}
+          <span className="pin">D2</span> pin)
+        </li>
+        <li>
+          Connect a jumper wire from <span className="pin">A48</span> to{' '}
+          <span className="pin">D3</span> (the DFPlayer's{' '}
+          <span className="pin">TX</span> to the Arduino Nano's{' '}
+          <span className="pin">D3</span> pin)
         </li>
       </ol>
       <h2 id="molex">The Tiny Speaker Wires</h2>
@@ -190,12 +222,17 @@ const Page = () => {
           to <span className="pin red">5V</span> as shown above.
         </li>
         <li>
-          If it's still crackling, go into the code and lower the{' '}
-          <code>volume</code> (try something like 10.) It might be quiet, but we
-          won't have this problem once everything is powered off a charged and
-          healthy battery.
+          Go into the code and lower the <code>volume</code> (try something like
+          10.) It might be quiet, but we won't have this problem once everything
+          is powered off a charged and healthy battery.
+        </li>
+        <li>
+          There is another, unused <span className="pin black">Gnd</span> pin
+          out of the DFPlayer. Attach that to the{' '}
+          <span className="pin black">GND</span> rail with a short black wire.
         </li>
       </ul>
+      <GuideImage src="/images/toobers/DFPlayer_wired1b.jpg" border={false} />
       <h4>If the wrong files are playing:</h4>
       <ul>
         <li>

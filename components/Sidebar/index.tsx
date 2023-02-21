@@ -179,7 +179,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         },
         pages: {
           '/overview': {
-            value: 'Power Two Ways',
+            value: 'Li-ion Battery',
           },
           '/assembly': {
             value: 'Assemble your Power Module',

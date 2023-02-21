@@ -1,11 +1,12 @@
 import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
 import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
   return (
     <div>
-      <h1>The Power Circuit</h1>
-      <h2>Let the Energy Flow</h2>
+      <h1>Li-Ion Battery</h1>
+      <h2>Additional Form of Power</h2>
       <WhatsDue chapter="/power" />
       <p>
         You may have heard of the two common types of batteries used in
@@ -51,6 +52,32 @@ const Page = () => {
         environment which has items with high temperature (soldering irons),
         machinery (tools) and the occasional screws/screwdriver that could
         puncture your battery if you're not careful!
+      </p>
+      <p>
+        In the rare case of a li-ion battery fire, the fires are very difficult
+        to put out. With batteries like these, the most common practice is just
+        to move the battery into an area with as few combustables as possible,
+        and just wait for the reaction to burn out. Remember, MIT's policy is to
+        not fight fires.
+      </p>
+      <h2>Powering the Arduino Nano</h2>
+      <p>
+        There are a couple of ways to power your Arduino Nano. Up until now, the
+        power from your Arduino Nano comes from your laptop's USB cable. In a
+        toy product prototype, it's not practical to have an entire laptop
+        embedded with the toy if it has a microcontroller.
+      </p>
+      <p>
+        The Li-ion battery is a great solution that's small and energy efficient
+        which can power your Arduino and your electronics for a reasonable
+        amount of time. Note that on the Arduino Nano, there is a{' '}
+        <span className="pin red">Vin</span> pin. While the{' '}
+        <GuideLink target="_BLANK" href="https://docs.arduino.cc/hardware/nano">
+          specifications sheet
+        </GuideLink>{' '}
+        says the Arduino Nano requires 7V, we've found that it works just fine
+        with the 3.7V input from the Li-ion battery because of some of the
+        internal chips & circuitry.
       </p>
     </div>
   );

@@ -39,6 +39,7 @@ const Page = () => {
         it can cause the battery to swell, which can damage the battery and the
         device it's in.
       </p>
+
       <h2>Li-ion Battery Safety</h2>
       <p>
         According to OSHA, the US government agency responsible for occupational
@@ -56,7 +57,7 @@ const Page = () => {
       <p>
         In the rare case of a li-ion battery fire, the fires are very difficult
         to put out. With batteries like these, the most common practice is just
-        to move the battery into an area with as few combustables as possible,
+        to move the battery into an area with as few combustibles as possible,
         and just wait for the reaction to burn out. Remember, MIT's policy is to
         not fight fires.
       </p>

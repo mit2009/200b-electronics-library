@@ -47,6 +47,18 @@ const Page = () => {
         border={false}
       />
       <p>
+        Make sure the threaded inserts are seated all the way through, such that
+        it protrudes on the other side.
+      </p>
+      <GuideImage
+        src={[
+          '/images/toobers/threaded-inserts-render-1.png',
+          '/images/toobers/threaded-inserts-render-2.png',
+        ]}
+        size="MEDIUM"
+        border={false}
+      />
+      <p>
         After adding your threaded brass inserts, we will be adding the charging
         circuit. We sourced our charging circuit from{' '}
         <GuideLink href="https://www.adafruit.com/product/4410" target="_blank">
@@ -88,7 +100,9 @@ const Page = () => {
           3M
         </GuideLink>
         . This tape is the industry standard for mechanical engineers because of
-        its strength and how cleanly it comes off of surfaces.
+        its strength and how cleanly it comes off of surfaces. If you don't have
+        this exact double-stick tape, the alternative provided for you at your
+        lab bench should work as well.
       </p>
       <p>
         Fun Fact: The first iPhone used a very similar 3M doubled-side tape

@@ -16,17 +16,21 @@ const Page = () => {
         border={false}
         size={'LARGE'}
       />
-      <p>
-        Start by <strong>making sure the power switch is OFF</strong>. Next, add
-        a jumper wire (color doesn't matter) between the red wire (JST
-        connector-terminated) of the charging circuit to the black wire (JST
-        connector-terminated) of the switch. When we actually assemble our
-        Toobers toy in the final housing, we won't need to jerry rig it like
-        this - this is just to get our prototype to work.
-      </p>
-      <GuideImage src="/images/toobers/wire-jerry-rig.jpg" />
-      <p>Now we're left with two unused JST connections.</p>
       <ol>
+        <li>
+          Make sure the power switch is <strong>OFF</strong>.
+        </li>
+        <li>
+          Next, add a jumper wire (color doesn't matter) between the{' '}
+          <span className="pin red">red wire</span> (JST connector-terminated)
+          of the charging circuit to the{' '}
+          <span className="pin black">black wire</span> (JST
+          connector-terminated) of the switch.
+        </li>
+      </ol>
+      <GuideImage src="/images/toobers/power-diagram.jpg" size={'FULL'} />
+      <p>Now we're left with two unused JST connections.</p>
+      <ol start={3}>
         <li>Unplug the USB mini connection to the Arduino Nano. </li>
         <li>
           Connect the red of the power switch to any point of the{' '}
@@ -44,7 +48,13 @@ const Page = () => {
           Ground rail connection if it is there.
         </li>
       </ol>
-      <p>Your final product should look something like the below.</p>
+      <p>
+        This jerry-rigged setup is not the best but will work for prototyping
+        purposes. The Dupont jumpers aren't intended to go into the JST
+        connectors; in the final product, these JST connectors will seat into
+        the appropriate receptacle on the final PCB. Your final product should
+        look something like the below.
+      </p>
       <GuideImage
         src="/images/toobers/final-assembly.jpg"
         border={false}

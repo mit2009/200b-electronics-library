@@ -397,6 +397,50 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   const chapters = PAGES_LAYOUT[currentSection].chapters as {
     [url: string]: IChapter;
   };
+
+  const handleSubmit = () => {
+    const phrase = unlockPhrase.toLocaleLowerCase();
+    switch (phrase) {
+      case 'bready':
+        if (!pageStates['/breadboarding']) {
+          setPageStates((current) => {
+            return {
+              ...current,
+              '/breadboarding': true,
+              '/soldering': true,
+              '/power': true,
+              '/prototype': true,
+            };
+          });
+          router.push(`${dirs[0]}/breadboarding`);
+          setUnlockPhrase('');
+          setEnteringUnlockPhrase(false);
+          setConfettiColor(['#c73030']);
+        }
+        break;
+      case 'cadlab':
+        if (!pageStates['/cad']) {
+          setPageStates((current) => {
+            return {
+              ...current,
+              '/breadboarding': true,
+              '/soldering': true,
+              '/power': true,
+              '/prototype': true,
+              '/cad': true,
+            };
+          });
+          router.push(`${dirs[0]}/cad`);
+          setUnlockPhrase('');
+          setEnteringUnlockPhrase(false);
+          setConfettiColor(['#a600a6']);
+        }
+        break;
+      default:
+        setUnlockPhrase('');
+        break;
+    }
+  };
   return (
     <div className={styles.chapterContainer}>
       {Object.keys(chapters).map((chapterUrl) => {
@@ -448,62 +492,22 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
           <div className={styles.moreComingSoon}>more coming soon?</div>
         )}
         {enteringUnlockPhrase && (
-          <input
-            type="text"
-            onChange={(e) => {
-              const phrase = e.target.value;
-              setUnlockPhrase(phrase);
-            }}
-            placeholder={'coming soon?'}
-            onKeyDown={(e) => {
-              console.log(e.key);
-              if (e.code == 'Enter' || e.key === 'y') {
-                const phrase = unlockPhrase.toLocaleLowerCase();
-                console.log(phrase);
-                switch (phrase) {
-                  case 'bread':
-                  case 'bready':
-                    if (!pageStates['/breadboarding']) {
-                      setPageStates((current) => {
-                        return {
-                          ...current,
-                          '/breadboarding': true,
-                          '/soldering': true,
-                          '/power': true,
-                          '/prototype': true,
-                        };
-                      });
-                      router.push(`${dirs[0]}/breadboarding`);
-                      setUnlockPhrase('');
-                      setEnteringUnlockPhrase(false);
-                      setConfettiColor(['#c73030']);
-                    }
-                    break;
-                  case 'cadlab':
-                    if (!pageStates['/cad']) {
-                      setPageStates((current) => {
-                        return {
-                          ...current,
-                          '/breadboarding': true,
-                          '/soldering': true,
-                          '/power': true,
-                          '/prototype': true,
-                          '/cad': true,
-                        };
-                      });
-                      router.push(`${dirs[0]}/cad`);
-                      setUnlockPhrase('');
-                      setEnteringUnlockPhrase(false);
-                      setConfettiColor(['#a600a6']);
-                    }
-                    break;
-                  default:
-                    setUnlockPhrase('');
-                    break;
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              onChange={(e) => {
+                const phrase = e.target.value;
+                setUnlockPhrase(phrase);
+              }}
+              placeholder={'coming soon?'}
+              onKeyDown={(e) => {
+                if (e.code == 'Enter') {
+                  handleSubmit();
                 }
-              }
-            }}
-          />
+              }}
+              autoFocus
+            />
+          </form>
         )}
       </div>
       {confettiColor.length > 0 && (

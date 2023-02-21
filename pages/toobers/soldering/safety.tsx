@@ -30,12 +30,12 @@ const Page = () => {
         extractors that are placed around to help with air circulation.
       </p>
       <p>
-        When soldering, make sure <strong>as few parts as possible</strong> is
+        When soldering, make sure <strong>as few parts as possible</strong> are
         connected to the part that you're soldering. Take a note and look around
-        at your space. Make sure they're nothing dangerous or especially near
-        the hot soldering iron (such as the Li-ion battery!) Also be extra
+        at your space. Make sure there's nothing dangerous or especially near
+        the hot soldering iron (such as the Li-ion battery!). Also be extra
         cognizant of any teammates that you may accidentally brush with your
-        soldering iron (ow.) This lab is a team trust exercise!
+        soldering iron (ow). This lab is a team trust exercise!
       </p>
       <p>
         And finally, make sure to wash your hands after soldering. Give it a

@@ -1,5 +1,4 @@
 import GuideImage from '../../../components/GuideImage';
-import { GuideLink } from '../../../components/GuideLink';
 import GuideVideo from '../../../components/GuideVideo';
 import { WhatsDue } from '../../../components/WhatsDue';
 

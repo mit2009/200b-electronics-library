@@ -153,10 +153,20 @@ const Page = () => {
         </GuideLink>
       </div>
       <p>
-        Open the file up in your Arduino IDE, and upload the code to the
-        Arduino. Be sure your IDE is correctly configured and you've selected
-        the right settings. If you don't remember this, you can always jump back
-        to{' '}
+        Open the file up in your Arduino IDE. For this file, you'll need a
+        library called <strong>FastLED</strong>. One way to add a library is to
+        install it using Arduino's built-in Library Manager. Open Arduino IDE
+        and then go to{' '}
+        <code>Sketch &gt; Include Library &gt; Manage Libraries</code>. Search
+        for <strong>FastLED by Daniel Garcia</strong> and then click{' '}
+        <strong>Install</strong>.
+      </p>
+      <GuideImage src="/images/toobers/fast-led-graphic.png" size={'MEDIUM'} />
+
+      <p>
+        Once you have the library installed, upload the code to the Arduino. Be
+        sure your IDE is correctly configured and you've selected the right
+        settings. If you don't remember this, you can always jump back to{' '}
         <GuideLink href="http://localhost:3000/toobers/breadboarding/test-microcontroller">
           the previous section
         </GuideLink>{' '}

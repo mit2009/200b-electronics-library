@@ -661,23 +661,28 @@ export const SectionNavigation = () => {
   ) as IChapterVisibility;
   const [pageStates, setPageStates] =
     useState<IChapterVisibility>(defaultState);
+
   useEffect(() => {
-    setPageStates((current) => {
-      Object.keys(pageStates)
-        .filter((page) => {
-          return (
-            window.localStorage.getItem(
-              `${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`
-            ) === 'true'
-          );
-        })
-        .map((page) => {
-          current = { ...current, [page]: true };
-        });
-      return current;
-    });
+    let defaultState = (
+      hasOwn(PAGES_LAYOUT, dirs[0]) &&
+      hasOwn(PAGES_LAYOUT[dirs[0]], 'chapter_visibility')
+        ? PAGES_LAYOUT[dirs[0]].chapter_visibility
+        : {}
+    ) as IChapterVisibility;
+    Object.keys(defaultState)
+      .filter((page) => {
+        return (
+          window.localStorage.getItem(
+            `${SIDEBAR_LOCAL_STORAGE_PREFIX}${page}`
+          ) === 'true'
+        );
+      })
+      .map((page) => {
+        defaultState = { ...defaultState, [page]: true };
+      });
+    setPageStates(defaultState);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [router.asPath]);
 
   if (!hasOwn(currentPage, 'value') || !PAGES_LAYOUT[dirs[0]].has_chapters) {
     return <></>;

@@ -191,6 +191,10 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         location: Location.AT_HOME,
         due_date: 'Feb 24',
         has_pages: true,
+        whatsDue: {
+          '5.1': 'Wire the power module up to the rest of your circuit',
+          '5.2': 'Have a working Toober prototype!',
+        },
         pages: {
           '/altogether': {
             value: 'Altogether Now',

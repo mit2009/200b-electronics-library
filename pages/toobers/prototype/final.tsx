@@ -1,4 +1,5 @@
 import { GuideLink } from '../../../components/GuideLink';
+import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
   return (
@@ -14,6 +15,7 @@ const Page = () => {
         , and you'll need to download all 3 files and put them in the same
         folder (we'll zip it up for the students)
       </p>
+      <WhatsDue chapter="/prototype" />
     </div>
   );
 };

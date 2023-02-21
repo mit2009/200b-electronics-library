@@ -1,10 +1,12 @@
 import GuideImage from '../../../components/GuideImage';
+import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
   return (
     <div>
       <h1>Playable Prototype</h1>
       <h2>Almost there!</h2>
+      <WhatsDue chapter="/prototype" />
       <p>
         First part: talk about connecting wires to join the POWER MODULE and the
         SWITCH

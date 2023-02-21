@@ -397,12 +397,19 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   const chapters = PAGES_LAYOUT[currentSection].chapters as {
     [url: string]: IChapter;
   };
+  let unlockAudio: HTMLAudioElement | undefined = undefined;
+  if (typeof Audio != 'undefined') {
+    unlockAudio = new Audio('/sounds/unlockLetsDoThisTrimmed.m4a');
+  }
 
   const handleSubmit = () => {
     const phrase = unlockPhrase.toLocaleLowerCase();
     switch (phrase) {
       case 'bready':
         if (!pageStates['/breadboarding']) {
+          if (typeof unlockAudio != 'undefined') {
+            unlockAudio.play();
+          }
           setPageStates((current) => {
             return {
               ...current,

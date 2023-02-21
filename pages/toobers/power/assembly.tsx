@@ -52,12 +52,12 @@ const Page = () => {
         <GuideLink href="https://www.adafruit.com/product/4410" target="_blank">
           Adafruit
         </GuideLink>
-        . Adafruit is a great resource for getting electronic components. The
-        charging circuit regulates the amount of electrical current that flows
-        into the battery and monitors the battery's charge level. The goal is to
-        safely and efficiently recharge and discharge our battery. This is a
-        very common component in portable electronics, like your smartphones,
-        laptops, and cameras.
+        . Adafruit is a reliable place for electronic components (and started by
+        an MIT Alum!) The charging circuit regulates the amount of electrical
+        current that flows into the battery and monitors the battery's charge
+        level. The goal is to safely and efficiently recharge and discharge our
+        battery. This is a very common component in portable electronics, like
+        your smartphones, laptops, and cameras.
       </p>
       <p>
         Use two Phillips head screws (the ones with a plus sign shape on top) to
@@ -91,8 +91,8 @@ const Page = () => {
         its strength and how cleanly it comes off of surfaces.
       </p>
       <p>
-        Fun Fact: The first iPhone used this doubled-side tape inside it as
-        well.
+        Fun Fact: The first iPhone used a very similar 3M doubled-side tape
+        product inside it as well.
       </p>
       <GuideImage src="/images/toobers/power-module-tape.jpg" border={false} />
       <p>

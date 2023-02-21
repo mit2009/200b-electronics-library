@@ -87,7 +87,7 @@ const Page = () => {
           <span className="pin">D2</span> pin
         </li>
       </ol>
-      <h2>The Tiny Speaker Wires</h2>
+      <h2 id="molex">The Tiny Speaker Wires</h2>
       <p>
         The speaker we've sourced has an impedance of 8 Ohms (nominally) and
         draws 2 Watts. It uses a special connector different from all the other

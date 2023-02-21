@@ -10,17 +10,15 @@ const Page = () => {
       <h2>Time to get Heated!</h2>
       <p>
         Turn your soldering irons on. These are particularily fancy and have a
-        temperature adjust - turn the knob so it shows 800F. The temperature
-        should slowly rise until it reaches that. We're going to be soldering
-        JST-XH connectors to both the components.{' '}
+        temperature adjust - turn the knob so it shows 800&deg;F. The
+        temperature should slowly rise until it reaches that. We're going to be
+        soldering JST-XH connectors to both the charging circuit and the power
+        toggle switch.{' '}
         <strong>
-          note how they are different than the ones for the speaker
+          note how they are different than the connectors for the speaker
         </strong>{' '}
         (the Molex ones we discussed{' '}
-        <GuideLink href="/toobers/breadboarding/audio">
-          in the audio section
-        </GuideLink>
-        )
+        <a href="/toobers/breadboarding/audio#molex">in the audio section</a>).
       </p>
       <GuideImage
         src={'/images/toobers/jst-xh-charging-circuit.png'}

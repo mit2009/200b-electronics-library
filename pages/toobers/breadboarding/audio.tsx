@@ -102,9 +102,9 @@ const Page = () => {
       <p>
         The two connectors go together, and the leads go into the breadboard.
         The wires are very tiny and aren't typically meant to go into a
-        breadboard like this, but it should be possible if you're careful, and
-        it should work for this prototyping stage (albeit a very precarious
-        operation).
+        breadboard like this, but <strong>it should be possible</strong> if
+        you're careful, and it should work for this prototyping stage (albeit a
+        very precarious operation).
       </p>
       <GuideImage
         src="/images/toobers/molex-picoblade-lead.jpg"
@@ -124,21 +124,20 @@ const Page = () => {
       <h2>Test some Audio!</h2>
       <p>
         Download this test code into your Arduino to test the DFPlayer playing
-        the first sound file (which should say something like "Toobers, get
-        ready to play!".)
+        the first sound file. When you download the .zip file, you may notice
+        two additional files in there. These files are part of the DFPlayer
+        library, and needed for your audio to work! Keep them in the same folder
+        as the .ino sketch file.
       </p>
       <p>
-        The buttons and lights <strong>won't do anything</strong> with this
-        example code.
-      </p>
-      <p>
-        Noted staffnote hotfix: (thanks, team sam & jimmy) - you need to
-        download dfplayer mini library... i'll also add this
+        As soon as the Arduino Nano starts up, it should play the audio{' '}
+        <em>Toobers, get ready to play!</em> Note that the buttons and lights{' '}
+        <strong>won't do anything</strong> with this example code.
       </p>
       <div className="center">
         <GuideLink
           target="_blank"
-          href="https://github.com/mit2009/200b-toobers/blob/main/2023/arduino/JustSomeNoise/JustSomeNoise.ino"
+          href="https://github.com/mit2009/200b-toobers/blob/main/2023/arduino/JustSomeNoise.zip?raw=true"
         >
           <span className={'download-btn'}>
             Get the <strong>Audio Test Code</strong>
@@ -170,6 +169,19 @@ const Page = () => {
           actually connected to the right pin of the DFPlayer.
         </li>
         <li>Ensure that the microSD card is actually in the DFPlayer.</li>
+      </ul>
+      <h4>The speaker is crackling:</h4>
+      <ul>
+        <li>
+          Make sure you've moved the <span className="pin red">Vin</span> over
+          to <span className="pin red">5V</span> as shown above.
+        </li>
+        <li>
+          If it's still crackling, go into the code and lower the{' '}
+          <code>volume</code> (try something like 10.) It might be quiet, but we
+          won't have this problem once everything is powered off a charged and
+          healthy battery.
+        </li>
       </ul>
       <h4>If the wrong files are playing:</h4>
       <ul>

@@ -121,6 +121,19 @@ const Page = () => {
           <span className="pin">B53</span>
         </li>
       </ul>
+      <p>
+        If you're not able to get the wires into the breadboard holes, we have
+        some header-to-alligator jumpers that you can use. Use the alligator
+        clips to grab onto the thin wires, and the other end should go easily
+        into a breadboard.
+      </p>
+      <GuideImage
+        src={[
+          '/images/toobers/alligator.jpeg',
+          '/images/toobers/alligator-connected.jpeg',
+        ]}
+        border={false}
+      />
       <h2>Test some Audio!</h2>
       <p>
         Download this test code into your Arduino to test the DFPlayer playing

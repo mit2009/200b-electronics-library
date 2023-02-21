@@ -38,7 +38,7 @@ const Page = () => {
         <strong>charging circuit</strong>.
       </p>
       <GuideImage
-        src="/images/toobers/switch-and-charging-circuit.jpg"
+        src="/images/toobers/charging-circuit-and-switch.png"
         size="MEDIUM"
         border={false}
       />

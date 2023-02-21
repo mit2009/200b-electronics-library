@@ -4,7 +4,7 @@ const Page = () => {
   return (
     <div>
       <h1>Soldering Safety</h1>
-      <h2>Smokey!</h2>
+      <h2>Smoky!</h2>
       <p>
         The solder we're using is an alloy of tin and lead. Soldering with lead,
         flux and/or rosin can produce dust and fumes that are hazardous if

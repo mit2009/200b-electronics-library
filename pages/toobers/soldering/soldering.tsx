@@ -1,4 +1,5 @@
 import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
 import GuideVideo from '../../../components/GuideVideo';
 import { WhatsDue } from '../../../components/WhatsDue';
 
@@ -13,9 +14,13 @@ const Page = () => {
         should slowly rise until it reaches that. We're going to be soldering
         JST-XH connectors to both the components.{' '}
         <strong>
-          note how they are different than the ones for the speaker (the Molex
-          ones)
-        </strong>
+          note how they are different than the ones for the speaker
+        </strong>{' '}
+        (the Molex ones we discussed{' '}
+        <GuideLink href="/toobers/breadboarding/audio">
+          in the audio section
+        </GuideLink>
+        )
       </p>
       <GuideImage
         src={'/images/toobers/jst-xh-charging-circuit.png'}
@@ -28,7 +33,10 @@ const Page = () => {
         the wires over a little on the other side to keep it in place)
       </p>
       <GuideImage
-        src={'/images/toobers/closeup-charging-circuit.jpg'}
+        src={[
+          '/images/toobers/closeup-charging-circuit.jpg',
+          '/images/toobers/bend-wires-over.png',
+        ]}
         border={false}
         size={'MEDIUM'}
       />

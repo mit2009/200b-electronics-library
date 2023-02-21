@@ -33,7 +33,7 @@ const Page = () => {
         When soldering, make sure <strong>as few parts as possible</strong> is
         connected to the part that you're soldering. Take a note and look around
         at your space. Make sure they're nothing dangerous or especially near
-        the hot soldering iron (such as the Li-po battery!) Also be extra
+        the hot soldering iron (such as the Li-ion battery!) Also be extra
         cognizant of any teammates that you may accidentally brush with your
         soldering iron (ow.) This lab is a team trust exercise!
       </p>

@@ -174,7 +174,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         location: Location.IN_LAB,
         has_pages: true,
         whatsDue: {
-          '4.1': 'Get a high-level understanding of Li-Po batteries',
+          '4.1': 'Get a high-level understanding of Li-ion batteries',
           '4.2': 'Assemble your power module',
         },
         pages: {

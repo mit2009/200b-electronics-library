@@ -11,7 +11,7 @@ const Page = () => {
         edge cases we've found. Instructors: you can skip it for now. we believe
         in you.
       </p>
-      <h2>Li-po Battery Safety</h2>
+      <h2>Li-ion Battery Safety</h2>
       <p>blah blah section on LiPo Batteries & Safety</p>
     </div>
   );

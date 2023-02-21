@@ -100,22 +100,6 @@ const Page = () => {
           <span className="pin">PIN 8</span> to <span className="pin">J14</span>
         </li>
         <li>
-          LED Long end to Arduino Output and short end to resistor
-          <span className="pin">H15</span> to <span className="pin">H16</span>
-        </li>
-        <li>
-          220&#8486; Resistor to connect LED to Ground
-          <span className="pin">G16</span> to <span className="pin">E16</span>
-        </li>
-        <li>
-          Short wire to bring Input to button
-          <span className="pin">G14</span> to <span className="pin">E14</span>
-        </li>
-        <li>
-          Button from wire to ground <span className="pin">C14</span> to
-          <span className="pin">C16</span>
-        </li>
-        <li>
           Wire to ground
           <span className="pin">A16</span> to{' '}
           <span className="pin black">GND</span>
@@ -131,14 +115,6 @@ const Page = () => {
         <li>
           Button Arduino Button to Breadboard
           <span className="pin">PIN 9</span> to <span className="pin">J20</span>
-        </li>
-        <li>
-          LED Long end to Arduino Output and short end to resistor
-          <span className="pin">H21</span> to <span className="pin">H22</span>
-        </li>
-        <li>
-          220&#8486; Resistor to connect LED to Ground
-          <span className="pin">G22</span> to <span className="pin">E22</span>
         </li>
         <li>
           Short wire to bring Input to button

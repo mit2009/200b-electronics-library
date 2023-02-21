@@ -1,4 +1,5 @@
 import GuideImage from '../../../components/GuideImage';
+import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
   return (
@@ -47,6 +48,7 @@ const Page = () => {
       </p>
       <GuideImage src="/images/toobers/power-module-tape.jpg" border={false} />
       <GuideImage src="/images/toobers/power-module-done.jpg" border={false} />
+      <WhatsDue chapter="/power" />
     </div>
   );
 };

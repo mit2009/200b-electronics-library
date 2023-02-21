@@ -13,11 +13,11 @@ const Page = () => {
         call <strong>points</strong>.
       </p>
       <GuideImage
-        src="/images/toobers/breadboard-ortho.jpg"
+        src={'/images/toobers/breadboard-example.jpg'}
         border={false}
         alt="Breadboard Explanation"
+        size="SMALL"
       />
-
       <p>
         The horizontal rows of five points (i.e.
         <span className="pin">A1</span>, <span className="pin">B1</span>,

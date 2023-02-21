@@ -66,12 +66,13 @@ const Page = () => {
         Most wires have a conductor in an insulating sheath. The ends of the
         wire are exposed by stripping the insulation off. Wire strippers have
         holes that are sized for the various gauges of wire. Place the wire in
-        the hole that corresponds to the gauge of the wire.
+        the hole that corresponds to the gauge of the wire. (Your wire strippers
+        may not go to 22, in which case 20 works just fine.)
       </p>
       <GuideImage
         size={'SMALL'}
         border={false}
-        src="/images/toobers/wire-cutter.png"
+        src="/images/toobers/wire-strippers-gauge.png"
       />
       <p>
         If the hole is too small, the conductor will be nicked. If the hole is

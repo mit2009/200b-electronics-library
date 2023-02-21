@@ -110,6 +110,10 @@ const Page = () => {
         ready to play!".)
       </p>
       <p>
+        The buttons and lights <strong>won't do anything</strong> with this
+        example code.
+      </p>
+      <p>
         Noted staffnote hotfix: (thanks, team sam & jimmy) - you need to
         download dfplayer mini library... i'll also add this
       </p>

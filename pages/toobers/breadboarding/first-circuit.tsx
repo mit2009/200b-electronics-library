@@ -89,18 +89,31 @@ const Page = () => {
         locations of pins as suggestions - as long as you have the right
         connections, you're good to go.
       </p>
-      {/* TODO(dillon): Update instructions for the LED */}
       <ul>
         <li>
-          Grab the LED. Place the shorter <Ws2812bLed pin={PIN.Din} /> into blah
-          blah.
+          Grab the LED. Place the shorter <Ws2812bLed pin={PIN.Din} /> into{' '}
+          <span className="pin">F20</span>
         </li>
         <li>
-          Place a blah blah blah on the board (220&#8486;) from{' '}
-          <span className="pin">G4</span> to <span className="pin">E4</span>
+          The other pins <Ws2812bLed pin={PIN.Vin} />,{' '}
+          <Ws2812bLed pin={PIN.Gnd} />, and <Ws2812bLed pin={PIN.Dout} /> should
+          fall into <span className="pin">F21</span>,{' '}
+          <span className="pin">F22</span>, and <span className="pin">F23</span>{' '}
+          respectively
         </li>
-        <li>blah blah</li>
-        <li>blah blah</li>
+        <li>
+          Connect <span className="pin">J20</span> (<Ws2812bLed pin={PIN.Din} />
+          ) to <span className="pin">J9</span> (Arduino Nano's{' '}
+          <span className="pin">D4</span>)
+        </li>
+        <li>
+          Connect <span className="pin">G21</span> (<Ws2812bLed pin={PIN.Vin} />
+          ) to the <span className="pin red">3.7V</span> rail
+        </li>
+        <li>
+          Connect <span className="pin">I22</span> (<Ws2812bLed pin={PIN.Gnd} />
+          ) to the <span className="pin black">GND</span> rail
+        </li>
       </ul>
       <p>
         Note that you'll likely have red wire, black wire, and a random color in
@@ -108,7 +121,6 @@ const Page = () => {
         random color is there to help you distinguish the different wires (and
         so the actual wire color itself doesn't matter.)
       </p>
-      {/* TODO(dillon): Update instructions for the BUTTON */}
       <h2>Connecting the Button</h2>
       <p>
         Next, let's attach the button. If you grab one of the buttons from your
@@ -121,18 +133,17 @@ const Page = () => {
       </p>
       <ul>
         <li>
-          Bring Pin 6 of the Arduino <span className="pin">PIN 6</span> into the
-          board <span className="pin">J2</span> blah blah blah
+          Place your button so that the pins fall into{' '}
+          <span className="pin">C20</span> and <span className="pin">C22</span>
         </li>
         <li>
-          Place a wire to jump across the trough
-          <span className="pin">G2</span> to blah blah{' '}
-          <span className="pin">E2</span>
+          Connect <span className="pin">A20</span> to the{' '}
+          <span className="pin black">GND</span> rail
         </li>
         <li>
-          Place a blah blah on the board from the input line
-          <span className="pin">C2</span> to the ground
-          <span className="pin">C4</span>
+          Connect <span className="pin">E22</span> to{' '}
+          <span className="pin">J5</span> (Arduino Nano's{' '}
+          <span className="pin">D8</span>)
         </li>
       </ul>
       <p>

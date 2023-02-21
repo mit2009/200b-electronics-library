@@ -66,8 +66,26 @@ const Page = () => {
         size="FULL"
       />
       <ol>
-        <li>Connect blah blah to blah blah</li>
-        <li>Connect blah blah to blah blah</li>
+        <li>
+          Connect the DFPlayer's <span className="pin black">GND</span> pin to
+          the <span className="pin black">GND</span> rail
+        </li>
+        <li>
+          Connect the DFPlayer's <span className="pin red">VCC</span> pin to the{' '}
+          <span className="pin red">3.7V</span> rail
+        </li>
+        <li>
+          Connect the DFPlayer's <span className="pin">TX</span> to the Arduino
+          Nano's <span className="pin">D3</span> pin
+        </li>
+        <li>
+          Connect the DFPlayer's <span className="pin">RX</span> to one end of a
+          resistor
+        </li>
+        <li>
+          Connect the other end of the resistor to the Arduino Nano's{' '}
+          <span className="pin">D2</span> pin
+        </li>
       </ol>
       <h2>The Tiny Speaker Wires</h2>
       <p>

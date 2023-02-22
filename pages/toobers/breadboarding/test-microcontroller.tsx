@@ -89,7 +89,7 @@ const Test = () => {
           <span className="pin black">GND</span> rail
         </li>
         <li>
-          Using a red black wire connect <span className="pin">A15</span>{' '}
+          Using a short red wire connect <span className="pin">A15</span>{' '}
           (Arduino Nano's <span className="pin red">VIN</span>) to the{' '}
           <span className="pin red">3.7V</span> rail
         </li>

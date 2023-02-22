@@ -136,7 +136,7 @@ const Page = () => {
         The speaker we've sourced has an impedance of 8 Ohms (nominally) and
         draws 2 Watts. It uses a special connector different from all the other
         connectors we're using - this is called Molex-type connector,
-        specifically the Molex Picoblade.
+        specifically the <strong>Molex Picoblade</strong>.
       </p>
       <GuideImage
         src="/images/toobers/molex-picoblade.png"
@@ -144,33 +144,23 @@ const Page = () => {
         size="MEDIUM"
       />
       <p>
-        The two connectors go together, and the leads go into the breadboard.
-        The wires are very tiny and aren't typically meant to go into a
-        breadboard like this, but <strong>it should be possible</strong> if
-        you're careful, and it should work for this prototyping stage (albeit a
-        very precarious operation).
+        The two connectors go together, and the leads need to be connected to
+        the DFPlayer via the breadboard. However the wires are very tiny, and
+        are stranded, and aren't typically meant to go into a breadboard like
+        this.
       </p>
+
       <GuideImage
         src="/images/toobers/molex-picoblade-lead.jpg"
         size="SMALL"
-        caption="Not quite the right gauge, but should work for what we're trying to do"
+        caption="Very thin wires!"
       />
-      <ul>
-        <li>
-          Connect the <span className="pin red">red</span> wire into{' '}
-          <span className="pin">B51</span>
-        </li>
-        <li>
-          Connect the <span className="pin black">black</span> wire into{' '}
-          <span className="pin">B53</span>
-        </li>
-      </ul>
       <p>
-        If you're not able to get the wires into the breadboard holes, we have
-        some header-to-alligator jumpers that you can use. Use the alligator
-        clips to grab onto the thin wires, and the other end should go easily
-        into a breadboard.
+        For this reason, we have these alligator to Dupont jumper cables that
+        you can use, such that the ends are breadboard friendly. Connect them
+        like so:
       </p>
+
       <GuideImage
         src={[
           '/images/toobers/alligator.jpeg',
@@ -178,6 +168,18 @@ const Page = () => {
         ]}
         border={false}
       />
+      <ul>
+        <li>
+          Connect the <span className="pin red">red</span> speaker wire into{' '}
+          <span className="pin">B51</span> (your alligator/jumper cables may not
+          be red)
+        </li>
+        <li>
+          Connect the <span className="pin black">black</span> speaker wire into{' '}
+          <span className="pin">B53</span> (your alligator/jumper cables may not
+          be black)
+        </li>
+      </ul>
       <h2>Test some Audio!</h2>
       <p>
         Download this test code into your Arduino to test the DFPlayer playing

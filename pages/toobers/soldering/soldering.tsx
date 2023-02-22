@@ -8,11 +8,58 @@ const Page = () => {
       <h1>Now Soldering!</h1>
       <h2>Time to get Heated!</h2>
       <p>
+        Make sure your table is clear of any unnecessary clutter, and let's get
+        ready to solder!
+      </p>
+      <GuideVideo src="clear-your-table.mp4" />
+      <p>
         Turn your soldering irons on. These are particularily fancy and have a
         temperature adjust - turn the knob so it shows 800&deg;F. The
-        temperature should slowly rise until it reaches that. We're going to be
-        soldering JST-XH connectors to both the charging circuit and the power
-        toggle switch.{' '}
+        temperature should slowly rise until it reaches that. This should be
+        obvious, but hear me out: the soldering iron is going to be{' '}
+        <strong>hot</strong> 🔥. Be careful where you point that thing. Always
+        leave it in the holder when not used. That holder may also be hot.
+      </p>
+      <h2>Tinning the Tip</h2>
+      <p>
+        To maintain a good soldering tip, you'll need to clean it periodically.
+        You'll know when it's time to clean your tip when it starts oxidizing,
+        or is no longer as shiny as it once was.
+      </p>
+      <p>
+        There are two ways to clean the tip. These soldering irons have both of
+        them built into their handy little stand, so it's up to what works for
+        you (or a combination of both).
+      </p>
+      <h2>Wet Sponge</h2>
+      <p>
+        Wet the sponge in the sink. Apply a bit of solder to the tip (if the
+        solder isn't melting, give it a few seconds to heat up.) After a minute
+        or two the iron should be hot enough to steam when touched to the
+        sponge, and you should hear a satisfying sizzling sound. Wipe the tip on
+        the sponge. The goal is to{' '}
+        <strong>remove old and excess solder from the tip.</strong>
+      </p>
+      <GuideVideo src="wet-sponge.mp4" />
+      <h2>Brass Sponge</h2>
+      <p>
+        A brass sponge works much like a regular sponge, except there's no need
+        to worry about the tip becoming cooler as the brass sponge is not wet.
+        Apply a bit of solder to the tip, and then just push your soldering tip
+        up and down into the brass sponge. As with before the goal is to remove
+        old and excess solder from the tip.
+      </p>
+      <GuideVideo src="brass-sponge.mp4" />
+      <p>
+        Now that your tip is properly tinned, you can start soldering.{' '}
+        <strong>Periodically while you are working</strong>, clean and re-tin
+        the tip. Tinning improves conductivity and makes soldering quicker and
+        easier.
+      </p>
+      <h2>Soldering the JST-XH Connectors</h2>
+      <p>
+        We're going to be soldering JST-XH connectors to both the charging
+        circuit and the power toggle switch.{' '}
         <strong>
           note how they are different than the connectors for the speaker
         </strong>{' '}

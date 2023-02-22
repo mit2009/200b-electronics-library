@@ -1,4 +1,5 @@
 import GuideImage from '../../../components/GuideImage';
+import GuideVideo from '../../../components/GuideVideo';
 
 const Page = () => {
   return (
@@ -108,6 +109,13 @@ const Page = () => {
           Your browser does not support the video tag.
         </video>
       </div>
+      <h3>Automatic Wire Strippers</h3>
+      <p>
+        We also have a couple of these neat automatic wire strippers! While you
+        won't be able to keep these, we'll have a bunch in PDL and 5-007 in case
+        you ever need to strip a large number of wires at once.
+      </p>
+      <GuideVideo src="automatic-wire-stripper.mp4" />
       <h3>Prepare the Bus Lines</h3>
       <p>
         Our first step is to set up the power bus lines. Staying with

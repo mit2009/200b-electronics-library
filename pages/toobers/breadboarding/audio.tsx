@@ -75,7 +75,7 @@ const Page = () => {
       <ol>
         <li>
           Place the <span className="pin red">VCC</span> of the DFPlayer into
-          point <span className="pin">46C</span> on the breadboard, facing in
+          point <span className="pin">C46</span> on the breadboard, facing in
           the direction as shown
         </li>
         <li>
@@ -103,7 +103,7 @@ const Page = () => {
         </li>
         <li>
           Connect the other end of the resistor to point{' '}
-          <span className="pin">B47</span> on the breadboard. The resistor leads
+          <span className="pin">B44</span> on the breadboard. The resistor leads
           might be a tad bit long - you're free to trim them down to keep it
           neat (as long as they still seat into the breadboard)
         </li>

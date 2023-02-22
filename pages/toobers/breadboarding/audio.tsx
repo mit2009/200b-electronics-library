@@ -33,7 +33,7 @@ const Page = () => {
         it'll work with the Toobers game.
       </p>
       <p>
-        The microSD card only goes in one orientation, and to remove it, simply
+        The microSD card only goes in one orientation, and to remove it, simply{' '}
         <strong>push</strong> the microSD card in once for it to spring back out
         (known as a push-push mechanism or a catch/latch in mechanical design).
       </p>
@@ -80,11 +80,11 @@ const Page = () => {
         </li>
         <li>
           Connect the DFPlayer's <span className="pin black">GND</span> pin to
-          the <span className="pin black">GND</span> rail
+          the <span className="pin black">GND</span> rail (as shown below)
         </li>
         <li>
           Connect the DFPlayer's <span className="pin red">VCC</span> pin to the{' '}
-          <span className="pin red">3.7V</span> rail
+          <span className="pin red">3.7V</span> rail (as shown below)
         </li>
       </ol>
       <GuideImage
@@ -97,28 +97,26 @@ const Page = () => {
       />
       <ol start={4}>
         <li>
-          Connect the DFPlayer's <span className="pin">RX</span> to one end of a
-          1kΩ resistor - point <span className="pin">B47</span> on the
-          breadboard.
-        </li>
-        <li>
-          Connect the other end of the resistor to point{' '}
-          <span className="pin">B44</span> on the breadboard. The resistor leads
-          might be a tad bit long - you're free to trim them down to keep it
-          neat (as long as they still seat into the breadboard)
+          Connect a 1kΩ resistor from <span className="pin">B44</span> to{' '}
+          <span className="pin">B47</span> (the DFPlayer's{' '}
+          <span className="pin">RX</span> to a 1kΩ resistor)
         </li>
         <li>
           Connect a jumper wire from <span className="pin">A44</span> to{' '}
-          <span className="pin">J11</span> (resistor to the Arduino Nano's{' '}
+          <span className="pin">J11</span> (1kΩ resistor to the Arduino Nano's{' '}
           <span className="pin">D2</span> pin)
         </li>
         <li>
           Connect a jumper wire from <span className="pin">A48</span> to{' '}
-          <span className="pin">D3</span> (the DFPlayer's{' '}
+          <span className="pin">J10</span> (the DFPlayer's{' '}
           <span className="pin">TX</span> to the Arduino Nano's{' '}
           <span className="pin">D3</span> pin)
         </li>
       </ol>
+      <p>
+        The resistor leads might be a tad bit long - you're free to trim them
+        down to keep it neat (as long as they still seat into the breadboard)
+      </p>
       <h2 id="molex">The Tiny Speaker Wires</h2>
       <p>
         The speaker we've sourced has an impedance of 8 Ohms (nominally) and
@@ -225,6 +223,13 @@ const Page = () => {
           Go into the code and lower the <code>volume</code> (try something like
           10.) It might be quiet, but we won't have this problem once everything
           is powered off a charged and healthy battery.
+        </li>
+        <li>
+          Change this line:{' '}
+          <code>if (!myDFPlayer.begin(mySoftwareSerial)) &#123;</code> to{' '}
+          <code>
+            if (!myDFPlayer.begin(mySoftwareSerial, true, false)) &#123;
+          </code>
         </li>
         <li>
           There is another, unused <span className="pin black">Gnd</span> pin

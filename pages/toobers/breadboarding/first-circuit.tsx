@@ -96,6 +96,18 @@ const Page = () => {
           <Ws2812bLed pin={PIN.Din} /> into <span className="pin">F20</span>
         </li>
         <li>
+          It might be easier for you to line up the longer{' '}
+          <Ws2812bLed pin={PIN.Dout} /> into <span className="pin">F23</span>{' '}
+          and then pivot the shorter pins into place.
+        </li>
+        <GuideImage
+          src={[
+            '/images/toobers/LED_in_place.jpg',
+            '/images/toobers/LED_inserted.jpg',
+          ]}
+          alt="Inserting the first LED"
+        />
+        <li>
           The other pins <Ws2812bLed pin={PIN.Vin} />,{' '}
           <Ws2812bLed pin={PIN.Gnd} />, and <Ws2812bLed pin={PIN.Dout} /> should
           fall into <span className="pin">F21</span>,{' '}
@@ -138,6 +150,16 @@ const Page = () => {
           <span className="pin">C20</span> and <span className="pin">C22</span>
         </li>
         <li>
+          As always, make sure your button is fully seated into the breadboard
+        </li>
+        <GuideImage
+          src={[
+            '/images/toobers/button_in_place.jpg',
+            '/images/toobers/button_inserted.jpg',
+          ]}
+          alt="Inserting the first Button"
+        />
+        <li>
           Connect <span className="pin">A20</span> to the{' '}
           <span className="pin black">GND</span> rail
         </li>
@@ -147,6 +169,7 @@ const Page = () => {
           <span className="pin">D8</span>)
         </li>
       </ul>
+      <GuideImage src="/images/toobers/button_wired.jpg" size={'MEDIUM'} />
       <p>
         That's all for wiring! If we've done it correctly, we should now be able
         to control the LED and monitor the input from the code. Let's jump into
@@ -165,16 +188,34 @@ const Page = () => {
         </GuideLink>
       </div>
       <p>
+        Our code comes in a folder called <code>LEDandButtonTest</code>. While
+        you can place this folder anywhere you would like in your filesystem,
+        the file <code>LEDandButtonTest.ino</code> has to remain in the folder.
+        Arduino requires the primary <code>.ino</code> file to match the folder
+        name.
+      </p>
+      <p>
         Open the file up in your Arduino IDE. For this file, you'll need a
         library called <strong>FastLED</strong>. One way to add a library is to
         install it using Arduino's built-in Library Manager. Open Arduino IDE
         and then go to{' '}
-        <code>Sketch &gt; Include Library &gt; Manage Libraries</code>. Search
-        for <strong>FastLED by Daniel Garcia</strong> and then click{' '}
+        <code>Sketch &gt; Include Library &gt; Manage Libraries</code>.
+      </p>
+      <GuideImage src="/images/toobers/include_library.png" size={'MEDIUM'} />
+      <p>
+        Search for <strong>FastLED by Daniel Garcia</strong> and then click{' '}
         <strong>Install</strong>.
       </p>
-      <GuideImage src="/images/toobers/fast-led-graphic.png" size={'MEDIUM'} />
-
+      <GuideImage src="/images/toobers/installFastLED.png" size={'MEDIUM'} />
+      <p>
+        When you are ready, you can close the library manager by clicking on the
+        library manager icon. This icon will also bring up the library manager
+        when you need to access it again.
+      </p>
+      <GuideImage
+        src="/images/toobers/library_manager_icon.png"
+        size={'NARROW'}
+      />
       <p>
         Once you have the library installed, upload the code to the Arduino. Be
         sure your IDE is correctly configured and you've selected the right
@@ -198,8 +239,8 @@ const Page = () => {
       </p>
       <p>
         Also note that on the Arduino, there is a <strong>reset</strong> button
-        you can click (near the usb port). Clicking it is the same as unplugging
-        and plugging in the Arduino.
+        you can click (near the center of the board). Clicking it is the same as
+        unplugging and plugging in the Arduino.
       </p>
     </div>
   );

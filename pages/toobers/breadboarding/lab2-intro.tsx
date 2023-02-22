@@ -16,7 +16,7 @@ const Page = () => {
         breadboard.
       </p>
       <p>
-        You'll notice infront of you is a nice, semi-transparent 2.00b Toolbox.
+        You'll notice in front of you is a nice, semi-transparent 2.00b Toolbox.
         You can use this handy carrying case to hold all of your Toobers-related
         parts. To start, <strong>write your name on your toolbox</strong> in the
         blank, pill-shaped space in the front.

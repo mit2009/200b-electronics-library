@@ -74,17 +74,19 @@ const Page = () => {
       />
       <ol>
         <li>
-          Place the <span className="pin red">VCC</span> of the DFPlayer into
-          point <span className="pin">C46</span> on the breadboard, facing in
-          the direction as shown
+          Place the <span className="pin red">VCC</span> of the DFPlayer (when
+          notch is facing left, <span className="pin red">VCC</span> is the
+          bottom left pin) into point <span className="pin">C46</span> on the
+          breadboard, facing in the direction as shown
         </li>
         <li>
-          Connect the DFPlayer's <span className="pin black">GND</span> pin to
-          the <span className="pin black">GND</span> rail (as shown below)
+          Connect a short black wire from <span className="pin">J55</span> to
+          the <span className="pin black">GND</span> rail (Grounding the
+          DFPlayer)
         </li>
         <li>
-          Connect the DFPlayer's <span className="pin red">VCC</span> pin to the{' '}
-          <span className="pin red">3.7V</span> rail (as shown below)
+          Connect a short red wire from <span className="pin">A46</span> to the{' '}
+          <span className="pin red">3.7V</span> rail (Powering the DFPlayer)
         </li>
       </ol>
       <GuideImage
@@ -101,6 +103,17 @@ const Page = () => {
           <span className="pin">B47</span> (the DFPlayer's{' '}
           <span className="pin">RX</span> to a 1kΩ resistor)
         </li>
+      </ol>
+      <GuideImage
+        src={'/images/toobers/audio-resistor.png'}
+        border={false}
+        size="LARGE"
+      />
+      <p>
+        The resistor leads might be a tad bit long - you're free to trim them
+        down to keep it neat (as long as they still seat into the breadboard)
+      </p>
+      <ol start={5}>
         <li>
           Connect a jumper wire from <span className="pin">A44</span> to{' '}
           <span className="pin">J11</span> (1kΩ resistor to the Arduino Nano's{' '}
@@ -113,10 +126,11 @@ const Page = () => {
           <span className="pin">D3</span> pin)
         </li>
       </ol>
-      <p>
-        The resistor leads might be a tad bit long - you're free to trim them
-        down to keep it neat (as long as they still seat into the breadboard)
-      </p>
+      <GuideImage
+        src="/images/toobers/audio-resistor-transmit-wires.png"
+        border={false}
+        size="LARGE"
+      />
       <h2 id="molex">The Tiny Speaker Wires</h2>
       <p>
         The speaker we've sourced has an impedance of 8 Ohms (nominally) and

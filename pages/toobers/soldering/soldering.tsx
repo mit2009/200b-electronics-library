@@ -14,7 +14,7 @@ const Page = () => {
       <GuideVideo src="clear-your-table.mp4" />
       <p>
         Turn your soldering irons on. These are particularily fancy and have a
-        temperature adjust - turn the knob so it shows 800&deg;F. The
+        temperature adjust - turn the knob so it shows 750&deg;F. The
         temperature should slowly rise until it reaches that. This should be
         obvious, but hear me out: the soldering iron is going to be{' '}
         <strong>hot</strong> 🔥. Be careful where you point that thing. Always

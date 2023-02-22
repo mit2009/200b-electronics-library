@@ -108,7 +108,7 @@ const Page = () => {
           neat (as long as they still seat into the breadboard)
         </li>
         <li>
-          Connect a jumper wire from <span className="pin">A47</span> to{' '}
+          Connect a jumper wire from <span className="pin">A44</span> to{' '}
           <span className="pin">J11</span> (resistor to the Arduino Nano's{' '}
           <span className="pin">D2</span> pin)
         </li>

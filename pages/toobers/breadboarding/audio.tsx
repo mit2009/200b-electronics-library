@@ -80,7 +80,7 @@ const Page = () => {
           breadboard, facing in the direction as shown
         </li>
         <li>
-          Connect a short black wire from <span className="pin">J55</span> to
+          Connect a short black wire from <span className="pin">J52</span> to
           the <span className="pin black">GND</span> rail (Grounding the
           DFPlayer)
         </li>

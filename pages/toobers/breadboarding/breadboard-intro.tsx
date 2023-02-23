@@ -88,10 +88,10 @@ const Page = () => {
         to debug. One process for stripping wires is as follows:
       </p>
       <ol>
-        <li>Strip one end of the wire, about a quarter inch.</li>
+        <li>Strip one end of the wire, about 12mm (1/2 inch).</li>
         <li>Bend the stripped end and place it in the start hole.</li>
         <li>Measure the wire to the end hole.</li>
-        <li>Add about a quarter inch and cut the wire.</li>
+        <li>Add about a 12mm (1/2 inch) and cut the wire.</li>
         <li>Strip the newly cut end of the wire.</li>
         <li>
           Bend the newly stripped end and place the wire in the start and end
@@ -114,6 +114,11 @@ const Page = () => {
         We also have a couple of these neat automatic wire strippers! While you
         won't be able to keep these, we'll have a bunch in PDL and 5-007 in case
         you ever need to strip a large number of wires at once.
+      </p>
+      <p>
+        Note the a setting (the stop) on the automatic wire stripper that helps
+        determine what length your wires should be striped to, that can be slid
+        back and forth. This should be set to around 12mm (1/2 inch)
       </p>
       <GuideVideo src="automatic-wire-stripper.mp4" />
       <h3>Prepare the Bus Lines</h3>

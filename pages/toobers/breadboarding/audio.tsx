@@ -203,19 +203,6 @@ const Page = () => {
           </span>
         </GuideLink>
       </div>
-      <h2>Do you hear Crackling?</h2>
-      <p>
-        If you hear weird crackling, or if your speaker isn't quite working
-        right, this may be a power problem! Move the wire that connects the
-        Arduino <span className="pin">Vin</span> to the Arduino{' '}
-        <span className="pin red">5V</span> instead, as shown below.
-      </p>
-      <GuideImage
-        src="/images/toobers/crackling-fix.png"
-        border={false}
-        size={'LARGE'}
-      />
-
       <h2>Debugging</h2>
       <p>
         If something doesn't look right, here are some steps that may help you
@@ -230,11 +217,24 @@ const Page = () => {
         <li>Ensure that the microSD card is actually in the DFPlayer.</li>
       </ul>
       <h4>The speaker is crackling:</h4>
-      <ul>
+      <p>
+        This is the most common issue we've encountered, so here's a list of
+        things you can try in order to resolve the problem!
+      </p>
+      <ol>
         <li>
-          Make sure you've moved the <span className="pin red">Vin</span> over
-          to <span className="pin red">5V</span> as shown above.
+          {' '}
+          Move the wire that connects the Arduino{' '}
+          <span className="pin">Vin</span> to the Arduino{' '}
+          <span className="pin red">5V</span> instead, as shown below.
         </li>
+      </ol>
+      <GuideImage
+        src="/images/toobers/crackling-fix.png"
+        border={false}
+        size={'LARGE'}
+      />
+      <ol start={2}>
         <li>
           Go into the code and lower the <code>volume</code> (try something like
           10.) It might be quiet, but we won't have this problem once everything
@@ -252,7 +252,7 @@ const Page = () => {
           out of the DFPlayer. Attach that to the{' '}
           <span className="pin black">GND</span> rail with a short black wire.
         </li>
-      </ul>
+      </ol>
       <GuideImage src="/images/toobers/DFPlayer_wired1b.jpg" border={false} />
       <h4>If the wrong files are playing:</h4>
       <ul>

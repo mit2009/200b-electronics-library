@@ -60,9 +60,10 @@ const Page = () => {
         border={false}
         size={'FULL'}
       />
+      <h2>Debugging</h2>
       <p>
         At this point, you should still have the 'audio' test code on your
-        Arduino Nano. If you flip the switch to <strong>on</strong> , (making
+        Arduino Nano. If you flip the switch to <strong>on</strong>, (making
         sure the computer is NOT connected to the Arduino), you should hear the
         audio clip play!
       </p>
@@ -73,7 +74,11 @@ const Page = () => {
         give it a few seconds. Sometimes, the power-up part draws more power
         than expected. Other things to try if it still doesn't work:
       </p>
-      <ul>
+      <ol>
+        <li>
+          Turn the switch <strong>off</strong> before you modify anything,
+          especially if it involves moving power around!
+        </li>
         <li>
           Double check all the wiring and connections to make sure nothing has
           come loose since you last worked on this part. Ask a teammate to
@@ -84,8 +89,24 @@ const Page = () => {
           stabilize the power problems
         </li>
         <li>Try a different battery (is yours dead?)</li>
-        <li>Reach out on #ask-the-tas</li>
-      </ul>
+        <li>
+          Move the power that's coming into the board from the battery closer to
+          the Audio player, as shown in the image below. Having the battery
+          power enter the breadboard physically as close as possible to the
+          audio player chip reduces the distance through the breadboard the
+          current has to flow through.
+        </li>
+      </ol>
+      <GuideImage
+        src="/images/toobers/move-power-closer-to-speaker.png"
+        size={'FULL'}
+      />
+      <ol start={6}>
+        <li>
+          Still having problems? As always, please feel free to reach out on
+          #ask-the-tas
+        </li>
+      </ol>
     </div>
   );
 };

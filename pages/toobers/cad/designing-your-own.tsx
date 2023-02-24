@@ -53,6 +53,7 @@ const Page = () => {
         src="/images/toobers/toober-box.png"
         alt="Toober case bounding box"
         size="FULL"
+        border={false}
       />
       <p>Additional Appendages:</p>
       <ul>
@@ -71,6 +72,7 @@ const Page = () => {
         src="/images/toobers/appendage-box.png"
         alt="Appendage bounding box"
         size="FULL"
+        border={false}
       />
       <p>
         To submit your custom Toobers enclosure, please post in the #3d-print
@@ -102,6 +104,7 @@ const Page = () => {
         src="/images/toobers/export-button.png"
         alt="Fusion export button"
         size="SMALL"
+        border={false}
       />
       <GuideImage
         src="/images/toobers/export-options.png"

@@ -19,7 +19,11 @@ const Page = () => {
         To bring our CAD models to reality, we will be printing them on fancy
         polyjet printers. Specifically, the J55™ Prime 3D Printer.
       </p>
-      <GuideImage src="/images/toobers/j55.png" alt="J55™ Prime 3D Printer" />
+      <GuideImage
+        src="/images/toobers/j55.png"
+        alt="J55™ Prime 3D Printer"
+        border={false}
+      />
       <p>
         This 3D printer is able to print materials nearly indistinguishable from
         "final products." Take a look at the image below! Yes, the "leather"
@@ -37,6 +41,7 @@ const Page = () => {
       <GuideImage
         src="/images/toobers/j55bed.png"
         alt="Prints bed of J55™ Prime 3D Printer with Toobers"
+        border={false}
       />
       <h2>Print Materials</h2>
       <p>
@@ -83,6 +88,7 @@ const Page = () => {
           '/images/toobers/ultimaker.png',
         ]}
         alt="Common FDM Printers"
+        border={false}
       />
       <p>
         <strong>Technology</strong>: FDM uses a process of heating and extruding
@@ -129,6 +135,7 @@ const Page = () => {
       <GuideImage
         src="/images/toobers/j55support.png"
         alt="J55 Support Material"
+        border={false}
       />
       <p>
         During the printing process, the support material is printed

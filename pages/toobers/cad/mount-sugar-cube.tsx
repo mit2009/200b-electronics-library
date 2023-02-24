@@ -12,6 +12,7 @@ const Page = () => {
       <GuideImage
         src="/images/toobers/top-of-toober.png"
         alt="Top down view of the Toober"
+        border={false}
       />
       <p>
         If we look closely at just one button, we can see that the minimum area
@@ -39,6 +40,7 @@ const Page = () => {
       <GuideImage
         src="/images/toobers/sugar-dimensions.png"
         alt="Sugar Cube Dimensions"
+        border={false}
       />
       <p>
         We'll focus on making one sugar cube mount for now, since once you make

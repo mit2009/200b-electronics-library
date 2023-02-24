@@ -17,7 +17,7 @@ const Page = () => {
       </p>
       <p>
         To bring our CAD models to reality, we will be printing them on fancy
-        polyjet printers. Specifically, the J55™ Prime 3D Printer.
+        polyjet printers. Specifically, the Stratasys J55™ Prime 3D Printer.
       </p>
       <GuideImage
         src="/images/toobers/j55.png"
@@ -74,7 +74,7 @@ const Page = () => {
         With these materials, we can mix and match and get millions of different
         colors at varying opacity levels!
       </p>
-      <h2>How is a Polyjet printer different from an FDM printer</h2>
+      <h2>How is a Polyjet Printer different from an FDM Printer?</h2>
       <p>
         You may have seen or used FDM (fused deposition modelling) printers like
         the ones below (common models being the Prusa, Ender, FlashForge,

@@ -203,8 +203,8 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
         },
       },
-      '/cad': {
-        value: '6. Enclosure CAD',
+      '/cad-review': {
+        value: '6. CAD Review',
         due_date: 'Mar 4',
         location: Location.AT_HOME,
         has_pages: true,
@@ -215,14 +215,25 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/intro': {
             value: 'Installing Fusion 360',
           },
+          '/interface': {
+            value: 'Exploring the Interface',
+          },
+        },
+      },
+      '/housing-cad': {
+        value: '7. Housing CAD',
+        due_date: 'Mar 4',
+        location: Location.AT_HOME,
+        has_pages: true,
+        whatsDue: {
+          '6.1': 'TODO: Get checklist',
+        },
+        pages: {
           '/3dprinting': {
             value: '3D Printing',
           },
           '/base-model': {
             value: 'Getting the Base Model',
-          },
-          '/interface': {
-            value: 'Exploring the Interface',
           },
           '/base-model-features': {
             value: 'Base Model Features',

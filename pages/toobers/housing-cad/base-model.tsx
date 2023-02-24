@@ -5,6 +5,8 @@ const Page = () => {
   return (
     <div>
       <h1>Getting the Base Model</h1>
+      <h2>This section being worked on by Elaine</h2>
+      <p>Coming soon!</p>
       <h2>Starting from the Basics</h2>
       <p>
         To help you get started, we're providing a base model that you can

@@ -21,9 +21,9 @@ const Page = () => {
       </p>
       <GuideImage src="/images/toobers/j55.png" alt="J55™ Prime 3D Printer" />
       <p>
-        This 3D printer is able to print materials indistinguishable from "final
-        products." Take a look at the image below! Yes, the "leather" strip of
-        material was 3D printed using this printer. And so was the
+        This 3D printer is able to print materials nearly indistinguishable from
+        "final products." Take a look at the image below! Yes, the "leather"
+        strip of material was 3D printed using this printer. And so was the
         transparent/marble glass-like material on the right.
       </p>
       <GuideImage
@@ -69,13 +69,12 @@ const Page = () => {
         With these materials, we can mix and match and get millions of different
         colors at varying opacity levels!
       </p>
-      <h2>
-        How is it different from a FDM (fused deposition modeling) printer?
-      </h2>
+      <h2>How is a Polyjet printer different from an FDM printer</h2>
       <p>
-        You may have seen printers like the ones below (common models being the
-        Prusa, Ender, FlashForge, Ultimaker, and Makerbot.) The J55 is different
-        to these FDM in a variety of ways:
+        You may have seen or used FDM (fused deposition modelling) printers like
+        the ones below (common models being the Prusa, Ender, FlashForge,
+        Ultimaker, and Makerbot.) The J55 is different to these FDM printers in
+        a variety of ways:
       </p>
       <GuideImage
         src={[

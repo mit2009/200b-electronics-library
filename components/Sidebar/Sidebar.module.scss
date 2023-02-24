@@ -153,14 +153,16 @@
   letter-spacing: 1px;
   font-weight: 600;
   align-self: center;
-  padding-bottom: 5px;
-  padding-right: 10px;
+  padding: 2px 20px 5px 0px;
+  position: relative;
+  top: 0;
 
   cursor: pointer;
 
   &::after {
     position: absolute;
     content: '';
+    top: 0;
     width: 0;
     height: 0;
     margin-left: 5px;
@@ -242,6 +244,70 @@ ul.pageList {
   &:hover {
     cursor: pointer;
     opacity: 0.6;
+  }
+}
+
+.sectionNav {
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 0;
+
+  .navButton {
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 6px;
+
+    display: flex;
+
+    &.comingSoonLink {
+      background-color: #aaa;
+      color: #444;
+      cursor: not-allowed;
+    }
+
+    & + .navButton {
+      margin-left: 10px;
+    }
+  }
+
+  .prevLink {
+    justify-self: flex-start;
+    background-color: var(--grey7);
+
+    &::before {
+      align-self: center;
+      flex-shrink: 0;
+
+      content: '';
+      margin-right: 5px;
+      transform: rotate(-225deg);
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border: 3px solid white;
+      border-width: 0 3px 3px 0;
+    }
+  }
+
+  .nextLink {
+    justify-self: flex-end;
+    background-color: var(--section-color);
+
+    &:after {
+      align-self: center;
+      flex-shrink: 0;
+
+      content: '';
+      margin-left: 5px;
+      transform: rotate(-45deg);
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border: 3px solid white;
+      border-width: 0 3px 3px 0;
+    }
   }
 }
 
@@ -368,68 +434,12 @@ ul.pageList {
       border-right: none;
     }
   }
-}
 
-.sectionNav {
-  display: flex;
-  justify-content: space-between;
-  margin: 60px 0;
-
-  .navButton {
-    font-size: 16px;
-    cursor: pointer;
-    padding: 8px 15px;
-    color: white;
-    border-radius: 6px;
-
-    display: flex;
-
-    &.comingSoonLink {
-      background-color: #aaa;
-      color: #444;
-      cursor: not-allowed;
-    }
-
-    & + .navButton {
-      margin-left: 10px;
-    }
-  }
-
-  .prevLink {
-    justify-self: flex-start;
-    background-color: var(--grey7);
-
-    &::before {
-      align-self: center;
-      flex-shrink: 0;
-
-      content: '';
-      margin-right: 5px;
-      transform: rotate(-225deg);
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border: 3px solid white;
-      border-width: 0 3px 3px 0;
-    }
-  }
-
-  .nextLink {
-    justify-self: flex-end;
-    background-color: var(--section-color);
-
-    &:after {
-      align-self: center;
-      flex-shrink: 0;
-
-      content: '';
-      margin-left: 5px;
-      transform: rotate(-45deg);
-      display: inline-block;
-      width: 8px;
-      height: 8px;
-      border: 3px solid white;
-      border-width: 0 3px 3px 0;
+  .chapterName {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    &::after {
+      top: 3px;
     }
   }
 

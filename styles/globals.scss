@@ -218,6 +218,18 @@ div {
     }
   }
 
+  strong {
+    font-weight: 700;
+
+    &.color {
+      color: var(--section-color);
+      background-color: var(--section-lightest);
+      padding: 0 3px;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+  }
+
   span.instruction,
   code {
     background-color: #eee;
@@ -226,6 +238,8 @@ div {
     margin: 0px 3px;
     font-weight: bold;
     white-space: no-wrap;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   span.pin {

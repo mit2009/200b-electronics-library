@@ -10,7 +10,7 @@ const Intro = () => {
       <WhatsDue chapter={'/cad-review'} />
       <p>
         It's time to start CADding your Fusion 360 Toober Model! The two pages
-        in this 'CAD Basics' section is a review of what you might already know
+        in this 'CAD Review' section is a review of what you might already know
         - feel free to skim it and skip to the{' '}
         <GuideLink href="/toobers/housing-cad/3dprinting">
           Housing CAD

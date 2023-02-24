@@ -8,7 +8,9 @@ const Page = () => {
       <p>
         Fillets, Rounds, and Chamfers are three common geometrics used in design
         and engineering. They strengthen parts by reducing stress concentrations
-        along corners and edges and soften the look and feel.
+        along corners and edges and soften the look and feel. There's sometimes
+        ambiguity between these terms, but in 2.00b (and at MIT), we often use
+        these definitions:
       </p>
       <ul>
         <li>

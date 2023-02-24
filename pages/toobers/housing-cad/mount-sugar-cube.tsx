@@ -121,7 +121,7 @@ const Page = () => {
         </li>
         <li>
           Draw another sketch, following the dimensions as shown below.{' '}
-          <strong>
+          <strong className="color">
             Note the offset rectangle that's drawn which is 0.25mm away from the
             existing, indented square.
           </strong>

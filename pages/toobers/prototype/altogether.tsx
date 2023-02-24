@@ -1,4 +1,5 @@
 import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
 import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
@@ -104,7 +105,12 @@ const Page = () => {
       <ol start={6}>
         <li>
           Still having problems? As always, please feel free to reach out on
-          #ask-the-tas
+          <GuideLink
+            href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J"
+            target="_blank"
+          >
+            #ask-the-tas
+          </GuideLink>
         </li>
       </ol>
     </div>

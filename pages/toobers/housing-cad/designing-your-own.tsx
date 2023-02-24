@@ -1,4 +1,5 @@
 import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
 import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
@@ -19,7 +20,7 @@ const Page = () => {
         right or wrong way to start or finish this process - just make sure
         you're proud of the end result.
       </p>
-      <p>We will be 3D-printing your designs in the coming week.</p>
+      <p>We will be 3D-printing your designs in the coming weeks.</p>
       <h2>Base Constraints</h2>
       <ul>
         <li>
@@ -33,8 +34,8 @@ const Page = () => {
           These are the <strong>hard points</strong>.
         </li>
         <li>
-          For additions onto the body, they may not increase the overall width
-          or depth of the top or bottom piece by more than <strong>7mm</strong>{' '}
+          For additions onto the body, they may not increase the overall length
+          or width of the top or bottom piece by more than <strong>14mm</strong>{' '}
           in the X or Y direction. One way to think of this is to keep your
           design within 7mm from all sides, but the available{' '}
           <strong>14mm</strong> buffer can be split along each axis in whichever
@@ -71,10 +72,18 @@ const Page = () => {
         outside of than the allotted bounding box, but we will be printing them
         separately and then you will join them to the base cube shape. All such
         appendages should not be larger than{' '}
-        <strong>150 x 50 x 25 mm each</strong>. If your design requires more
+        <strong>104 x 50 x 25 mm each</strong>. If your design requires more
         than <strong>2 such appendages</strong> or additional printing capacity,{' '}
-        <strong>please contact the TAs on #ask-the-tas</strong> to discuss your
-        design, which will need to be approved.
+        <strong>
+          please contact the TAs on{' '}
+          <GuideLink
+            href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J"
+            target="_blank"
+          >
+            #ask-the-tas
+          </GuideLink>
+        </strong>{' '}
+        to discuss your design, which will need to be approved.
       </p>
       <p>
         Leave your appendages on your model. The 3D printing staff will
@@ -137,7 +146,12 @@ const Page = () => {
       <WhatsDue
         checklist={{
           '1': 'Your entire Toober housing (minus appendages) fits within a 104mm x 104mm x 52mm bounding box (length x width x height)',
-          '2': 'Your Toober appendage(s) fits within a 25 x 50mm by 150mm bounding box',
+          '2': (
+            <>
+              Your Toober appendage(s) fits within a{' '}
+              <strong>25 x 50 x 104 mm</strong> bounding box
+            </>
+          ),
           '3': 'Your Toober has no more than 2 appendages (or you have contacted the TAs to discuss your design)',
           '4': 'There have been no modifications to the bottom housing piece',
           '5': 'You have used no more than 5 decals',
@@ -152,8 +166,25 @@ const Page = () => {
               not accidentally joined the top and the bottom half.
             </>
           ),
-          '8': `The file naming scheme follows the format: DAVID_WALLACE_V2.f3z, and the version number of the file name matches the save version of the Fusion 360 file (in David's case, it would be version 2)`,
-          '9': 'You have thouroughly read the submission guidelines and have prepared all the necessary files!',
+          '9': (
+            <>
+              The exterior edges of your Toober has an appopriate fillet as
+              specified{' '}
+              <GuideLink href="/toobers/housing-cad/sweat-the-details">
+                here
+              </GuideLink>
+              , and is no more than <strong>5mm</strong>
+            </>
+          ),
+          '20': (
+            <>
+              The file naming scheme follows the format:{' '}
+              <strong>DAVID_WALLACE_V2.f3z</strong>, and the version number of
+              the file name matches the save version of the Fusion 360 file (in
+              David's case, it would be version 2)
+            </>
+          ),
+          '21': 'You have thouroughly read the submission guidelines and have prepared all the necessary files!',
         }}
       />
       <WhatsDue chapter={'/housing-cad'} />

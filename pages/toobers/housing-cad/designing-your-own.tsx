@@ -66,18 +66,16 @@ const Page = () => {
         border={false}
       />
       <h2>Additional Appendages and ProTOOBERances</h2>
-      <ul>
-        <li>
-          You may design appendages that go on any of the faces that protrudes
-          outside of than the allotted bounding box, but we will be printing
-          them separately and then you will join them to the base cube shape.
-          All such appendages should not be larger than{' '}
-          <strong>150 x 50 x 25 mm each</strong>. If your design requires more
-          than 2 such appendages or additional printing capacity,{' '}
-          <strong>please contact the TAs on #ask-the-tas</strong> to discuss
-          your design, which will need to be approved.
-        </li>
-      </ul>
+      <p>
+        You may design appendages that go on any of the faces that protrudes
+        outside of than the allotted bounding box, but we will be printing them
+        separately and then you will join them to the base cube shape. All such
+        appendages should not be larger than{' '}
+        <strong>150 x 50 x 25 mm each</strong>. If your design requires more
+        than <strong>2 such appendages</strong> or additional printing capacity,{' '}
+        <strong>please contact the TAs on #ask-the-tas</strong> to discuss your
+        design, which will need to be approved.
+      </p>
       <p>
         Leave your appendages on your model. The 3D printing staff will
         carefully slice them up and add the necessary pins to join the pieces
@@ -109,7 +107,7 @@ const Page = () => {
         </li>
         <li>Copies of any decal images or custom fonts used</li>
         <li>
-          If any decals or texture appearances (e.g. wood grains) were used,
+          If any decals or texture appearances (e.g. wood grains) were used,{' '}
           <strong>
             please also note how they are to be placed on the part in the slack
             thread
@@ -144,8 +142,18 @@ const Page = () => {
           '4': 'There have been no modifications to the bottom housing piece',
           '5': 'You have used no more than 5 decals',
           '6': 'You have specified colors for the faces that you want colors',
-          '7': 'When you open up the body list, you see 2 bodies: the top and bottom. (Ensure that you have not accidentally created a new body. Consider using the boolean tool if you have!)',
-          '8': 'The file naming scheme follows the format: DAVID_WALLACE_V2.f3z, and the version number of the file name matches the save version of the Fusion 360 file',
+          '7': (
+            <>
+              When you open up the body list, you see exactly{' '}
+              <strong>2 bodies</strong>: the top and bottom. (Ensure that you
+              have not accidentally created a new body. Double check to make
+              sure your extrudes are "joins" when appropriate, and consider
+              using the boolean tool if you have!) Conversely, ensure you have
+              not accidentally joined the top and the bottom half.
+            </>
+          ),
+          '8': `The file naming scheme follows the format: DAVID_WALLACE_V2.f3z, and the version number of the file name matches the save version of the Fusion 360 file (in David's case, it would be version 2)`,
+          '9': 'You have thouroughly read the submission guidelines and have prepared all the necessary files!',
         }}
       />
       <WhatsDue chapter={'/housing-cad'} />

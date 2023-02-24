@@ -10,7 +10,7 @@ export const WhatsDue = ({
   checklist,
 }: {
   chapter?: string;
-  checklist?: { [id: string]: string };
+  checklist?: { [id: string]: string | React.ReactNode };
 }) => {
   const dueItems =
     checklist ?? PAGES_LAYOUT['/toobers'].chapters?.[chapter ?? '']?.whatsDue;

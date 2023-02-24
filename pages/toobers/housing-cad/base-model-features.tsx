@@ -123,9 +123,9 @@ const Page = () => {
         Near the USB-C opening is a feature attached to the side wall which can
         hold a small piece of acrylic. The hole for this is counterbored such
         that a screw head sits flush with the surface as the diameter of the M3
-        screw is smaller than the major (larger) hole diameter, and the primary
-        hole (smaller) can accomodate a threaded insert. The M3 screw then
-        clamps down onto the acrylic, holding it in place.
+        screw head is smaller than the major (larger) hole diameter, and the
+        primary hole (smaller) can accomodate a threaded insert. The M3 screw
+        then clamps down onto the acrylic, holding it in place.
       </p>
       <GuideImage
         src="/images/toobers/acrylic-light-channel-mount.png"
@@ -140,13 +140,18 @@ const Page = () => {
         housing.
       </p>
       <GuideImage src="/images/toobers/toober-usb-c.jpg" size={'SMALL'} />
-      <p>Here is a photo of the acrylic on top of the charging module</p>
+      <p>
+        Here is a photo of the acrylic on top of the charging module, with the
+        red charging indicator on.
+      </p>
       <GuideImage
         src="/images/toobers/acrylic-on-charging-module.png"
         size={'MEDIUM'}
       />
 
-      <p>And here is a photo of it from the outside!</p>
+      <p>
+        And here is a photo of it from the outside, what the toy user would see!
+      </p>
       <GuideImage
         src="/images/toobers/charging-light.png"
         size={'SMALL'}

@@ -70,7 +70,7 @@ const Intro = () => {
       <ul>
         <li>
           <a
-            href="https://knowledge.autodesk.com/customer-service/account-management/education-program/renew-education-licenses"
+            href="https://web.mit.edu/2.00b/www/resources/fusion360_tutorials.html"
             target="_blank"
             rel="noreferrer"
           >
@@ -82,7 +82,7 @@ const Intro = () => {
           If you are coming to Fusion from Solidworks, it is very easy to get up
           to speed with the new software.{' '}
           <a
-            href="https://knowledge.autodesk.com/customer-service/account-management/education-program/renew-education-licenses"
+            href="https://www.youtube.com/watch?v=68G8Igl1jKM"
             target="_blank"
             rel="noreferrer"
           >
@@ -93,7 +93,7 @@ const Intro = () => {
         <li>
           If you're a beginner in CAD, no worries!{' '}
           <a
-            href="https://knowledge.autodesk.com/customer-service/account-management/education-program/renew-education-licenses"
+            href="https://www.autodesk.com/products/fusion-360/resources"
             target="_blank"
             rel="noreferrer"
           >

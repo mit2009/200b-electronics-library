@@ -212,6 +212,9 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/intro': {
             value: 'Installing Fusion 360',
           },
+          '/3dprinting': {
+            value: '3D Printing',
+          },
           '/base-model': {
             value: 'Getting the Base Model',
           },

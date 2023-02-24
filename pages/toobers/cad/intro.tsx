@@ -7,9 +7,9 @@ const Intro = () => {
       <h2>Time for CAD</h2>
       <p>
         It's time to start CADding your Fusion 360 Toober Model! If you've made
-        your Flora model, you probably already have Fusion 360, so feel free to{' '}
-        <a href="/toobers/cad/3dprinting">3D Printing</a>! Otherwise, this is a
-        guide that will help you get Fusion 360 installed.
+        your Flora model, you probably already have Fusion 360, so feel free to
+        skip to <a href="/toobers/cad/3dprinting">3D Printing</a>! Otherwise,
+        this is a guide that will help you get Fusion 360 installed.
       </p>
       <a
         target="_blank"

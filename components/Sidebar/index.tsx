@@ -84,7 +84,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/soldering': true,
       '/power': true,
       '/prototype': true,
-      '/cad-review': true,
       '/cad': false,
       '/suger-cube': false,
       '/pcb': false,
@@ -96,7 +95,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/soldering': false,
       '/power': false,
       '/prototype': true,
-      '/cad-review': true,
       '/cad': true,
       '/suger-cube': false,
       '/pcb': false,
@@ -217,24 +215,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
         },
       },
-      // '/cad-review': {
-      //   value: '6. CAD Review',
-      //   due_date: 'Mar 4',
-      //   location: Location.AT_HOME,
-      //   has_pages: true,
-      //   whatsDue: {
-      //     '6.1': 'Install Fusion 360',
-      //     '6.2': "Familiarize yourself with Fusion's Interface",
-      //   },
-      //   pages: {
-      //     '/intro': {
-      //       value: 'Installing Fusion 360',
-      //     },
-      //     '/interface': {
-      //       value: 'Exploring the Interface',
-      //     },
-      //   },
-      // },
       '/cad': {
         value: '6. Housing CAD',
         due_date: 'Mar 4',

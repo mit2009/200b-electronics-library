@@ -85,7 +85,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/power': true,
       '/prototype': true,
       '/cad-review': true,
-      '/housing-cad': true,
+      '/cad': false,
       '/suger-cube': false,
       '/pcb': false,
       '/final': false,
@@ -97,7 +97,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/power': false,
       '/prototype': true,
       '/cad-review': true,
-      '/housing-cad': true,
+      '/cad': true,
       '/suger-cube': false,
       '/pcb': false,
       '/final': false,
@@ -217,26 +217,26 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
         },
       },
-      '/cad-review': {
-        value: '6. CAD Review',
-        due_date: 'Mar 4',
-        location: Location.AT_HOME,
-        has_pages: true,
-        whatsDue: {
-          '6.1': 'Install Fusion 360',
-          '6.2': "Familiarize yourself with Fusion's Interface",
-        },
-        pages: {
-          '/intro': {
-            value: 'Installing Fusion 360',
-          },
-          '/interface': {
-            value: 'Exploring the Interface',
-          },
-        },
-      },
-      '/housing-cad': {
-        value: '7. Housing CAD',
+      // '/cad-review': {
+      //   value: '6. CAD Review',
+      //   due_date: 'Mar 4',
+      //   location: Location.AT_HOME,
+      //   has_pages: true,
+      //   whatsDue: {
+      //     '6.1': 'Install Fusion 360',
+      //     '6.2': "Familiarize yourself with Fusion's Interface",
+      //   },
+      //   pages: {
+      //     '/intro': {
+      //       value: 'Installing Fusion 360',
+      //     },
+      //     '/interface': {
+      //       value: 'Exploring the Interface',
+      //     },
+      //   },
+      // },
+      '/cad': {
+        value: '6. Housing CAD',
         due_date: 'Mar 4',
         location: Location.AT_HOME,
         has_pages: true,
@@ -249,6 +249,9 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
             'Submit your design to Slack following the submission guidelines',
         },
         pages: {
+          '/intro': {
+            value: 'Installing Fusion 360',
+          },
           '/3dprinting': {
             value: '3D Printing',
           },
@@ -471,7 +474,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
         }
         break;
       case 'cadlab':
-        if (!pageStates['/cad-review']) {
+        if (!pageStates['/cad']) {
           setPageStates((current) => {
             return {
               ...current,
@@ -479,11 +482,10 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
               '/soldering': true,
               '/power': true,
               '/prototype': true,
-              '/cad-review': true,
-              '/housing-cad': true,
+              '/cad': true,
             };
           });
-          router.push(`${dirs[0]}/cad-review`);
+          router.push(`${dirs[0]}/cad`);
           setUnlockPhrase('');
           setEnteringUnlockPhrase(false);
           setConfettiColor(['#a600a6']);

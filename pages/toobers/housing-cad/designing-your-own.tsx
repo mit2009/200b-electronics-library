@@ -72,8 +72,8 @@ const Page = () => {
           outside of than the allotted bounding box, but we will be printing
           them separately and then you will join them to the base cube shape.
           All such appendages should not be larger than{' '}
-          <strong>150mm x 50mm x 25mm each</strong>. If your design requires
-          more than 2 such appendages or additional printing capacity,{' '}
+          <strong>150 x 50 x 25 mm each</strong>. If your design requires more
+          than 2 such appendages or additional printing capacity,{' '}
           <strong>please contact the TAs on #ask-the-tas</strong> to discuss
           your design, which will need to be approved.
         </li>
@@ -139,10 +139,13 @@ const Page = () => {
       <WhatsDue
         checklist={{
           '1': 'Your entire Toober housing (minus appendages) fits within a 104mm x 104mm x 52mm bounding box (length x width x height)',
-          '2': 'Your Toober appendage(s) fits within a 25mm by 50mm by 150mm bounding box',
+          '2': 'Your Toober appendage(s) fits within a 25 x 50mm by 150mm bounding box',
           '3': 'Your Toober has no more than 2 appendages (or you have contacted the TAs to discuss your design)',
           '4': 'There have been no modifications to the bottom housing piece',
-          '5': 'The file naming scheme follows the format: DAVID_WALLACE_V2.f3z',
+          '6': 'You have used no more than 5 decals',
+          '7': 'You have specified colors for the faces that you want colors',
+          '8': 'When you open up the body list, you see 2 bodies: the top and bottom. (Ensure that you have not accidentally created a new body. Consider using the boolean tool if you have!)',
+          '5': 'The file naming scheme follows the format: DAVID_WALLACE_V2.f3z, and the version number of the file name matches the save version of the Fusion 360 file',
         }}
       />
       <WhatsDue chapter={'/housing-cad'} />

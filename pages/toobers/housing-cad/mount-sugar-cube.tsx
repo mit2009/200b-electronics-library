@@ -82,25 +82,78 @@ const Page = () => {
       <ol>
         <li>Hide all parts except the top housing.</li>
         <li>
-          Click the <strong>Create Sketch</strong> button, and create a 16mm by
-          16mm square. Confirm the sketch.
+          Click the <strong>Create Sketch</strong> button, and create a{' '}
+          <strong>16 x 16 mm square</strong>. Confirm the sketch.
+          <GuideImage src="/images/toobers/16x16mm.png" />
         </li>
         <li>
           Click the <strong>Extrude</strong> button. Make sure the operation is
           set to <strong>Cut</strong>. Extrude through the housing wall (either
           by an Extent Type Distance of wall thickness, or you can use the
-          Extent Type: 'To Object' feature). Click <strong>OK</strong>. you
-          should have a square hole in your housing.
+          Extent Type: 'To Object' feature). You should have a square hole in
+          your housing.
         </li>
         <li>
-          Click the <strong>Fillet</strong> tool. Add a 2mm Fillet to the hole.
-          This will give it the nice, rounded button shape for the sugar cube.
-          Click <strong>OK</strong>.
+          Click the <strong>Fillet</strong> tool. Add a{' '}
+          <strong>2 mm Fillet</strong> to the hole. This will give it the nice,
+          rounded button shape for the sugar cube.
+          <GuideImage
+            src="/images/toobers/sugar-cube-mount-extruded-hole.png"
+            size={'SMALL'}
+          />
+        </li>
+        <li>
+          Rotate the view to show the underside of the housing, and create a
+          sketch. For this sketch, draw a <strong>25 x 25 mm square</strong>{' '}
+          centered at the hole of the rounded square hole you made earlier.
+          <GuideImage
+            src="/images/toobers/centered-square-hole.png"
+            size={'SMALL'}
+          />
+        </li>
+        <li>
+          Use the extrude tool to cut <strong>0.3 mm</strong> into the top
+          housing.
+          <GuideImage
+            src="/images/toobers/slim-indentation.png"
+            size={'SMALL'}
+          />
+        </li>
+        <li>
+          Draw another sketch, following the dimensions as shown below.{' '}
+          <strong>
+            Note the offset rectangle that's drawn which is 0.25mm away from the
+            existing, indented square.
+          </strong>
+          <GuideImage
+            src="/images/toobers/holes-and-circles.png"
+            size={'LARGE'}
+          />
+        </li>
+        <li>
+          Use the extrude tool to extrude the two pac-mans by 4.8mm, making sure
+          the operation is <strong>join</strong>. This feature is called a boss
+          (though, normally there's not a corner cut out of them).{' '}
+          <GuideImage src="/images/toobers/two-pac-mans.png" size={'MEDIUM'} />
+        </li>
+        <li>
+          Use the Hole tool to create a hole that's 5 mm deep by 4.3 mm in
+          diameter. This will fit the threaded insert nicely and create threads
+          to which you can attach your sugar cube module.
+          <GuideImage
+            src={[
+              '/images/toobers/pac-mans-with-holes.png',
+              '/images/toobers/edit-hole.png',
+            ]}
+            size={'MEDIUM'}
+          />
+        </li>
+        <li>
+          Add a small 1 mm chamfer to the extruded bosses to strengthen the
+          part.
+          <GuideImage src={'/images/toobers/pac-mans-with-chamfer.png'} />
         </li>
       </ol>
-      <p>TODO: Finish instructions</p>
-      <h2>Double Check, then Check Again</h2>
-      <p>TODO: Add content</p>xF
     </div>
   );
 };

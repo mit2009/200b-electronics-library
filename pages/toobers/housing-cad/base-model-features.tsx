@@ -8,7 +8,9 @@ const Page = () => {
       <h2>Secrets about our Base Model</h2>
       <p>
         The base model contains a bunch of exciting features that you are free
-        to snatch up for your future toy designs!
+        to snatch up for your future toy designs! We don't expect you to
+        recreate any of these, but this hopefully gives you some insight into
+        what we've included in your base Toober!
       </p>
       <h2>Alignment Features</h2>
       <p>

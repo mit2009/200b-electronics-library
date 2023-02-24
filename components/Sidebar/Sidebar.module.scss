@@ -154,12 +154,13 @@
   font-weight: 600;
   align-self: center;
   padding-bottom: 5px;
+  padding-right: 10px;
 
   cursor: pointer;
 
   &::after {
     position: absolute;
-    content: "";
+    content: '';
     width: 0;
     height: 0;
     margin-left: 5px;
@@ -171,7 +172,15 @@
   }
 
   &.rotated::after {
-    transform: translateY(5px) rotate(0deg)
+    transform: translateY(5px) rotate(0deg);
+  }
+
+  &:hover {
+    filter: brightness(0.4);
+
+    &:after {
+      filter: brightness(0.4);
+    }
   }
 }
 

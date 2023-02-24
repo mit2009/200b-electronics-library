@@ -140,6 +140,11 @@ const Page = () => {
           Click <code>OK</code> to accept the changes
         </li>
       </ol>
+      <p>
+        Please keep in mind that decals need to be re-applied when the print is
+        setup. Please include no more than <strong>5 individual decals</strong>,
+        and please read the instructions for submitting decals carefully!
+      </p>
     </div>
   );
 };

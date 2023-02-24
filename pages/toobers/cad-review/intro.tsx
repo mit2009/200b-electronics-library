@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { GuideLink } from '../../../components/GuideLink';
 
 const Intro = () => {
   return (
@@ -6,10 +7,13 @@ const Intro = () => {
       <h1>Installing Fusion 360</h1>
       <h2>Time for CAD</h2>
       <p>
-        It's time to start CADding your Fusion 360 Toober Model! If you've made
-        your Flora model, you probably already have Fusion 360, so feel free to
-        skip to <a href="/toobers/cad/3dprinting">3D Printing</a>! Otherwise,
-        this is a guide that will help you get Fusion 360 installed.
+        It's time to start CADding your Fusion 360 Toober Model! The two pages
+        in this 'CAD Basics' section is a review of what you might already know
+        - feel free to skim it and skip to the{' '}
+        <GuideLink href="/toobers/housing-cad/3dprinting">
+          Housing CAD
+        </GuideLink>{' '}
+        chapter if you feel comfortable!
       </p>
       <a
         target="_blank"

@@ -250,8 +250,8 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/mount-sugar-cube': {
             value: 'Mounting the Sugar Cube',
           },
-          '/filet-the-edges': {
-            value: 'Filet the Edges',
+          '/fillet-the-edges': {
+            value: 'Fillet the Edges',
           },
           '/designing-your-own': {
             value: 'Designing your own!',

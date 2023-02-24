@@ -1,11 +1,13 @@
 import GuideImage from '../../../components/GuideImage';
 import { GuideLink } from '../../../components/GuideLink';
+import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
   return (
     <div>
-      <h1>3D Printing</h1>
+      <h1>3D Printing your Toober</h1>
       <h2>Real Life to CAD, CAD to Real Life</h2>
+      <WhatsDue chapter="/housing-cad" />
       <p>
         Before we get started, we want to understand a little bit about how
         these enclosures will be printed. In product design, it's important to

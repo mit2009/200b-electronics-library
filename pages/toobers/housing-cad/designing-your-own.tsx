@@ -7,19 +7,21 @@ const Page = () => {
       <h1>Designing your own Case</h1>
       <h2>It's your turn!</h2>
       <p>
-        Now that we have learned some of the fundamental methods of working in
-        Fusion 360 software, we now have the opportunity to build on and explore
-        these skills as we design our own case for our Toobers game!
+        Now that we've learned some of the fundamentals of our base Toober and
+        developed some basic understanding of CAD, we now have the opportunity
+        to build on and explore these skills as we design our own case for our
+        Toobers game!
       </p>
       <p>
         Use the tools in this tutorial (or any others you may come across) and
-        make modifications to your copy of the base Toobers design, showcasing
-        your uniqueness and interests! There is no right or wrong way to start
-        or finish this process - just make sure you're proud of the end result.
+        make modifications to your copy of the base Toobers design,{' '}
+        <strong>showcasing your uniqueness and interests</strong>! There is no
+        right or wrong way to start or finish this process - just make sure
+        you're proud of the end result.
       </p>
       <p>
-        We will be 3D-printing your designs in the coming week, so there are a
-        few physical limitations to your design to keep in mind:
+        We will be 3D-printing your designs in the coming week. There are a few
+        constraints you must adhere to:
       </p>
       <ul>
         <li>
@@ -30,7 +32,7 @@ const Page = () => {
           You may modify the button locations in the top piece, but please do
           not change the placement of components in the bottom piece or change
           the openings for the battery or power switch in the bottom piece.
-          These are the "hard points".
+          These are the <strong>hard points</strong>.
         </li>
         <li>
           For additions onto the body, they may not increase the overall width
@@ -40,10 +42,7 @@ const Page = () => {
           <strong>14mm</strong> buffer can be split along each axis in whichever
           manner you wish.
         </li>
-      </ul>
-      <p>Top Case:</p>
-      <ul>
-        <li>Top piece may have up to a 7mm increase in overall height.</li>
+        <li>The top piece may have up to a 7mm increase in overall height.</li>
       </ul>
       <p>Bottom Case:</p>
       <ul>

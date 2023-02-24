@@ -17,10 +17,16 @@
   --section-lightest: rgba(8, 146, 174, 0.1);
 }
 
-.cad {
+.cadReview {
   --section-color: rgb(166, 0, 166);
   --section-lighter: rgba(166, 0, 166, 0.3);
   --section-lightest: rgba(66, 0, 166, 0.1);
+}
+
+.housingCad {
+  --section-color: rgb(94, 0, 166);
+  --section-lighter: rgba(94, 0, 166, 0.3);
+  --section-lightest: rgba(94, 0, 166, 0.1);
 }
 
 .sugarCube {
@@ -98,7 +104,7 @@
 }
 
 .chapterContainer {
-  overflow-y: scroll;
+  overflow-y: auto;
   width: 340px;
 
   padding: 5px 10px 80px;

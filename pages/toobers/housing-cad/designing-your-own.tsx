@@ -118,7 +118,7 @@ const Page = () => {
         cannot be made to your case once we have started printing it!
       </p>
 
-      <WhatsDue chapter={'/cad'} />
+      <WhatsDue chapter={'/housing-cad'} />
     </div>
   );
 };

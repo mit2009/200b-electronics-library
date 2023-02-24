@@ -101,7 +101,7 @@
   overflow-y: scroll;
   width: 340px;
 
-  padding: 5px 10px;
+  padding: 5px 10px 80px;
   background-color: var(--grey1);
 
   a {
@@ -368,7 +368,7 @@ ul.pageList {
     &::before {
       align-self: center;
       flex-shrink: 0;
-      
+
       content: '';
       margin-right: 5px;
       transform: rotate(-225deg);

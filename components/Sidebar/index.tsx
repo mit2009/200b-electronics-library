@@ -205,8 +205,8 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       },
       '/cad': {
         value: '6. Enclosure CAD',
-        due_date: 'Feb 31',
-        location: Location.IN_LAB,
+        due_date: 'Mar 4',
+        location: Location.AT_HOME,
         has_pages: true,
         whatsDue: {
           '6.1': 'TODO: Get checklist',
@@ -237,7 +237,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
             value: 'Filet the Edges',
           },
           '/designing-your-own': {
-            value: 'Designing your own',
+            value: 'Designing your own!',
           },
         },
       },

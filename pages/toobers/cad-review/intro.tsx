@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import { GuideLink } from '../../../components/GuideLink';
+import { WhatsDue } from '../../../components/WhatsDue';
 
 const Intro = () => {
   return (
     <div>
       <h1>Installing Fusion 360</h1>
       <h2>Time for CAD</h2>
+      <WhatsDue chapter={'/cad-review'} />
       <p>
         It's time to start CADding your Fusion 360 Toober Model! The two pages
         in this 'CAD Basics' section is a review of what you might already know

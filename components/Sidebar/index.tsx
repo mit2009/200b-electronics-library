@@ -223,7 +223,8 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         location: Location.AT_HOME,
         has_pages: true,
         whatsDue: {
-          '6.1': 'TODO: Get checklist',
+          '6.1': 'Install Fusion 360',
+          '6.2': "Familiarize yourself with Fusion's Interface",
         },
         pages: {
           '/intro': {

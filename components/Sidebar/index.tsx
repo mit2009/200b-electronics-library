@@ -84,7 +84,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/soldering': true,
       '/power': true,
       '/prototype': true,
-      '/cad': false,
+      '/cad': true,
       '/suger-cube': false,
       '/pcb': false,
       '/final': false,

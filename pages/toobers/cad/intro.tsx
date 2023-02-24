@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { GuideLink } from '../../../components/GuideLink';
 import { WhatsDue } from '../../../components/WhatsDue';
 
 const Intro = () => {
@@ -49,7 +50,14 @@ const Intro = () => {
         proof of student status to qualify for the license. If you have any
         difficulty, please email{' '}
         <a href="mailto:200b-sysadmin@mit.edu">200b-sysadmin@mit.edu</a> or post
-        in the <strong>#ask-the-TA</strong> channel on Slack for help.
+        in the{' '}
+        <GuideLink
+          href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J"
+          target="_blank"
+        >
+          #ask-the-tas
+        </GuideLink>{' '}
+        channel on Slack for help.
       </p>
       <p className={'important'}>
         Submitting your MIT ID <strong>will not work</strong> for proof of

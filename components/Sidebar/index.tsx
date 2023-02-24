@@ -205,9 +205,12 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       },
       '/cad': {
         value: '6. Enclosure CAD',
-        due_date: 'Feb 17',
+        due_date: 'Feb 31',
         location: Location.IN_LAB,
         has_pages: true,
+        whatsDue: {
+          '6.1': 'TODO: Get checklist',
+        },
         pages: {
           '/intro': {
             value: 'Installing Fusion 360',

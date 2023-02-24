@@ -1,13 +1,20 @@
+.themeOverride {
+  --section-color: var(--grey8);
+  --section-lightest: var(--grey2);
+}
+
 .whatsDueContainer {
   background-color: var(--section-lightest);
   border-radius: 8px;
   padding: 20px;
+  margin-bottom: 10px;
 
   h1 {
     font-size: 16px;
     color: var(--section-color);
     margin-bottom: 10px;
   }
+
   .dueContainer {
     display: grid;
     gap: 15px;

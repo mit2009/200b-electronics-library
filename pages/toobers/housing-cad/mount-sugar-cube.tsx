@@ -29,8 +29,8 @@ const Page = () => {
         src="/images/toobers/top-of-sugar.png"
         alt="Top down view of the Sugar Cube"
       />
-      <h2>Moving the Sugar cube Mount</h2>
-      <h2>Creating your own Sugar cube Mount</h2>
+      <h2>Moving the Sugar Cube Mount</h2>
+      <h2>Creating your own Sugar Cube Mount</h2>
       <p>
         First, determine which plane you'd like your button to be on. Ballpark
         if you'll have enough space for the button itself before proceedin. The

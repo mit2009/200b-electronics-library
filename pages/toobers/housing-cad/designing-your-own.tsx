@@ -62,7 +62,7 @@ const Page = () => {
           cube, but we will be printing them separately and then you will join
           them to the base cube shape. All such appendages should not be larger
           than <strong>150mm x 50mm x 25mm each</strong>. If your design
-          requires more than 2 such appendages or additional printing capacity,
+          requires more than 2 such appendages or additional printing capacity,{' '}
           <strong>please contact the TAs on #ask-the-tas</strong> to discuss
           your design, which will need to be approved.
         </li>
@@ -80,9 +80,10 @@ const Page = () => {
       <ul>
         <li>
           <code>.f3z</code> of your assembly named{' '}
-          <code>YOUR_NAME_V24.f3z</code> (note the underscore and
-          capitalization. The V24 should be the version number of your fusion
-          save file)
+          <code>FIRSTNAME_LASTNAME_V[X].f3z</code> (note the underscore and
+          capitalization. The [X] should be the version number of your saved
+          Fusion 360 save file, <strong>without</strong> the square brackets).
+          E.g. <code>DAVID_WALLACE_V2.f3z</code>
         </li>
         <li>
           A screenshot or two showing your design (from different angles, so we
@@ -117,6 +118,15 @@ const Page = () => {
         cannot be made to your case once we have started printing it!
       </p>
 
+      <WhatsDue
+        checklist={{
+          '1': 'Your entire Toober housing (minus appendages) fits within a 104mm x 104mm x 52mm bounding box (length x width x height)',
+          '2': 'Your Toober appendage(s) fits within a 25mm by 50mm by 150mm bounding box',
+          '3': 'Your Toober has no more than 2 appendages (or you have contacted the TAs to discuss your design)',
+          '4': 'There have been no modifications to the bottom housing piece',
+          '5': 'The file naming scheme follows the format: DAVID_WALLACE_V2.f3z',
+        }}
+      />
       <WhatsDue chapter={'/housing-cad'} />
     </div>
   );

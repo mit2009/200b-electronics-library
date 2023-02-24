@@ -5,8 +5,16 @@ import cx from 'classnames';
 
 import ConfettiExplosion from 'react-confetti-explosion';
 
-export const WhatsDue = ({ chapter }: { chapter: string }) => {
-  const dueItems = PAGES_LAYOUT['/toobers'].chapters?.[chapter]?.whatsDue;
+export const WhatsDue = ({
+  chapter,
+  checklist,
+}: {
+  chapter?: string;
+  checklist?: { [id: string]: string };
+}) => {
+  const dueItems =
+    checklist ?? PAGES_LAYOUT['/toobers'].chapters?.[chapter ?? '']?.whatsDue;
+
   const [trackedItems, setTrackedItems] = useState(dueItems);
   const [dontShowConfetti, setDontShowConfetti] = useState(true);
 
@@ -39,8 +47,19 @@ export const WhatsDue = ({ chapter }: { chapter: string }) => {
   }, []);
 
   return (
-    <div className={styles.whatsDueContainer}>
-      <h1>What's Due {PAGES_LAYOUT['/toobers'].chapters?.[chapter]?.due_date}</h1>
+    <div
+      className={cx(styles.whatsDueContainer, {
+        [styles.themeOverride]: checklist,
+      })}
+    >
+      {checklist ? (
+        <h1>Submission Checklist. Before you Submit!</h1>
+      ) : (
+        <h1>
+          What's Due{' '}
+          {PAGES_LAYOUT['/toobers'].chapters?.[chapter ?? '']?.due_date}
+        </h1>
+      )}
       <div className={styles.dueContainer}>
         {dueItems &&
           Object.entries(dueItems).map((item: any, index: any) => {
@@ -68,7 +87,11 @@ export const WhatsDue = ({ chapter }: { chapter: string }) => {
             };
 
             return (
-              <div key={item[1]} className={styles.dueItemContainer} onClick={clickItem}>
+              <div
+                key={item[1]}
+                className={styles.dueItemContainer}
+                onClick={clickItem}
+              >
                 <div className={styles.checkbox}>
                   <div
                     className={cx(styles.checkboxSquare, {
@@ -80,11 +103,18 @@ export const WhatsDue = ({ chapter }: { chapter: string }) => {
               </div>
             );
           })}
-        {!dontShowConfetti && Object.values(trackedItems).every((item: any) => item === true) && (
-          <div className={styles.confettiContainer}>
-            <ConfettiExplosion particleCount={100} width={2000} height={'300vh'} duration={6000} force={0.8} />
-          </div>
-        )}
+        {!dontShowConfetti &&
+          Object.values(trackedItems).every((item: any) => item === true) && (
+            <div className={styles.confettiContainer}>
+              <ConfettiExplosion
+                particleCount={100}
+                width={2000}
+                height={'300vh'}
+                duration={6000}
+                force={0.8}
+              />
+            </div>
+          )}
       </div>
       <div className={styles.dueTime} />
     </div>

@@ -210,13 +210,28 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         has_pages: true,
         pages: {
           '/intro': {
-            value: 'CAD Intro',
+            value: 'Installing Fusion 360',
           },
           '/base-model': {
             value: 'Getting the Base Model',
           },
-          '/case-design': {
-            value: 'Designing your own Case',
+          '/interface': {
+            value: 'Exploring the Interface',
+          },
+          '/base-model-features': {
+            value: 'Base Model Features',
+          },
+          '/sugar-cube': {
+            value: 'The Sugar Cube',
+          },
+          '/mount-sugar-cube': {
+            value: 'Mounting the Sugar Cube',
+          },
+          '/filet-the-edges': {
+            value: 'Filet the Edges',
+          },
+          '/designing-your-own': {
+            value: 'Designing your own',
           },
         },
       },

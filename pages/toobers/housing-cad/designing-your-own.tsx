@@ -105,10 +105,10 @@ const Page = () => {
       <ul>
         <li>
           <code>.f3z</code> of your assembly named{' '}
-          <code>FIRSTNAME_LASTNAME_V[X].f3z</code> (note the underscore and
+          <code>FIRSTNAME_LASTNAME_v[X].f3z</code> (note the underscore and
           capitalization. The [X] should be the version number of your saved
           Fusion 360 save file, <strong>without</strong> the square brackets).
-          E.g. <code>DAVID_WALLACE_V2.f3z</code>
+          E.g. <code>DAVID_WALLACE_v2.f3z</code>
         </li>
         <li>
           A screenshot or two showing your design (from different angles, so we
@@ -159,9 +159,13 @@ const Page = () => {
             </>
           ),
           '3': 'Your Toober has no more than 2 appendages (or you have contacted the TAs to discuss your design)',
-          '4': 'There have been no modifications to the bottom housing piece',
-          '5': 'You have used no more than 5 decals',
-          '6': 'You have specified colors for the faces that you want colors',
+          '4': 'There have been no height changes to the bottom housing and no modifications to the internals',
+          '5': (
+            <>
+              You have used no more than <strong>5 decals</strong>
+            </>
+          ),
+          '6': 'You have specified colors for the faces that you want colored',
           '7': (
             <>
               If you end up with extra bodies{' '}
@@ -175,7 +179,7 @@ const Page = () => {
           ),
           '9': (
             <>
-              The exterior edges of your Toober has an appopriate fillet as
+              The exterior edges of your Toober have an appropriate fillet as
               specified{' '}
               <GuideLink href="/toobers/housing-cad/sweat-the-details">
                 here
@@ -186,7 +190,7 @@ const Page = () => {
           '20': (
             <>
               The file naming scheme follows the format:{' '}
-              <strong>DAVID_WALLACE_V2.f3z</strong>, and the version number of
+              <strong>DAVID_WALLACE_v2.f3z</strong>, and the version number of
               the file name matches the save version of the Fusion 360 file (in
               David's case, it would be version 2)
             </>

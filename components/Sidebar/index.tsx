@@ -84,8 +84,8 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/soldering': true,
       '/power': true,
       '/prototype': true,
-      '/cad-review': false,
-      '/housing-cad': false,
+      '/cad-review': true,
+      '/housing-cad': true,
       '/suger-cube': false,
       '/pcb': false,
       '/final': false,
@@ -471,7 +471,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
         }
         break;
       case 'cadlab':
-        if (!pageStates['/cad']) {
+        if (!pageStates['/cad-review']) {
           setPageStates((current) => {
             return {
               ...current,
@@ -483,7 +483,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
               '/housing-cad': true,
             };
           });
-          router.push(`${dirs[0]}/cad`);
+          router.push(`${dirs[0]}/cad-review`);
           setUnlockPhrase('');
           setEnteringUnlockPhrase(false);
           setConfettiColor(['#a600a6']);

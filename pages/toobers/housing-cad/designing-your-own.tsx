@@ -142,10 +142,10 @@ const Page = () => {
           '2': 'Your Toober appendage(s) fits within a 25 x 50mm by 150mm bounding box',
           '3': 'Your Toober has no more than 2 appendages (or you have contacted the TAs to discuss your design)',
           '4': 'There have been no modifications to the bottom housing piece',
-          '6': 'You have used no more than 5 decals',
-          '7': 'You have specified colors for the faces that you want colors',
-          '8': 'When you open up the body list, you see 2 bodies: the top and bottom. (Ensure that you have not accidentally created a new body. Consider using the boolean tool if you have!)',
-          '5': 'The file naming scheme follows the format: DAVID_WALLACE_V2.f3z, and the version number of the file name matches the save version of the Fusion 360 file',
+          '5': 'You have used no more than 5 decals',
+          '6': 'You have specified colors for the faces that you want colors',
+          '7': 'When you open up the body list, you see 2 bodies: the top and bottom. (Ensure that you have not accidentally created a new body. Consider using the boolean tool if you have!)',
+          '8': 'The file naming scheme follows the format: DAVID_WALLACE_V2.f3z, and the version number of the file name matches the save version of the Fusion 360 file',
         }}
       />
       <WhatsDue chapter={'/housing-cad'} />

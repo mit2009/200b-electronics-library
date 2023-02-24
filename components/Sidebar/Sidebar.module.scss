@@ -154,6 +154,25 @@
   font-weight: 600;
   align-self: center;
   padding-bottom: 5px;
+
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--section-color);
+    transform: translateY(5px) rotate(90deg);
+    transition: transform 200ms;
+  }
+
+  &.rotated::after {
+    transform: translateY(5px) rotate(0deg)
+  }
 }
 
 .details {

@@ -42,6 +42,7 @@ interface ISection extends IPage {
   has_chapters: boolean;
   chapters?: IChapters;
   chapter_visibility?: IChapterVisibility;
+  chapter_state?: IChapterVisibility;
   icon: JSX.Element;
 }
 
@@ -82,6 +83,18 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/breadboarding': true,
       '/soldering': true,
       '/power': true,
+      '/prototype': true,
+      '/cad-review': true,
+      '/housing-cad': true,
+      '/suger-cube': false,
+      '/pcb': false,
+      '/final': false,
+    },
+    chapter_state: {
+      '/intro': false,
+      '/breadboarding': false,
+      '/soldering': false,
+      '/power': false,
       '/prototype': true,
       '/cad-review': true,
       '/housing-cad': true,
@@ -380,9 +393,17 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   const [pageStates, setPageStates] = useState<IChapterVisibility>({});
   const [unlockPhrase, setUnlockPhrase] = useState('');
   const [confettiColor, setConfettiColor] = useState<string[]>([]);
+  const [chapterState, setChapterState] = useState<IChapterVisibility>({});
 
   useEffect(() => {
     setConfettiColor([]);
+    const defaultState = (
+      hasOwn(PAGES_LAYOUT, currentSection) &&
+      hasOwn(PAGES_LAYOUT[currentSection], 'chapter_state')
+        ? PAGES_LAYOUT[currentSection].chapter_state
+        : {}
+    ) as IChapterVisibility;
+    setChapterState(defaultState);
   }, []);
 
   useEffect(() => {
@@ -489,7 +510,13 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
             <div
               className={cx(styles.chapterName, {
                 [styles.selected]: dirs[dirs.length - 1] === chapterUrl,
+                [styles.rotated]: chapterState[chapterUrl],
               })}
+              onClick={() => {
+                setChapterState((current) => {
+                  return { ...current, [chapterUrl]: !current[chapterUrl] };
+                });
+              }}
             >
               {chapters[chapterUrl].value}
             </div>
@@ -503,11 +530,13 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
                 </div>
               )}
             </div>
-            <PageList
-              chapterUrl={chapterPath}
-              pages={chapters[chapterUrl].pages}
-              dirs={dirs}
-            />
+            {chapterState[chapterUrl] && (
+              <PageList
+                chapterUrl={chapterPath}
+                pages={chapters[chapterUrl].pages}
+                dirs={dirs}
+              />
+            )}
           </div>
         );
       })}

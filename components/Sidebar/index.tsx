@@ -92,7 +92,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
     chapters: {
       '/intro': {
         value: '1. Introduction',
-        due_date: 'Before Lab',
+        due_date: 'Before Lab 1',
         location: Location.AT_HOME,
         has_pages: true,
         whatsDue: {
@@ -227,7 +227,12 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         location: Location.AT_HOME,
         has_pages: true,
         whatsDue: {
-          '6.1': 'TODO: Get checklist',
+          '7.1': 'Understand the J55 Polyjet Printer',
+          '7.2': 'Understand the unique features of the base model Toober',
+          '7.3': 'Understand the sugar cube buttons and how to mount them',
+          '7.4': 'CAD your own Toober housing from the base housing!',
+          '7.5':
+            'Submit your design to Slack following the submission guidelines',
         },
         pages: {
           '/3dprinting': {
@@ -267,20 +272,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
         },
       },
-      // '/battery-charger': {
-      //   value: '5. Battery & Charger',
-      //   due_date: 'Feb 17',
-      //   location: Location.IN_LAB,
-      //   has_pages: true,
-      //   pages: {
-      //     '/intro': {
-      //       value: 'The Power Circuit',
-      //     },
-      //     '/assembly': {
-      //       value: 'Battery & Charger Assembly',
-      //     },
-      //   },
-      // },
       '/pcb': {
         value: '6. PCB Assembly',
         due_date: 'Feb 17',

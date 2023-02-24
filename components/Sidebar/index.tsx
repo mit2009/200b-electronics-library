@@ -84,8 +84,8 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/soldering': true,
       '/power': true,
       '/prototype': true,
-      '/cad-review': true,
-      '/housing-cad': true,
+      '/cad-review': false,
+      '/housing-cad': false,
       '/suger-cube': false,
       '/pcb': false,
       '/final': false,
@@ -479,7 +479,8 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
               '/soldering': true,
               '/power': true,
               '/prototype': true,
-              '/cad': true,
+              '/cad-review': true,
+              '/housing-cad': true,
             };
           });
           router.push(`${dirs[0]}/cad`);

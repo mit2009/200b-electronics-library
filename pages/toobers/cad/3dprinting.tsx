@@ -155,6 +155,10 @@ const Page = () => {
         run until the last level has been printed. This means the print time
         scales linearly with the height of the print.{' '}
       </p>
+      <GuideImage
+        src={'/images/toobers/rotating-j55.gif'}
+        alt={'J55 Printing'}
+      />
       <p>
         The other factor that affects print time is how far away the prints are
         positioned from the center. If prints are further out on this circular

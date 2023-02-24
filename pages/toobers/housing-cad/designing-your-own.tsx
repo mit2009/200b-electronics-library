@@ -145,7 +145,13 @@ const Page = () => {
 
       <WhatsDue
         checklist={{
-          '1': 'Your entire Toober housing (minus appendages) fits within a 104mm x 104mm x 52mm bounding box (length x width x height)',
+          '1': (
+            <>
+              Your entire Toober housing (minus appendages) fits within a{' '}
+              <strong>104 x 104 x 52 mm bounding</strong> box (length x width x
+              height)
+            </>
+          ),
           '2': (
             <>
               Your Toober appendage(s) fits within a{' '}
@@ -158,12 +164,13 @@ const Page = () => {
           '6': 'You have specified colors for the faces that you want colors',
           '7': (
             <>
-              When you open up the body list, you see exactly{' '}
-              <strong>2 bodies</strong>: the top and bottom. (Ensure that you
-              have not accidentally created a new body. Double check to make
-              sure your extrudes are "joins" when appropriate, and consider
-              using the boolean tool if you have!) Conversely, ensure you have
-              not accidentally joined the top and the bottom half.
+              If you end up with extra bodies{' '}
+              <strong>in addition to the top and bottom</strong>, that should be
+              fine and will be handled appropriately by our super-professional
+              team of CAD experts- please just make sure that any bodies that
+              are intended to print as a unit are actually in contact with each
+              other, without any unintended gaps between them. If there are gaps
+              between bodies, they will print as separate bodies.
             </>
           ),
           '9': (

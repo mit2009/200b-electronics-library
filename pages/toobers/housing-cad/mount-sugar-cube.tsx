@@ -3,7 +3,7 @@ import GuideImage from '../../../components/GuideImage';
 const Page = () => {
   return (
     <div>
-      <h1>Mounting the Sugar Cube</h1>
+      <h1>Moving the Sugar Cubes</h1>
       <h2>I Like to Move It Move It</h2>
       <p>
         The sugar cubes are attached to the Toober top housing via 2 screws.
@@ -29,11 +29,41 @@ const Page = () => {
         src="/images/toobers/top-of-sugar.png"
         alt="Top down view of the Sugar Cube"
       />
-      <h2>Moving the Sugar Cube Mount</h2>
+      <h2>Moving the Sugar Cube</h2>
+      <p>
+        If you'd like to move the sugar cubes, go ahead and look for a sketch
+        called <span className="instruction">Sugar Cube Button Locations</span>.
+        Change the dimensions below to modify the placement of the holes, and
+        the features following it should update automatically.{' '}
+        <strong>
+          If you notice that there are red or yellow highlighted boxes in your
+          timeline, you may have errors you need to address, and your placement
+          may be invalid
+        </strong>
+        .
+      </p>
+      <p>
+        When you move the placement of these, examine the model carefully to see
+        if any of the new sugar cube locations would result in any issues
+        including interference problems (will this new location cause the sugar
+        cubes to intersect with another part) or assembly problems (will you
+        still be able to access to screws to attach the cube?).
+      </p>
+      <GuideImage
+        src="/images/toobers/sugar-cube-button-locations.png"
+        size={'FULL'}
+      />
       <h2>Creating your own Sugar Cube Mount</h2>
       <p>
+        If you'd like to reposition the sugar cube onto a different face
+        entirely, we've detailed instructions below which should help you do so.
+        (This is one exception that we'll make if you'd like to make your
+        Toober's top housing taller than the alloted 7mm - which is if you want
+        to add the sugar cubes to the side of the Toober instead of the front.)
+      </p>
+      <p>
         First, determine which plane you'd like your button to be on. Ballpark
-        if you'll have enough space for the button itself before proceedin. The
+        if you'll have enough space for the button itself before proceeding. The
         rectangular, bounding box of the shape is roughly 36mm by 36mm. Your
         housing wall should be roughly 3mm thick. The buttons do stick out quite
         a bit so there is a bit of a buffer if you do make your walls thicker
@@ -50,6 +80,7 @@ const Page = () => {
         patterning/duplication/mirroring tools).
       </p>
       <ol>
+        <li>Hide all parts except the top housing.</li>
         <li>
           Click the <strong>Create Sketch</strong> button, and create a 16mm by
           16mm square. Confirm the sketch.
@@ -69,7 +100,7 @@ const Page = () => {
       </ol>
       <p>TODO: Finish instructions</p>
       <h2>Double Check, then Check Again</h2>
-      <p>TODO: Add content</p>
+      <p>TODO: Add content</p>xF
     </div>
   );
 };

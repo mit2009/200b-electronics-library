@@ -19,10 +19,8 @@ const Page = () => {
         right or wrong way to start or finish this process - just make sure
         you're proud of the end result.
       </p>
-      <p>
-        We will be 3D-printing your designs in the coming week. There are a few
-        constraints you must adhere to:
-      </p>
+      <p>We will be 3D-printing your designs in the coming week.</p>
+      <h2>Base Constraints</h2>
       <ul>
         <li>
           In the base model, all the walls are around 3mm thick. Typically, it
@@ -42,33 +40,53 @@ const Page = () => {
           <strong>14mm</strong> buffer can be split along each axis in whichever
           manner you wish.
         </li>
-        <li>The top piece may have up to a 7mm increase in overall height.</li>
+        <li>
+          The top housing may have up to a <strong>7mm</strong> increase in
+          overall height.
+        </li>
+        <li>
+          The bottom housing may <strong>not change</strong> in height.
+        </li>
       </ul>
-      <p>Bottom Case:</p>
-      <ul>
-        <li>The height of the bottom case should not change.</li>
-      </ul>
+      <p>The image below contains dimensions of the existing base toober.</p>
       <GuideImage
-        src="/images/toobers/toober-box.png"
+        src="/images/toobers/case-dimensions-04.png"
         alt="Toober case bounding box"
-        size="FULL"
+        size="MEDIUM"
         border={false}
       />
-      <p>Additional Appendages:</p>
+      <p>
+        The green lines in the image below represents the bounding box to which
+        your design can extend. Think of all the possibilities!
+      </p>
+      <GuideImage
+        src="/images/toobers/case-dimensions-02.png"
+        alt="Toober case bounding box"
+        size="LARGE"
+        border={false}
+      />
+      <h2>Additional Appendages and ProTOOBERances</h2>
       <ul>
         <li>
-          You may design appendages that go on the bottom of the bottom piece or
-          appendages that would protrude more than 1" from the sides of the
-          cube, but we will be printing them separately and then you will join
-          them to the base cube shape. All such appendages should not be larger
-          than <strong>150mm x 50mm x 25mm each</strong>. If your design
-          requires more than 2 such appendages or additional printing capacity,{' '}
+          You may design appendages that go on any of the faces that protrudes
+          outside of than the allotted bounding box, but we will be printing
+          them separately and then you will join them to the base cube shape.
+          All such appendages should not be larger than{' '}
+          <strong>150mm x 50mm x 25mm each</strong>. If your design requires
+          more than 2 such appendages or additional printing capacity,{' '}
           <strong>please contact the TAs on #ask-the-tas</strong> to discuss
           your design, which will need to be approved.
         </li>
       </ul>
+      <p>
+        Leave your appendages on your model. The 3D printing staff will
+        carefully slice them up and add the necessary pins to join the pieces
+        together, being mindful of locating features as well as strength of
+        printed part. You will receive plenty of instructions and glue during
+        the assembly party.
+      </p>
       <GuideImage
-        src="/images/toobers/appendage-box.png"
+        src="/images/toobers/case-dimensions-03.png"
         alt="Appendage bounding box"
         size="FULL"
         border={false}

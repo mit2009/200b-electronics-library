@@ -189,7 +189,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/prototype': {
         value: '5. The Prototype',
         location: Location.AT_HOME,
-        due_date: 'Feb 24',
+        due_date: 'Feb 27',
         has_pages: true,
         whatsDue: {
           '5.1': 'Wire the power module up to the rest of your circuit',
@@ -248,7 +248,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
             value: 'The Sugar Cube',
           },
           '/mount-sugar-cube': {
-            value: 'Mounting the Sugar Cube',
+            value: 'Moving the Sugar Cubes',
           },
           '/start-the-customization': {
             value: 'Start the Customization',

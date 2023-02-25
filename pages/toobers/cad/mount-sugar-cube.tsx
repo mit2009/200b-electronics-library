@@ -1,4 +1,5 @@
 import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
 
 const Page = () => {
   return (
@@ -23,7 +24,13 @@ const Page = () => {
         dotted line below.) Of course, another way to check is to import the
         sugar cube in to your model so you can both visually inspect if there's
         interference as well as to use the Fusion 360{' '}
-        <strong>interference tool</strong> (which we'll show in a bit).
+        <GuideLink
+          target="_blank"
+          href="https://www.youtube.com/watch?v=wy6chd2hP24&ab_channel=ProductDesignOnline"
+        >
+          interference tool
+        </GuideLink>
+        .
       </p>
       <GuideImage
         src="/images/toobers/top-of-sugar.png"
@@ -149,8 +156,7 @@ const Page = () => {
           />
         </li>
         <li>
-          Add a small 1 mm chamfer to the extruded bosses to strengthen the
-          part.
+          Add a small 1mm chamfer to the extruded bosses to strengthen the part.
           <GuideImage src={'/images/toobers/pac-mans-with-chamfer.png'} />
         </li>
       </ol>

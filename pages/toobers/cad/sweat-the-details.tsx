@@ -146,7 +146,9 @@ const Page = () => {
           duplicate and double click on the selected material to change it's
           properties/colors
         </li>
-        <li>Click and drag it onto part or face you would like to update</li>
+        <li>
+          Click and drag the material onto part or face you would like to update
+        </li>
         <li>
           When the highlight is over what you want to change, let go of your
           click
@@ -157,11 +159,12 @@ const Page = () => {
       <p>
         While we can do a lot with just color and texture, sometimes you will
         want your design to be a little more personal. If you want to add a logo
-        or graphic to your toy, decals are what you are looking for.
+        or graphic to your Toober, decals are what you are looking for!
       </p>
       <ol>
         <li>
-          Find an image you would like to add and save it to your computer
+          Create or find an image you would like to add and save it to your
+          computer
         </li>
         <li>
           Position your part so that you can see where you would like to place

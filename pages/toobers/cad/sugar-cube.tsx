@@ -64,9 +64,9 @@ const Page = () => {
       <p>
         The fun, customizable aspect of the WS2812b LED is that you can give it
         color and brightness specifications from the Arduino. This information
-        gets fed into the “data in” pin, and when you have multiple WS2812B
+        gets fed into the "data in" pin, and when you have multiple WS2812B
         LEDs, you can link them together and feed the color and brightness
-        information from the “data out” pin on one LED and into the "data in"
+        information from the "data out" pin on one LED and into the "data in"
         pin on another LED.{' '}
       </p>
       <p>

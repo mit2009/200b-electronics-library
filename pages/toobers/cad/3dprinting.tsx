@@ -179,7 +179,7 @@ const Page = () => {
         <strong>24 hours to print</strong>. With over a hundred students in the
         class, that's a lot of printing-hours! This is why optimal packing and
         height management of the prints are very important factors to us before
-        we send these Toobers to print!
+        we hit the print button!
       </p>
     </div>
   );

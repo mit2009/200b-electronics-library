@@ -49,8 +49,8 @@ const Page = () => {
       />
       <p>
         Certain Toober designs, such as the <em>Textbook Example</em> doesn't
-        need a visual indicator like this because it's the top and bottom
-        housing orientation is clear.
+        need a visual indicator like this because the top and bottom housing
+        orientation is clear.
       </p>
       <GuideImage
         src="/images/toobers/textbook-toober-render.png"
@@ -63,7 +63,7 @@ const Page = () => {
         The USB-C charging port feature needs to provide both access to the USB
         charging circuit as well as provide enough clearance around it for the
         USB plug to be fully inserted into the charging circuit without any
-        interference from the surrounding toober shell wall. The shell wall is
+        interference from the surrounding Toober shell wall. The shell wall is
         cut out around the USB port in this wall to ensure the molding around
         the USB plug does not collide with the case.
       </p>
@@ -135,7 +135,7 @@ const Page = () => {
       <p>
         Highlighted in red are two screw boss features that can accommodate
         threaded inserts for mounting the sugar cube assembly to the Toober
-        case. A 1 mm chamfer helps increase the strength of the part around the
+        case. A 1mm chamfer helps increase the strength of the part around the
         screw boss features.
       </p>
       <h2 id="acrylic">Acrylic Light Channel Mount</h2>
@@ -145,7 +145,7 @@ const Page = () => {
         that a screw head sits flush with the surface as the diameter of the M3
         screw head is smaller than the major (larger) hole diameter, and the
         primary hole (smaller) can accomodate a threaded insert. The M3 screw
-        then clamps down onto the acrylic, holding it in place.
+        then clamps down onto the acrylic, holding the acrylic in place.
       </p>
       <GuideImage
         src="/images/toobers/acrylic-light-channel-mount.png"
@@ -156,8 +156,8 @@ const Page = () => {
         charging module (which shows red when charging, and green when charged)
         to the outside of the case. A tiny hole just to the right of the USB-C
         opening allows enough light to pass through such that the user can see
-        if the device is still charging or not without having to open the Toober
-        housing.
+        if the device is charging, not charging, or completed charging without
+        having to open the Toober housing.
       </p>
       <GuideImage src="/images/toobers/toober-usb-c.jpg" size={'SMALL'} />
       <p>

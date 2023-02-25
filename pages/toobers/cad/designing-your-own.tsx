@@ -29,9 +29,9 @@ const Page = () => {
       <h2>It's your turn!</h2>
       <p>
         Now that we've learned some of the fundamentals of our base Toober and
-        developed some basic understanding of CAD, we now have the opportunity
-        to build on and explore these skills as we design our own case for our
-        Toobers game!
+        developed some basic understanding of CAD, we have the opportunity to
+        build on and explore these skills as we design our own case for our
+        Toobers toy!
       </p>
       <p>
         Use the tools in this tutorial (or any others you may come across) and

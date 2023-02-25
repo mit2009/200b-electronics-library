@@ -1,24 +1,28 @@
-import Editor from 'react-simple-code-editor';
-import { highlight, languages } from 'prismjs';
-import 'prismjs/components/prism-clike';
 import { useState } from 'react';
 
 import GuideImage from '../../../components/GuideImage';
 import { GuideLink } from '../../../components/GuideLink';
 import { WhatsDue } from '../../../components/WhatsDue';
 
-const arduinoCode = `* Height: how much was added to the top half, or if it stayed the same. how much appendages stick out above top surface
-* Length/Width: how much was added in the length/width dimensions of the top half and bottom half Whether protrusions may be printed as appendages (separately printed and then attached during assembly).
+const submissionTemplate = `Provide a brief description of design, e.g., "it's a blue textbook, with a friendly green bookworm poking out the top and side."
+
+* Height: how much was added to the top half, or if it stayed the same. how many and how long do the appendages stick out above the different surfaces
+
+* Length/Width: how much was added in the length/width dimensions of the top half and bottom half. Whether protrusions may be printed as appendages (separately printed and then attached during assembly).
+
 * Whether there were any other changes to the dimensions of the top and bottom halves.
+
 * Buttons: whether or not there were any changes to button positions. If so, briefly describe change.
-* Decals: whether or not any decals were used. If so, list of decals and where/how to position them (since staff will need to reapply). Don’t forget to upload decals into Slack!
+
+* Decals: whether or not any decals were used. If so, list of decals and where/how to position them (since staff will need to reapply). Don't forget to upload decals into Slack!
+
 * Textures: whether any textures were applied. If so, which texture and where/how to position them.
-* Transparency: whether any tranparency is intended. If so, where and how much transparency.
+
+* Transparency: whether any transparency is intended. If so, where and what level of transparency (i.e. 10%, 50%, 90% - 90% being almost completely transparent).
+
 * Color/Grayscale: whether parts should be printed in full-color or whether a part can be printed grayscale.`;
 
 const Page = () => {
-  const [code, setCode] = useState(arduinoCode);
-
   return (
     <div>
       <h1>Designing your own Case</h1>
@@ -114,6 +118,11 @@ const Page = () => {
         size="FULL"
         border={false}
       />
+      <p>
+        Below is an example of a Toober with an appendage. It's our textbook
+        example bookworm, Professor Wigglesworth.
+      </p>
+      <GuideImage src={'/images/toobers/textbookworm-1.png'} border={false} />
       <h2 id="submission">Submission Instructions</h2>
       <p>
         To submit your custom Toobers enclosure, please post all your submission
@@ -141,16 +150,34 @@ const Page = () => {
         </li>
         <li>
           The <strong>Toober Submission Text Details</strong> template (copy and
-          paste the block of text below)
+          paste the block of text below, changing the text to describe your
+          Toober)
         </li>
         <li>
-          Copies of any <strong>decal images</strong> or custom fonts used in
-          the same thread. Decal images should be ideally 300 PPI, and should be{' '}
-          <strong>clearly named</strong>
+          <strong>Decal image</strong> files. Decal images should be ideally 300
+          PPI, and should be <strong>clearly named</strong>
+        </li>
+        <li>
+          <strong>Fonts</strong> used in your design. If you used a font that is
+          not a standard font, please include the font file in your submission.
         </li>
       </ol>
       <h2>Toober Submission Text Details</h2>
-      <pre>{arduinoCode}</pre>
+      <p>
+        Follow the template below and replace the text below with details of
+        your submission, and then copy and paste it into your{' '}
+        <strong>Slack post</strong>. Please provide all dimensions in{' '}
+        <strong className="color">mm</strong>. Fusion 360 has a bunch of tools
+        to help you{' '}
+        <GuideLink
+          href="https://www.youtube.com/watch?v=DQaOuBP4P_A&ab_channel=TylerBeckofTech%26Espresso"
+          target="_blank"
+        >
+          measure
+        </GuideLink>
+        .
+      </p>
+      <textarea defaultValue={submissionTemplate} />
       <h2>Exporting your File</h2>
       <GuideImage
         src="/images/toobers/export-button.png"

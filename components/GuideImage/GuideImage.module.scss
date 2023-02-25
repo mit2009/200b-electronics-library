@@ -41,7 +41,6 @@
     max-width: 100px;
   }
 
-
   .hideBorder {
     border: none;
   }
@@ -68,7 +67,6 @@
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin: 40px 0;
 
   .imageContainer {
     flex: 1 1 100px;
@@ -79,4 +77,18 @@
       max-width: 100%;
     }
   }
+}
+
+.allImagesContainer {
+  margin: 40px 0;
+}
+
+.caption {
+  display: block;
+  opacity: 0.6;
+  margin-top: 5px;
+  font-size: 16px;
+  font-weight: normal;
+  color: var(--grey9);
+  text-align: center;
 }

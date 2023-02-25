@@ -49,20 +49,23 @@ const GuideImage = ({
   }
 
   return (
-    <div className={styles.allImages}>
-      {src.map((image, key) => (
-        <div className={styles.imageContainer} key={key}>
-          <a href={image} target="_blank">
-            <img
-              className={cx({
-                [styles.hideBorder]: border === false,
-              })}
-              src={image}
-              alt={`${alt} ${key + 1}`}
-            />
-          </a>
-        </div>
-      ))}
+    <div className={styles.allImagesContainer}>
+      <div className={styles.allImages}>
+        {src.map((image, key) => (
+          <div className={styles.imageContainer} key={key}>
+            <a href={image} target="_blank">
+              <img
+                className={cx({
+                  [styles.hideBorder]: border === false,
+                })}
+                src={image}
+                alt={`${alt} ${key + 1}`}
+              />
+            </a>
+          </div>
+        ))}
+      </div>
+      <div>{caption && <span className={styles.caption}>{caption}</span>}</div>
     </div>
   );
 };

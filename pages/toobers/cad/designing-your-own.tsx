@@ -1,8 +1,24 @@
+import Editor from 'react-simple-code-editor';
+import { highlight, languages } from 'prismjs';
+import 'prismjs/components/prism-clike';
+import { useState } from 'react';
+
 import GuideImage from '../../../components/GuideImage';
 import { GuideLink } from '../../../components/GuideLink';
 import { WhatsDue } from '../../../components/WhatsDue';
 
+const arduinoCode = `* Height: how much was added to the top half, or if it stayed the same. how much appendages stick out above top surface
+* Length/Width: how much was added in the length/width dimensions of the top half and bottom half Whether protrusions may be printed as appendages (separately printed and then attached during assembly).
+* Whether there were any other changes to the dimensions of the top and bottom halves.
+* Buttons: whether or not there were any changes to button positions. If so, briefly describe change.
+* Decals: whether or not any decals were used. If so, list of decals and where/how to position them (since staff will need to reapply). Don’t forget to upload decals into Slack!
+* Textures: whether any textures were applied. If so, which texture and where/how to position them.
+* Transparency: whether any tranparency is intended. If so, where and how much transparency.
+* Color/Grayscale: whether parts should be printed in full-color or whether a part can be printed grayscale.`;
+
 const Page = () => {
+  const [code, setCode] = useState(arduinoCode);
+
   return (
     <div>
       <h1>Designing your own Case</h1>
@@ -100,8 +116,16 @@ const Page = () => {
       />
       <h2 id="submission">Submission Instructions</h2>
       <p>
-        To submit your custom Toobers enclosure, please post in the #3d-print
-        Slack channel the following files in <strong>1 thread</strong>:
+        To submit your custom Toobers enclosure, please post all your submission
+        items in the{' '}
+        <GuideLink
+          href="https://toyproductdesign2023.slack.com/archives/C04Q98WLAAX"
+          target="_blank"
+        >
+          #3d-print
+        </GuideLink>{' '}
+        Slack channel the following files in{' '}
+        <strong className="color">1 thread</strong>:
       </p>
       <ol>
         <li>
@@ -116,20 +140,18 @@ const Page = () => {
           angles, so we know what it is supposed to look like)
         </li>
         <li>
-          Copies of any <strong>decal images</strong> or custom fonts used.
-          Decal images should be ideally 300 PPI, and should be{' '}
-          <strong>clearly named</strong>
+          The <strong>Toober Submission Text Details</strong> template (copy and
+          paste the block of text below)
         </li>
         <li>
-          If any decals or texture appearances (e.g. wood grains) were used,{' '}
-          <strong>
-            please also note how they are to be placed on the part in the slack
-            thread
-          </strong>{' '}
-          (staff will need to re-apply decals to the part as part of the file
-          preparation for 3D printing)
+          Copies of any <strong>decal images</strong> or custom fonts used in
+          the same thread. Decal images should be ideally 300 PPI, and should be{' '}
+          <strong>clearly named</strong>
         </li>
       </ol>
+      <h2>Toober Submission Text Details</h2>
+      <pre>{arduinoCode}</pre>
+      <h2>Exporting your File</h2>
       <GuideImage
         src="/images/toobers/export-button.png"
         alt="Fusion export button"

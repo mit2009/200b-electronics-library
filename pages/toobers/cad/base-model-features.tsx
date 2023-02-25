@@ -10,9 +10,13 @@ const Page = () => {
         The base model contains a bunch of exciting features that you are free
         to snatch up for your future toy designs! We don't expect you to
         recreate any of these, but this hopefully gives you some insight into
-        what we've included in your base Toober!
+        what we've included in your base Toober! Additionally, when you submit
+        your Toober, please{' '}
+        <strong>
+          make sure these features aren't accidentally removed/altered!
+        </strong>
       </p>
-      <h2>Alignment Features</h2>
+      <h2 id="internal-alignment">Alignment Features</h2>
       <p>
         The Toober base model has a couple of simple alignment features. One
         such feature is a physical break in the continuity of the parting line
@@ -27,18 +31,34 @@ const Page = () => {
         size={'MEDIUM'}
       />
       <p>
+        The reason we need this internal alignment feature is because we want
+        the screws to always line up, and for the button mappings to be
+        consistent to the PCB below.
+      </p>
+      <p id="external-alignment">
         As the first alignment feature is an internal alignment feature not
         visible on the external surfaces, it is accompanied by a second external
         alignment feature that can be seen in the image below. The pill shape on
         the side of the top shell serves as a visual indicator of correct
-        orientation.{' '}
+        orientation.
       </p>
       <GuideImage
         src="/images/toobers/toober-visual-alignment-feature.jpg"
         size={'MEDIUM'}
         border={false}
       />
-      <h2>USB Port</h2>
+      <p>
+        Certain Toober designs, such as the <em>Textbook Example</em> doesn't
+        need a visual indicator like this because it's the top and bottom
+        housing orientation is clear.
+      </p>
+      <GuideImage
+        src="/images/toobers/textbook-toober-render.png"
+        size={'LARGE'}
+        border={false}
+        caption="Our Textbook Example! The assembly orientation is fairly apparent to the user."
+      />
+      <h2 id="usb">USB Port</h2>
       <p>
         The USB-C charging port feature needs to provide both access to the USB
         charging circuit as well as provide enough clearance around it for the
@@ -48,7 +68,7 @@ const Page = () => {
         the USB plug does not collide with the case.
       </p>
       <GuideImage src="/images/toobers/toober-usb-c.jpg" size={'SMALL'} />
-      <h2>Wire Clip</h2>
+      <h2 id="wire-clip">Wire Clip</h2>
       <p>
         The wire clip feature is an extrusion from the sidewall to assist in
         cable management for the speaker.
@@ -57,7 +77,7 @@ const Page = () => {
         src="/images/toobers/toober-speaker-holder.jpg"
         size={'MEDIUM'}
       />
-      <h2>Housing Screws</h2>
+      <h2 id="housing-screws">Housing Screws</h2>
       <p>
         The top and bottom case parts are secured together with two housing
         screws. The housing screws pass through the screw boss features of the
@@ -69,7 +89,7 @@ const Page = () => {
         size={'LARGE'}
         border={false}
       />
-      <h2>PCB Mounting Features</h2>
+      <h2 id="pcb-mounting">PCB Mounting Features</h2>
       <p>
         The PCB mounting features highlighted in red demonstrates one technique
         to locate the PCB in the housing using the mounting holes in the corners
@@ -91,7 +111,7 @@ const Page = () => {
         src="/images/toobers/pcb-mounting-features.jpg"
         size={'LARGE'}
       />
-      <h2>Sugar Cube Mounting Points</h2>
+      <h2 id="sugarcube-mounting">Sugar Cube Mounting Points</h2>
       <GuideImage
         src="/images/toobers/sugar-cube-dimensions.jpg"
         size={'SMALL'}
@@ -118,7 +138,7 @@ const Page = () => {
         case. A 1 mm chamfer helps increase the strength of the part around the
         screw boss features.
       </p>
-      <h2>Acrylic Light Channel Mount</h2>
+      <h2 id="acrylic">Acrylic Light Channel Mount</h2>
       <p>
         Near the USB-C opening is a feature attached to the side wall which can
         hold a small piece of acrylic. The hole for this is counterbored such

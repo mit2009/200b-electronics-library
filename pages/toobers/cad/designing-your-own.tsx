@@ -213,7 +213,7 @@ const Page = () => {
             </>
           ),
           '3': 'Your Toober has no more than 2 appendages (or you have contacted the TAs to discuss your design)',
-          '4': 'There have been no height changes to the bottom housing and no modifications to the internals',
+          '4': 'There have been no height changes to the bottom housing and no modifications to the interior of the bottom housing',
           '5': (
             <>
               You have used no more than <strong>5 decals</strong>
@@ -239,6 +239,112 @@ const Page = () => {
               and is no more than <strong>5mm</strong>
             </>
           ),
+          '10': (
+            <>
+              Verify that the{' '}
+              <GuideLink
+                target="_BLANK"
+                href="/toobers/cad/base-model-features#internal-alignment"
+              >
+                internal alignment feature
+              </GuideLink>{' '}
+              is still present
+            </>
+          ),
+          '11': (
+            <>
+              Verify that an{' '}
+              <GuideLink
+                target="_BLANK"
+                href="/toobers/cad/base-model-features#external-alignment"
+              >
+                external alignment feature
+              </GuideLink>{' '}
+              exists (either the pill, or having a Toober appearance that makes
+              the orientation clear)
+            </>
+          ),
+          '12': (
+            <>
+              Verify that the{' '}
+              <GuideLink
+                target="_BLANK"
+                href="/toobers/cad/base-model-features#usb"
+              >
+                USB-C opening
+              </GuideLink>{' '}
+              is not obstructed and has not been modified
+            </>
+          ),
+          '14': (
+            <>
+              Verify that the{' '}
+              <GuideLink
+                target="_BLANK"
+                href="/toobers/cad/base-model-features#housing-screws"
+              >
+                housing screw hole
+              </GuideLink>{' '}
+              is still accessible from the bottom housing
+            </>
+          ),
+          '15': (
+            <>
+              Verify that the{' '}
+              <GuideLink
+                target="_BLANK"
+                href="/toobers/cad/base-model-features#housing-screws"
+              >
+                holes for threaded inserts for the housing screws
+              </GuideLink>{' '}
+              on the top housing are still accessible
+            </>
+          ),
+          '16': (
+            <>
+              Verify that the{' '}
+              <GuideLink
+                target="_BLANK"
+                href="/toobers/cad/base-model-features#pcb-mounting"
+              >
+                PCB mounting features
+              </GuideLink>{' '}
+              still exist and have not been modified
+            </>
+          ),
+          '17': (
+            <>
+              Verify that the{' '}
+              <GuideLink
+                target="_BLANK"
+                href="/toobers/cad/base-model-features#sugarcube-mounting"
+              >
+                Sugar Cube mounting points
+              </GuideLink>{' '}
+              are still accessible
+            </>
+          ),
+          '18': (
+            <>
+              Verify that the{' '}
+              <GuideLink
+                target="_BLANK"
+                href="/toobers/cad/base-model-features#acrylic"
+              >
+                acrylic light channel mount
+              </GuideLink>{' '}
+              has not been modified, and the front charging LED status hole
+              still exists. The top threaded insert and the top screw is
+              accessible.
+            </>
+          ),
+          '19': (
+            <>
+              Verify that the speaker holes & rectangular power switch hole have
+              not been modified.
+            </>
+          ),
+
           '20': (
             <>
               The file naming scheme follows the format:{' '}

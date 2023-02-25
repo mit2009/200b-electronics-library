@@ -13,7 +13,7 @@ const Page = () => {
       </p>
       <p>
         You will be sent an email with an invitation to join the 2.00b Fusion
-        360 Team on Friday evening, Feb 24.
+        360 Team.
       </p>
       <GuideImage src="/images/toobers/cad2_join_team.png" />
       <p>

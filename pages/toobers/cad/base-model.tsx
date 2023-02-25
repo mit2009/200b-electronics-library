@@ -121,8 +121,7 @@ const Page = () => {
         </strong>{' '}
         If you "Upload" via the web browser, it merely uploads the file (like
         Dropbox or Google Drive) and does not import it into Fusion 360, so you
-        will not see the individual components listed as shown above. (highlight
-        this common error somehow)
+        will not see the individual components listed as shown above.
       </p>
     </div>
   );

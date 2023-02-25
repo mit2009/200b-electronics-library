@@ -98,11 +98,12 @@ const Page = () => {
         size="FULL"
         border={false}
       />
+      <h2 id="submission">Submission Instructions</h2>
       <p>
         To submit your custom Toobers enclosure, please post in the #3d-print
         Slack channel the following files in <strong>1 thread</strong>:
       </p>
-      <ul>
+      <ol>
         <li>
           <code>.f3z</code> of your assembly named{' '}
           <code>FIRSTNAME_LASTNAME_v[X].f3z</code> (note the underscore and
@@ -111,10 +112,14 @@ const Page = () => {
           E.g. <code>DAVID_WALLACE_v2.f3z</code>
         </li>
         <li>
-          A screenshot or two showing your design (from different angles, so we
-          know what it is supposed to look like)
+          <strong>Two screenshots</strong> showing your design (from different
+          angles, so we know what it is supposed to look like)
         </li>
-        <li>Copies of any decal images or custom fonts used</li>
+        <li>
+          Copies of any <strong>decal images</strong> or custom fonts used.
+          Decal images should be ideally 300 PPI, and should be{' '}
+          <strong>clearly named</strong>
+        </li>
         <li>
           If any decals or texture appearances (e.g. wood grains) were used,{' '}
           <strong>
@@ -124,7 +129,7 @@ const Page = () => {
           (staff will need to re-apply decals to the part as part of the file
           preparation for 3D printing)
         </li>
-      </ul>
+      </ol>
       <GuideImage
         src="/images/toobers/export-button.png"
         alt="Fusion export button"
@@ -132,15 +137,15 @@ const Page = () => {
         border={false}
       />
       <GuideImage
-        src="/images/toobers/export-options.png"
+        src="/images/toobers/fusion-export.png"
         alt="Fusion export options"
         size="FULL"
       />
       <p>
-        Toober cases will be printed roughly in order of submission date. Please
-        submit your case design as soon as you are finished and happy with it so
-        that we can start printing before the submission deadline. Changes
-        cannot be made to your case once we have started printing it!
+        Toober housings will be printed roughly in order of submission date.
+        Please submit your case design as soon as you are finished and happy
+        with it so that we can start printing before the submission deadline.
+        Changes cannot be made to your case once we have started printing it!
       </p>
 
       <WhatsDue

@@ -1,4 +1,5 @@
 import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
 
 const Page = () => {
   return (
@@ -113,33 +114,37 @@ const Page = () => {
       />
       <h2>A Pop of Color</h2>
       <p>
-        Colors play a large role in how we percieve the world. More importantly
-        color can have a significant impact on how people percieve and interact
+        Colors play a large role in how we perceive the world. More importantly
+        color can have a significant impact on how people perceive and interact
         with your toy. Certain colors can evoke different emotions and have
-        psychological effects. For example, red often associated with excitement
-        or passion, while blue is often associated with calmness or
+        psychological effects. For example, red is often associated with
+        excitement or passion, while blue is often associated with calmness or
         trustworthiness. The shade of color you choose can also influence
         people. Bright and bold colors are more eye-catching and appealing,
         while muted or neutral colors may convey a more sophisticated look.
       </p>
       <ol>
         <li>
-          Click <code>Modify {'>'} Appearence</code>
+          Click <code>Modify {'>'} Appearance</code>
         </li>
         <li>
           Select between <code>Bodies/Components</code> and <code>Faces</code>
         </li>
         <ul>
           <li>
-            <code>Bodies/Components</code> will change every face of the
-            selected body/component
+            <code>Bodies/Components</code> will colorize every face of the
+            selected body/component, as well as the inside of the
+            body/component.
           </li>
           <li>
-            <code>Faces</code> will only update the selected face
+            <code>Faces</code> will only color the selected face
           </li>
         </ul>
         <li>
-          Scroll through <code>Library</code> and find a material you like
+          Scroll through <code>Library</code> and find a material you like. You
+          also are not limited to the colors/materials in the library. You can
+          duplicate and double click on the selected material to change it's
+          properties/colors
         </li>
         <li>Click and drag it onto part or face you would like to update</li>
         <li>
@@ -152,7 +157,7 @@ const Page = () => {
       <p>
         While we can do a lot with just color and texture, sometimes you will
         want your design to be a little more personal. If you want to add a logo
-        or name to your toy, decals are what you are looking for.
+        or graphic to your toy, decals are what you are looking for.
       </p>
       <ol>
         <li>
@@ -194,7 +199,7 @@ const Page = () => {
       </ol>
       <p>
         Let's say we wanted to apply this hole-filled decal image to the yellow
-        block. This image was made in <strong>illustrator</strong>, and was
+        block. This image was made in <strong>Illustrator</strong>, and was as
         simple as drawing a few circles (which you should have plenty of in your
         sketchbooks as well.) This image as a <code>.png</code> such that the
         background is transparent.
@@ -216,7 +221,9 @@ const Page = () => {
       <p>
         Please keep in mind that decals need to be re-applied when the print is
         setup. Please include no more than <strong>5 individual decals</strong>,
-        and please read the instructions for submitting decals carefully!
+        and be sure to{' '}
+        <strong>include high-quality graphic files for your decal</strong> with
+        your submission (which you'll learn more about on the next page!).
       </p>
     </div>
   );

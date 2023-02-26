@@ -165,7 +165,7 @@ const Page = () => {
       </p>
       <p>
         If you choose this route, we'll print your Toober on the{' '}
-        <GuideLink href="/toobers/cad/3dprinting#j35">J35</GuideLink>
+        <GuideLink href="/toobers/cad/3dprinting#j35">J35</GuideLink>.
       </p>
       <h2>Add a Decal</h2>
       <p>

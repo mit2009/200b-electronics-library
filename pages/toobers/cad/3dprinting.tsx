@@ -1,6 +1,5 @@
 import GuideImage from '../../../components/GuideImage';
 import { GuideLink } from '../../../components/GuideLink';
-import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
   return (

@@ -88,13 +88,18 @@ const Page = () => {
         thickness of 18 microns (that's 0.0007 inches)! It uses the same range
         of materials as the J55. However, because it only has 3 slots for
         material cartridges, it's unable to print full color (full color
-        requires 4 slots, for each of cyan, magenta, yellow, and black).
+        requires 4 slots, for each of cyan, magenta, yellow, and white).
+        Instead, the J35 can print{' '}
+        <strong>0-100% grayscale (pure black and white included)</strong>.
       </p>
       <p>
         For this reason, if you're thinking color does not matter for your
         Toober, or you're highly thinking of taking advantage of the sleekness
-        that is a monochrome print, keep your Toober grayscale and we'll print
-        it on this printer!
+        that is a grayscale print, keep your Toober grayscale and we'll print it
+        on this printer!{' '}
+        <strong>The J35 will also print grayscale better than the J55</strong>.
+        As the J55 doesn't actually have black resin (since we load the clear
+        resin instead), darker grays don't always turn out so great.
       </p>
       <GuideImage
         src="/images/toobers/j35-3d-printer.png"

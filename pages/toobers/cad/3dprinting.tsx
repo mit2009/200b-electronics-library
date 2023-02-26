@@ -18,11 +18,14 @@ const Page = () => {
       </p>
       <p>
         To bring our CAD models to reality, we will be printing them on fancy
-        polyjet printers. Specifically, the Stratasys J55™ Prime 3D Printer.
+        PolyJet printers. Specifically, the Stratasys J55™ Prime and the
+        Stratasys J35™ Pro 3D Printer. We tend to use the J55 more, so we'll
+        focus mainly on that.
       </p>
       <GuideImage
         src="/images/toobers/j55.png"
         alt="J55™ Prime 3D Printer"
+        caption="J55 Prime 3D Printer"
         border={false}
       />
       <p>
@@ -75,6 +78,30 @@ const Page = () => {
         With these materials, we can mix and match and get millions of different
         colors at varying opacity levels!
       </p>
+      <h2 id="j35">J35 Pro Multi-Material 3D Printer</h2>
+      <p>
+        The Stratasys J35 is also a professional-grade 3D printer that lives in
+        the small side of PDL, which also uses PolyJet technology to create
+        high-resolution, accurate parts. It has a larger build volume than many
+        other printers in its class, measuring 355 x 254 x 355 mm (roughly 14 x
+        10 x 14 in), and is capable of producing monochrome parts with a layer
+        thickness of 18 microns (that's 0.0007 inches)! It uses the same range
+        of materials as the J55. However, because it only has 3 slots for
+        material cartridges, it's unable to print full color (full color
+        requires 4 slots, for each of cyan, magenta, yellow, and black).
+      </p>
+      <p>
+        For this reason, if you're thinking color does not matter for your
+        Toober, or you're highly thinking of taking advantage of the sleekness
+        that is a monochrome print, keep your Toober grayscale and we'll print
+        it on this printer!
+      </p>
+      <GuideImage
+        src="/images/toobers/j35-3d-printer.png"
+        alt="J35™ Pro 3D Printer"
+        caption="J35™ Pro 3D Printer"
+        border={false}
+      />
       <h2>How is a Polyjet Printer different from an FDM Printer?</h2>
       <p>
         You may have seen or used FDM (fused deposition modelling) printers like

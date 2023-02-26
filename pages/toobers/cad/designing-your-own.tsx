@@ -18,7 +18,7 @@ const submissionTemplate = `Provide a brief description of design, e.g., "it's a
 
 * Textures: whether any textures were applied. If so, which texture and where/how to position them.
 
-* Transparency: whether any transparency is intended. If so, where and what level of transparency (i.e. 10%, 50%, 90% - 90% being almost completely transparent).
+* Transparency: Whether there is any transparency is any of the materials. If so, specify which parts are intended to be transparent.
 
 * Color/Grayscale: whether parts should be printed in full-color or whether a part can be printed grayscale.`;
 

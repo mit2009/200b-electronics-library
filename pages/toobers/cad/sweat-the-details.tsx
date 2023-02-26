@@ -155,6 +155,18 @@ const Page = () => {
         </li>
       </ol>
       <GuideImage src={'/images/toobers/yellow-toober.png'} size="FULL" />
+      <h2>Keepin' it Grayscale</h2>
+      <p>
+        If you're not thinking of adding color to your Toober, keep in mind you
+        can also just have a grayscale Toober. Grayscale designs can be simple
+        and elegant, allowing the design and the textures to speak for itself.
+        The lack of color can also create a sense of sophistication and
+        timelessness.
+      </p>
+      <p>
+        If you choose this route, we'll print your Toober on the{' '}
+        <GuideLink href="/toobers/cad/3dprinting#j35">J35</GuideLink>
+      </p>
       <h2>Add a Decal</h2>
       <p>
         While we can do a lot with just color and texture, sometimes you will

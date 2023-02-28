@@ -20,7 +20,7 @@ interface IPages {
 interface IChapter extends IPage {
   due_date?: string;
   location?: string;
-  whatsDue?: any;
+  whatsDue?: { [key: string]: string };
   has_pages: boolean;
   pages?: IPages;
 }
@@ -262,6 +262,11 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         due_date: 'Mar 4',
         location: Location.AT_HOME,
         has_pages: true,
+        // Be careful when adding todos here
+        // Due to the fact we used 7 above in CAD, probably a remenant of having two separate CAD chapters
+        // Be sure to use something unique from the the above todos
+        // Ideally not 8 so we can back on track
+        // We canot just modify the above since the students already have those values saved in localstorage
         whatsDue: {},
         pages: {
           '/background': {

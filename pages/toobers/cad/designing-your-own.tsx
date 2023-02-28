@@ -140,9 +140,10 @@ const Page = () => {
         <li>
           <code>.f3z</code> of your assembly named{' '}
           <code>FIRSTNAME_LASTNAME_v[X].f3z</code> (note the underscore and
-          capitalization. The [X] should be the version number of your saved
-          Fusion 360 save file, <strong>without</strong> the square brackets).
-          E.g. <code>DAVID_WALLACE_v2.f3z</code>
+          capitalization. The <strong>v</strong> should be{' '}
+          <strong>lowercase.</strong> The [X] should be the version number of
+          your saved Fusion 360 save file, <strong>without</strong> the square
+          brackets). E.g. <code>DAVID_WALLACE_v2.f3z</code>
         </li>
         <li>
           <strong>Two screenshots</strong> showing your design (from different

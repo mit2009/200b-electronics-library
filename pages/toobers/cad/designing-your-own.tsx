@@ -71,7 +71,7 @@ const Page = () => {
       </ul>
       <p>The image below contains dimensions of the existing base toober.</p>
       <GuideImage
-        src="/images/toobers/case-dimensions-04.png"
+        src="/images/toobers/case-dimensions_02.png"
         alt="Toober case bounding box"
         size="MEDIUM"
         border={false}
@@ -81,7 +81,7 @@ const Page = () => {
         your design can extend. Think of all the possibilities!
       </p>
       <GuideImage
-        src="/images/toobers/case-dimensions-02.png"
+        src="/images/toobers/case-dimensions_04.png"
         alt="Toober case bounding box"
         size="LARGE"
         border={false}
@@ -113,7 +113,7 @@ const Page = () => {
         the assembly party.
       </p>
       <GuideImage
-        src="/images/toobers/case-dimensions-03.png"
+        src="/images/toobers/case-dimensions_03.png"
         alt="Appendage bounding box"
         size="FULL"
         border={false}

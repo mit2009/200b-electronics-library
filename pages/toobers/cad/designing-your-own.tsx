@@ -139,11 +139,27 @@ const Page = () => {
       <ol>
         <li>
           <code>.f3z</code> of your assembly named{' '}
-          <code>FIRSTNAME_LASTNAME_v[X].f3z</code> (note the underscore and
-          capitalization. The <strong>v</strong> should be{' '}
-          <strong>lowercase.</strong> The [X] should be the version number of
-          your saved Fusion 360 save file, <strong>without</strong> the square
-          brackets). E.g. <code>DAVID_WALLACE_v2.f3z</code>
+          <code>FIRSTNAME_LASTNAME_v[X].f3z</code>.
+          <ul>
+            <li>
+              <strong>YOUR_NAME</strong> should be in <strong>UPPERCASE</strong>
+            </li>
+            <li>
+              Separted by <strong>underscores</strong>
+            </li>
+            <li>
+              The <strong>v</strong> should be in <strong>lowercase</strong>
+            </li>
+            <li>
+              The <strong>[X]</strong> should be the version number of your
+              saved Fusion 360 save file, <strong>without</strong> the square
+              brackets)
+            </li>
+          </ul>
+          E.g. <code>DAVID_WALLACE_v2.f3z</code>
+          note the underscore and Your name should be in{' '}
+          <strong>UPPERCASE</strong>. The <strong>v</strong> should be{' '}
+          <strong>lowercase.</strong>
         </li>
         <li>
           <strong>Two screenshots</strong> showing your design (from different

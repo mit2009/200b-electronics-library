@@ -99,6 +99,20 @@ div {
     }
   }
 
+  ul,
+  ol {
+    ul,
+    ol {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding-left: 20px;
+      list-style: disc;
+      li {
+        padding-left: 5px;
+      }
+    }
+  }
+
   p + h3 {
     margin-top: 30px;
   }

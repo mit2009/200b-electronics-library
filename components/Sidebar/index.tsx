@@ -85,6 +85,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/power': true,
       '/prototype': true,
       '/cad': true,
+      '/assembly': false,
       '/suger-cube': false,
       '/pcb': false,
       '/final': false,
@@ -95,6 +96,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/soldering': false,
       '/power': false,
       '/prototype': true,
+      '/assembly': true,
       '/cad': true,
       '/suger-cube': false,
       '/pcb': false,
@@ -252,6 +254,39 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
           '/designing-your-own': {
             value: 'Designing your own!',
+          },
+        },
+      },
+      '/assembly': {
+        value: '7. Assembly',
+        due_date: 'Mar 4',
+        location: Location.AT_HOME,
+        has_pages: true,
+        whatsDue: {},
+        pages: {
+          '/background': {
+            value: 'Background Info',
+          },
+          '/prep': {
+            value: 'Preparing your Housing',
+          },
+          '/assemble': {
+            value: 'Assemble the Sugar Cubes',
+          },
+          '/electronics': {
+            value: 'Electronic Insides',
+          },
+          '/acrylic': {
+            value: 'Acrylic Light Channel',
+          },
+          '/testing': {
+            value: 'Testing and Closing',
+          },
+          '/glue': {
+            value: 'Glue and Adhesives',
+          },
+          '/done': {
+            value: 'Done!',
           },
         },
       },
@@ -431,7 +466,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   }
 
   const handleSubmit = () => {
-    const phrase = unlockPhrase.toLocaleLowerCase();
+    const phrase = unlockPhrase.toLocaleLowerCase().replace(/[^a-z]/g, '');
     switch (phrase) {
       case 'bready':
         if (!pageStates['/breadboarding']) {
@@ -469,6 +504,25 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
           setUnlockPhrase('');
           setEnteringUnlockPhrase(false);
           setConfettiColor(['#a600a6']);
+        }
+        break;
+      case 'toobersassemble':
+        if (!pageStates['/assembly']) {
+          setPageStates((current) => {
+            return {
+              ...current,
+              '/breadboarding': true,
+              '/soldering': true,
+              '/power': true,
+              '/prototype': true,
+              '/cad': true,
+              '/assembly': true,
+            };
+          });
+          router.push(`${dirs[0]}/assembly`);
+          setUnlockPhrase('');
+          setEnteringUnlockPhrase(false);
+          setConfettiColor(['#ff9100']);
         }
         break;
       default:

@@ -202,7 +202,7 @@ const Page = () => {
           '1': (
             <>
               Your entire Toober housing (minus appendages) fits within a{' '}
-              <strong>104 x 104 x 52 mm bounding</strong> box (length x width x
+              <strong>104 x 104 x 50 mm bounding</strong> box (length x width x
               height)
             </>
           ),

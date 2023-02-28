@@ -259,7 +259,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       },
       '/assembly': {
         value: '7. Assembly',
-        due_date: 'Mar 4',
+        due_date: 'Mar 24',
         location: Location.AT_HOME,
         has_pages: true,
         // Be careful when adding todos here

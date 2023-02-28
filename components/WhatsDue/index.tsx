@@ -13,7 +13,10 @@ export const WhatsDue = ({
   checklist?: { [id: string]: string | React.ReactNode };
 }) => {
   const dueItems =
-    checklist ?? PAGES_LAYOUT['/toobers'].chapters?.[chapter ?? '']?.whatsDue;
+    checklist ??
+    (PAGES_LAYOUT['/toobers'].chapters?.[chapter ?? '']?.whatsDue as {
+      [id: string]: string;
+    });
 
   const [trackedItems, setTrackedItems] = useState(dueItems);
   const [dontShowConfetti, setDontShowConfetti] = useState(true);

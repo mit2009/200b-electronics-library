@@ -2,6 +2,7 @@
 import { useState } from 'react';
 
 import styles from '../../../styles/Customize.module.scss';
+import cx from 'classnames';
 
 const Page = () => {
   const [color, setColor] = useState('#666666');
@@ -19,9 +20,12 @@ const Page = () => {
           draggable={false}
         />
         <label className={styles.cubeContainer}>
-          <div className={styles.cube1} style={{ backgroundColor: color }} />
           <div
-            className={styles.cube1Color}
+            className={cx(styles.cube1, styles.cube)}
+            style={{ backgroundColor: color }}
+          />
+          <div
+            className={cx(styles.cube1Color, styles.cubeColor)}
             style={{ backgroundColor: color }}
           />
           <input

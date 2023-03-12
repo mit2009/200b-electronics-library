@@ -51,7 +51,9 @@ const styleFromCategory = (category: string) => {
 
 const removeEmpty = (obj: any) => {
   Object.keys(obj).forEach(
-    (k) => (obj[k] && typeof obj[k] === 'object' && removeEmpty(obj[k])) || (!obj[k] && delete obj[k])
+    (k) =>
+      (obj[k] && typeof obj[k] === 'object' && removeEmpty(obj[k])) ||
+      (!obj[k] && delete obj[k])
   );
   return obj;
 };
@@ -98,9 +100,14 @@ export async function getStaticProps() {
   };
 }
 
-const Home = ({ electronicComponents }: { electronicComponents: IElectronicsComponent[] }) => {
+const Home = ({
+  electronicComponents,
+}: {
+  electronicComponents: IElectronicsComponent[];
+}) => {
   const [showOverlay, setShowOverlay] = useState(false);
-  const [activeProduct, setActiveProduct] = useState<IElectronicsComponent | null>(null);
+  const [activeProduct, setActiveProduct] =
+    useState<IElectronicsComponent | null>(null);
 
   return (
     <div>
@@ -118,7 +125,10 @@ const Home = ({ electronicComponents }: { electronicComponents: IElectronicsComp
           >
             <div className={styles.productName}>{item.name}</div>
             <img src={item.productPhoto[0]} alt={item.name} />
-            <div className={styles.category} style={styleFromCategory(item.category)}>
+            <div
+              className={styles.category}
+              style={styleFromCategory(item.category)}
+            >
               {item.category}
             </div>
             <div className={styles.description}>{item.shortDescription}</div>
@@ -155,10 +165,13 @@ const ComingSoon = () => {
       <h1>2.00b Electronics Library!</h1>
       <h2>Coming Soon</h2>
       <p>
-        In the future, this is where you will find our recommendations for different electrical components to use. These
-        will include microcontrollers, communication devices like NFC (Near Field Communication), sensors, etc. Don't
-        worry if you are not familiar with these parts just yet! The staff will have expertise in these specific parts
-        and will be happy to assist you if you want to delve deeper into electronics.
+        In the future, this is where you will find our recommendations for
+        different electrical components to use. These will include
+        microcontrollers, communication devices like NFC (Near Field
+        Communication), sensors, etc. Don't worry if you are not familiar with
+        these parts just yet! The staff will have expertise in these specific
+        parts and will be happy to assist you if you want to delve deeper into
+        electronics.
       </p>
     </>
   );

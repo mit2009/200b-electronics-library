@@ -267,7 +267,11 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         // Be sure to use something unique from the the above todos
         // Ideally not 8 so we can back on track
         // We canot just modify the above since the students already have those values saved in localstorage
-        // whatsDue: {},
+        whatsDue: {
+          '8.1': 'Assemble your Toober Toy!',
+          '8.2':
+            'Get a product photo of your Toober Toy with the course photographer',
+        },
         pages: {
           '/background': {
             value: 'Background Info',
@@ -275,17 +279,14 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/prep': {
             value: 'Preparing your Housing',
           },
-          '/assemble': {
+          '/sugar-cube': {
             value: 'Assemble the Sugar Cubes',
-          },
-          '/electronics': {
-            value: 'Electronic Insides',
           },
           '/acrylic': {
             value: 'Acrylic Light Channel',
           },
           '/testing': {
-            value: 'Testing and Closing',
+            value: 'Electronics and Testing',
           },
           '/glue': {
             value: 'Glue and Adhesives',

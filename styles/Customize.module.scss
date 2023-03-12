@@ -1,0 +1,73 @@
+.container {
+  position: relative;
+  width: 100%;
+
+  label {
+    position: absolute;
+    top: 13.35%;
+    left: 31.8%;
+    width: 14.35%;
+    height: 15%;
+    display: block;
+  }
+
+  input[type='color'] {
+    height: 0px;
+    width: 0px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.cubeImage {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.cubeContainer {
+  &:hover {
+    cursor: pointer;
+    &:after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border-radius: 10px;
+      border: 4px dotted rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+.cube1 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-mask-image: url('../public/images/toobers/sugar-cube-1.png');
+  mask-image: url('../public/images/toobers/sugar-cube-1.png');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mix-blend-mode: overlay;
+  opacity: 0.4;
+}
+
+.cube1Color {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -webkit-mask-image: url('../public/images/toobers/sugar-cube-1.png');
+  mask-image: url('../public/images/toobers/sugar-cube-1.png');
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mix-blend-mode: color;
+  opacity: 1;
+}

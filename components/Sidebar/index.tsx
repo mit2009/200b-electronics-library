@@ -288,6 +288,9 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/testing': {
             value: 'Electronics and Testing',
           },
+          '/customize': {
+            value: 'Customizing the Cubes',
+          },
           '/glue': {
             value: 'Glue and Adhesives',
           },
@@ -307,49 +310,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
           '/assembly': {
             value: 'Sugar Cube Assembly',
-          },
-        },
-      },
-      '/pcb': {
-        value: '6. PCB Assembly',
-        due_date: 'Feb 17',
-        location: Location.AT_HOME,
-        has_pages: true,
-        pages: {
-          '/intro': {
-            value: 'PCB Overview',
-          },
-          '/safety': {
-            value: 'Solder & Safety',
-          },
-          '/parts': {
-            value: 'Preparing the Parts',
-          },
-          '/soldering': {
-            value: 'Actually Soldering!',
-          },
-          '/assembly': {
-            value: 'Connect it Together',
-          },
-        },
-      },
-      '/final': {
-        value: '7. Final Assembly',
-        due_date: 'Feb 17',
-        location: Location.AT_HOME,
-        has_pages: true,
-        pages: {
-          '/intro': {
-            value: 'Background Info',
-          },
-          '/prep': {
-            value: 'Preparing your Enclosure',
-          },
-          '/glue': {
-            value: 'Glue and Adhesives',
-          },
-          '/electronics': {
-            value: 'Electronics Inside',
           },
         },
       },

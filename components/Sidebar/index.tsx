@@ -282,14 +282,14 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/sugar-cube': {
             value: 'Assemble the Sugar Cubes',
           },
-          '/acrylic': {
-            value: 'Acrylic Light Channel',
-          },
           '/testing': {
             value: 'Electronics and Testing',
           },
           '/customize': {
             value: 'Customizing the Cubes',
+          },
+          '/acrylic': {
+            value: 'Acrylic Light Channel',
           },
           '/glue': {
             value: 'Glue and Adhesives',

@@ -2,14 +2,14 @@ const Page = () => {
   return (
     <div>
       <h1>Assemble the Sugar Cubes</h1>
-      <h2>Hello 2.00ber!</h2>
+      <h2>Some Subassembly Required</h2>
       <p>Let's review. The Sugar Cube assembly is composed of 3 parts:</p>
       <ol>
         <li>Silicone button</li>
         <li>Printed Circuit Board (PCB)</li>
         <li>Acrylic mounting plate</li>
       </ol>
-      <p>You'll be assembling two of the four Sugar Cubes for your Toober.</p>
+      <p>You'll be assembling 2 of the 4 Sugar Cubes for your Toober.</p>
       <p>
         Starting with the acrylic plate. Peel off the brown protective paper on
         both sides. <strong>Make sure the text is facing you</strong> and is not
@@ -36,6 +36,12 @@ const Page = () => {
         Give the completed Sugar Cube assembly a few test pushes to make sure
         that the button isn't stuck or stiff in odd places. If it feels
         sluggish, try unscrewing the corner M2 screws a bit.
+      </p>
+      <h2>Label the Cubes</h2>
+      <p>
+        Once you have 4 assembled sugar cubes, grab a sharpie label them{' '}
+        <strong className="color">0, 1, 2, and 3</strong>. Starting with the 0
+        numbering helps in software since Arduino indexes with 0.
       </p>
     </div>
   );

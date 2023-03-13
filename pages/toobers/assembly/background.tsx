@@ -10,9 +10,10 @@ const Page = () => {
       <p>
         Hello! Exciting! You've hopefully received your freshly printed Toobers
         printed on the Stratasys J55 Prime or the J35 Pro. This is the last part
-        to the Toobers project. By the end of this lab, make sure that you{' '}
-        <strong>get a photo of your Toobers</strong> with Danny, the course
-        photographer. After that, you're free to take your Toobers home!
+        to the Toobers project. <strong>Before the end of this lab</strong>,
+        make sure that you <strong>get a photo of your Toobers</strong> with
+        Danny, the course photographer. After that, you're free to take your
+        Toobers home!
       </p>
       <GuideImage
         src="/images/toobers/walle-toobers.png"
@@ -71,9 +72,12 @@ const Page = () => {
       <p>
         Because of the size constraints we've set, we're able to print multiple
         Toobers at once. We try our best to cram as many parts in there at once
-        for efficiency (like a fun game of Tetris). Below shows an example tray
-        of parts we would be printing.
+        for efficiency (like a fun game of Tetris). Below shows example trays of
+        parts we printed (J35 on the left, J55 on the right).
       </p>
+      <GuideImage
+        src={['/images/toobers/j35-tray.png', '/images/toobers/j55-tray.png']}
+      />
       <h2>The Aftermath</h2>
       <p>
         The J55 prime is what the industry calls a 'polyjet' printer. A polyjet

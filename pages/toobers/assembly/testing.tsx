@@ -4,7 +4,7 @@ const Page = () => {
   return (
     <div>
       <h1>Electronics & Testing</h1>
-      <h2>Together!</h2>
+      <h2>Getting Permanent</h2>
       <p>
         Take a look at the custom PCB that we've made for your Toober! A PCB
         like this can often help with compacting the size of your toy. The
@@ -13,6 +13,8 @@ const Page = () => {
         board, which has holes that you can solder connections onto). If done
         correctly, this can make your electronics more reliable.
       </p>
+      <h2>Transferring the Electronic Components</h2>
+      <h3>Arduino Nano</h3>
       <p>
         Let's transfer the electronics from your breadboard to the PCB.{' '}
         <strong>
@@ -24,32 +26,56 @@ const Page = () => {
           spudger
         </GuideLink>{' '}
         if necessary). Place it onto the breadboard paying attention to the
-        direction of the USB port. Next, remove the <strong>DFPlayer</strong>{' '}
-        and place it on the PCB, paying attention to the direction the MicroSD
-        card faces.
+        direction of the USB port.
       </p>
+      <h3>DFPlayer</h3>
+      <p>
+        Next, remove the <strong>DFPlayer</strong> and place it on the PCB,
+        paying attention to the direction the MicroSD card faces.
+      </p>
+      <h3>Power Switch & Battery</h3>
       <p>
         Remove the jerry-rigged power setup, and separate the wires that join
         the <strong>battery module</strong> and the{' '}
         <strong>power switch</strong>. Take the JST-XH connectors and place onto
         the connectors on the PCB.
       </p>
+      <h3>Speaker</h3>
       <p>
-        Disconnect the speaker from the breadboard, and plug it into the PCB.
+        Disconnect the speaker from the breadboard. You may have additional
+        connectors to the speaker wires, like a small Molex connector or
+        alligator clips. We won't need those. Plug the speaker directly into the
+        PCB.
       </p>
+      <h3>Buttons & LEDs</h3>
       <p>
         And finally, take the four JST-PH 4-Pin Jumper cables and connect them
-        from the PCB to the Sugar Cubes. Once again,{' '}
+        from the PCB to the Sugar Cubes. As you insert the Jumper cable into the
+        PCB end, take note of the button number. Make sure the other end is{' '}
+        <strong>
+          connected to the corresponding button you've labeled (0 through 3).
+        </strong>
+      </p>
+      <p>
+        Once again,{' '}
         <strong className="color">
           pay attention to which way the connectors face
         </strong>
-        !
+        ! The orientation of the jumper cable into the PCB is fixed, but
+        unfortunately due to a sourcing error the connectors on the Sugar Cube
+        is ambiguous. Make sure it's oriented as shown in the photo below.
       </p>
+      <h2>Testing</h2>
       <p>
         Test the setup by turning the switch on. If you completed the
-        breadboarding exercise, you still have the original code on the Arduino
-        Nano. The game should start: the speaker should play, and the Sugar
-        Cubes should light up!
+        breadboarding exercise from a few labs ago, you should still have the
+        original code on the Arduino Nano. The game should start: the speaker
+        should play, and the Sugar Cubes should light up!
+      </p>
+      <p>
+        Your breadboard is now a little empty looking, and won't do much for you
+        anymore, but that's ok! Keep all the breadboard components and feel free
+        to use it in future projects!
       </p>
       <h2>Troubleshooting</h2>
       <h4>If nothing is happening...</h4>

@@ -88,7 +88,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/assembly': false,
       '/suger-cube': false,
       '/pcb': false,
-      '/final': false,
     },
     chapter_state: {
       '/intro': false,
@@ -100,7 +99,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/cad': true,
       '/suger-cube': false,
       '/pcb': false,
-      '/final': false,
     },
     chapters: {
       '/intro': {
@@ -258,7 +256,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         },
       },
       '/assembly': {
-        value: '7. Assembly',
+        value: '7. Final Assembly',
         due_date: 'Mar 24',
         location: Location.AT_HOME,
         has_pages: true,
@@ -287,6 +285,9 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
           '/customize': {
             value: 'Customizing the Cubes',
+          },
+          '/into-the-housing': {
+            value: 'Into the Housing!',
           },
           '/acrylic': {
             value: 'Acrylic Light Channel',

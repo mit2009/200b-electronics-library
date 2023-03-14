@@ -55,6 +55,12 @@ const Page = () => {
         we made sure that the two halves of the Toober housings were still two
         separate bodies such that they didn't fuse together when printing.
       </p>
+      <GuideImage
+        src="/images/toobers/jordan.jpeg"
+        border={false}
+        size={'MEDIUM'}
+        caption="Jordan, staring very intently at a jeep for ants."
+      />
       <p>
         If there were appendages on your Toobers, we chopped it up for you and
         added alignment and orientation pins. Modifying your appendages in this

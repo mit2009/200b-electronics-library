@@ -57,10 +57,11 @@
   a .caption {
     display: block;
     opacity: 0.6;
-    margin-top: 5px;
     font-size: 16px;
     font-weight: normal;
     color: var(--grey9);
+    max-width: 550px;
+    margin: 5px auto 0;
   }
 
   &.noMargin {
@@ -91,7 +92,7 @@
 .caption {
   display: block;
   opacity: 0.6;
-  margin-top: 5px;
+  margin: 5px auto 0;
   font-size: 16px;
   font-weight: normal;
   color: var(--grey9);

@@ -12,6 +12,7 @@ const Page = () => {
         additional pieces.) This tupperware container is for you to keep! You
         can use it to move other small parts, electronics, or sandwiches!
       </p>
+      <GuideImage src="/images/toobers/tupperware.jpg" border={false} />
       <h2>Be Careful! Parts are Brittle!</h2>
       <p>
         If you recall from the lecture, these prototypes can be very expensive
@@ -22,21 +23,46 @@ const Page = () => {
         <strong className="color">it will likely shatter</strong>, so be
         careful!
       </p>
+      <GuideImage
+        src="/images/toobers/brittle-1.jpeg"
+        border={false}
+        caption={
+          'Parts that are skinny like this are especially susceptible to damage'
+        }
+      />
       <p>
-        <strong>Watch out for small, flimsy parts!</strong> The plastic material
-        is brittle, and these parts are especially prone to snapping off. (See
-        the awesome Toobers design below for an example).{' '}
-        <strong>Be careful, and never apply force to your Toobers!</strong>.
+        Watch out for small, flimsy parts! These smaller features are especially
+        prone to snapping off.{' '}
+        <strong>
+          Be careful when handling your Toober, and never apply force to your
+          Toobers!
+        </strong>
       </p>
+      <GuideImage
+        src="/images/toobers/brittle-2.jpeg"
+        border={false}
+        caption={`Be careful of areas like the speaker grill! You don't want to press too hard on weak areas like this as they'll crack and break`}
+      />
       <h2>Removal of Extra Gunk</h2>
       <p>
         This 3D printer uses a gel-like substance to create its 'support
         material'. Take a moment to make sure that all the gunk has been
         thoroughly removed from the parts. Extra places to look out for
-        includes: the locking mechanism, the speaker holes, and the screw holes.
-        If there is extra support material, use something soft like a toothpick
-        or a popsicle stick to scrape off any excess.
+        includes: the speaker holes, the acrylic light channel, any holes for
+        threaded inserts, and the screw holes. If there is extra support
+        material, use something soft like a toothpick or a popsicle stick to
+        scrape off any excess.
       </p>
+      <GuideImage
+        src={[
+          '/images/toobers/support-materials.jpeg',
+          '/images/toobers/support-materials-closeup.jpeg',
+        ]}
+        border={false}
+        caption={
+          'This is what the support material looks like when it first comes off the printer. Hopefully we got most of that off!'
+        }
+      />
       <p>
         Avoid using something too abrasive, like 100 grit sandpaper (or
         sandpaper on the belts) on your Toobers! Depending on how the color was
@@ -85,6 +111,10 @@ const Page = () => {
       />
       <h2>Install the Threaded Inserts</h2>
       <p></p>
+      <GuideImage
+        src="/images/toobers/threaded-insert-closeup.jpeg"
+        border={false}
+      />
     </div>
   );
 };

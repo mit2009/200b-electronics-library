@@ -85,6 +85,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/power': true,
       '/prototype': true,
       '/cad': true,
+      '/preassembly': true,
       '/assembly': false,
       '/suger-cube': false,
       '/pcb': false,
@@ -94,7 +95,8 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/breadboarding': false,
       '/soldering': false,
       '/power': false,
-      '/prototype': true,
+      '/prototype': false,
+      '/preassembly': true,
       '/assembly': true,
       '/cad': true,
       '/suger-cube': false,
@@ -255,8 +257,21 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           },
         },
       },
+      '/preassembly': {
+        value: '7. Pre-Assembly',
+        due_date: 'Before Lab 6',
+        location: Location.AT_HOME,
+        has_pages: true,
+        // whatsDue: {
+        // },
+        pages: {
+          '/things-to-bring': {
+            value: 'Things to Bring',
+          }
+        },
+      },
       '/assembly': {
-        value: '7. Final Assembly',
+        value: '8. Final Assembly',
         due_date: 'Mar 24',
         location: Location.AT_HOME,
         has_pages: true,

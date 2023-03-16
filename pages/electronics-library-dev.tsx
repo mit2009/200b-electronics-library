@@ -174,22 +174,4 @@ const Home = ({
   );
 };
 
-const ComingSoon = () => {
-  return (
-    <>
-      <h1>2.00b Electronics Library!</h1>
-      <h2>Coming Soon</h2>
-      <p>
-        In the future, this is where you will find our recommendations for
-        different electrical components to use. These will include
-        microcontrollers, communication devices like NFC (Near Field
-        Communication), sensors, etc. Don't worry if you are not familiar with
-        these parts just yet! The staff will have expertise in these specific
-        parts and will be happy to assist you if you want to delve deeper into
-        electronics.
-      </p>
-    </>
-  );
-};
-
-export default ComingSoon;
+export default Home;

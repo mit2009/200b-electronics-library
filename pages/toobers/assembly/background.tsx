@@ -1,4 +1,5 @@
 import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
 import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
@@ -64,8 +65,8 @@ const Page = () => {
       <p>
         If there were appendages on your Toobers, we chopped it up for you and
         added alignment and orientation pins. Modifying your appendages in this
-        way often saves tens of hours worth of printing time, and tens (maybe
-        even hundreds) of dollars in terms of 3D printing costs!
+        way often saves tens of hours worth of printing time, and hundred of
+        dollars in terms of 3D printing costs!
       </p>
       <p>
         Once the appropriate modifications have been made, the file is then
@@ -86,7 +87,11 @@ const Page = () => {
       />
       <h2>The Aftermath</h2>
       <p>
-        The J55 prime is what the industry calls a 'polyjet' printer. A polyjet
+        As we mentioned in the{' '}
+        <GuideLink href="https://toylab.mit.edu/toobers/cad/3dprinting">
+          3D printing section
+        </GuideLink>{' '}
+        The J55 Prime is what the industry calls a 'polyjet' printer. A polyjet
         printer is like a 2D inkjet printer, but instead of jetting drops of
         ink, the printer jets drops of photopolymer that solidify when exposed
         to UV light. These layers accumulate on the build tray.
@@ -102,7 +107,8 @@ const Page = () => {
       <p>
         For the more detailed parts, you can use the waterjet in the PDL. We've
         gone ahead and done all of this for you since there's only one of these
-        waterjets in the PDL.
+        waterjets in the PDL. See the waterjet in action below (yes, it even has
+        a nice little windshield wiper).
       </p>
       <GuideImage src="/images/toobers/toobers-cleaning.gif" border={false} />
     </div>

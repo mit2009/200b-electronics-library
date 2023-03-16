@@ -281,9 +281,11 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         // Ideally not 8 so we can back on track
         // We canot just modify the above since the students already have those values saved in localstorage
         whatsDue: {
-          '8.1': 'Assemble your Toober Toy!',
-          '8.2':
-            'Get a product photo of your Toober Toy with the course photographer',
+          '8.1': 'Assemble your Toober Toy',
+          '8.2': 'Test your Toober Toy to make sure everything still works!',
+          '8.3':
+            'Get a product photo of your Toober Toy with the course photographer!',
+          '8.4': 'Optional: show it off :)',
         },
         pages: {
           '/background': {

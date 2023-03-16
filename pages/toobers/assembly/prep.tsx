@@ -1,5 +1,6 @@
 import GuideImage from '../../../components/GuideImage';
 import { GuideLink } from '../../../components/GuideLink';
+import GuideVideo from '../../../components/GuideVideo';
 
 const Page = () => {
   return (
@@ -13,7 +14,7 @@ const Page = () => {
         can use it to move other small parts, electronics, or sandwiches!
       </p>
       <GuideImage src="/images/toobers/tupperware.jpg" border={false} />
-      <h2>Be Careful! Parts are Brittle!</h2>
+      <h2>Careful! Parts are Brittle!</h2>
       <p>
         If you recall from the lecture, these prototypes can be very expensive
         and take a while to print, given they are printed on very precise
@@ -50,8 +51,8 @@ const Page = () => {
         thoroughly removed from the parts. Extra places to look out for
         includes: the speaker holes, the acrylic light channel, any holes for
         threaded inserts, and the screw holes. If there is extra support
-        material, use something soft like a toothpick or a popsicle stick to
-        scrape off any excess.
+        material, use something soft like a{' '}
+        <strong>toothpick or a popsicle stick</strong> to scrape off any excess.
       </p>
       <GuideImage
         src={[
@@ -64,18 +65,18 @@ const Page = () => {
         }
       />
       <p>
-        Avoid using something too abrasive, like 100 grit sandpaper (or
-        sandpaper on the belts) on your Toobers! Depending on how the color was
-        printed on,{' '}
+        Avoid using something too abrasive, like the sandpaper on the belts, or
+        anything under 500 grit, on your Toobers! Depending on how the color was
+        printed,{' '}
         <strong>you may accidentally sand off too much of your Toobers</strong>{' '}
-        and reveal a different color.
+        and reveal the color underneath.
       </p>
       <p>
         If you want to give it a nice finish and remove any layers of residue,
         some water and a little rubbing with some 3M Scotch-Brite pads will do
-        the trick! We highly recommend wetting the pads before using them; it'll
-        make them a little less abrasive and any residue can easily be wiped
-        away.
+        the trick! We highly recommend <strong>wetting</strong> the pads before
+        using them; it'll make them a little less abrasive and any residue can
+        easily be wiped away.
       </p>
       <GuideImage
         src="/images/toobers/scotch-brite.jpg"
@@ -89,6 +90,11 @@ const Page = () => {
         the part down. It shouldn't take much to give it a nice, smooth, clean
         finish!
       </p>
+      <GuideImage
+        src="/images/toobers/isopropyl.jpeg"
+        border={false}
+        size={'SMALL'}
+      />
       <h2>Threaded Inserts</h2>
       <p>
         When designing an enclosure for your toy prototype, you want to think
@@ -129,10 +135,20 @@ const Page = () => {
       <p>
         As these are press-fit threaded inserts, we'll be applying a bit of
         force down to set them in place. You'll use a screwdriver or something
-        similar to press down on the insert going into the Toober
+        similar to press down on the insert going into the Toober. Align your
+        threaded insert on the threaded insert hole as shown below:
       </p>
       <GuideImage
         src="/images/toobers/threaded-insert-closeup.jpeg"
+        border={false}
+      />
+      <p>Then press down on the threaded insert as shown in the video below</p>
+      <GuideVideo src="threaded-insert-installation.webm" />
+      <p>Repeat for all 13 inserts!</p>
+      <GuideImage
+        src="/images/toobers/threaded-inserts-labels.png"
+        caption="The threaded inserts are all the same aluminum threaded inserts shown above. Note the two holes on the bottom housing (left image) that do not get threaded inserts."
+        size={'FULL'}
         border={false}
       />
     </div>

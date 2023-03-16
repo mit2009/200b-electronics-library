@@ -6,7 +6,10 @@ const GuideVideo = ({ src }: { src: string }) => {
   return (
     <div className="video-container">
       <video controls={true}>
-        <source src={`/images/toobers/${src}`} type="video/mp4" />
+        <source
+          src={`/images/toobers/${src}`}
+          type={`video/${src.split('.')[1]}`}
+        />
         Your browser does not support the video tag.
       </video>
     </div>

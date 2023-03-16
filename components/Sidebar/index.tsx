@@ -266,8 +266,8 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
         // },
         pages: {
           '/things-to-bring': {
-            value: 'Things to Bring',
-          }
+            value: 'Pre-lab Prep',
+          },
         },
       },
       '/assembly': {
@@ -437,7 +437,9 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
         defaultState[page] = true;
       });
     setPageStates(defaultState);
-    setChapterState((cur) => {return {...cur, [dirs[1]]: true}});
+    setChapterState((cur) => {
+      return { ...cur, [dirs[1]]: true };
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.asPath]);
   const chapters = PAGES_LAYOUT[currentSection].chapters as {

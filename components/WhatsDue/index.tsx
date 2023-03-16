@@ -8,8 +8,10 @@ import ConfettiExplosion from 'react-confetti-explosion';
 export const WhatsDue = ({
   chapter,
   checklist,
+  checklistTitle,
 }: {
   chapter?: string;
+  checklistTitle?: React.ReactNode;
   checklist?: { [id: string]: string | React.ReactNode };
 }) => {
   const dueItems =
@@ -56,14 +58,16 @@ export const WhatsDue = ({
       })}
     >
       {checklist ? (
-        <>
-          <h1>Submission Checklist. Before you Submit!</h1>
-          <p>
-            Please carefully review this list and check off all items before
-            submitting! Ensuring that you've done these checks will help us
-            reduce errors and save time in your printing process.
-          </p>
-        </>
+        checklistTitle ?? (
+          <>
+            <h1>Submission Checklist. Before you Submit!</h1>
+            <p>
+              Please carefully review this list and check off all items before
+              submitting! Ensuring that you've done these checks will help us
+              reduce errors and save time in your printing process.
+            </p>
+          </>
+        )
       ) : (
         <h1>
           What's Due{' '}

@@ -104,7 +104,7 @@ const Page = () => {
       />
       <ol start={6}>
         <li>
-          Still having problems? As always, please feel free to reach out on
+          Still having problems? As always, please feel free to reach out on{' '}
           <GuideLink
             href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J"
             target="_blank"

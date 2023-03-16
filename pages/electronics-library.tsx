@@ -111,8 +111,23 @@ const Home = ({
 
   return (
     <div>
-      <h1>2.00b Electronics Library!</h1>
-      <h2>Recommended Electronic Components</h2>
+      <div className={styles.electronicsHeader}>
+        <h1>2.00b Electronics Library!</h1>
+        <h2>Recommended Electronic Components</h2>
+        <div className={styles.textContent}>
+          <p>
+            Hello! This page is designed to help you select parts as you develop
+            your toy product prototype! While you're always free to use any
+            components you choose, the parts below have been selected by the
+            2.00b staff to be versatile and easy-to-use options.
+          </p>
+          <p>
+            The staff will be able to better support your team if you're using
+            these components. Additionally, we'll likely have a lot of these{' '}
+            <strong>parts in stock</strong>!
+          </p>
+        </div>
+      </div>
       <div className={styles.electronicsContainer}>
         {electronicComponents.map((item: any) => (
           <div
@@ -177,4 +192,4 @@ const ComingSoon = () => {
   );
 };
 
-export default ComingSoon;
+export default Home;

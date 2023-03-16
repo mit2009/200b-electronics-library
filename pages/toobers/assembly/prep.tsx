@@ -72,9 +72,16 @@ const Page = () => {
       </p>
       <p>
         If you want to give it a nice finish and remove any layers of residue,
-        some water and a little rubbing with some Scotch Brite pads will do the
-        trick!
+        some water and a little rubbing with some 3M Scotch-Brite pads will do
+        the trick! We highly recommend wetting the pads before using them; it'll
+        make them a little less abrasive and any residue can easily be wiped
+        away.
       </p>
+      <GuideImage
+        src="/images/toobers/scotch-brite.jpg"
+        border={false}
+        size={'SMALL'}
+      />
       <h2>Sticky Toober!</h2>
       <p>
         If your Toobers is feeling a little sticky or unpleasant, dampen a paper
@@ -110,7 +117,20 @@ const Page = () => {
         border={false}
       />
       <h2>Install the Threaded Inserts</h2>
-      <p></p>
+      <p>
+        There are <strong className={'color'}>13</strong> threaded inserts for
+        your Toober housing.
+      </p>
+      <ul>
+        <li>3 on the bottom for the battery and charger module</li>
+        <li>8 on the top housing for the sugar cube buttons (2 each)</li>
+        <li>2 on the top housing to keep both housing halves closed</li>
+      </ul>
+      <p>
+        As these are press-fit threaded inserts, we'll be applying a bit of
+        force down to set them in place. You'll use a screwdriver or something
+        similar to press down on the insert going into the Toober
+      </p>
       <GuideImage
         src="/images/toobers/threaded-insert-closeup.jpeg"
         border={false}

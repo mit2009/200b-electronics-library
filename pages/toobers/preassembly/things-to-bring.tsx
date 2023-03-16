@@ -14,16 +14,16 @@ const Page = () => {
       <WhatsDue
         checklistTitle={
           <>
-            <h1>For Lab 6, please make sure:</h1>
+            <h1>For Lab 6, please make sure you:</h1>
           </>
         }
         checklist={{
           '17.1': (
             <>
-              You have completed the <strong>breadboarding</strong> of your
-              Toober Toy, have verified all the components work and that you're
-              able to play the Toober Simon game successfully (if you need help,
-              feel free to ask on{' '}
+              Complete the <strong>breadboarding</strong> of your Toober Toy,
+              have verified all the components work and that you're able to play
+              the Toober Simon game successfully (if you need help, feel free to
+              ask on{' '}
               <GuideLink
                 href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J"
                 target="_blank"

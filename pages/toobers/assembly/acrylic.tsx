@@ -10,9 +10,9 @@ const Page = () => {
         <GuideLink href="/toobers/cad/base-model-features#acrylic">
           features
         </GuideLink>{' '}
-        section of your toober. This light channel carries light from the
-        charging LED status on the battery module so it can be seen on the
-        outside of the Toober toy.
+        section of this guide. This solid transparent plastic carries light from
+        the charging LED status on the battery module to the edge of the bottom
+        housing so it can be seen on the outside of the Toober toy.
       </p>
       <h2>The Acrylic Piece</h2>
       <p>

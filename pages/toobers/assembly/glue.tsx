@@ -78,11 +78,11 @@ const Glue = () => {
         size={'SMALL'}
         border={false}
         caption={
-          "This one didn't have any alignment pins. Hold it very, very still and don't spook the piggy!"
+          "This one didn't have any alignment pins. Hold it very, very still; don't spook the piggy!"
         }
       />
       <p>
-        If the hole for attaching your part is a through-hole, consider adding
+        If the hole for the alignment pin is a through-hole, consider adding
         just a bit of tape to plug up the hole, to prevent glue from dripping
         onto you, the table, or worst of all- unwanted parts of your Toober.
       </p>

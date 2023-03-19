@@ -12,8 +12,8 @@ const Page = () => {
         <li>Acrylic mounting plate</li>
       </ol>
       <p>
-        You'll be assembling 2 of the 4 Sugar Cubes for your Toober! Start by
-        grabbing one acrylic plate.
+        You'll be assembling <strong className="color">2</strong> of the 4 Sugar
+        Cubes for your Toober! Start by grabbing one acrylic plate.
       </p>
       <GuideImage
         src="/images/toobers/sugarcube-paper-on-plate.jpeg"
@@ -119,6 +119,17 @@ const Page = () => {
         <strong className="color">0, 1, 2, and 3</strong>. Starting with the 0
         numbering helps in software since Arduino indexes with 0.
       </p>
+      <GuideImage
+        src="/images/toobers/sugar-cube-labelled.jpeg"
+        size="LARGE"
+        border={false}
+      />
+      <p>Put these aside for later. Yay!</p>
+      <GuideImage
+        src="/images/toobers/sugar-cube-done.jpeg"
+        size="FULL"
+        border={false}
+      />
     </div>
   );
 };

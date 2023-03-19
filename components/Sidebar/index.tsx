@@ -297,17 +297,23 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/sugar-cube': {
             value: 'Assemble the Sugar Cubes',
           },
+          '/electronic-insides': {
+            value: 'Electronic Insides',
+          },
+          '/sugar-cube-connect': {
+            value: 'Connecting the Cubes',
+          },
           '/testing': {
-            value: 'Electronics and Testing',
+            value: 'Testing and Debugging',
           },
           '/customize': {
             value: 'Customizing the Cubes',
           },
-          '/into-the-housing': {
-            value: 'Into the Housing!',
-          },
           '/acrylic': {
             value: 'Acrylic Light Channel',
+          },
+          '/close-it-up': {
+            value: 'Close it up',
           },
           '/glue': {
             value: 'Glue and Adhesives',

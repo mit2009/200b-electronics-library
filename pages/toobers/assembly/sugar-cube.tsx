@@ -5,12 +5,15 @@ const Page = () => {
     <div>
       <h1>Assemble the Sugar Cubes</h1>
       <h2>Some Subassembly Required</h2>
-      <p>Let's review. The Sugar Cube assembly is composed of 3 parts:</p>
-      <ol>
-        <li>Silicone button</li>
-        <li>Printed Circuit Board (PCB)</li>
-        <li>Acrylic mounting plate</li>
-      </ol>
+      <p>
+        By the end of this section, you should have 4 nifty sugar cubes that
+        will act as the buttons of your Toober.
+      </p>
+      <GuideImage
+        src="/images/toobers/sugar-cube-done.jpeg"
+        size="FULL"
+        border={false}
+      />
       <p>
         You'll be assembling <strong className="color">2</strong> of the 4 Sugar
         Cubes for your Toober! Start by grabbing one acrylic plate.
@@ -125,11 +128,6 @@ const Page = () => {
         border={false}
       />
       <p>Put these aside for later. Yay!</p>
-      <GuideImage
-        src="/images/toobers/sugar-cube-done.jpeg"
-        size="FULL"
-        border={false}
-      />
     </div>
   );
 };

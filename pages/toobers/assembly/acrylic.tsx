@@ -1,3 +1,4 @@
+import GuideImage from '../../../components/GuideImage';
 import { GuideLink } from '../../../components/GuideLink';
 
 const Page = () => {
@@ -23,23 +24,55 @@ const Page = () => {
         <strong>only remove the protective paper on the bottom side</strong>.
       </p>
       <p>
-        Slide the acrylic piece in, making sure it makes contact with the bottom
-        housing. Hold it in place as you install the final{' '}
-        <strong>threaded insert</strong>. Holding the acrylic piece there will
-        prevent the threaded insert from falling out the other side.
+        Slide the acrylic piece in, as shown below, making sure the rounded
+        corner is facing the direction as shown and that the{' '}
+        <strong className={'color'}>bottom side has the paper removed</strong>.
+        Making sure it makes contact with the bottom housing.
       </p>
+      <GuideImage
+        src="/images/toobers/acrylic-light-channel-1.jpg"
+        size="LARGE"
+        border={false}
+      />
       <p>
-        While you're still holding everything, grab a <strong>M3 x 6</strong>{' '}
-        screw it in. The screw should sit relatively flush with the top of the
-        bottom housing, sinking into the{' '}
+        Next, like you did before, place the threaded insert in. Be careful with
+        this one - don't go full force. Gently press the insert in, so that the
+        top is flush with the bottom of the{' '}
         <GuideLink
           target="_BLANK"
           href="https://en.wikipedia.org/wiki/Counterbore"
         >
           counterbore
-        </GuideLink>
-        .
+        </GuideLink>{' '}
+        as shown.
       </p>
+      <GuideImage
+        src="/images/toobers/acrylic-light-channel-2.jpg"
+        size="LARGE"
+        border={false}
+      />
+      <p>
+        Now you'll want to use a <strong className="color">M3 x 5mm</strong>{' '}
+        screw to clamp the acrylic plate down to the charging module. Also be
+        careful to not over tighten this one, as you may jack the threaded
+        insert up and out of the housing.
+      </p>
+      <GuideImage
+        src="/images/toobers/acrylic-light-channel-3.jpg"
+        size="LARGE"
+        border={false}
+        caption="This is what the light channel should look like when you're done!"
+      />
+      <p>
+        Now, when you charge your Toober (once the case is closed), you'll be
+        able to see the charging status (red for charging, green for done!)
+      </p>
+
+      <GuideImage
+        src="/images/toobers/charging-light.png"
+        size={'MEDIUM'}
+        border={false}
+      />
     </div>
   );
 };

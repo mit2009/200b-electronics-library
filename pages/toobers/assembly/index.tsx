@@ -1,2 +1,2 @@
-import Page from './background';
+import Page from '../assembly/prep';
 export default Page;

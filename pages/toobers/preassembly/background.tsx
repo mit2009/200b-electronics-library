@@ -1,30 +1,24 @@
 import GuideImage from '../../../components/GuideImage';
 import { GuideLink } from '../../../components/GuideLink';
-import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
   return (
     <div>
       <h1>Background Info</h1>
       <h2>Your Freshly Printed Toobers!</h2>
-      <WhatsDue chapter="/assembly" />
       <p>
-        Hello! Exciting! You've hopefully received your freshly printed Toobers
+        Hello! Exciting! You'll soon receive your freshly printed Toobers
         printed on the Stratasys J55 Prime or the J35 Pro. This is the last part
-        to the Toobers project. <strong>Before the end of this lab</strong>,
-        make sure that you <strong>get a photo of your Toobers</strong> with
-        Danny, the course photographer. After that, you're free to take your
-        Toobers home!
+        to the Toobers project. <strong>Before the end of lab 6</strong>, make
+        sure that you <strong>get a photo of your Toobers</strong> with Danny,
+        the course photographer. After that, you're free to take your Toobers
+        home!
       </p>
       <GuideImage
         src="/images/toobers/walle-toobers.png"
         border={false}
         size={'MEDIUM'}
       />
-      <p>
-        Try fitting the two halves of your housing together! Note that only one
-        orientation should properly 'fit'.
-      </p>
       <p>
         Between you submitting your CAD file and the printing of your Toober, a
         few things happened. Reading the below will give you a better

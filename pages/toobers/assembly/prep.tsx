@@ -1,17 +1,19 @@
 import GuideImage from '../../../components/GuideImage';
 import { GuideLink } from '../../../components/GuideLink';
 import GuideVideo from '../../../components/GuideVideo';
+import { WhatsDue } from '../../../components/WhatsDue';
 
 const Page = () => {
   return (
     <div>
       <h1>Preparing your Housing</h1>
       <h2>Hand-Packaged for you!</h2>
+      <WhatsDue chapter="/assembly" />
       <p>
         We've packaged your freshly printed Toobers in this lovely little
-        tupperware container so all the pieces stay together (if you have
-        additional pieces.) This tupperware container is for you to keep! You
-        can use it to move other small parts, electronics, or sandwiches!
+        food-safe polypropylene container so all the pieces stay together (if
+        you have additional pieces.) This container is for you to keep! You can
+        use it to move other small parts, electronics, or sandwiches!
       </p>
       <GuideImage src="/images/toobers/tupperware.jpg" border={false} />
       <h2>Careful! Parts are Brittle!</h2>
@@ -23,6 +25,10 @@ const Page = () => {
         you drop your Toobers on the floor,{' '}
         <strong className="color">it will likely shatter</strong>, so be
         careful!
+      </p>
+      <p>
+        Take a look at the print. Give it a quick test-fit to see how the top
+        and bottom housing fits. Admire the lovely 3D printed parts.{' '}
       </p>
       <GuideImage
         src="/images/toobers/brittle-1.jpeg"

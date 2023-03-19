@@ -268,6 +268,9 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/things-to-bring': {
             value: 'Pre-lab Prep',
           },
+          '/background': {
+            value: 'Background Info',
+          },
         },
       },
       '/assembly': {
@@ -288,9 +291,6 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '8.4': 'Optional: show it off :)',
         },
         pages: {
-          '/background': {
-            value: 'Background Info',
-          },
           '/prep': {
             value: 'Preparing your Housing',
           },

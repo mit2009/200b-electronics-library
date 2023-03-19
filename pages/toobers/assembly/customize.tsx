@@ -194,18 +194,22 @@ const Page = () => {
       <h2>Some Code Tweaks</h2>
       <h3>Changing the Colors</h3>
       <p>
-        Changing the colors of your sugar cubes is actually fairly straight
-        forward. Open up the Arduino sketch. Roughly line <code>37</code>, you
-        should see a variable being defined called <code>colorMap</code>. This
-        is a 2D array that defines the values for each of the sugar cube lights,
-        in RGB format. Replace what you have from line <code>37</code> -{' '}
-        <code>42</code> with the below (automatically populated with your
-        selected colors):
+        Changing the colors of your sugar cubes require a teensy bit of code
+        change, but it's actually fairly straight forward! Open up the Arduino
+        sketch from last time (it should be called{' '}
+        <code>ToobersArduino.ino</code>).
       </p>
       <p>
         If you don't have the code anymore, you can refer back to{' '}
         <GuideLink href="/toobers/prototype/final">this section</GuideLink> to
         download it again.
+      </p>
+      <p>
+        On roughly line <code>37</code>, you should see a variable being defined
+        called <code>colorMap</code>. This is a 2D array that defines the values
+        for each of the sugar cube lights, in RGB format from Button 0 to Button
+        3. Replace what you have from line <code>37</code> - <code>42</code>{' '}
+        with the below (automatically populated with your selected colors):
       </p>
       <pre>
         <p

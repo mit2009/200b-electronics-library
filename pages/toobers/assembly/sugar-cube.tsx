@@ -127,7 +127,6 @@ const Page = () => {
         size="LARGE"
         border={false}
       />
-      <p>Put these aside for later. Yay!</p>
     </div>
   );
 };

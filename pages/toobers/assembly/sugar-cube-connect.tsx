@@ -6,8 +6,8 @@ const Page = () => {
       <h1>Connecting the Sugar Cubes!</h1>
       <h2>Into the Top Housing</h2>
       <p>
-        Grab your sugar cubes, and place them into the housing. Set your top
-        housing down in front of you in the orientation shown below.
+        Set your top housing down in front of you in the orientation shown
+        below. Grab your sugar cubes, and place them into the housing.
       </p>
       <p>
         The layout below is what we recommend such that when it comes to
@@ -22,7 +22,11 @@ const Page = () => {
         border={false}
       />
       <p>
-        We also recommend setting the bottom housing in front of you in the
+        Screw the sugar cubes into the top housing using eight{' '}
+        <strong>M3 x 8mm</strong> screws.
+      </p>
+      <p>
+        Once those are secure, set the bottom housing in front of you in the
         orientation shown below. This lays out the jumper wire connections
         clearly (shown in purple), which makes them more clear and also the case
         easier to close later on.

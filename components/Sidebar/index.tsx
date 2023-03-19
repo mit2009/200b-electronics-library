@@ -297,11 +297,11 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/sugar-cube': {
             value: 'Assemble the Sugar Cubes',
           },
-          '/electronic-insides': {
-            value: 'Electronic Insides',
-          },
           '/sugar-cube-connect': {
             value: 'Connecting the Cubes',
+          },
+          '/electronic-insides': {
+            value: 'Electronic Insides',
           },
           '/testing': {
             value: 'Testing and Debugging',

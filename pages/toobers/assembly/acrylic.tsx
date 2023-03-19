@@ -52,7 +52,7 @@ const Page = () => {
         border={false}
       />
       <p>
-        Now you'll want to use a <strong className="color">M3 x 5mm</strong>{' '}
+        Now you'll want to use a <strong className="color">M3 x 6mm</strong>{' '}
         screw to clamp the acrylic plate down to the charging module. Also be
         careful to not over tighten this one, as you may jack the threaded
         insert up and out of the housing.

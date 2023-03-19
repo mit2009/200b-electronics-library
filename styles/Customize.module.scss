@@ -3,14 +3,15 @@
   width: 100%;
 
   input[type='color'] {
-    height: 1px;
+    height: 3px;
     left: 50%;
-    width: 1px;
+    width: 3px;
     border: none;
     background-color: transparent;
     position: relative;
-    top: 100%;
-    opacity: 0.1;
+    top: 80%;
+    opacity: 0.3;
+    z-index: 20;
   }
 }
 
@@ -22,16 +23,102 @@
   user-select: none;
 }
 
+.buttonPcbNumbering {
+  position: absolute;
+  bottom: -50px;
+  padding: 4px 6px;
+  background-color: var(--grey1);
+  color: var(--grey8);
+  border-radius: 30px;
+  font-size: 18px;
+  z-index: 10;
+  display: inline-block;
+  white-space: nowrap;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+  left: calc(-50px + 50%);
+  opacity: 0.2;
+}
+
+.tooltip {
+  position: absolute;
+  background-color: var(--grey9);
+  color: var(--grey1);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 18px;
+  z-index: 10;
+  display: inline-block;
+  white-space: nowrap;
+  width: 220px;
+  text-align: center;
+  left: calc(-110px + 50%);
+  top: calc(-30px - 10%);
+
+  // gentling pulsing as if to get your attention
+  animation: pulse 1.5s infinite;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: var(--grey9) transparent transparent transparent;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  60% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.resetButton {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 8px 14px;
+  background-color: var(--grey8);
+  color: var(--grey1);
+  border-radius: 30px;
+  font-size: 20px;
+  z-index: 10;
+  display: inline-block;
+  white-space: nowrap;
+  width: 220px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 5px 2px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background-color: var(--grey8);
+  }
+}
+
 .cubeContainer {
   position: absolute;
-  top: 13.5%;
-  left: 31.8%;
-  width: 14.35%;
-  height: 15%;
   display: block;
 
   &:hover {
     cursor: pointer;
+
+    .buttonPcbNumbering {
+      opacity: 1;
+    }
+
     &:after {
       content: '';
       position: absolute;
@@ -42,6 +129,62 @@
       border-radius: 10px;
       border: 6px dotted rgba(255, 255, 255, 0.5);
     }
+  }
+}
+
+.cubeContainer1 {
+  top: 13.5%;
+  left: 31.8%;
+  width: 14.35%;
+  height: 15%;
+}
+
+.cubeContainer2 {
+  top: 15.9%;
+  left: 60.1%;
+  width: 13.8%;
+  height: 13.5%;
+}
+
+.cubeContainer3 {
+  top: 45%;
+  left: 39%;
+  width: 15.68%;
+  height: 17%;
+}
+
+.cubeContainer4 {
+  top: 45.2%;
+  left: 68.8%;
+  width: 14.8%;
+  height: 15%;
+}
+
+.buttonColorGrid {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: max-content min-content;
+  font-size: 16px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.buttonColorText {
+  margin-left: 10px;
+  width: 200px;
+  padding: 9px 18px;
+  text-align: left;
+  border-radius: 6px;
+  border: 1px solid var(--grey2);
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  input {
+    width: 3px;
+    height: 3px;
+    opacity: 0.1;
   }
 }
 
@@ -56,11 +199,6 @@
   opacity: 0.4;
 }
 
-.cube1 {
-  -webkit-mask-image: url('../public/images/toobers/sugar-cube-1.png');
-  mask-image: url('../public/images/toobers/sugar-cube-1.png');
-}
-
 .cubeColor {
   position: absolute;
   height: 100%;
@@ -72,7 +210,48 @@
   opacity: 1;
 }
 
+.cube1 {
+  -webkit-mask-image: url('../public/images/toobers/sugar-cube-1.png');
+  mask-image: url('../public/images/toobers/sugar-cube-1.png');
+}
+
 .cube1Color {
   -webkit-mask-image: url('../public/images/toobers/sugar-cube-1.png');
   mask-image: url('../public/images/toobers/sugar-cube-1.png');
+}
+
+.cube2 {
+  -webkit-mask-image: url('../public/images/toobers/sugar-cube-2.png');
+  mask-image: url('../public/images/toobers/sugar-cube-2.png');
+}
+
+.cube2Color {
+  -webkit-mask-image: url('../public/images/toobers/sugar-cube-2.png');
+  mask-image: url('../public/images/toobers/sugar-cube-2.png');
+}
+
+.cube3 {
+  -webkit-mask-image: url('../public/images/toobers/sugar-cube-3.png');
+  mask-image: url('../public/images/toobers/sugar-cube-3.png');
+}
+
+.cube3Color {
+  -webkit-mask-image: url('../public/images/toobers/sugar-cube-3.png');
+  mask-image: url('../public/images/toobers/sugar-cube-3.png');
+}
+
+.cube4 {
+  -webkit-mask-image: url('../public/images/toobers/sugar-cube-4.png');
+  mask-image: url('../public/images/toobers/sugar-cube-4.png');
+}
+
+.cube4Color {
+  -webkit-mask-image: url('../public/images/toobers/sugar-cube-4.png');
+  mask-image: url('../public/images/toobers/sugar-cube-4.png');
+}
+
+@media (max-width: 768px) {
+  .buttonPcbNumbering {
+    display: none;
+  }
 }

@@ -13,7 +13,7 @@ const Page = () => {
         We've packaged your freshly printed Toobers in this lovely little
         food-safe polypropylene container so all the pieces stay together (if
         you have additional pieces.) This container is for you to keep! You can
-        use it to move other small parts, electronics, or sandwiches!
+        use it to move other small parts, electronics, or sandwiches 🥪!
       </p>
       <GuideImage src="/images/toobers/tupperware.jpg" border={false} />
       <h2>Careful! Parts are Brittle!</h2>

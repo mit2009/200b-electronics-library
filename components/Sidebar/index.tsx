@@ -312,14 +312,11 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
           '/acrylic': {
             value: 'Acrylic Light Channel',
           },
-          '/close-it-up': {
-            value: 'Close it up',
-          },
           '/glue': {
             value: 'Glue and Adhesives',
           },
-          '/done': {
-            value: 'Done!',
+          '/close-it-up': {
+            value: 'Close it up',
           },
         },
       },

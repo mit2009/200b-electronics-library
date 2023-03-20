@@ -66,6 +66,7 @@ const Glue = () => {
         after that and should hold itself together, but will reach its full
         strength in 24 hours.
       </p>
+      <p>XXXXX PHOTO OF GLUING bookworm GOES HERE, to be taken monday XXXXX</p>
       <p>
         Sometimes the geometry of the parts may be a little tricky. Be very
         still when you hold it together!

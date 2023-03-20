@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import styles from '../../../styles/Customize.module.scss';
 import cx from 'classnames';
 import { GuideLink } from '../../../components/GuideLink';
+import GuideImage from '../../../components/GuideImage';
 
 const getRgbValuesFromHex = (hex: string) => {
   const r = parseInt(hex.slice(1, 3), 16);
@@ -247,6 +248,21 @@ const Page = () => {
         This should increase the volume, and make it more audible while inside
         the case. If you're experiencing errors, you'll probably want to turn
         that number back down.
+      </p>
+      <h2>Done with Programming!</h2>
+      <p>
+        Once you're happy with the colors and the volume, we can now stick our
+        PCB to the bottom housing. Look for the 1/8" double-sided foam tape and
+        apply around an inch or less to an open area on the PCB.
+      </p>
+      <GuideImage
+        src="/images/toobers/double-sided-tape.jpg"
+        border={false}
+        alt="PCB Tape"
+      />
+      <p>
+        Peel off the backing and give it a good stick! This should make it
+        easier to work with and less likely to come out as you close it later
       </p>
     </div>
   );

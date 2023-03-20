@@ -871,7 +871,10 @@ export const SectionNavigation = () => {
       ) : (
         prevDiv
       )}
-      {nextPage.nonexistant ? (
+      {currentPage.value === 'Close it up' ? (
+        // Hi, please don't look too closely
+        <></>
+      ) : nextPage.nonexistant ? (
         <></>
       ) : nextPage.coming_soon ? (
         comingSoonDiv

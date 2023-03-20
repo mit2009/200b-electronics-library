@@ -50,6 +50,13 @@ const Page = () => {
         border={false}
         caption={`Be careful of areas like the speaker grill! You don't want to press too hard on weak areas like this as they'll crack and break`}
       />
+      <GuideImage
+        src="/images/toobers/chipped.jpg"
+        border={false}
+        size={'MEDIUM'}
+        caption={`An unfortunate Toober that was chipped during the cleaning process. Edges not filleted/rounded are also more susceptible to damage.`}
+      />
+
       <h2>Removal of Extra Gunk</h2>
       <p>
         This 3D printer uses a gel-like substance to create its 'support
@@ -150,7 +157,40 @@ const Page = () => {
       />
       <p>Then press down on the threaded insert as shown in the video below</p>
       <GuideVideo src="threaded-insert-installation.webm" />
-      <p>Repeat for all 13 inserts!</p>
+      <p>
+        If your Toober has delicate, printed-on features, make sure you don't
+        put weight on them! The below example is one where the goals may be
+        particularly delicate. (notice that we've bulked up the posts and also
+        added some clear filler to prevent it from breaking.)
+      </p>
+      <GuideImage src="/images/toobers/toober-delicate.jpg" border={false} />
+      <p>
+        Use clamps, work benches, etc. around lab to help with positioning your
+        toobers in a way such that you can press down on them when putting in
+        the threaded inserts and not damage anything. Below is an example setup
+        of how we might tackle this particular case.
+      </p>
+      <GuideImage
+        src={[
+          '/images/toobers/toober-delicate-2.jpg',
+          '/images/toobers/toober-delicate-3.jpg',
+        ]}
+        border={false}
+      />
+      <p>
+        <strong>Avoid</strong> holding the Toober in your hand and using the
+        screwdriver to press down on it. Never apply force towards yourself!{' '}
+      </p>
+      <GuideImage
+        src="/images/toobers/avoid-toober.jpg"
+        caption="This risks stabbing yourself if something breaks or slips! Don't do this!"
+        size={'MEDIUM'}
+        border={false}
+      />
+      <p>
+        Place all 13 inserts into your bottom housing. The thirteen locations
+        are shown below; ignore the light channel for now.
+      </p>
       <GuideImage
         src="/images/toobers/threaded-inserts-labels.png"
         caption="The threaded inserts are all the same aluminum threaded inserts shown above. Note the two holes on the bottom housing (left image) that do not get threaded inserts."

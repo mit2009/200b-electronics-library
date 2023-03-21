@@ -1,4 +1,6 @@
 import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
+import GuideVideo from '../../../components/GuideVideo';
 
 const Page = () => {
   return (
@@ -83,6 +85,25 @@ const Page = () => {
         size="FULL"
         border={false}
       />
+      <h2>A Sugar Cube Hat</h2>
+      <p>
+        This section only pertains to you if you have a 3D printed cap or
+        appendage on top of the sugar cube, like something similar below. If you
+        don't have this, feel free to move onto the{' '}
+        <GuideLink href="/toobers/assembly/testing">next section</GuideLink>!
+      </p>
+      <GuideImage
+        src="/images/toobers/sugar-cube-hat.jpg"
+        size="MEDIUM"
+        border={false}
+      />
+      <p>
+        These sugar cube toppers were adjusted to fit the sugar cubes, but
+        because they can trap the air underneath and make them hard to put on,
+        we advise using a popsicle stick or something soft to break the air seal
+        (watch video below for instructions!)
+      </p>
+      <GuideVideo src="sugar-cube-hat-video.mp4" />
     </div>
   );
 };

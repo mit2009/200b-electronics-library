@@ -155,8 +155,18 @@ const Page = () => {
         src="/images/toobers/threaded-insert-closeup.jpeg"
         border={false}
       />
+      <p>Position your screwdriver over it.</p>
       <p>Then press down on the threaded insert as shown in the video below</p>
       <GuideVideo src="threaded-insert-installation.webm" />
+      <p>
+        Make sure the top of the threaded insert is flush with the 3D printed
+        part you're pressing it into.
+      </p>
+      <GuideImage
+        src="/images/toobers/threaded-inserts-yes-no.jpg"
+        border={false}
+        size={'FULL'}
+      />
       <p>
         If your Toober has delicate, printed-on features, make sure you don't
         put weight on them! The below example is one where the goals may be

@@ -21,7 +21,7 @@ const Page = () => {
         caption="Acrylic plates being cut by Sir Laser Cutter on the small side of PDL."
       />
       <p>
-        You'll be assembling <strong className="color">2</strong> of the 4 Sugar
+        You'll be assembling <strong className="color">1</strong> of the 4 Sugar
         Cubes for your Toober! Start by grabbing one acrylic plate.
       </p>
       <GuideImage

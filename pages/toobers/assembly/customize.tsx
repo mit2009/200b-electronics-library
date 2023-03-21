@@ -224,13 +224,7 @@ const Page = () => {
           }}
         ></p>
       </pre>
-      <p>
-        Compile the code to make sure it works! To upload this to the Arduino,
-        gently lift up just the PCB portion and plug it into your computer - you
-        don't need to remove anything from the Toober other than lifting the PCB
-        about half an inch!
-      </p>
-      <p> XXXXX MISSING PHOTO HERE, WILL TAKE MONDAY NIGHT XXXXX </p>
+      <p></p>
       <h3>Adjust the Volume</h3>
       <p>
         We had some issues last time while breadboarding with the volume of your
@@ -249,6 +243,14 @@ const Page = () => {
         the case. If you're experiencing errors, you'll probably want to turn
         that number back down.
       </p>
+      <h3>Reupload to the Arduino Nano</h3>
+      <p>
+        Compile the code to make sure it works! To upload this to the Arduino,
+        gently lift up just the PCB portion and plug it into your computer - you
+        don't need to remove anything from the Toober other than lifting the PCB
+        about half an inch!
+      </p>
+      <GuideImage src="/images/toobers/lift-toober-up.jpg" border={false} />
       <h2>Done with Programming!</h2>
       <p>
         Once you're happy with the colors and the volume, we can now stick our

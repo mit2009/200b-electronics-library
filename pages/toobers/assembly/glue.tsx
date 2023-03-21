@@ -57,16 +57,36 @@ const Glue = () => {
       </p>
       <h2>Just a bit will do the trick!</h2>
       <p>
+        Open up your superglue by untwisting the cap, removing the red ring, and
+        then re-tightening the cap (it'll puncture the super glue and open it
+        for you to use.) Then remove the red cap.
+        <GuideImage
+          src={'/images/toobers/using-superglue.jpg'}
+          size={'FULL'}
+          border={false}
+        />
+      </p>
+      <p>
         Unlike wood glue, you don't need to saturate or evenly coat your entire
         surface with this glue. A dab on one of the surfaces you'll be attaching
-        to is enough (<strong>one drop per square inch</strong>). For the glue
-        that we've provided you, once you've added your part, hold the two
-        pieces together for at least{' '}
+        to is enough (<strong>one drop per square inch</strong>).
+      </p>
+      <GuideImage
+        src={'/images/toobers/drop-of-superglue.jpg'}
+        border={false}
+        size={'FULL'}
+        caption={
+          'Just a bit will do the trick! With a paper towel nearby at the ready!'
+        }
+      />
+      <p>
+        For the glue that we've provided you, once you've added your part, hold
+        the two pieces together for at least{' '}
         <strong className={'color'}>30 seconds</strong>. It'll remain in place
         after that and should hold itself together, but will reach its full
         strength in 24 hours.
       </p>
-      <p>XXXXX PHOTO OF GLUING bookworm GOES HERE, to be taken monday XXXXX</p>
+      <h2>Steady Hands</h2>
       <p>
         Sometimes the geometry of the parts may be a little tricky. Be very
         still when you hold it together!

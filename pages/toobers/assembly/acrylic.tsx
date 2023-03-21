@@ -15,6 +15,11 @@ const Page = () => {
         the charging LED status on the battery module to the edge of the bottom
         housing so it can be seen on the outside of the Toober toy.
       </p>
+      <GuideImage
+        src="/images/toobers/charging-lights.jpg"
+        border={false}
+        caption="These are the surface mounted LEDs on the charging PCB."
+      />
       <h2>The Acrylic Piece</h2>
       <p>
         <strong className={'color'}>DO NOT PEEL BOTH SIDES</strong> of the paper

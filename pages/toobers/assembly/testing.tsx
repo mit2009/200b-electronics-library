@@ -51,6 +51,13 @@ const Page = () => {
           that's broken, but consider double checking the wire or the PCB
         </li>
       </ul>
+      <h4>If the Toober turns on, starts up normally, but then stops...</h4>
+      <ul>
+        <li>
+          This is most likely due to your Toober not having enough power. Charge
+          the battery for 5 minutes and then try again!
+        </li>
+      </ul>
     </div>
   );
 };

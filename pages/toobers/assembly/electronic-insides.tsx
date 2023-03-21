@@ -48,6 +48,11 @@ const Page = () => {
         the pill-shaped cutout, and from the outside you should be able to see
         the metal of the charging port.
       </p>
+      <GuideImage
+        src="/images/toobers/usb-c-port-align.jpg"
+        size={'LARGE'}
+        border={false}
+      />
       <p>Screw the module down with three M3 x 8mm screws.</p>
       <GuideImage
         src="/images/toobers/power-module-screwed.jpg"

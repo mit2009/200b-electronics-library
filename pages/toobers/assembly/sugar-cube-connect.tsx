@@ -7,7 +7,11 @@ const Page = () => {
       <h2>Into the Top Housing</h2>
       <p>
         Set your top housing down in front of you in the orientation shown
-        below. Grab your sugar cubes, and place them into the housing.
+        below.{' '}
+        <strong className="color">
+          Note the alignment feature (should be pointed down towards you)
+        </strong>
+        . Grab your sugar cubes, and place them into the housing.
       </p>
       <p>
         The layout below is what we recommend such that when it comes to

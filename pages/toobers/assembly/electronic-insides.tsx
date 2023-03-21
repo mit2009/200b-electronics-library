@@ -67,7 +67,11 @@ const Page = () => {
       <p>
         Push the switch into the rectangular hole in your Toober bottom housing.
         The lip of the switch should be right up against the edge of the housing
-        when it's fully inserted.
+        when it's fully inserted.{' '}
+        <strong>
+          Hold on to the housing walls as you press your switch in
+        </strong>
+        , in order to prevent the thin walls from cracking.
       </p>
       <GuideImage
         src={[

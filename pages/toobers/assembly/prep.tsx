@@ -197,6 +197,10 @@ const Page = () => {
         size={'FULL'}
         border={false}
       />
+      <p>
+        Before you move on, make sure you have{' '}
+        <strong>all 13 threaded inserts</strong> in the housing!
+      </p>
     </div>
   );
 };

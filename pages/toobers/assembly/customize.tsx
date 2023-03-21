@@ -91,8 +91,11 @@ const Page = () => {
         that you may see on your Toober may vary from what you're able to see on
         your device screen, which has gone through many layers of tuning.
         Additionally, because our diffuser (the silicone cubes) are white, you
-        won't be able to get dark colors like black or brown. The best way to
-        get something you want is to experiment!
+        <strong>
+          won't be able to get dark colors like black or brown
+        </strong>{' '}
+        (in fact, black is just "off"; the sugar cubes won't light up.) The best
+        way to get something you want is to experiment!
       </p>
       <div className={styles.container}>
         {hasChanged && (

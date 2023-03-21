@@ -13,6 +13,16 @@ const Page = () => {
         smoothly on your Arduino. However- this is real life, and usually things
         don't go right on the first try. Don't be discouraged. You got this!
       </p>
+      <div className="advanced">
+        <h3>note</h3>
+        <p>
+          Remember to extract the <strong>entire folder</strong>, and not just
+          the <code>ToobersArduino.ino</code> file. The{' '}
+          <code>DFRobotDFPlayerMini.cpp</code> and the{' '}
+          <code>DFRobotDFPlayerMini.h</code> file need to be in the same folder
+          as the sketch file for the DFPlayer libraries to work!
+        </p>
+      </div>
       <div className="center">
         <GuideLink
           target="_blank"

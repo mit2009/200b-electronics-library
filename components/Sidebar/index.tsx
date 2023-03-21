@@ -304,7 +304,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
             value: 'Connecting the Cubes',
           },
           '/testing': {
-            value: 'Testing and Debugging',
+            value: 'Testing and Troubleshooting',
           },
           '/customize': {
             value: 'Customizing the Cubes',

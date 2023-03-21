@@ -1,3 +1,4 @@
+import GuideImage from '../../../components/GuideImage';
 import { GuideLink } from '../../../components/GuideLink';
 
 const Page = () => {
@@ -58,6 +59,28 @@ const Page = () => {
           the battery for 5 minutes and then try again!
         </li>
       </ul>
+      <h4>If your audio player is still making crackling sounds</h4>
+      <ul>
+        <li>
+          Make sure the Toober is <strong>only</strong> connected to the battery
+          (no USB!)
+        </li>
+        <li>Make sure your battery is charged</li>
+      </ul>
+      <h2>Speed up the Charging!</h2>
+      <p>
+        This charging circuit actually has a faster charging mode. The board is
+        initially set to the slower mode, as the board is intended to be used
+        with a variety of different batteries, but ours can actually handle
+        500mA of charging current. If needed,{' '}
+        <strong>an instructor or mentor will help you solder the gap</strong> to
+        increase your battery charging speed.
+      </p>
+      <GuideImage
+        src="/images/toobers/charging-500mA.jpg"
+        size="MEDIUM"
+        border={false}
+      />
     </div>
   );
 };

@@ -86,7 +86,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       '/prototype': true,
       '/cad': true,
       '/preassembly': true,
-      '/assembly': false,
+      '/assembly': true,
       '/suger-cube': false,
       '/pcb': false,
     },

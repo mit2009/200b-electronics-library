@@ -575,9 +575,9 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
           setConfettiColor([]);
         }}
       >
-        {!enteringUnlockPhrase && (
+        {/* {!enteringUnlockPhrase && (
           <div className={styles.moreComingSoon}>more coming soon?</div>
-        )}
+        )} */}
         {enteringUnlockPhrase && (
           <form onSubmit={handleSubmit}>
             <input

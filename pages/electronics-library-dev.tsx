@@ -6,7 +6,7 @@ import { google } from 'googleapis';
 import styles from '../styles/Page.module.scss';
 import cx from 'classnames';
 
-const {Searcher} = require("fast-fuzzy");
+const { Searcher } = require('fast-fuzzy');
 
 interface IElectronicsComponent {
   name?: string;
@@ -21,22 +21,32 @@ interface IElectronicsComponent {
   dataSheet?: string;
   tutorialLinks?: string[];
   additionalLinks?: string[];
-};
+}
 
 enum CategoryTags {
-  ShowAll = "ShowAll",
-  Microcontroller = "Microcontroller",
-  Power = "Power",
-  Communication = "Communication",
-  Sensor = "Sensor",
-};
+  ShowAll = 'ShowAll',
+  Microcontroller = 'Microcontroller',
+  Power = 'Power',
+  Communication = 'Communication',
+  Sensor = 'Sensor',
+}
 
-const categoryObject:{[key in CategoryTags]: {result: string, color: string}} = {
-  ShowAll: {result: "All Components", color: '#2D2D2D'},
-  Microcontroller: {result: "Microcontrollers", color: 'rgb(4, 194, 168)'},
-  Power: {result: "Power Components", color: 'rgb(49, 7, 235)'},
-  Communication: {result: "Communication Components", color: 'rgb(245, 166, 35)'},
-  Sensor: {result: "Sensors", color: 'rgb(129, 50, 34)'},
+const categoryObject: {
+  [key in CategoryTags]: { name: string; result: string; color: string };
+} = {
+  ShowAll: { name: 'Show all', result: 'All Components', color: '#2D2D2D' },
+  Microcontroller: {
+    name: 'Microcontroller',
+    result: 'Microcontrollers',
+    color: '#04c2a8',
+  },
+  Power: { name: 'Power', result: 'Power Components', color: '#3107eb' },
+  Communication: {
+    name: 'Communication',
+    result: 'Communication Components',
+    color: '#f5a623',
+  },
+  Sensor: { name: 'Sensor', result: 'Sensors', color: '#813222' },
 };
 
 // given a background color, determine whether the font color should be black or white for readability
@@ -77,6 +87,26 @@ const removeEmpty = (obj: any) => {
   return obj;
 };
 
+const buildResultsHeader = (
+  searchField: string,
+  searchCategoryTags: CategoryTags[]
+): JSX.Element => {
+  return (
+    <>
+      {`${searchField === '' ? 'Showing' : 'Searching all'}`}{' '}
+      <span
+        style={{
+          color: categoryObject[searchCategoryTags[0]].color,
+          fontWeight: 700,
+        }}
+      >
+        {categoryObject[searchCategoryTags[0]].result}
+      </span>
+      {searchField && <span> with "{searchField}"</span>}
+    </>
+  );
+};
+
 const Home = ({
   electronicComponents,
 }: {
@@ -86,58 +116,62 @@ const Home = ({
   const [activeProduct, setActiveProduct] =
     useState<IElectronicsComponent | null>(null);
 
-  const [searchField, setSearchField] = useState<string>("");
-  const [searchCategoryTags, setSearchCategoryTags] = useState<CategoryTags[]>([CategoryTags.ShowAll]);
+  const [searchField, setSearchField] = useState<string>('');
+
+  const [timerId, setTimerId] = useState<ReturnType<typeof setTimeout>>();
+
+  const [searchCategoryTags, setSearchCategoryTags] = useState<CategoryTags[]>([
+    CategoryTags.ShowAll,
+  ]);
   const onSearchChange = (e: React.FormEvent<HTMLInputElement>) => {
-    setSearchField(e.currentTarget.value);
+    const searchValue = e.currentTarget.value;
+    clearTimeout(timerId);
+    setTimerId(
+      setTimeout(() => {
+        setSearchField(searchValue);
+      }, 500)
+    );
   };
   const onTagSelect = (e: React.FormEvent<HTMLInputElement>) => {
-    setSearchCategoryTags([e.currentTarget.value as CategoryTags])
+    setSearchCategoryTags([e.currentTarget.value as CategoryTags]);
   };
 
-  const [filteredComponents,setFilteredComponents] = useState<IElectronicsComponent[]>(electronicComponents)
+  const [filteredComponents, setFilteredComponents] =
+    useState<IElectronicsComponent[]>(electronicComponents);
   const filterComponents = () => {
-    let componentList:IElectronicsComponent[] = electronicComponents;
+    let componentList: IElectronicsComponent[] = electronicComponents;
     if (searchCategoryTags[0] !== CategoryTags.ShowAll) {
       componentList = componentList.filter((component) => {
-        return component.category?component.category.toLowerCase().includes(searchCategoryTags[0].toLowerCase()):null;
+        return component.category
+          ? component.category
+              .toLowerCase()
+              .includes(searchCategoryTags[0].toLowerCase())
+          : null;
       });
     }
 
-    if(searchField) {      
-      const searcher = new Searcher(componentList,{keySelector: (obj:IElectronicsComponent) => [obj.category, obj.name, obj.shortDescription, obj.description, obj.tags?.join(" "), obj.shownTo, obj.leadTime]});
+    if (searchField) {
+      const searcher = new Searcher(componentList, {
+        keySelector: (obj: IElectronicsComponent) => [
+          obj.category,
+          obj.name,
+          obj.shortDescription,
+          obj.description,
+          obj.tags?.join(' '),
+          obj.shownTo,
+          obj.leadTime,
+        ],
+      });
       setFilteredComponents(searcher.search(searchField));
     } else {
       setFilteredComponents(componentList);
     }
-  }
-
-  const [resultsHeader, setResultsHeader] = useState<JSX.Element>();
-  const buildResultsHeader = () => {
-    setResultsHeader(
-      <>
-        {`${searchField===''?'Showing':'Searching all'}`}{' '}
-        <span style={{color: categoryObject[searchCategoryTags[0]].color, fontWeight: 700}}>
-          {categoryObject[searchCategoryTags[0]].result}
-        </span>
-        <span style={{transition:"0.2s all ease", opacity: searchField?'1':'0'}}>
-          {' '}with "{searchField}"
-        </span>
-      </>
-    );
   };
 
   useEffect(() => {
     filterComponents();
-    buildResultsHeader();
-  },[searchCategoryTags]);
-
-  const [timerId, setTimerId] = useState<ReturnType<typeof setTimeout>>();
-  useEffect(() => {
-    filterComponents();
-    clearTimeout(timerId);
-    setTimerId(setTimeout(() => buildResultsHeader(), 500));
-  },[searchField]);
+    buildResultsHeader(searchField, searchCategoryTags);
+  }, [searchCategoryTags, searchField]);
 
   return (
     <div>
@@ -161,32 +195,55 @@ const Home = ({
 
       <div className={styles.searchBar}>
         <label htmlFor="search">Search:</label>
-        <input aria-label='Search Electronic Components' type='search' name='search' onChange={onSearchChange} />
+        <input
+          aria-label="Search Electronic Components"
+          id="search"
+          type="search"
+          name="search"
+          onChange={onSearchChange}
+        />
       </div>
 
       <fieldset className={styles.searchCategoryTags}>
         <legend>Show:</legend>
-        {(Object.keys(CategoryTags) as Array<keyof typeof CategoryTags>).map((key) => (
-
-            <label className={styles.categoryTag} key={CategoryTags[key]} htmlFor={CategoryTags[key]} >
+        {(Object.keys(CategoryTags) as Array<keyof typeof CategoryTags>).map(
+          (key) => (
+            <label
+              className={styles.categoryTag}
+              key={CategoryTags[key]}
+              htmlFor={CategoryTags[key]}
+            >
               <input
                 type="radio"
                 name={`searchTag`}
                 key={CategoryTags[key]}
                 id={key}
                 value={CategoryTags[key]}
-                checked={searchCategoryTags.includes((CategoryTags[key]))}
+                checked={searchCategoryTags.includes(CategoryTags[key])}
                 onChange={onTagSelect}
               />
-              <span style={{background: searchCategoryTags[0]===CategoryTags.ShowAll||searchCategoryTags[0]===CategoryTags[key]?categoryObject[CategoryTags[key]].color : `var(--grey3)`}}>{CategoryTags[key]}</span>
+              <span
+                style={{
+                  background:
+                    searchCategoryTags[0] === CategoryTags.ShowAll ||
+                    searchCategoryTags[0] === CategoryTags[key]
+                      ? categoryObject[CategoryTags[key]].color
+                      : `var(--grey3)`,
+                }}
+              >
+                {categoryObject[CategoryTags[key]].name}
+              </span>
             </label>
-
-        ))}
+          )
+        )}
       </fieldset>
 
       <div className={styles.resultsHeader}>
-        <h2>{resultsHeader}</h2>
-        <h3>{filteredComponents.length===1?`${filteredComponents.length} result`:`${filteredComponents.length} results`}</h3>
+        <h2>{buildResultsHeader(searchField, searchCategoryTags)}</h2>
+        <h3>
+          {filteredComponents.length} result
+          {filteredComponents.length === 1 ? '' : 's'}
+        </h3>
       </div>
 
       <div className={styles.electronicsContainer}>
@@ -212,17 +269,18 @@ const Home = ({
         ))}
       </div>
 
-      { filteredComponents.length ? null :
-        <p className={styles.askTas}>Hmm... we don’t seem to have anything here. Feel free to contact{' '}
+      {filteredComponents.length === 0 && (
+        <p className={styles.askTas}>
+          Hmm... we don’t seem to have anything here. Feel free to contact{' '}
           <GuideLink
             href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J"
             target="_blank"
           >
             #ask-the-tas
           </GuideLink>{' '}
-         for questions if you’re looking for a recommendation!
+          for questions if you’re looking for a recommendation!
         </p>
-      }
+      )}
 
       <div
         className={cx(styles.fullOverlay, {
@@ -283,21 +341,21 @@ export async function getStaticProps() {
     });
 
     const electronicComponentPlaceholder: IElectronicsComponent = {
-      name: "",
-      category: "",
-      shortDescription: "",
-      tags: [""],
-      shownTo: "",
-      productPhoto: [""],
-      description: "",
-      purchaseLink: "",
-      leadTime: "",
-      dataSheet: "",
-      tutorialLinks: [""],
-      additionalLinks: [""],
+      name: '',
+      category: '',
+      shortDescription: '',
+      tags: [''],
+      shownTo: '',
+      productPhoto: [''],
+      description: '',
+      purchaseLink: '',
+      leadTime: '',
+      dataSheet: '',
+      tutorialLinks: [''],
+      additionalLinks: [''],
     };
 
-    return {...electronicComponentPlaceholder,...electroncisDataObj}
+    return { ...electronicComponentPlaceholder, ...electroncisDataObj };
   });
 
   return {

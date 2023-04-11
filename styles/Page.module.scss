@@ -15,15 +15,18 @@
 
 .searchBar label {
   font-weight: 700;
-  color: #5A5A5A;
+  color: #5a5a5a;
+  margin-bottom: 3px;
 }
 
-.searchBar input{
+.searchBar input {
   width: 460px;
   height: 34px;
-  background: #FFFFFF;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  background: #ffffff;
   border: 2px solid #464646;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
   padding: 0 0.5rem;
   margin-bottom: 1.25rem;
 }
@@ -35,11 +38,12 @@
 
   legend {
     font-weight: 700;
-    color: #5A5A5A;
+    color: #5a5a5a;
     padding: 0;
     display: block;
     height: fit-content;
     width: fit-content;
+    margin-bottom: 3px;
   }
 }
 
@@ -64,12 +68,12 @@
   span {
     display: block;
     border-radius: 0.25rem;
-    color: #FFFFFF;
+    color: #ffffff;
     padding: 6px 1rem;
   }
 
   input:checked ~ span {
-    background: grey
+    background: grey;
   }
 }
 
@@ -153,13 +157,9 @@
   }
 }
 
-.askTas {
-  width: 690px;
-
-  a {
-    color: #2F00FF;
-    font-weight: 400;
-  }
+.askTas a {
+  color: #2f00ff;
+  font-weight: 400;
 }
 
 .fullOverlay {

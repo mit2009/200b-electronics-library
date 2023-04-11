@@ -143,9 +143,8 @@ const Home = ({
     if (searchCategoryTags[0] !== CategoryTags.ShowAll) {
       componentList = componentList.filter((component) => {
         return component.category
-          ? component.category
-              .toLowerCase()
-              .includes(searchCategoryTags[0].toLowerCase())
+          ? component.category.toLowerCase() ===
+              searchCategoryTags[0].toLowerCase()
           : null;
       });
     }

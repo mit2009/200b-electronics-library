@@ -151,15 +151,16 @@ const Home = ({
 
     if (searchField) {
       const searcher = new Searcher(componentList, {
-        keySelector: (obj: IElectronicsComponent) => [
-          obj.category,
-          obj.name,
-          obj.shortDescription,
-          obj.description,
-          obj.tags?.join(' '),
-          obj.shownTo,
-          obj.leadTime,
-        ],
+        keySelector: (obj: IElectronicsComponent) =>
+          [
+            obj.category,
+            obj.name,
+            obj.shortDescription,
+            obj.description,
+            obj.tags?.join(' '),
+            obj.shownTo,
+            obj.leadTime,
+          ].filter((item: string | undefined): item is string => !!item),
       });
       setFilteredComponents(searcher.search(searchField));
     } else {
@@ -170,6 +171,7 @@ const Home = ({
   useEffect(() => {
     filterComponents();
     buildResultsHeader(searchField, searchCategoryTags);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchCategoryTags, searchField]);
 
   return (

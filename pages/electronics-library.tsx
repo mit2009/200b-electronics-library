@@ -9,18 +9,18 @@ import styles from '../styles/Page.module.scss';
 import cx from 'classnames';
 
 interface IElectronicsComponent {
-  name?: string;
-  category?: string;
-  shortDescription?: string;
-  tags?: string[];
-  shownTo?: string;
-  productPhoto?: string[];
-  description?: string;
-  purchaseLink?: string;
-  leadTime?: string;
-  dataSheet?: string;
-  tutorialLinks?: string[];
-  additionalLinks?: string[];
+  name: string;
+  category: string;
+  shortDescription: string;
+  tags: string[];
+  shownTo: string;
+  productPhoto: string[];
+  description: string;
+  purchaseLink: string;
+  leadTime: string;
+  dataSheet: string;
+  tutorialLinks: string[];
+  additionalLinks: string[];
 }
 
 enum CategoryTags {
@@ -151,16 +151,15 @@ const Home = ({
 
     if (searchField) {
       const searcher = new Searcher(componentList, {
-        keySelector: (obj: IElectronicsComponent) =>
-          [
-            obj.category,
-            obj.name,
-            obj.shortDescription,
-            obj.description,
-            obj.tags?.join(' '),
-            obj.shownTo,
-            obj.leadTime,
-          ].filter((item: string | undefined): item is string => !!item),
+        keySelector: (obj: IElectronicsComponent) => [
+          obj.category,
+          obj.name,
+          obj.shortDescription,
+          obj.description,
+          obj.tags?.join(' '),
+          obj.shownTo,
+          obj.leadTime,
+        ],
       });
       setFilteredComponents(searcher.search(searchField));
     } else {

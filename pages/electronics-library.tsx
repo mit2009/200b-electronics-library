@@ -138,6 +138,7 @@ const Home = ({
 
   const [filteredComponents, setFilteredComponents] =
     useState<IElectronicsComponent[]>(electronicComponents);
+
   const filterComponents = () => {
     let componentList: IElectronicsComponent[] = electronicComponents;
     if (searchCategoryTags[0] !== CategoryTags.ShowAll) {
@@ -169,8 +170,6 @@ const Home = ({
 
   useEffect(() => {
     filterComponents();
-    buildResultsHeader(searchField, searchCategoryTags);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchCategoryTags, searchField]);
 
   return (
@@ -249,7 +248,7 @@ const Home = ({
       <div className={styles.electronicsContainer}>
         {filteredComponents.map((item: any) => (
           <div
-            key={item.name}
+            key={item.name + item.shortDescription.substring(0, 30)}
             className={styles.electronicsItem}
             onClick={() => {
               setShowOverlay(true);

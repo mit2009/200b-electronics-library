@@ -18,8 +18,10 @@ const buildLinkText = (link?: string): string => {
     return 'Arduino Website';
   } else if (link?.toLowerCase().search(/\S*adafruit\S*/) !== -1) {
     return 'Adafruit Website';
+  } else if (link?.toLowerCase().search(/\S*grainger\S*/) !== -1) {
+    return 'Grainger Website';
   } else {
-    return link ? link : 'missing link :(';
+    return link ? link : 'check with a TA';
   }
 };
 
@@ -93,24 +95,27 @@ const Modal = ({ show, closeModal, component }: ModalProps) => {
                 show && styles.animateEnterTranslateUp
               }`}
             >
-              <div className={styles.headings}>
-                <h1>{component?.name}</h1>
-                <p>{component?.shortDescription}</p>
+              <div className={styles.sectionHeading}>
+                <h1 className={styles.componentTitle}>{component?.name}</h1>
+                <p className={styles.componentSubtitle}>
+                  {component?.shortDescription}
+                </p>
                 <span
+                  className={styles.categoryTag}
                   style={{
                     background: CategoryTags[
                       component?.category as CategoryTags
                     ]
                       ? categoryObject[component?.category as CategoryTags]
                           .color
-                      : '#FFFFFF',
+                      : '#000000',
                   }}
                 >
                   {component?.category}
                 </span>
               </div>
 
-              <div className={styles.imageContainer}>
+              <div className={styles.sectionImage}>
                 <img
                   className={styles.product}
                   src={component?.productPhoto[0]}
@@ -123,40 +128,43 @@ const Modal = ({ show, closeModal, component }: ModalProps) => {
                 />
               </div>
 
-              <p>{component?.description}</p>
+              <p className={styles.sectionDescription}>
+                {component?.description}
+              </p>
 
-              <div className={styles.sourcing}>
-                <h2>Sourcing Information</h2>
-                <p>
+              <div className={styles.sectionSourcing}>
+                <h2 className={styles.sectionTitle}>Sourcing Information</h2>
+                <p className={styles.sectionText}>
                   Below is where we recommend buying these parts! Please note
                   the lead time - that means the number of days you can expect
                   to wait before receiving your part.
                 </p>
                 <div className={styles.linkLeadInfo}>
                   <a
+                    className={styles.purchaseLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     href={component?.purchaseLink}
                   >
                     {buildLinkText(component?.purchaseLink)}
                   </a>
-                  <p>
-                    Lead Time: <span>{component?.leadTime}</span>
+                  <p className={styles.leadTime}>
+                    Lead Time: <strong>{component?.leadTime}</strong>
                   </p>
                 </div>
                 <p>
                   Do we have extras of this in the 2.00b Vault?{' '}
-                  <span>{component?.inVault}</span>
+                  <strong>{component?.inVault}</strong>
                 </p>
               </div>
 
-              <div className={styles.help}>
-                <h2>2.00b Staff Help?</h2>
-                <p>
+              <div className={styles.sectionHelp}>
+                <h2 className={styles.sectionTitle}>2.00b Staff Help?</h2>
+                <p className={styles.sectionText}>
                   You can reach out to the following staff for help using this
                   component!
                 </p>
-                <ul>
+                <ul className={styles.staffList}>
                   <li>
                     <GuideLink
                       href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J"
@@ -165,8 +173,10 @@ const Modal = ({ show, closeModal, component }: ModalProps) => {
                       #ask-the-tas
                     </GuideLink>
                   </li>
-                  {component?.helpfulStaff.map((staff) => (
-                    <li key={staff}>{staff}</li>
+                  {component?.helpStaff.map((staff) => (
+                    <li key={staff} className={styles.staffName}>
+                      {staff}
+                    </li>
                   ))}
                 </ul>
               </div>

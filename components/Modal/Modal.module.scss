@@ -56,7 +56,7 @@
   margin: 4.5rem 1.25rem 1.25rem 1.25rem;
   overflow-y: auto;
 
-  h2 {
+  .sectionTitle {
     color: #000000;
     font-size: 1.5rem;
     font-weight: 700;
@@ -72,29 +72,29 @@
     margin: 0;
   }
 
-  > p {
-    margin-bottom: 2rem;
+  .sectionDescription {
+    margin-bottom: 1.5rem;
   }
 
-  p > span {
-    font-weight: 700;
+  .sectionText {
+    margin-bottom: 1rem;
   }
 }
 
-.headings {
+.sectionHeading {
   margin-bottom: 1rem;
 
-  h1 {
+  .componentTitle {
     font-size: 3rem;
     margin-bottom: 0.5rem;
   }
 
-  p {
+  .componentSubtitle {
     font-size: 18px;
     margin-bottom: 0.5rem;
   }
 
-  span {
+  .categoryTag {
     display: inline-block;
     padding: 0.5rem 0.75rem;
     border-radius: 0.25rem;
@@ -104,7 +104,7 @@
   }
 }
 
-.imageContainer {
+.sectionImage {
   position: relative;
   margin: auto;
   margin-bottom: 1rem;
@@ -126,12 +126,8 @@
   }
 }
 
-.sourcing {
+.sectionSourcing {
   margin-bottom: 1.5rem;
-
-  > p:first-of-type {
-    margin-bottom: 1rem;
-  }
 
   .linkLeadInfo {
     display: flex;
@@ -140,7 +136,7 @@
     white-space: nowrap;
     margin-bottom: 1rem;
 
-    a {
+    .purchaseLink {
       display: inline-block;
       min-width: 162px;
       width: fit-content;
@@ -150,34 +146,26 @@
       margin-right: 0.5rem;
     }
 
-    p {
+    .leadTime {
       display: inline-block;
       margin: 0;
     }
 
-    span {
+    .leadTime strong {
       background: #fff59e;
       padding: 0 0.5rem;
       border-radius: 0.25rem;
     }
   }
-
-  p > span {
-    font-weight: 700;
-  }
 }
 
-.help {
-  p {
-    margin-bottom: 0.75rem;
-  }
-
-  ul {
+.sectionHelp {
+  .staffList {
     list-style: none;
     padding: 0;
     margin: 0;
 
-    li:last-of-type {
+    .staffName:last-of-type {
       margin: 0;
     }
   }
@@ -216,7 +204,7 @@
 }
 
 @media only screen and (min-width: 400px) {
-  .sourcing .linkLeadInfo {
+  .sectionSourcing .linkLeadInfo {
     flex-direction: row;
     gap: 0;
   }
@@ -231,9 +219,13 @@
     width: calc(100% - 4rem);
     padding: 30px;
     margin: 6.5rem 2rem 2rem 2rem;
+
+    .sectionDescription {
+      margin-bottom: 2rem;
+    }
   }
 
-  .imageContainer {
+  .sectionImage {
     .badge {
       width: 99.84px;
       height: 89.35px;
@@ -255,11 +247,11 @@
     column-gap: 30px;
   }
 
-  .headings {
+  .sectionHeading {
     margin-bottom: 2rem;
   }
 
-  .imageContainer {
+  .sectionImage {
     max-width: 630px;
     margin-top: 0;
     margin-left: 0;
@@ -267,11 +259,11 @@
     grid-row: 1 / span 3;
   }
 
-  .sourcing {
+  .sectionSourcing {
     grid-column: 1;
   }
 
-  .help {
+  .sectionHelp {
     grid-column: 1;
   }
 }

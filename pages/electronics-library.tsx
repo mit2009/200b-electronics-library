@@ -22,7 +22,7 @@ export interface IElectronicsComponent {
   tutorialLinks: string[];
   additionalLinks: string[];
   inVault: string;
-  helpfulStaff: string[];
+  helpStaff: string[];
 }
 
 export enum CategoryTags {
@@ -326,7 +326,7 @@ export async function getStaticProps() {
       tutorialLinks: item[10]?.split(','),
       additionalLinks: item[11]?.split(','),
       inVault: item[12],
-      helpfulStaff: item[13]?.split(','),
+      helpStaff: item[13]?.split(','),
     });
 
     const electronicComponentPlaceholder: IElectronicsComponent = {
@@ -343,7 +343,7 @@ export async function getStaticProps() {
       tutorialLinks: [''],
       additionalLinks: [''],
       inVault: '',
-      helpfulStaff: [''],
+      helpStaff: [''],
     };
 
     return { ...electronicComponentPlaceholder, ...electroncisDataObj };

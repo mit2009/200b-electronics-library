@@ -13,6 +13,7 @@
   top: 0;
   left: 0;
   overflow: auto;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .close {
@@ -30,10 +31,10 @@
   color: #ffffff;
   font-weight: 700;
   font-size: 1.5rem;
+  font-family: 'DM Sans', sans-serif;
   cursor: pointer;
   padding: 0.25rem 0 0.25rem 0.25rem;
-  margin: 1.5rem 2rem 0 0;
-  align-self: flex-end;
+  margin: 2rem 2rem 0 0;
   transition: 0.2s opacity;
 
   &:hover {
@@ -49,10 +50,10 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   padding: 30px;
   width: calc(100% - 4rem);
-  height: 100vh;
+  height: fit-content;
   min-width: 288px;
-  border-radius: 10px;
-  margin: 4.5rem 2rem 2rem 2rem;
+  border-radius: 20px;
+  margin: 6.5rem 2rem 2rem 2rem;
   overflow-y: auto;
 
   h2 {
@@ -81,7 +82,8 @@
 }
 
 .headings {
-  margin-bottom: 0;
+  margin-bottom: 1rem;
+
   h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
@@ -105,6 +107,7 @@
 .imageContainer {
   position: relative;
   margin: auto;
+  margin-bottom: 1rem;
   max-width: 475px;
 
   .product {
@@ -116,6 +119,7 @@
     position: absolute;
     top: 0;
     right: 0;
+    object-fit: contain;
   }
 }
 
@@ -125,6 +129,7 @@
   > p:first-of-type {
     margin-bottom: 1rem;
   }
+
   .linkLeadInfo {
     display: flex;
     white-space: nowrap;
@@ -205,30 +210,35 @@
 }
 
 @media only screen and (min-width: 987px) {
+  .close {
+    margin: 2.5rem 2.5rem 0 0;
+  }
+
   .card {
     width: calc(100% - 5rem);
-    margin: 5.75rem 2.5rem 3.5rem 2.5rem;
+    margin: 7.5rem 2.5rem 2.5rem 2.5rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
+    column-gap: 30px;
   }
+
   .headings {
-    span {
-      margin-bottom: 2rem;
-    }
+    margin-bottom: 2rem;
   }
+
   .imageContainer {
     max-width: 630px;
     margin-top: 0;
     margin-left: 0;
     grid-column: 2 / 3;
     grid-row: 1 / span 3;
-    align-self: start;
-    justif-self: start;
   }
+
   .sourcing {
     grid-column: 1;
   }
+
   .help {
     grid-column: 1;
   }

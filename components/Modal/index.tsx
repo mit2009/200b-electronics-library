@@ -153,22 +153,20 @@ const Modal = ({ show, closeModal, component }: ModalProps) => {
               <div className={styles.help}>
                 <h2>2.00b Staff Help?</h2>
                 <p>
-                  Below are some staff that can help you use this component!
+                  You can reach out to the following staff for help using this
+                  component!
                 </p>
                 <ul>
+                  <li>
+                    <GuideLink
+                      href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J"
+                      target="_blank"
+                    >
+                      #ask-the-tas
+                    </GuideLink>
+                  </li>
                   {component?.helpfulStaff.map((staff) => (
-                    <li key={staff}>
-                      {staff.toLowerCase() === '#ask-the-tas' ? (
-                        <GuideLink
-                          href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J"
-                          target="_blank"
-                        >
-                          #ask-the-tas
-                        </GuideLink>
-                      ) : (
-                        staff
-                      )}
-                    </li>
+                    <li key={staff}>{staff}</li>
                   ))}
                 </ul>
               </div>

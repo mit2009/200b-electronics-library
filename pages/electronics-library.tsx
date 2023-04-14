@@ -3,12 +3,12 @@ import { Searcher } from 'fast-fuzzy';
 
 import { GuideLink } from '../components/GuideLink';
 import { useState, useEffect } from 'react';
-
+import Modal from '../components/Modal';
 import { google } from 'googleapis';
 import styles from '../styles/Page.module.scss';
 import cx from 'classnames';
 
-interface IElectronicsComponent {
+export interface IElectronicsComponent {
   name: string;
   category: string;
   shortDescription: string;
@@ -21,9 +21,11 @@ interface IElectronicsComponent {
   dataSheet: string;
   tutorialLinks: string[];
   additionalLinks: string[];
+  inVault: string;
+  helpfulStaff: string[];
 }
 
-enum CategoryTags {
+export enum CategoryTags {
   ShowAll = 'ShowAll',
   Microcontroller = 'Microcontroller',
   Power = 'Power',
@@ -31,7 +33,7 @@ enum CategoryTags {
   Sensor = 'Sensor',
 }
 
-const categoryObject: {
+export const categoryObject: {
   [key in CategoryTags]: { name: string; result: string; color: string };
 } = {
   ShowAll: { name: 'Show All', result: 'All Components', color: '#2D2D2D' },
@@ -280,26 +282,12 @@ const Home = ({
           for questions if you’re looking for a recommendation!
         </p>
       )}
-
-      <div
-        className={cx(styles.fullOverlay, {
-          [styles.showOverlay]: showOverlay,
-        })}
-        onClick={() => {
-          setShowOverlay(false);
-        }}
-      >
-        <div
-          className={styles.overlayContent}
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-          }}
-        >
-          <h2>{activeProduct?.name}</h2>
-          <p>{activeProduct?.description}</p>
-        </div>
-      </div>
+      <Modal
+        closeModal={() => setShowOverlay(false)}
+        show={showOverlay}
+        component={activeProduct}
+      />
+      <div id="modal-root"></div>
     </div>
   );
 };
@@ -319,7 +307,7 @@ export async function getStaticProps() {
   const gsapi = google.sheets({ version: 'v4', auth: client });
   const opt = {
     spreadsheetId,
-    range: 'Website Data!A2:M999',
+    range: 'Website Data!A2:N999',
   };
 
   const data = await gsapi.spreadsheets.values.get(opt);
@@ -337,6 +325,8 @@ export async function getStaticProps() {
       dataSheet: item[9],
       tutorialLinks: item[10]?.split(','),
       additionalLinks: item[11]?.split(','),
+      inVault: item[12],
+      helpfulStaff: item[13]?.split(','),
     });
 
     const electronicComponentPlaceholder: IElectronicsComponent = {
@@ -352,6 +342,8 @@ export async function getStaticProps() {
       dataSheet: '',
       tutorialLinks: [''],
       additionalLinks: [''],
+      inVault: '',
+      helpfulStaff: [''],
     };
 
     return { ...electronicComponentPlaceholder, ...electroncisDataObj };

@@ -1,0 +1,182 @@
+import { useEffect, useState, useRef } from 'react';
+import ReactDOM from 'react-dom';
+import styles from './Modal.module.scss';
+import { GuideLink } from '../GuideLink';
+import {
+  IElectronicsComponent,
+  categoryObject,
+  CategoryTags,
+} from '../../pages/electronics-library';
+interface ModalProps {
+  show: boolean;
+  closeModal: () => void;
+  component: IElectronicsComponent | null;
+}
+
+const buildLinkText = (link?: string): string => {
+  if (link?.toLowerCase().search(/\S*arduino\S*/) !== -1) {
+    return 'Arduino Website';
+  } else if (link?.toLowerCase().search(/\S*adafruit\S*/) !== -1) {
+    return 'Adafruit Website';
+  } else {
+    return link ? link : 'missing link :(';
+  }
+};
+
+const Modal = ({ show, closeModal, component }: ModalProps) => {
+  const [error, setError] = useState<string>('');
+
+  const [isBrowser, setIsBrowser] = useState(false);
+  const overlayRef = useRef<HTMLDivElement>(null);
+
+  const handleCloseClick = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    e.stopPropagation();
+    closeModal();
+    setError('');
+  };
+
+  const overlayClickHandler = (e: React.MouseEvent<HTMLDivElement>): void => {
+    if (overlayRef.current == e.target) {
+      closeModal();
+      setError('');
+    }
+  };
+
+  useEffect(() => {
+    setIsBrowser(true);
+    const close = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    };
+    window.addEventListener('keydown', close);
+    return () => window.removeEventListener('keydown', close);
+  }, []);
+
+  useEffect(() => {
+    const body = document.body;
+    if (show) {
+      body.style.overflowY = 'hidden';
+    } else {
+      body.style.overflowY = 'auto';
+    }
+  }, [show]);
+
+  return isBrowser
+    ? ReactDOM.createPortal(
+        show && (
+          <div
+            className={`${styles.overlay} ${show && styles.animateEnterFadeIn}`}
+            ref={overlayRef}
+            onClick={(e) => overlayClickHandler(e)}
+          >
+            <button
+              onClick={handleCloseClick}
+              aria-label="close pop-up"
+              title="close pop-up button"
+              className={`${styles.close} ${
+                show && styles.animateEnterTranslateUp
+              }`}
+            >
+              Close
+              <img
+                src="/images/exit.svg"
+                decoding="async"
+                width="23"
+                height="23"
+                alt=""
+              />
+            </button>
+            <div
+              className={`${styles.card} ${
+                show && styles.animateEnterTranslateUp
+              }`}
+            >
+              <div className={styles.headings}>
+                <h1>{component?.name}</h1>
+                <p>{component?.shortDescription}</p>
+                <span
+                  style={{
+                    background: CategoryTags[
+                      component?.category as CategoryTags
+                    ]
+                      ? categoryObject[component?.category as CategoryTags]
+                          .color
+                      : '#FFFFFF',
+                  }}
+                >
+                  {component?.category}
+                </span>
+              </div>
+
+              <div className={styles.imageContainer}>
+                <img
+                  className={styles.product}
+                  src={component?.productPhoto[0]}
+                />
+                <img
+                  className={styles.badge}
+                  src="./images/Recommended.png"
+                  width="99.84"
+                  height="89.35"
+                />
+              </div>
+
+              <p>{component?.description}</p>
+
+              <div className={styles.sourcing}>
+                <h2>Sourcing Information</h2>
+                <p>
+                  Below is where we recommend buying these parts! Please note
+                  the lead time - that means the number of days you can expect
+                  to wait before receiving your part.
+                </p>
+                <div className={styles.linkLeadInfo}>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={component?.purchaseLink}
+                  >
+                    {buildLinkText(component?.purchaseLink)}
+                  </a>
+                  <p>
+                    Lead Time: <span>{component?.leadTime}</span>
+                  </p>
+                </div>
+                <p>
+                  Do we have extras of this in the 2.00b Vault?{' '}
+                  <span>{component?.inVault}</span>
+                </p>
+              </div>
+
+              <div className={styles.help}>
+                <h2>2.00b Staff Help?</h2>
+                <p>
+                  Below are some staff that can help you use this component!
+                </p>
+                <ul>
+                  {component?.helpfulStaff.map((staff) => (
+                    <li key={staff}>
+                      {staff.toLowerCase() === '#ask-the-tas' ? (
+                        <GuideLink
+                          href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J"
+                          target="_blank"
+                        >
+                          #ask-the-tas
+                        </GuideLink>
+                      ) : (
+                        staff
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ),
+        document.getElementById('modal-root')!
+      )
+    : null;
+};
+export default Modal;

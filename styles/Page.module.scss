@@ -112,10 +112,10 @@
 }
 
 .electronicsItem {
+  width: calc(100vw - 55px);
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  width: 360px;
   transition: 0.1s transform;
 
   .productName {
@@ -130,8 +130,8 @@
   }
 
   img {
-    width: 300px;
-    height: 225px;
+    width: 100%;
+    aspect-ratio: 300 / 225;
     object-fit: cover;
     background-color: var(--grey1);
     display: block;
@@ -156,6 +156,12 @@
   &:hover {
     cursor: pointer;
     transform: scale(1.02);
+  }
+}
+
+@media only screen and (min-width: 675px) {
+  .electronicsItem {
+    width: 300px;
   }
 }
 

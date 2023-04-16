@@ -78,8 +78,8 @@
     display: inline-block;
     padding: 0.5rem 0.75rem;
     border-radius: 0.25rem;
-    font-weight: 700;
-    font-size: 14px;
+    font-weight: 400;
+    font-size: 1.1em;
     color: #ffffff;
 
     width: fit-content;
@@ -150,10 +150,15 @@
   }
 }
 
-.staffList {
-  list-style: none;
+ul.staffList {
+  list-style: '-';
   padding: 0;
   margin: 0;
+  padding-left: 10px;
+
+  li {
+    padding-left: 10px;
+  }
 
   .staffName:last-of-type {
     margin: 0;
@@ -219,7 +224,7 @@
   .sectionImage {
     position: absolute;
     left: 55%;
-    width: 45%;
+    width: calc(45% - 2em);
     max-width: 630px;
 
     .badge {

@@ -20,6 +20,8 @@ const buildLinkText = (link?: string): string => {
     return 'Adafruit Website';
   } else if (link?.toLowerCase().search(/\S*grainger\S*/) !== -1) {
     return 'Grainger Website';
+  } else if (link?.toLowerCase().search(/\S*sparkfun\S*/) !== -1) {
+    return 'Sparkfun Website';
   } else {
     return link ? link : 'check with a TA';
   }

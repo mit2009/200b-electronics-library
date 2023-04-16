@@ -3,7 +3,6 @@
   text-align: center;
   max-width: 720px;
   width: 100%;
-  margin-top: -15vh;
 
   .mainImage {
     max-width: 580px;
@@ -33,13 +32,12 @@
 .topics {
   display: flex;
   gap: 10px;
-  height: 105px;
   flex-wrap: wrap;
 }
 
 .topic {
   position: relative;
-  flex: 1 1 200px;
+  flex: 1 1 300px;
   text-align: center;
   border: 3px solid var(--grey9);
   border-radius: 12px;
@@ -49,6 +47,7 @@
   flex-wrap: wrap;
   align-items: bottom;
   color: black;
+  transition: 0.1s transform;
 
   .text {
     margin-bottom: 20px;
@@ -68,12 +67,17 @@
     margin-bottom: 5px;
     display: flex;
     align-items: flex-end;
+
+    &.casting {
+      width: 90px;
+      height: 80px;
+    }
   }
 
   &:hover {
     background-color: var(--grey1);
     cursor: pointer;
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
 }
 
@@ -84,4 +88,4 @@
   .topics {
     height: auto;
   }
-} 
+}

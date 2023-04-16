@@ -32,21 +32,22 @@ const Page = () => {
         cool shop especially if you're into prop-making, special effects, and
         more!)
       </p>
-      <h2>I'd like to make a...</h2>
+      <p>More information will be posted soon!</p>
+      {/* <h2>I'd like to make a...</h2>
       <h4>Soft Rubber Mold</h4>
-      <p>// Talk about Silicone Here</p>
+      <p>We'll post more information soon!</p>
       <h4>Hard Plastic Mold</h4>
-      <p>// Talk about Hard Plastics Here</p>
+      <p>We'll post more information soon!</p>
       <h4>Hand/Body Part Mold</h4>
-      <p>// Talk about Algenate</p>
+      <p>We'll post more information soon!</p>
       <h4>Cast Hard Plastic Object</h4>
-      <p>// Talk about Hard Plastic</p>
+      <p>We'll post more information soon!</p>
       <h4>Cast Soft Rubbery Object</h4>
-      <p>// Talk about Hard Plastic</p>
+      <p>We'll post more information soon!</p>
       <h4>Cast Hard Rigid Foam Object</h4>
-      <p>// Talk about Hard Plastic</p>
+      <p>We'll post more information soon!</p>
       <h4>Cast Soft Squishy Foam Object</h4>
-      <p>// Talk about Hard Plastic</p>
+      <p>We'll post more information soon!</p> */}
     </div>
   );
 };

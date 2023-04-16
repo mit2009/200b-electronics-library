@@ -143,7 +143,10 @@ const Modal = ({ show, closeModal, component }: ModalProps) => {
                   {buildLinkText(component?.purchaseLink)}
                 </a>
                 <p className={styles.leadTime}>
-                  Lead Time: <strong>{component?.leadTime}</strong>
+                  Lead Time:{' '}
+                  <strong>
+                    {component?.leadTime ? component.leadTime : 'Unknown'}
+                  </strong>
                 </p>
               </div>
               <p>

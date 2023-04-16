@@ -95,25 +95,20 @@ const Modal = ({ show, closeModal, component }: ModalProps) => {
                 show && styles.animateEnterTranslateUp
               }`}
             >
-              <div className={styles.sectionHeading}>
-                <h1 className={styles.componentTitle}>{component?.name}</h1>
-                <p className={styles.componentSubtitle}>
-                  {component?.shortDescription}
-                </p>
-                <span
-                  className={styles.categoryTag}
-                  style={{
-                    background: CategoryTags[
-                      component?.category as CategoryTags
-                    ]
-                      ? categoryObject[component?.category as CategoryTags]
-                          .color
-                      : '#000000',
-                  }}
-                >
-                  {component?.category}
-                </span>
-              </div>
+              <h1 className={styles.componentTitle}>{component?.name}</h1>
+              <p className={styles.componentSubtitle}>
+                {component?.shortDescription}
+              </p>
+              <span
+                className={styles.categoryTag}
+                style={{
+                  background: CategoryTags[component?.category as CategoryTags]
+                    ? categoryObject[component?.category as CategoryTags].color
+                    : '#000000',
+                }}
+              >
+                {component?.category}
+              </span>
 
               <div className={styles.sectionImage}>
                 <img
@@ -132,54 +127,50 @@ const Modal = ({ show, closeModal, component }: ModalProps) => {
                 {component?.description}
               </p>
 
-              <div className={styles.sectionSourcing}>
-                <h2 className={styles.sectionTitle}>Sourcing Information</h2>
-                <p className={styles.sectionText}>
-                  Below is where we recommend buying these parts! Please note
-                  the lead time - that means the number of days you can expect
-                  to wait before receiving your part.
-                </p>
-                <div className={styles.linkLeadInfo}>
-                  <a
-                    className={styles.purchaseLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={component?.purchaseLink}
-                  >
-                    {buildLinkText(component?.purchaseLink)}
-                  </a>
-                  <p className={styles.leadTime}>
-                    Lead Time: <strong>{component?.leadTime}</strong>
-                  </p>
-                </div>
-                <p>
-                  Do we have extras of this in the 2.00b Vault?{' '}
-                  <strong>{component?.inVault}</strong>
+              <h2 className={styles.sectionTitle}>Sourcing Information</h2>
+              <p className={styles.sectionText}>
+                Below is where we recommend buying these parts! Please note the
+                lead time - that means the number of days you can expect to wait
+                before receiving your part.
+              </p>
+              <div className={styles.linkLeadInfo}>
+                <a
+                  className={styles.purchaseLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={component?.purchaseLink}
+                >
+                  {buildLinkText(component?.purchaseLink)}
+                </a>
+                <p className={styles.leadTime}>
+                  Lead Time: <strong>{component?.leadTime}</strong>
                 </p>
               </div>
+              <p>
+                Do we have extras of this in the 2.00b Vault?{' '}
+                <strong>{component?.inVault}</strong>
+              </p>
 
-              <div className={styles.sectionHelp}>
-                <h2 className={styles.sectionTitle}>2.00b Staff Help?</h2>
-                <p className={styles.sectionText}>
-                  You can reach out to the following staff for help using this
-                  component!
-                </p>
-                <ul className={styles.staffList}>
-                  <li>
-                    <GuideLink
-                      href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J"
-                      target="_blank"
-                    >
-                      #ask-the-tas
-                    </GuideLink>
+              <h2 className={styles.sectionTitle}>2.00b Staff Help?</h2>
+              <p className={styles.sectionText}>
+                You can reach out to the following staff for help using this
+                component!
+              </p>
+              <ul className={styles.staffList}>
+                <li>
+                  <GuideLink
+                    href="https://toyproductdesign2023.slack.com/archives/C04PDTGS60J"
+                    target="_blank"
+                  >
+                    #ask-the-tas
+                  </GuideLink>
+                </li>
+                {component?.helpStaff.map((staff) => (
+                  <li key={staff} className={styles.staffName}>
+                    {staff}
                   </li>
-                  {component?.helpStaff.map((staff) => (
-                    <li key={staff} className={styles.staffName}>
-                      {staff}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                ))}
+              </ul>
             </div>
           </div>
         ),

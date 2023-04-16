@@ -1,4 +1,4 @@
-# 2.00b Electronics Library
+# 2.00b Resources Website
 
 Hello! This is a companion website to Toy Product Design (2.00b) a Mechanical Engineering class that runs in the spring at MIT, with a focus on learning product design through building a toy product prototype. This simple one-page website has a list of recommended electronic components for students of the class.
 

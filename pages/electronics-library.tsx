@@ -2,7 +2,7 @@
 import { Searcher } from 'fast-fuzzy';
 
 import { GuideLink } from '../components/GuideLink';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Modal from '../components/Modal';
 import { google } from 'googleapis';
 import styles from '../styles/Page.module.scss';
@@ -31,6 +31,10 @@ export enum CategoryTags {
   Power = 'Power',
   Communication = 'Communication',
   Sensor = 'Sensor',
+  Display = 'Display',
+  Input = 'Input',
+  Output = 'Output',
+  Actuation = 'Actuation',
 }
 
 export const categoryObject: {
@@ -42,13 +46,17 @@ export const categoryObject: {
     result: 'Microcontrollers',
     color: '#04c2a8',
   },
-  Power: { name: 'Power', result: 'Power Components', color: '#3107eb' },
+  Power: { name: 'Power', result: 'Power Components', color: '#f1072b' },
   Communication: {
     name: 'Communication',
     result: 'Communication Components',
     color: '#f5a623',
   },
   Sensor: { name: 'Sensor', result: 'Sensors', color: '#813222' },
+  Display: { name: 'Display', result: 'Displays', color: '#12a1f3' },
+  Input: { name: 'Input', result: 'Inputs', color: '#12a123' },
+  Output: { name: 'Output', result: 'Outputs', color: '#a221a3' },
+  Actuation: { name: 'Actuation', result: 'Actuators', color: '#826183' },
 };
 
 // given a background color, determine whether the font color should be black or white for readability
@@ -61,15 +69,8 @@ const pickTextColorBasedOnBgColorSimple = (bgColor: string) => {
 };
 
 const backgroundColorFromCategory = (category: string) => {
-  switch (category?.toLowerCase()) {
-    case 'microcontroller':
-      return { backgroundColor: '#04c2a8' };
-    case 'power':
-      return { backgroundColor: '#3107eb' };
-    case 'communication':
-      return { backgroundColor: '#f5a623' };
-    case 'sensor':
-      return { backgroundColor: '#813222' };
+  if (categoryObject.hasOwnProperty(category)) {
+    return { backgroundColor: categoryObject[category as CategoryTags]?.color };
   }
   return { backgroundColor: '#000000' };
 };
@@ -173,6 +174,43 @@ const Home = ({
   useEffect(() => {
     filterComponents();
   }, [searchCategoryTags, searchField]);
+
+  const metaTracker = useRef(false);
+
+  useEffect(() => {
+    const findHijacker = (e: KeyboardEvent) => {
+      if (e.key === 'Meta') {
+        metaTracker.current = true;
+      }
+
+      if (
+        e.keyCode === 114 ||
+        ((e.ctrlKey || metaTracker?.current) && e.keyCode === 70)
+      ) {
+        if (document.getElementById('search') !== document.activeElement) {
+          e.preventDefault();
+          document.getElementById('search')?.focus();
+        } else {
+          return true;
+        }
+      }
+    };
+    const metaUp = (e: KeyboardEvent) => {
+      if (e.key === 'Meta') {
+        metaTracker.current = false;
+      }
+    };
+    if (window) {
+      window.addEventListener('keydown', findHijacker);
+      window.addEventListener('keyup', metaUp);
+    }
+    return () => {
+      if (window) {
+        window.removeEventListener('keydown', findHijacker);
+        window.removeEventListener('keyup', metaUp);
+      }
+    };
+  }, []);
 
   return (
     <div>

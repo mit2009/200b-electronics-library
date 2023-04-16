@@ -9,6 +9,97 @@
   max-width: 800px;
 }
 
+.searchBar * {
+  display: block;
+}
+
+.searchBar label {
+  font-weight: 700;
+  color: #5a5a5a;
+  margin-bottom: 3px;
+}
+
+.searchBar input {
+  width: 100%;
+  max-width: 460px;
+  height: 34px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  background: #ffffff;
+  border: 2px solid #464646;
+  border-radius: 0.4rem;
+  padding: 0 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.searchCategoryTags {
+  border: none;
+  padding: 0;
+  margin-bottom: 2.75rem;
+
+  legend {
+    font-weight: 700;
+    color: #5a5a5a;
+    padding: 0;
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 3px;
+  }
+}
+
+.categoryTag {
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  opacity: 1;
+  transition: 0.2s opacity ease;
+
+  input {
+    position: absolute;
+    top: 0;
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  span {
+    display: block;
+    border-radius: 0.25rem;
+    color: #ffffff;
+    padding: 6px 1rem;
+  }
+
+  input:checked ~ span {
+    background: grey;
+  }
+}
+
+.categoryTag:hover {
+  opacity: 0.8;
+}
+
+.resultsHeader {
+  h2 {
+    color: #000000;
+    margin-bottom: 0.25rem;
+  }
+
+  h3 {
+    font-size: 18px;
+    letter-spacing: 0px;
+    text-transform: none;
+    color: var(--grey6);
+    opacity: 0.5;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+}
+
 .textContent {
   border: 3px solid var(--grey3);
   padding: 0 20px;
@@ -21,10 +112,10 @@
 }
 
 .electronicsItem {
+  width: calc(100vw - 55px);
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   overflow: hidden;
-  width: 300px;
   transition: 0.1s transform;
 
   .productName {
@@ -39,8 +130,8 @@
   }
 
   img {
-    width: 300px;
-    height: 225px;
+    width: 100%;
+    aspect-ratio: 300 / 225;
     object-fit: cover;
     background-color: var(--grey1);
     display: block;
@@ -66,6 +157,17 @@
     cursor: pointer;
     transform: scale(1.02);
   }
+}
+
+@media only screen and (min-width: 675px) {
+  .electronicsItem {
+    width: 300px;
+  }
+}
+
+.askTas a {
+  color: #2f00ff;
+  font-weight: 400;
 }
 
 .fullOverlay {

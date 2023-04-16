@@ -174,6 +174,30 @@ const Home = ({
     filterComponents();
   }, [searchCategoryTags, searchField]);
 
+  useEffect(() => {
+    const findHijacker = (e: KeyboardEvent) => {
+      console.log(e);
+      if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70)) {
+        if (document.getElementById('search') !== document.activeElement) {
+          e.preventDefault();
+          console.log('Search is not in focus');
+          document.getElementById('search')?.focus();
+        } else {
+          console.log('Default action of CtrlF');
+          return true;
+        }
+      }
+    };
+    if (window) {
+      window.addEventListener('keydown', findHijacker);
+    }
+    return () => {
+      if (window) {
+        window.removeEventListener('keydown', findHijacker);
+      }
+    };
+  }, []);
+
   return (
     <div>
       <div className={styles.electronicsHeader}>

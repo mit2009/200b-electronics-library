@@ -2,7 +2,7 @@
 import { Searcher } from 'fast-fuzzy';
 
 import { GuideLink } from '../components/GuideLink';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Modal from '../components/Modal';
 import { google } from 'googleapis';
 import styles from '../styles/Page.module.scss';
@@ -174,26 +174,39 @@ const Home = ({
     filterComponents();
   }, [searchCategoryTags, searchField]);
 
+  const metaTracker = useRef(false);
+
   useEffect(() => {
     const findHijacker = (e: KeyboardEvent) => {
-      console.log(e);
-      if (e.keyCode === 114 || (e.ctrlKey && e.keyCode === 70)) {
+      if (e.key === 'Meta') {
+        metaTracker.current = true;
+      }
+
+      if (
+        e.keyCode === 114 ||
+        ((e.ctrlKey || metaTracker?.current) && e.keyCode === 70)
+      ) {
         if (document.getElementById('search') !== document.activeElement) {
           e.preventDefault();
-          console.log('Search is not in focus');
           document.getElementById('search')?.focus();
         } else {
-          console.log('Default action of CtrlF');
           return true;
         }
       }
     };
+    const metaUp = (e: KeyboardEvent) => {
+      if (e.key === 'Meta') {
+        metaTracker.current = false;
+      }
+    };
     if (window) {
       window.addEventListener('keydown', findHijacker);
+      window.addEventListener('keyup', metaUp);
     }
     return () => {
       if (window) {
         window.removeEventListener('keydown', findHijacker);
+        window.removeEventListener('keyup', metaUp);
       }
     };
   }, []);

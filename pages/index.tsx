@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import styles from '../styles/Home.module.scss';
+import cx from 'classnames';
 
 const Home = () => {
   return (
@@ -42,6 +43,19 @@ const Home = () => {
               />
             </div>
             <div className={styles.text}>Electronics Library</div>
+          </div>
+        </Link>
+        <Link href="/casting-library/">
+          <div className={styles.topic}>
+            <div className={cx(styles.imageContainer, styles.casting)}>
+              <Image
+                src="/images/casting-library-icon-full.png"
+                alt="Casting Library"
+                width={280}
+                height={215}
+              />
+            </div>
+            <div className={styles.text}>Casting Library</div>
           </div>
         </Link>
         <Link href="https://web.mit.edu/2.00b/www/index.html">

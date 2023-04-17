@@ -343,12 +343,31 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
       <div>
         <Image
           src="/images/electronics-icon.svg"
-          alt="Home Icon"
+          alt="Electronics"
           height={55}
           width={55}
         />
         <div>
           electronics
+          <br />
+          library
+        </div>
+      </div>
+    ),
+  },
+  '/casting-library': {
+    value: 'Electronics Library',
+    has_chapters: false,
+    icon: (
+      <div>
+        <Image
+          src="/images/casting-icon.svg"
+          alt="Casting"
+          height={55}
+          width={55}
+        />
+        <div>
+          casting
           <br />
           library
         </div>

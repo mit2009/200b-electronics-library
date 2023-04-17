@@ -46,7 +46,7 @@ export const categoryObject: {
     result: 'Microcontrollers',
     color: '#04c2a8',
   },
-  Power: { name: 'Power', result: 'Power Components', color: '#f1072b' },
+  Power: { name: 'Power', result: 'Power Components', color: '#da3214' },
   Communication: {
     name: 'Communication',
     result: 'Communication Components',
@@ -56,7 +56,7 @@ export const categoryObject: {
   Display: { name: 'Display', result: 'Displays', color: '#12a1f3' },
   Input: { name: 'Input', result: 'Inputs', color: '#12a123' },
   Output: { name: 'Output', result: 'Outputs', color: '#a221a3' },
-  Actuation: { name: 'Actuation', result: 'Actuators', color: '#826183' },
+  Actuation: { name: 'Actuation', result: 'Actuators', color: '#1200aa' },
 };
 
 // given a background color, determine whether the font color should be black or white for readability
@@ -136,7 +136,12 @@ const Home = ({
     );
   };
   const onTagSelect = (e: React.FormEvent<HTMLInputElement>) => {
-    setSearchCategoryTags([e.currentTarget.value as CategoryTags]);
+    // check to see if existing tag is current value, if so set to be showAll
+    if (searchCategoryTags[0] === e.currentTarget.value) {
+      setSearchCategoryTags([CategoryTags.ShowAll]);
+    } else {
+      setSearchCategoryTags([e.currentTarget.value as CategoryTags]);
+    }
   };
 
   const [filteredComponents, setFilteredComponents] =
@@ -259,7 +264,7 @@ const Home = ({
                 id={key}
                 value={CategoryTags[key]}
                 checked={searchCategoryTags.includes(CategoryTags[key])}
-                onChange={onTagSelect}
+                onClick={onTagSelect}
               />
               <span
                 style={{

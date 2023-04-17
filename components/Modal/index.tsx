@@ -22,6 +22,8 @@ const buildLinkText = (link?: string): string => {
     return 'Grainger Website';
   } else if (link?.toLowerCase().search(/\S*sparkfun\S*/) !== -1) {
     return 'Sparkfun Website';
+  } else if (link?.toLowerCase().search(/\S*mcmaster\S*/) !== -1) {
+    return 'McMaster-Carr Website';
   } else {
     return link ? link : 'check with a TA';
   }

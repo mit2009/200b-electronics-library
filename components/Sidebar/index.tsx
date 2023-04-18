@@ -356,7 +356,7 @@ export const PAGES_LAYOUT: { [url: string]: ISection } = {
     ),
   },
   '/casting-library': {
-    value: 'Electronics Library',
+    value: 'Casting Library',
     has_chapters: false,
     icon: (
       <div>

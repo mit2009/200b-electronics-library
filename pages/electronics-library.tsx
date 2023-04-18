@@ -153,7 +153,7 @@ const Home = ({
       componentList = componentList.filter((component) => {
         return component.category
           ? component.category.toLowerCase() ===
-              searchCategoryTags[0].toLowerCase()
+          searchCategoryTags[0].toLowerCase()
           : null;
       });
     }
@@ -265,12 +265,15 @@ const Home = ({
                 value={CategoryTags[key]}
                 checked={searchCategoryTags.includes(CategoryTags[key])}
                 onClick={onTagSelect}
+                onChange={() => {
+                  return;
+                }}
               />
               <span
                 style={{
                   background:
                     searchCategoryTags[0] === CategoryTags.ShowAll ||
-                    searchCategoryTags[0] === CategoryTags[key]
+                      searchCategoryTags[0] === CategoryTags[key]
                       ? categoryObject[CategoryTags[key]].color
                       : `var(--grey3)`,
                 }}
@@ -394,7 +397,10 @@ export async function getStaticProps() {
 
   return {
     props: {
-      electronicComponents,
+      electronicComponents: electronicComponents?.filter((component) =>
+      (
+        component?.shownTo === 'Everyone'
+      )),
     },
     revalidate: 10,
   };

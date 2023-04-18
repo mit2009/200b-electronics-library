@@ -22,6 +22,10 @@ const buildLinkText = (link?: string): string => {
     return 'Grainger Website';
   } else if (link?.toLowerCase().search(/\S*sparkfun\S*/) !== -1) {
     return 'Sparkfun Website';
+  } else if (link?.toLowerCase().search(/\S*amazon\S*/) !== -1) {
+    return 'Amazon Website';
+  } else if (link?.toLowerCase().search(/\S*digikey\S*/) !== -1) {
+    return 'Digi-Key Website';
   } else if (link?.toLowerCase().search(/\S*mcmaster\S*/) !== -1) {
     return 'McMaster-Carr Website';
   } else {

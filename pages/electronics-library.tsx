@@ -52,7 +52,7 @@ export const categoryObject: {
     result: 'Communication Components',
     color: '#f5a623',
   },
-  Sensor: { name: 'Sensor', result: 'Sensors', color: '#813222' },
+  Sensor: { name: 'Sensor', result: 'Sensors', color: '#003300' },
   Display: { name: 'Display', result: 'Displays', color: '#12a1f3' },
   Input: { name: 'Input', result: 'Inputs', color: '#12a123' },
   Output: { name: 'Output', result: 'Outputs', color: '#a221a3' },

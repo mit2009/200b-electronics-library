@@ -1,40 +1,52 @@
 .overlay {
-  width: 100vw;
-  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+
+  font-family: "DM Sans", sans-serif;
+
   background: rgba(0, 0, 0, 0.8);
-  background-size: contain;
   background-repeat: no-repeat;
-  z-index: 100;
-  position: fixed;
-  top: 0;
-  left: 0;
+  background-size: contain;
+
   overflow: auto;
-  font-family: 'DM Sans', sans-serif;
 }
 
 .close {
   position: absolute;
   top: 0;
   right: 0;
-  height: fit-content;
-  width: fit-content;
-  background: none;
-  border: none;
+
   display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 18px;
+  justify-content: center;
+  align-items: center;
+
+  width: fit-content;
+  height: fit-content;
+  margin: 1.25rem 1.25rem 0 0;
+  padding: 0.25rem 0 0.25rem 0.25rem;
+
   color: #ffffff;
   font-weight: 700;
   font-size: 1.5rem;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
+
+  border: none;
+
+  background: none;
+
   cursor: pointer;
-  padding: 0.25rem 0 0.25rem 0.25rem;
-  margin: 1.25rem 1.25rem 0 0;
+
   transition: 0.2s opacity;
 
   &:hover {
@@ -45,50 +57,95 @@
 .card {
   display: flex;
   flex-direction: column;
-  text-align: left;
-  background-color: #ffffff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+  width: calc(100% - 2.5rem);
   height: fit-content;
   min-width: 288px;
-  border-radius: 20px;
-  width: calc(100% - 2.5rem);
-  padding: 1.25rem;
   margin: 4.5rem 1.25rem 1.25rem 1.25rem;
+  padding: 1.25rem;
+
+  text-align: left;
+
+  border-radius: 20px;
+
+  background-color: #ffffff;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
   overflow-y: auto;
 
   .componentTitle {
-    font-size: 3rem;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+
+    font-size: 1.75rem;
   }
 
   .componentSubtitle {
-    font-size: 18px;
     margin-bottom: 10px;
+
+    font-size: 1.2em;
   }
 
   .sectionTitle {
+    margin-top: 28px;
+    margin-bottom: 10px;
+
     color: #000000;
-    font-size: 1.5rem;
     font-weight: 700;
+    font-size: 1.5rem;
+  }
+
+  .copyLinkToClipboard {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 10px;
+    padding: 0;
+
+    font-size: 0.95em;
+    font-family: "DM Sans", sans-serif;
+    text-decoration: underline;
+
+    border: none;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    opacity: 0.4;
+
+    transition: 0.1s all;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    svg {
+      margin-right: 3px;
+    }
+  }
+
+  .categoryTagContainer {
     margin-bottom: 10px;
   }
 
   .categoryTag {
     display: inline-block;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.25rem;
-    font-weight: 400;
-    font-size: 1.1em;
-    color: #ffffff;
 
     width: fit-content;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    padding: 0.5rem 0.75rem;
+
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 1.1em;
+
+    border-radius: 0.25rem;
   }
 
   a {
-    font-weight: 400;
     color: #3107eb;
+    font-weight: 400;
   }
 
   p {
@@ -102,22 +159,27 @@
 
 .sectionImage {
   position: relative;
+
+  max-width: 475px;
   margin: auto;
   margin-bottom: 1rem;
-  max-width: 475px;
 
   .product {
-    object-fit: contain;
     width: 100%;
+
     border-radius: 10px;
+
+    object-fit: contain;
   }
 
   .badge {
     position: absolute;
     top: 0;
     right: 0;
+
     width: 79.9px;
     height: 71.5px;
+
     object-fit: contain;
   }
 }
@@ -126,35 +188,45 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  white-space: nowrap;
+
   margin-bottom: 1rem;
+
+  white-space: nowrap;
 
   .purchaseLink {
     display: inline-block;
-    min-width: 162px;
+
     width: fit-content;
+    min-width: 162px;
     max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
     margin-right: 0.5rem;
+
+    text-overflow: ellipsis;
+
+    overflow: hidden;
   }
 
   .leadTime {
     display: inline-block;
+
     margin: 0;
+
     strong {
-      background: #fff59e;
       padding: 0 0.5rem;
+
       border-radius: 0.25rem;
+
+      background: #fff59e;
     }
   }
 }
 
 ul.staffList {
-  list-style: '-';
-  padding: 0;
   margin: 0;
+  padding: 0;
   padding-left: 10px;
+
+  list-style: "-";
 
   li {
     padding-left: 10px;
@@ -166,8 +238,8 @@ ul.staffList {
 }
 
 .animateEnterFadeIn {
-  animation-duration: 0.4s;
   animation-name: animate-enter-fade-in;
+  animation-duration: 0.4s;
   animation-timing-function: ease;
 }
 
@@ -175,25 +247,27 @@ ul.staffList {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
 
 .animateEnterTranslateUp {
-  animation-duration: 0.4s;
   animation-name: animate-enter-translate-up;
+  animation-duration: 0.4s;
   animation-timing-function: ease;
 }
 
 @keyframes animate-enter-translate-up {
   0% {
-    transform: translateY(40px);
     opacity: 0;
+    transform: translateY(40px);
   }
+
   100% {
-    transform: translateY(0px);
     opacity: 1;
+    transform: translateY(0px);
   }
 }
 
@@ -213,17 +287,26 @@ ul.staffList {
     position: relative;
 
     width: calc(100% - 4rem);
-    padding: 30px;
     margin: 6.5rem 2rem 2rem 2rem;
-  }
+    padding: 30px;
 
-  .card > * {
-    width: 50%;
+    &>* {
+      width: 50%;
+    }
+
+    .componentTitle {
+      font-size: 2.5rem;
+    }
+
+    .componentSubtitle {
+      font-size: 1.4rem;
+    }
   }
 
   .sectionImage {
     position: absolute;
     left: 55%;
+
     width: calc(45% - 2em);
     max-width: 630px;
 

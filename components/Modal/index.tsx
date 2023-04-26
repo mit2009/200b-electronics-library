@@ -7,6 +7,7 @@ import {
   categoryObject,
   CategoryTags,
 } from '../../pages/electronics-library';
+import CopyLinkSvg from '../CopyLink/CopyLinkSvg';
 interface ModalProps {
   show: boolean;
   closeModal: () => void;
@@ -29,7 +30,7 @@ const buildLinkText = (link?: string): string => {
   } else if (link?.toLowerCase().search(/\S*mcmaster\S*/) !== -1) {
     return 'McMaster-Carr Website';
   } else {
-    return link ? link : 'check with a TA';
+    return link ? link : 'Check with a TA';
   }
 };
 
@@ -105,16 +106,24 @@ const Modal = ({ show, closeModal, component }: ModalProps) => {
             <p className={styles.componentSubtitle}>
               {component?.shortDescription}
             </p>
-            <span
-              className={styles.categoryTag}
-              style={{
-                background: CategoryTags[component?.category as CategoryTags]
-                  ? categoryObject[component?.category as CategoryTags].color
-                  : '#000000',
-              }}
-            >
-              {component?.category}
-            </span>
+            <p>
+              {/* TODO: move into CopyLinkButton.tsx */}
+              <span className={styles.copyLinkToClipboard} onClick={() => {
+                navigator.clipboard.writeText(typeof window !== "undefined" ? window.location.href : "");
+              }}><CopyLinkSvg />Copy Link to {component?.name}</span>
+            </p>
+            <div className={styles.categoryTagContainer}>
+              <span
+                className={styles.categoryTag}
+                style={{
+                  background: CategoryTags[component?.category as CategoryTags]
+                    ? categoryObject[component?.category as CategoryTags].color
+                    : '#000000',
+                }}
+              >
+                {component?.category}
+              </span>
+            </div>
 
             <div className={styles.sectionImage}>
               <img

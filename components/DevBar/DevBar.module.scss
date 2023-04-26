@@ -1,33 +1,41 @@
 .devMarker {
-  z-index: 1000000;
-
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background-color: silver;
-  font-weight: bold;
-  color: white;
-  padding: 5px 10px;
-  font-size: 20px;
-  border-radius: 5px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  user-select: none;
-  pointer-events: none;
-  opacity: 0.9;
+  z-index: 1000000;
 
   display: flex;
   gap: 5px;
 
+  padding: 5px 10px;
+
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  border-radius: 5px;
+
+  background-color: silver;
+
+  opacity: 0.9;
+
+  user-select: none;
+  pointer-events: none;
+
   button {
-    border-radius: 5px;
-    border: none;
     color: white;
+
+    border: none;
+    border-radius: 5px;
+
     background-color: silver;
+
     pointer-events: all;
 
     &:hover {
-      background-color: #999;
+      background-color: #999999;
     }
   }
 

@@ -320,7 +320,7 @@ const Home = ({
 
       <div className={styles.electronicsContainer}>
         {filteredComponents.map((item: any) => (
-          <Link href={`/electronics-library#${item.id.toLowerCase()}`} key={item.name + item.shortDescription.substring(0, 30)}>
+          <Link href={`/electronics-library#${item.id}`} key={item.id + item.shortDescription.substring(0, 30)}>
             <div
               className={styles.electronicsItem}
               onClick={() => {

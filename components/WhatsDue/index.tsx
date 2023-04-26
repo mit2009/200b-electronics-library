@@ -48,7 +48,6 @@ export const WhatsDue = ({
         setDontShowConfetti(false);
       }
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

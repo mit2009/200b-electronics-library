@@ -424,7 +424,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
     setConfettiColor([]);
     const defaultState = (
       hasOwn(PAGES_LAYOUT, currentSection) &&
-      hasOwn(PAGES_LAYOUT[currentSection], 'chapter_state')
+        hasOwn(PAGES_LAYOUT[currentSection], 'chapter_state')
         ? PAGES_LAYOUT[currentSection].chapter_state
         : {}
     ) as IChapterVisibility;
@@ -445,7 +445,7 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   useEffect(() => {
     const defaultState = (
       hasOwn(PAGES_LAYOUT, currentSection) &&
-      hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
+        hasOwn(PAGES_LAYOUT[currentSection], 'chapter_visibility')
         ? PAGES_LAYOUT[currentSection].chapter_visibility
         : {}
     ) as IChapterVisibility;
@@ -464,7 +464,6 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
     setChapterState((cur) => {
       return { ...cur, [dirs[1]]: true };
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.asPath]);
   const chapters = PAGES_LAYOUT[currentSection].chapters as {
     [url: string]: IChapter;
@@ -663,7 +662,7 @@ export const Sidebar = () => {
       setIsOpen(false);
     }
     setTargetUrl(router.pathname);
-  }, [router.asPath]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [router.asPath]);
   const [targetUrl, setTargetUrl] = useState(router.pathname);
 
   const path = router.pathname;
@@ -752,9 +751,9 @@ export const SectionNavigation = () => {
   const dirs = splitPath(path);
   const currentPage = getCurrentPage(dirs);
 
-  let defaultState = (
+  const defaultState = (
     hasOwn(PAGES_LAYOUT, dirs[0]) &&
-    hasOwn(PAGES_LAYOUT[dirs[0]], 'chapter_visibility')
+      hasOwn(PAGES_LAYOUT[dirs[0]], 'chapter_visibility')
       ? PAGES_LAYOUT[dirs[0]].chapter_visibility
       : {}
   ) as IChapterVisibility;
@@ -764,7 +763,7 @@ export const SectionNavigation = () => {
   useEffect(() => {
     let defaultState = (
       hasOwn(PAGES_LAYOUT, dirs[0]) &&
-      hasOwn(PAGES_LAYOUT[dirs[0]], 'chapter_visibility')
+        hasOwn(PAGES_LAYOUT[dirs[0]], 'chapter_visibility')
         ? PAGES_LAYOUT[dirs[0]].chapter_visibility
         : {}
     ) as IChapterVisibility;
@@ -780,7 +779,6 @@ export const SectionNavigation = () => {
         defaultState = { ...defaultState, [page]: true };
       });
     setPageStates(defaultState);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router.asPath]);
 
   if (!hasOwn(currentPage, 'value') || !PAGES_LAYOUT[dirs[0]].has_chapters) {

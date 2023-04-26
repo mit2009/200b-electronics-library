@@ -8,7 +8,6 @@ import Modal from '../components/Modal';
 import { google } from 'googleapis';
 import styles from '../styles/Page.module.scss';
 import cx from 'classnames';
-import { constants } from 'buffer';
 
 export interface IElectronicsComponent {
   name: string;
@@ -199,7 +198,7 @@ const Home = ({
       queriedProduct && setActiveProduct(queriedProduct);
       setShowOverlay(true);
     }
-  }, [router])
+  }, [router.asPath])
 
   const metaTracker = useRef(false);
 
@@ -321,13 +320,7 @@ const Home = ({
       <div className={styles.electronicsContainer}>
         {filteredComponents.map((item: any) => (
           <Link href={`/electronics-library#${item.id}`} key={item.id + item.shortDescription.substring(0, 30)}>
-            <div
-              className={styles.electronicsItem}
-              onClick={() => {
-                setShowOverlay(true);
-                setActiveProduct(item);
-              }}
-            >
+            <div className={styles.electronicsItem}>
               <div className={styles.productName}>{item.name}</div>
               <img src={item.productPhoto[0]} alt={item.name} />
               <div

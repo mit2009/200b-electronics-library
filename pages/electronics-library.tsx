@@ -1,12 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import { Searcher } from 'fast-fuzzy';
-
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { GuideLink } from '../components/GuideLink';
 import { useState, useEffect, useRef } from 'react';
 import Modal from '../components/Modal';
 import { google } from 'googleapis';
 import styles from '../styles/Page.module.scss';
 import cx from 'classnames';
+import { constants } from 'buffer';
 
 export interface IElectronicsComponent {
   name: string;
@@ -23,6 +25,7 @@ export interface IElectronicsComponent {
   additionalLinks: string[];
   inVault: string;
   helpStaff: string[];
+  id: string;
 }
 
 export enum CategoryTags {
@@ -91,6 +94,11 @@ const removeEmpty = (obj: any) => {
   return obj;
 };
 
+const formatId = (text: string): string => {
+  text = text.toLowerCase().trim().replace(/ /g, "-");
+  return text;
+}
+
 const buildResultsHeader = (
   searchField: string,
   searchCategoryTags: CategoryTags[]
@@ -116,6 +124,7 @@ const Home = ({
 }: {
   electronicComponents: IElectronicsComponent[];
 }) => {
+  const router = useRouter();
   const [showOverlay, setShowOverlay] = useState(false);
   const [activeProduct, setActiveProduct] =
     useState<IElectronicsComponent | null>(null);
@@ -181,9 +190,22 @@ const Home = ({
     filterComponents();
   }, [searchCategoryTags, searchField]);
 
+  useEffect(() => {
+    const id = router.asPath.match(/(?<=#).*/g);
+    if (id) {
+      const queriedProduct = electronicComponents.find((component) =>
+        component.id === id[0]
+      );
+      queriedProduct && setActiveProduct(queriedProduct);
+      setShowOverlay(true);
+    }
+  }, [router])
+
   const metaTracker = useRef(false);
 
   useEffect(() => {
+    const changeHashQuery = (e: HashChangeEvent) => router.push(`/electronics-library${window.location.hash}`, undefined, { shallow: true })
+
     const findHijacker = (e: KeyboardEvent) => {
       if (e.key === 'Meta') {
         metaTracker.current = true;
@@ -209,11 +231,13 @@ const Home = ({
     if (window) {
       window.addEventListener('keydown', findHijacker);
       window.addEventListener('keyup', metaUp);
+      window.addEventListener('hashchange', changeHashQuery)
     }
     return () => {
       if (window) {
         window.removeEventListener('keydown', findHijacker);
         window.removeEventListener('keyup', metaUp);
+        window.removeEventListener('hashchange', changeHashQuery)
       }
     };
   }, []);
@@ -296,24 +320,25 @@ const Home = ({
 
       <div className={styles.electronicsContainer}>
         {filteredComponents.map((item: any) => (
-          <div
-            key={item.name + item.shortDescription.substring(0, 30)}
-            className={styles.electronicsItem}
-            onClick={() => {
-              setShowOverlay(true);
-              setActiveProduct(item);
-            }}
-          >
-            <div className={styles.productName}>{item.name}</div>
-            <img src={item.productPhoto[0]} alt={item.name} />
+          <Link href={`/electronics-library#${item.id.toLowerCase()}`} key={item.name + item.shortDescription.substring(0, 30)}>
             <div
-              className={styles.category}
-              style={styleFromCategory(item.category)}
+              className={styles.electronicsItem}
+              onClick={() => {
+                setShowOverlay(true);
+                setActiveProduct(item);
+              }}
             >
-              {item.category}
+              <div className={styles.productName}>{item.name}</div>
+              <img src={item.productPhoto[0]} alt={item.name} />
+              <div
+                className={styles.category}
+                style={styleFromCategory(item.category)}
+              >
+                {item.category}
+              </div>
+              <div className={styles.description}>{item.shortDescription}</div>
             </div>
-            <div className={styles.description}>{item.shortDescription}</div>
-          </div>
+          </Link>
         ))}
       </div>
 
@@ -374,6 +399,7 @@ export async function getStaticProps() {
       additionalLinks: item[11]?.split(','),
       inVault: item[12],
       helpStaff: item[13]?.split(','),
+      id: formatId(item[0]),
     });
 
     const electronicComponentPlaceholder: IElectronicsComponent = {
@@ -391,6 +417,7 @@ export async function getStaticProps() {
       additionalLinks: [''],
       inVault: '',
       helpStaff: [''],
+      id: '',
     };
 
     return { ...electronicComponentPlaceholder, ...electroncisDataObj };

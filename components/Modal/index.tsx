@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import styles from './Modal.module.scss';
 import { GuideLink } from '../GuideLink';
+import CopyLink from '../CopyLink';
 import {
   IElectronicsComponent,
   categoryObject,
@@ -106,12 +107,7 @@ const Modal = ({ show, closeModal, component }: ModalProps) => {
             <p className={styles.componentSubtitle}>
               {component?.shortDescription}
             </p>
-            <p>
-              {/* TODO: move into CopyLinkButton.tsx */}
-              <span className={styles.copyLinkToClipboard} onClick={() => {
-                navigator.clipboard.writeText(typeof window !== "undefined" ? window.location.href : "");
-              }}><CopyLinkSvg />Copy Link to {component?.name}</span>
-            </p>
+            <CopyLink componentName={component ? component.name : "Component"} />
             <div className={styles.categoryTagContainer}>
               <span
                 className={styles.categoryTag}

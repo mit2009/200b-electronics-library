@@ -1,10 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from 'react';
+import cx from 'classnames';
+
+import GuideImage from '../../../components/GuideImage';
+import { GuideLink } from '../../../components/GuideLink';
 
 import styles from '../../../styles/Customize.module.scss';
-import cx from 'classnames';
-import { GuideLink } from '../../../components/GuideLink';
-import GuideImage from '../../../components/GuideImage';
 
 const getRgbValuesFromHex = (hex: string) => {
   const r = parseInt(hex.slice(1, 3), 16);

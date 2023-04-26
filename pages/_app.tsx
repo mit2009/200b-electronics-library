@@ -1,19 +1,18 @@
 /* eslint-disable @next/next/no-page-custom-font */
 /* eslint-disable @next/next/next-script-for-ga */
 
+import cx from 'classnames';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-import cx from 'classnames';
+import { DevBar } from '../components/DevBar';
+import { PAGES_LAYOUT, SectionNavigation, Sidebar } from '../components/Sidebar';
+import { isDev } from '../lib/devHelper';
+import { kebabToCamel, splitPath } from '../utils/format';
+
 import '../styles/globals.scss';
 import sidebarStyles from '../components/Sidebar/Sidebar.module.scss';
-
-import { isDev } from '../lib/devHelper';
-
-import { PAGES_LAYOUT, SectionNavigation, Sidebar } from '../components/Sidebar';
-import { DevBar } from '../components/DevBar';
-import { kebabToCamel, splitPath } from '../utils/format';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const color = new Date().getDay() + 1;

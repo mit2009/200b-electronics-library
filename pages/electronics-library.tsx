@@ -1,13 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
+import { useEffect, useRef, useState } from 'react';
 import { Searcher } from 'fast-fuzzy';
+import { google } from 'googleapis';
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+
 import { GuideLink } from '../components/GuideLink';
-import { useState, useEffect, useRef } from 'react';
 import Modal from '../components/Modal';
-import { google } from 'googleapis';
+
 import styles from '../styles/Page.module.scss';
-import cx from 'classnames';
 
 export interface IElectronicsComponent {
   name: string;

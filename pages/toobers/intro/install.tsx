@@ -1,9 +1,10 @@
 import { useState } from 'react';
-
 import cx from 'classnames';
-import styles from './Toggle.module.scss';
+
 import GuideImage from '../../../components/GuideImage';
 import { WhatsDue } from '../../../components/WhatsDue';
+
+import styles from './Toggle.module.scss';
 
 const PageToggle = ({
   options,

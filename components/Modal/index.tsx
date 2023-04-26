@@ -1,12 +1,14 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import ReactDOM from 'react-dom';
-import styles from './Modal.module.scss';
-import { GuideLink } from '../GuideLink';
+
 import {
-  IElectronicsComponent,
   categoryObject,
   CategoryTags,
+  IElectronicsComponent,
 } from '../../pages/electronics-library';
+import { GuideLink } from '../GuideLink';
+
+import styles from './Modal.module.scss';
 interface ModalProps {
   show: boolean;
   closeModal: () => void;

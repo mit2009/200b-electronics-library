@@ -24,7 +24,8 @@ module.exports = {
   plugins: [
     "react",
     "@typescript-eslint",
-    "import"
+    "import",
+    "simple-import-sort"
   ],
   rules: {
     "react/prop-types": "off",
@@ -38,11 +39,30 @@ module.exports = {
     "import/no-unresolved": "off",
     "no-case-declarations": "off",
     "@typescript-eslint/no-use-before-define": "off",
-
     "object-shorthand": [
       "error",
       "always"
     ],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          // Packages `react` related packages come first.
+          ["^react", "^@?\\w"],
+          // Internal packages.
+          ["^(@|components)(/.*|$)"],
+          // Side effect imports.
+          ["^\\u0000"],
+          // Parent imports. Put `..` last.
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          // Style imports.
+          ["^.+\\.?(css)$"]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error",
   },
   settings: {
     react: {

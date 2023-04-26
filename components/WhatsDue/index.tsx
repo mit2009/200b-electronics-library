@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import { PAGES_LAYOUT } from '../Sidebar';
-import styles from './WhatsDue.module.scss';
+import ConfettiExplosion from 'react-confetti-explosion';
 import cx from 'classnames';
 
-import ConfettiExplosion from 'react-confetti-explosion';
+import { PAGES_LAYOUT } from '../Sidebar';
+
+import styles from './WhatsDue.module.scss';
 
 export const WhatsDue = ({
   chapter,

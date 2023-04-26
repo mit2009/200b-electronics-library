@@ -1,5 +1,6 @@
-import styles from './Ws2812bLed.module.scss';
 import cx from 'classnames';
+
+import styles from './Ws2812bLed.module.scss';
 
 export enum PIN {
   Vin = 'Vin',

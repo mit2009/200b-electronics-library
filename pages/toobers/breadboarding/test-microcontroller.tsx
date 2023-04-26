@@ -1,7 +1,8 @@
 import Image from 'next/image';
+
 import GuideImage from '../../../components/GuideImage';
-import GuideVideo from '../../../components/GuideVideo';
 import { GuideLink } from '../../../components/GuideLink';
+import GuideVideo from '../../../components/GuideVideo';
 
 const Test = () => {
   return (

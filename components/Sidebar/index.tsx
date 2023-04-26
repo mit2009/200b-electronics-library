@@ -1,13 +1,12 @@
-import Link from 'next/link';
-import Router, { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
-
+import ConfettiExplosion from 'react-confetti-explosion';
 import cx from 'classnames';
-import styles from './Sidebar.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
+
 import { hasOwn, kebabToCamel } from '../../utils/format';
 
-import ConfettiExplosion from 'react-confetti-explosion';
+import styles from './Sidebar.module.scss';
 
 interface IPage {
   value: string;

@@ -9,8 +9,7 @@ module.exports = {
     "plugin:react/recommended",
     "plugin:import/errors",
     "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
-    "prettier/react",
+
     "plugin:import/typescript",
     "plugin:@next/next/recommended",
   ],
@@ -39,15 +38,7 @@ module.exports = {
     "import/no-unresolved": "off",
     "no-case-declarations": "off",
     "@typescript-eslint/no-use-before-define": "off",
-    "prettier/prettier": [
-      "error",
-      {
-        printWidth: 80,
-        tabWidth: 2,
-        trailingComma: "all",
-        arrowParens: "avoid",
-      },
-    ],
+
     "object-shorthand": [
       "error",
       "always"

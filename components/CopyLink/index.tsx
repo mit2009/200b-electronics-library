@@ -1,8 +1,8 @@
 import { useState } from 'react';
+
 import CopyLinkSvg from "./CopyLinkSvg";
+
 import styles from './CopyLink.module.scss';
-
-
 
 const CopyLinkButton = ({ componentName }: { componentName: string }) => {
   const [linkText, setLinkText] = useState<string>(`Copy Link to ${componentName}`);

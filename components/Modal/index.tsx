@@ -1,14 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ReactDOM from 'react-dom';
-
+import styles from './Modal.module.scss';
+import { GuideLink } from '../GuideLink';
+import CopyLink from '../CopyLink';
 import {
+  IElectronicsComponent,
   categoryObject,
   CategoryTags,
-  IElectronicsComponent,
 } from '../../pages/electronics-library';
-import { GuideLink } from '../GuideLink';
-
-import styles from './Modal.module.scss';
 interface ModalProps {
   show: boolean;
   closeModal: () => void;
@@ -31,7 +30,7 @@ const buildLinkText = (link?: string): string => {
   } else if (link?.toLowerCase().search(/\S*mcmaster\S*/) !== -1) {
     return 'McMaster-Carr Website';
   } else {
-    return link ? link : 'check with a TA';
+    return link ? link : 'Check with a TA';
   }
 };
 
@@ -107,16 +106,19 @@ const Modal = ({ show, closeModal, component }: ModalProps) => {
             <p className={styles.componentSubtitle}>
               {component?.shortDescription}
             </p>
-            <span
-              className={styles.categoryTag}
-              style={{
-                background: CategoryTags[component?.category as CategoryTags]
-                  ? categoryObject[component?.category as CategoryTags].color
-                  : '#000000',
-              }}
-            >
-              {component?.category}
-            </span>
+            <CopyLink componentName={component ? component.name : "Component"} />
+            <div className={styles.categoryTagContainer}>
+              <span
+                className={styles.categoryTag}
+                style={{
+                  background: CategoryTags[component?.category as CategoryTags]
+                    ? categoryObject[component?.category as CategoryTags].color
+                    : '#000000',
+                }}
+              >
+                {component?.category}
+              </span>
+            </div>
 
             <div className={styles.sectionImage}>
               <img

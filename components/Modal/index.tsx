@@ -8,7 +8,6 @@ import {
   categoryObject,
   CategoryTags,
 } from '../../pages/electronics-library';
-import CopyLinkSvg from '../CopyLink/CopyLinkSvg';
 interface ModalProps {
   show: boolean;
   closeModal: () => void;

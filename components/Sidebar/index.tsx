@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Router, { useRouter } from 'next/router';
 import ConfettiExplosion from 'react-confetti-explosion';
 import cx from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
+import Router, { useRouter } from 'next/router';
 
 import { hasOwn, kebabToCamel } from '../../utils/format';
 

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+
 import GuideImage from '../../../components/GuideImage';
 
 const Glue = () => {

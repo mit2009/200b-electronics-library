@@ -1,5 +1,6 @@
-import Link from 'next/link';
 import { useEffect } from 'react';
+import Link from 'next/link';
+
 import GuideImage from '../../../components/GuideImage';
 
 const Page = () => {

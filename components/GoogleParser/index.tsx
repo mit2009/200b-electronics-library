@@ -1,9 +1,9 @@
-import Link from 'next/link';
 import React from 'react';
-
 import cx from 'classnames';
-import styles from './GoogleParser.module.scss';
 import Image from 'next/image';
+import Link from 'next/link';
+
+import styles from './GoogleParser.module.scss';
 
 const LineBreakManager = ({ element }: any) => {
   // given a text string, replace all the /n with <br /> and return a jsx element

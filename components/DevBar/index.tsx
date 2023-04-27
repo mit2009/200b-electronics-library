@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-
 import cx from 'classnames';
+
 import styles from './DevBar.module.scss';
 
 const HIDDEN_DURATION = 8000;

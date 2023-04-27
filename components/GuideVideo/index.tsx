@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
-import styles from './GuideVideo.module.scss';
 import cx from 'classnames';
+
+import styles from './GuideVideo.module.scss';
 
 const GuideVideo = ({ src }: { src: string }) => {
   return (

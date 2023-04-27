@@ -1,10 +1,11 @@
 import { google } from 'googleapis';
+import Image from 'next/image';
+import Link from 'next/link';
+
 import GuideImage from '../components/GuideImage';
 import { GuideLink } from '../components/GuideLink';
 
 import styles from '../styles/CastingLibrary.module.scss';
-import Image from 'next/image';
-import Link from 'next/link';
 
 export async function getStaticProps() {
   const spreadsheetId = '1oy8CSaAVCUW85ui_FAuW0YxfaDJNwehxXqTTWuVQkZo';
@@ -28,6 +29,7 @@ export async function getStaticProps() {
     props: {
       data: data.data.values,
     },
+    revalidate: 10,
   };
 }
 

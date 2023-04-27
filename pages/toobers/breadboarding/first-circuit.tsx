@@ -1,7 +1,8 @@
 import Link from 'next/link';
+
 import GuideImage from '../../../components/GuideImage';
 import { GuideLink } from '../../../components/GuideLink';
-import { Ws2812bLed, PIN } from '../../../components/Ws2812bLed';
+import { PIN, Ws2812bLed } from '../../../components/Ws2812bLed';
 
 const Page = () => {
   return (

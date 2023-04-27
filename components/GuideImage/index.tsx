@@ -1,7 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-no-target-blank */
-import styles from './GuideImage.module.scss';
 import cx from 'classnames';
+
+import styles from './GuideImage.module.scss';
 
 type ImageSize = 'MICRO' | 'NARROW' | 'SMALL' | 'MEDIUM' | 'LARGE' | 'FULL';
 

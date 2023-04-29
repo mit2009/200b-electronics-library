@@ -1,7 +1,8 @@
 .electronicsContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
+
   gap: 20px;
 }
 
@@ -162,6 +163,10 @@
 @media only screen and (min-width: 675px) {
   .electronicsItem {
     width: 300px;
+  }
+
+  .electronicsContainer {
+    justify-content: left;
   }
 }
 

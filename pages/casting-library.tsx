@@ -85,21 +85,33 @@ const Page = ({ data }: any) => {
       <div className={styles.castingSelections}>
         {data.map((row: any, id: number) => {
           return (
-            <Link key={id} href={`/casting-library#${row[0]
-              .toLowerCase()
-              .split(" ")
-              .join("-")}`}><div className={styles.castingSelection}>
+            <Link
+              key={id}
+              href={`/casting-library#${row[0]
+                .toLowerCase()
+                .split(" ")
+                .join("-")}`}
+            >
+              <div className={styles.castingSelection}>
                 <h4>{row[0]}</h4>
+                <p>
+                  <span className={styles.dem}>Example Application:</span>
+                </p>
                 <div className={styles.imageContainer}>
-                  <Image src={`/images/casting/${row[2]}`} layout="fill" objectFit='contain' />
+                  <Image
+                    src={`/images/casting/${row[2]}`}
+                    layout="fill"
+                    objectFit="contain"
+                  />
                 </div>
                 <p>
-                  <span className={styles.dem}>Recommend:</span><br />
+                  <span className={styles.dem}>Recommended:</span>
+                  <br />
                   <span className={styles.recommendationText}>{row[1]}</span>
                 </p>
               </div>
             </Link>
-          )
+          );
         })}
       </div>
       <div className={styles.longResponses}>

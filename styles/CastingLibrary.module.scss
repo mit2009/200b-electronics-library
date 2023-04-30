@@ -45,6 +45,8 @@
       width: 90px;
       height: 80px;
     }
+    margin-top: -10px;
+    margin-bottom: 25px;
   }
 
   h4 {
@@ -141,6 +143,9 @@
   font-weight: 800;
 }
 
+.castingSelection h4 {
+  margin-bottom: -5px;
+}
 
 @media (min-width: 768px) {
   .castingSelections {

@@ -53,8 +53,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
       </Head>
       <Sidebar />
-      <div className={cx('page-content', paths[0] ?? 'home', sidebarStyles[kebabToCamel(paths[1]) ?? 'intro'])}>
-        {paths[0] === 'toobers' && (
+      <div className={cx('page-content', paths[0] ?? 'home', sidebarStyles[kebabToCamel(paths[1]) ?? 'intro'], {
+        "force-wide": paths[1] === 'all-toobers'
+      })}>
+        {paths[0] === 'toobers' && paths[1] !== 'all-toobers' && (
           <div className="breadcrumbs">
             <span className="chapter">
               {PAGES_LAYOUT?.['/toobers']?.chapters?.[`/${paths[1]}`]?.value ?? `1. Introduction`}

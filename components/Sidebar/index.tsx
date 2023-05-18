@@ -540,6 +540,11 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
   };
   return (
     <div className={styles.chapterContainer}>
+      <Link href="/toobers/all-toobers">
+        <div className={styles.allToobersButton}>
+          Check out the&nbsp;<strong>Toobers of 2023</strong>!
+        </div>
+      </Link>
       {Object.keys(chapters).map((chapterUrl) => {
         if (!pageStates[chapterUrl]) {
           return <React.Fragment key={chapterUrl}></React.Fragment>;

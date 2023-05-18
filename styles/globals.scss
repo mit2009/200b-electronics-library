@@ -199,6 +199,10 @@ div {
       justify-content: center;
       align-items: center;
     }
+
+    &.force-wide {
+      max-width: 100%;
+    }
   }
 
   .link-image {

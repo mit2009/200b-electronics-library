@@ -1,0 +1,42 @@
+.toobersContainer {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+
+  width: 100%;
+}
+
+.toober {
+  border: 2px solid var(--grey2);
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  transition: 0.2s all;
+
+  &:hover {
+    border-color: var(--grey9);
+
+    cursor: pointer;
+
+    transform: scale(1.03)
+  }
+
+  img {
+    width: 100%;
+
+    transform: scale(1.2)
+  }
+}
+
+.customHeader2 {
+  color: var(--grey4) !important;
+  font-weight: 100 !important;
+  font-size: 1.4rem !important; 
+
+  strong {
+    color: var(--grey9) !important;
+    font-weight: 500 !important;
+  }
+}

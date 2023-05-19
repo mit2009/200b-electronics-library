@@ -542,7 +542,9 @@ const ChapterContainer = ({ dirs }: { dirs: string[] }) => {
     <div className={styles.chapterContainer}>
       <Link href="/toobers/all-toobers">
         <div className={styles.allToobersButton}>
-          Check out the&nbsp;<strong>Toobers of 2023</strong>!
+          <div>
+            Check out the&nbsp;<strong>Toobers&nbsp;of&nbsp;2023</strong>!
+          </div>
         </div>
       </Link>
       {Object.keys(chapters).map((chapterUrl) => {
@@ -674,8 +676,8 @@ export const Sidebar = () => {
   const dirs = splitPath(path);
   const currentPage = getCurrentPage(dirs);
   const currentPageName = hasOwn(currentPage, 'value')
-    ? currentPage.value
-    : 'Coming Soon!';
+    ? currentPage.value : '';
+
   return (
     <div className={styles.sidebar}>
       <div className={styles.topbar}>
